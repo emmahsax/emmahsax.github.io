@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head -->
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      font-src 'self' fonts.gstatic.com;
+      img-src 'self' data: live.staticflickr.com i.imgur.com media.giphy.com referrer.disqus.com c.disquscdn.com;
+      script-src 'self' emmasax4.disqus.com www.google.com www.gstatic.com;
+      prefetch-src disqus.com c.disquscdn.com;
+      frame-src 'self' referrer.disqus.com disqus.com www.google.com docs.google.com;
+      style-src 'self' c.disquscdn.com;
+    ">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
+    <meta http-equiv="X-Frame-Options" content="deny">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#001aaf">
+    <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#001aaf">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="/assets/css/google_fonts.min.css">
+    <link rel="stylesheet" href="/assets/css/photoswipe.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="alternate" href="/feed.xml" type="application/rss+xml">
+    <!-- Begin Jekyll SEO tag v2.7.1e -->
+    <title>Emma Sax | Implementing Uptime Monitoring for my Static Sites</title>
+    <meta name="generator" content="Jekyll v4.2.0" />
+    <meta property="og:title" content="Emma Sax | Implementing Uptime Monitoring for my Static Sites" />
+    <meta name="author" content="Emma Sax" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
+    <meta property="og:description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
+    <link rel="canonical" href="https://emmasax.com/blog/posts/implementing-uptime-monitoring-for-my-static-sites/" />
+    <meta property="og:url" content="https://emmasax.com/blog/posts/implementing-uptime-monitoring-for-my-static-sites/" />
+    <meta property="og:site_name" content="Emma Sax" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2021-10-02T19:43:00+00:00" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Implementing Uptime Monitoring for my Static Sites" />
+    <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
+    <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
+    <meta name="yandex-verification" content="32fe10ad6352714a" />
+    <script type="application/ld+json">
+      {"headline":"Implementing Uptime Monitoring for my Static Sites","url":"https://emmasax.com/blog/posts/implementing-uptime-monitoring-for-my-static-sites/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/implementing-uptime-monitoring-for-my-static-sites/"},"dateModified":"2021-10-02T19:44:04+00:00","datePublished":"2021-10-02T19:43:00+00:00","author":{"@type":"Person","name":"Emma Sax"},"description":"Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies.","@type":"BlogPosting","@context":"https://schema.org"}
+    </script>
+    <!-- End Jekyll SEO tag -->
+  </head>
+  <!-- Navigation bar -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark py-0 py-md-0">
+      <!-- Left hand side of navbar -->
+      <a class="navbar-brand mb-0" href="/" target="_self">
+        <img src="/assets/images/logo-plain-white-400.png" width="30" height="30"
+        class="d-inline-block align-top nav-icon" alt="E logo"
+      >&nbsp;&nbsp;Emma Sax
+      </a>
+      <!-- Navbar open/close button when on a smaller screen -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbar-links" aria-controls="navbar-links"
+      aria-expanded="false" aria-label="Toggle navigation"
+    >
+        <img class="nav-icon-menu" src="/assets/images/icons/menu.svg" alt="Menu icon">
+        <img class="nav-icon-x" src="/assets/images/icons/x.svg" alt="X icon">
+      </button>
+      <!-- Page links -->
+      <div class="collapse navbar-collapse" id="navbar-links">
+        <ul class="navbar-nav ml-auto mt-2 mt-md-0">
+          <li class="nav-item ">
+            <a class="nav-link" href="/about-me/">About Me
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">Blog
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Page content -->
+  <body>
+    <main class="container">
+      <div class="row">
+        <div class="col col-12 col-md-10">
+          <!-- Blog post title and information -->
+          <div class="text-center">
+            <h1 class="post-title">
+              Implementing Uptime Monitoring for my Static Sites
+              <div class="row post-data">
+                <div class="col col-12 col-md-4">
+                  <span class="post-meta">
+                    <img class="post-categorization-icon" src="/assets/images/icons/tag.svg" alt="Tag icon">
+                    <a href="/blog/tech/">tech</a>
+                  </span>
+                </div>
+                <div class="col col-12 col-md-4">
+                  <span class="date-meta">2021-10-02 14:43:00 -0500</span>
+                </div>
+                <div class="col col-12 col-md-4">
+                  <span class="post-meta">Read time: 6 minutes</span>
+                </div>
+              </div>
+            </h1>
+          </div>
+          <!-- Blog post content and comments -->
+          <div class="page-body">
+            <p>I use <a href="https://www.cloudflare.com/">Cloudflare</a> to manage my SSL certs, DNS configuration, and redirects. And to be completely honest, DNS/SSL is one area that I’m not super familiar with, and it always seemed a bit magical to me. So, a couple of weeks ago, when I navigated to one of my websites (such as this one), and I immediately saw an error, directly from Cloudflare, I realized there was an error in my SSL settings. The error page looked something like this:</p>
+            <div class="text-center photoswipe-gallery">
+              <a class="photoswipe photo" href="https://live.staticflickr.com/65535/51537348779_830f5dedc1_b.jpg" target="_blank" data-pswp-width="1797" data-pswp-height="944">
+                <img class="image" src="https://live.staticflickr.com/65535/51537348779_830f5dedc1_b.jpg" width="500"  alt="Cloudflare SSL errors">
+                <div class="invisible caption">Cloudflare SSL errors</div>
+              </a>
+            </div>
+            <p>I freaked out for a minute. What changed? What did I do? And then I remembered. A few weeks ago, when Cloudflare sent me an email which said that I should change my domains to use <code>Full (strict)</code> as my SSL/TLS mode, versus <code>Flexible</code> or <code>Full</code>, I said “sure”. After briefly looking over the suggested change, I set all of my domains to use <code>Full (strict)</code>.</p>
+            <p>What I didn’t catch was this:</p>
+            <div class="text-center photoswipe-gallery">
+              <a class="photoswipe photo" href="https://live.staticflickr.com/65535/51535838467_3f1177d53f.jpg" target="_blank" data-pswp-width="452" data-pswp-height="99">
+                <img class="image" src="https://live.staticflickr.com/65535/51535838467_3f1177d53f.jpg" width="452"  alt="Full (strict) instructions">
+                <div class="invisible caption">Full (strict) instructions</div>
+              </a>
+            </div>
+            <p>This means that for <code>Full (strict)</code> to work, not only does the domain need to have an SSL certificate, but my server (and my site is currently hosted on <a href="https://pages.github.com">GitHub Pages</a>, so that would be GitHub’s server) would need a trusted private certificate… and my site does not have one. So turning on <code>Full (strict)</code> immediately broke my site. And setting it back to <code>Full</code> fixed it right away.</p>
+            <p>But what this taught me was: my site was down for almost a week before I noticed anything. Either my visitors didn’t feel like telling me (or didn’t know how because my site was down), or I didn’t have any visitors during that time frame. Either way, my site was down for a long time, I didn’t know it, and I wouldn’t have realized it had I not wanted to look at something.</p>
+            <p>So, I need to make a change in order to avoid this happening again. Downtime happens… it is sort of inevitable. The thing is that I need to be made aware of when downtime happens or is happening so that I can try to fix it right away. Static sites generally don’t have a lot of downtime because there’s no backend, but they’re still liable to internet issues and DNS/SSL issues (as shown above). So, I went on an experimental journey to find a 3rd party service to provide some simple uptime monitoring.</p>
+            <p>CloudRadar does a beautiful job of explaining what uptime monitoring is <a href="https://www.cloudradar.io/blog/uptime-monitoring-explained-in-two-minutes#:~:text=Uptime%20Monitoring%20checks%20the%20availability,it%20occurs%20%2D%20wherever%20you%20are.">here</a>. The gist is this (straight from that link):</p>
+            <blockquote>
+              <p>Uptime Monitoring checks the availability and the response time of your website and publicly accessible infrastructure. An effective monitoring solution will alert you of a problem as soon as it occurs - wherever you are.</p>
+            </blockquote>
+            <p>So, I needed to find a service that would ping my website (over HTTPS) regularly (preferrably once a minute), and then text me, send my phone a notification, or some other alternative when it goes down for a couple of consecutive checks. It’d be awesome if it also notified me when my website came back up. I started by just googling for some uptime monitoring services. I got some pretty common ones like:</p>
+            <ul>
+              <li><a href="https://www.pingdom.com/">Pingdom</a></li>
+              <li><a href="https://www.datadoghq.com/">Datadog</a></li>
+              <li><a href="https://uptimerobot.com/">UptimeRobot</a></li>
+              <li><a href="https://www.freshworks.com/website-monitoring/">Freshping</a></li>
+              <li><a href="https://betteruptime.com/">BetterUptime</a></li>
+              <li><a href="https://uptime.com/">Uptime.com</a></li>
+              <li><a href="https://www.site24x7.com/">Site24x7</a></li>
+              <li><a href="https://www.alertbot.com/">AlertBot</a></li>
+              <li><a href="https://cronitor.io/">Cronitor.io</a></li>
+              <li><a href="https://www.statuscake.com/">StatusCake</a></li>
+              <li><a href="https://www.dynatrace.com/">Dynatrace</a></li>
+            </ul>
+            <p>I could keep listing off these services—there’s a lot of them. I compared several of them based on pricing (I try very hard to make my entire website free except for my domain), uptime check frequency (how often they ping my monitoring checks, commonly ranging from once a minute to once every five minutes), amount of uptime checks (I’d like to have at least ten checks, preferrably more), and integration options (SMS notifications, push notifications to mobile devices, etc).</p>
+            <p>I ended up selecting two to trial: <a href="https://betteruptime.com/">BetterUptime</a> and <a href="https://www.freshworks.com/website-monitoring/">Freshping</a> (that’s by a company called <a href="https://www.freshworks.com/">Freshworks</a>).</p>
+            <p>Overall, I really liked the look and feel of BetterUptime more than Freshping. The UI seemed more modern, it checked from multiple locations around the world to verify downtime was <em>real</em> downtime, and it was fast at alerting me when I tested downtime. However, BetterUptime could only check my websites every three minutes, which was too slow for my preference. The free plan also didn’t notify my phone app via push notification, which is my ideal situation. I found a way around this by using their integration with Slack, and then letting Slack alert me via push notifications from Slack straight to my phone. The free plan only allowed 10 monitors total, and they turned each downtime into a full incident, which was unnecessary for me… I want a ping service, not an incident management service. Their emails were fast though.</p>
+            <p>But Freshping filled in BetterUptime’s gaps. With Freshping, they can check my websites once a minute. Freshping gives me 50 monitors, versus BetterUptime’s limit of 10. Freshping also has the ability to pause monitors, and gives me a full report with data, metrics, and availability percentages.
+              Freshping’s free plan still doesn’t have push notifications, but my Slack integration solution worked as well for Freshping as it did for BetterUptime. Although I don’t like the UI of Freshping quite as much as BetterUptime, I decided to fully commit to Freshping (for now at least) by deleting my BetterUptime account. And so far, Freshping has given me everything I wanted in my uptime monitoring service.</p>
+            <p>After setting Freshping up with several of my websites, I now feel 10x more confident that when downtime happens, I’ll know about it. Throughout all of my testing, and some real downtime that happened during maintenance yesterday, I knew the downtime was happening. In fact, Freshping notified me multiple times as the downtime continued, just in case I missed it.</p>
+            <p>I’m not suggesting that you use Freshping or BetterUptime. What I found through my research was that all of the different uptime monitoring services have different benefits. Some are cheaper, some offer lots of features, but have less data on the reporting side. BetterUptime turned every downtime event into a full incident, which could be helpful if the team had more than one person. What I simply suggest is that every team (even teams of one) <em>use</em> an uptime monitoring service. There’s free options, and they’re simple to set up. The peace of mind is worth the effort to do some research.</p>
+            <p>Here’s some places to get started:</p>
+            <ul>
+              <li><a href="https://logicalread.com/uptime-monitor-tools/">Logicalread.com: Uptime Monitoring Tools</a></li>
+              <li><a href="https://www.quicksprout.com/best-website-monitoring-services/">Quicksprout.com: Best Website Monitoring Tools</a></li>
+              <li><a href="https://neilpatel.com/blog/best-website-monitoring-services/">NeilPatel.com: Best Website Monitoring Tools</a></li>
+              <li><a href="https://www.techradar.com/best/best-website-monitoring-software">TechRadar.com: Best Website Monitoring Software</a></li>
+            </ul>
+            <p>Good luck!</p>
+            <div class="text-center margin-bottom-1">
+              <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
+                Load Comments
+              </button>
+              <script id="comments" data-name="emmasax4" src="/assets/js/show_comments.js"></script>
+            </div>
+            <div id="disqus_thread"></div>
+            <noscript>
+              Please enable JavaScript to view the
+              <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                comments powered by Disqus.
+              </a>
+            </noscript>
+          </div>
+        </div>
+        <div class="col col-12 col-md-2 text-center">
+          <!-- Sidebar – button to go back to all posts and RSS feed button -->
+          <div class="text-center">
+            <div class="container padding-bottom-1">
+              <a href="/blog/" class="btn btn-lg btn-outline button-text">All Posts</a>
+            </div>
+            <a href="/feed.xml" target="_blank" class="link-icon-rss">
+              <img class="icon-static" src="/assets/images/icons/rss-fill.svg" alt="RSS icon">
+              <img class="icon-hover" src="/assets/images/icons/rss-fill-hover.svg" alt="RSS icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <!-- Footer -->
+  <footer>
+    &copy; <script src="/assets/js/get_full_year.js"></script>
+    Emma Sax. All rights reserved.
+  </footer>
+  <!-- Javascript scripts -->
+  <script
+    src="/assets/js/activate_photoswipe.js"
+    type="module"
+    class="photoswipe-activation"
+    gallery-selector=".photoswipe-gallery"
+    child-selector=".photoswipe"
+  ></script>
+  <script src="/assets/js/show_dates.js"></script>
+  <script src="/assets/js/external_links.js"></script>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/lightbox.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+</html>

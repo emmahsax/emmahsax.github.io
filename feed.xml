@@ -3,13 +3,24 @@
     <generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2021-09-29T19:05:42+00:00</updated>
+    <updated>2021-10-02T19:44:04+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <subtitle>Emma Sax&apos;s personal website and blog. Includes information about my social media profiles, resumé, and hobbies.</subtitle>
     <author>
       <name>Emma Sax</name>
     </author>
+    <entry>
+      <title type="html">Implementing Uptime Monitoring for my Static Sites</title>
+      <link href="https://emmasax.com/blog/posts/implementing-uptime-monitoring-for-my-static-sites/" rel="alternate" type="text/html" title="Implementing Uptime Monitoring for my Static Sites" />
+      <published>2021-10-02T19:43:00+00:00</published>
+      <updated>2021-10-02T19:44:04+00:00</updated>
+      <id>https://emmasax.com/blog/posts/implementing-uptime-monitoring-for-my-static-sites</id>
+      <author>
+        <name>Emma Sax</name>
+      </author>
+      <category term="tech" />
+    </entry>
     <entry>
       <title type="html">Turning Lightbox2 into PhotoSwipe</title>
       <link href="https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/" rel="alternate" type="text/html" title="Turning Lightbox2 into PhotoSwipe" />
@@ -54,16 +65,5 @@
         <name>Emma Sax</name>
       </author>
       <category term="Welcome to Kenya" />
-    </entry>
-    <entry>
-      <title type="html">Our 20s Matter — Part 3: The Brain and the Body</title>
-      <link href="https://emmasax.com/blog/posts/our-20s-matter/the-brain-and-the-body/" rel="alternate" type="text/html" title="Our 20s Matter — Part 3: The Brain and the Body" />
-      <published>2020-11-26T20:00:00+00:00</published>
-      <updated>2021-08-20T14:04:11+00:00</updated>
-      <id>https://emmasax.com/blog/posts/our-20s-matter/the-brain-and-the-body</id>
-      <author>
-        <name>Emma Sax</name>
-      </author>
-      <category term="Our 20s Matter" />
     </entry>
   </feed>
