@@ -33,7 +33,7 @@
     <link rel="alternate" href="/feed.xml" type="application/rss+xml">
     <!-- Begin Jekyll SEO tag v2.7.1e -->
     <title>Emma Sax | Why I Switched from Travis CI to CircleCI</title>
-    <meta name="generator" content="Jekyll v4.2.0" />
+    <meta name="generator" content="Jekyll v4.2.1" />
     <meta property="og:title" content="Emma Sax | Why I Switched from Travis CI to CircleCI" />
     <meta name="author" content="Emma Sax" />
     <meta property="og:locale" content="en_US" />
@@ -50,7 +50,7 @@
     <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
     <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"headline":"Why I Switched from Travis CI to CircleCI","url":"https://emmasax.com/blog/posts/why-i-switched-from-travis-ci-to-circleci/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/why-i-switched-from-travis-ci-to-circleci/"},"dateModified":"2021-09-29T19:05:42+00:00","datePublished":"2020-03-22T17:51:00+00:00","author":{"@type":"Person","name":"Emma Sax"},"description":"Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies.","@type":"BlogPosting","@context":"https://schema.org"}
+      {"headline":"Why I Switched from Travis CI to CircleCI","url":"https://emmasax.com/blog/posts/why-i-switched-from-travis-ci-to-circleci/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/why-i-switched-from-travis-ci-to-circleci/"},"dateModified":"2021-09-29T19:05:42+00:00","datePublished":"2020-03-22T17:51:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies.","@type":"BlogPosting","@context":"https://schema.org"}
     </script>
     <!-- End Jekyll SEO tag -->
   </head>
@@ -346,7 +346,7 @@ bundle <span class="nb">exec </span>htmlproofer <span class="se">\</span>
         <span class="na">command</span><span class="pi">:</span> <span class="s">.circleci/generate-slack-message.sh</span>
   <span class="na">slack_build_notification</span><span class="pi">:</span>
     <span class="na">steps</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">slack/status</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">slack/status</span><span class="pi">:</span>
         <span class="na">success_message</span><span class="pi">:</span> <span class="s2">"</span><span class="s">$SLACK_MESSAGE</span><span class="nv"> </span><span class="s">*passed*."</span>
         <span class="na">failure_message</span><span class="pi">:</span> <span class="s2">"</span><span class="s">$SLACK_MESSAGE</span><span class="nv"> </span><span class="s">*failed*."</span>
         <span class="na">include_job_number_field</span><span class="pi">:</span> <span class="no">false</span>
