@@ -32,13 +32,13 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="alternate" href="/feed.xml" type="application/rss+xml">
     <!-- Begin Jekyll SEO tag v2.7.1e -->
-    <title>Emma Sax | Adding Pagination without Jekyll</title>
+    <title>Adding Pagination without Jekyll | Emma Sax</title>
     <meta name="generator" content="Jekyll v4.2.1" />
-    <meta property="og:title" content="Emma Sax | Adding Pagination without Jekyll" />
+    <meta property="og:title" content="Adding Pagination without Jekyll | Emma Sax" />
     <meta name="author" content="Emma Sax" />
     <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
-    <meta property="og:description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
+    <meta name="description" content="Read on for an overview of how I added basic pagination to a static site WITHOUT the use of Jekyll." />
+    <meta property="og:description" content="Read on for an overview of how I added basic pagination to a static site WITHOUT the use of Jekyll." />
     <link rel="canonical" href="https://emmasax.com/blog/posts/adding-pagination-without-jekyll/" />
     <meta property="og:url" content="https://emmasax.com/blog/posts/adding-pagination-without-jekyll/" />
     <meta property="og:site_name" content="Emma Sax" />
@@ -50,7 +50,7 @@
     <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
     <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"headline":"Adding Pagination without Jekyll","url":"https://emmasax.com/blog/posts/adding-pagination-without-jekyll/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/adding-pagination-without-jekyll/"},"dateModified":"2021-09-29T19:05:42+00:00","datePublished":"2019-09-12T05:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies.","@type":"BlogPosting","@context":"https://schema.org"}
+      {"headline":"Adding Pagination without Jekyll","url":"https://emmasax.com/blog/posts/adding-pagination-without-jekyll/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/adding-pagination-without-jekyll/"},"dateModified":"2021-11-01T17:05:53+00:00","datePublished":"2019-09-12T05:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Read on for an overview of how I added basic pagination to a static site WITHOUT the use of Jekyll.","@type":"BlogPosting","@context":"https://schema.org"}
     </script>
     <!-- End Jekyll SEO tag -->
   </head>
@@ -121,9 +121,9 @@
           <!-- Blog post content and comments -->
           <div class="page-body">
             <p>As I stated in my original <a href="/blog/posts/switching-to-jekyll/"><em>Switching to Jekyll</em></a> post, one of the original reasons I wanted to move to a Jekyll-based site was so that I could implement pagination on my “Blog” page(s). Converting my site to Jekyll was definitely challenging, and it involved me learning a new framework and a new language (Liquid). And therefore, my pull request that made the switch was massive, and took a while—it had 54 changed files and 19 commits. Because of this, I decided that pagination should come in a separate pull request. And then, because I’m in my “website-phase,” I thought I’d write a blog post about it 🤷🏻‍♀️😂.</p>
-            <p>I originally tried to add Jekyll’s built-in pagination. Supposedly, it’s pretty slick. You add a few sections to the <code>_config.yml</code>, a couple sections to your <code>index.html</code>, and bam: it’s done and it works 💥. My real experience setting up the pagination was <em>not</em> like that. In fact, within one commit, I learned that Jekyll’s pagination (and other pagination gems), wouldn’t work well with my current directory/file setup. Both <a href="https://jekyllrb.com/docs/pagination/">Jekyll’s built-in pagination</a> and the gem <a href="https://github.com/sverrirs/jekyll-paginate-v2"><code>jekyll-paginate-v2</code></a> expect the blog posts to be in a <code>_posts/</code> directory, and to be referenced by <code>site.posts</code>. They also expect the main “Blog” page to be in its own directory, and my stuff wasn’t formatted like that. And so, instead of fighting with that, I decided to get more creative. That can’t be the only pagination option, right? 🥴😬🙏🏼</p>
-            <p>Turns out, the Google doesn’t have a lot of other suggestions on pagination. But, the original Jekyll repository I copied (<a href="https://github.com/UMM-CSci/senior-seminar">UMM-CSci’s <code>senior-seminar</code></a>), implements a version of pagination that’s installed from <a href="https://listjs.com/docs/pagination/"><code>List.js</code></a>. Possibly this is because that site uses <code>seminars</code> instead of <code>posts</code>. But either way, I decided to give it a chance. Worst case scenario, it just wouldn’t work and I’d have to find another pagination option.</p>
-            <p>Of course, I started with the things I know how to do best: copy-paste 💁🏻‍♀️. I started with <a href="https://github.com/UMM-CSci/senior-seminar/blob/master/seminars.html#L63-L80">this blob</a>, of course edited to suit my HTML file. Surprisingly, bits of this work right out of the box. But… the pagination isn’t pretty, which is very important to me.</p>
+            <p>I originally tried to add Jekyll’s built-in pagination. Supposedly, it’s pretty slick. You add a few sections to the <code>_config.yml</code>, a couple sections to your <code>index.html</code>, and bam: it’s done and it works 💥. My real experience setting up the pagination was <em>not</em> like that. In fact, within one commit, I learned that Jekyll’s pagination (and other pagination gems), wouldn’t work well with my current directory/file setup. Both Jekyll’s built-in pagination and the gem <a href="https://github.com/sverrirs/jekyll-paginate-v2"><code>jekyll-paginate-v2</code></a> expect the blog posts to be in a <code>_posts/</code> directory, and to be referenced by <code>site.posts</code>. They also expect the main “Blog” page to be in its own directory, and my stuff wasn’t formatted like that. And so, instead of fighting with that, I decided to get more creative. That can’t be the only pagination option, right? 🥴😬🙏🏼</p>
+            <p>Turns out, the Google doesn’t have a lot of other suggestions on pagination. But, the original Jekyll repository I copied implements a version of pagination that’s installed from <a href="https://listjs.com/docs/pagination/"><code>List.js</code></a>. Possibly this is because that site uses <code>seminars</code> instead of <code>posts</code>. But either way, I decided to give it a chance. Worst case scenario, it just wouldn’t work and I’d have to find another pagination option.</p>
+            <p>Of course, I started with the things I know how to do best: copy-paste 💁🏻‍♀️. I started with <a href="https://github.com/UMM-CSci/senior-seminar/blob/master/seminars.html#L63-L80">this blob from UMM-CSci’s <code>senior-seminar</code></a>, of course edited to suit my HTML file. Surprisingly, bits of this work right out of the box. But… the pagination isn’t pretty, which is very important to me.</p>
             <div class="text-center photoswipe-gallery">
               <a class="photoswipe photo" href="https://live.staticflickr.com/65535/48741690227_e27cb82884.jpg" target="_blank" data-pswp-width="400" data-pswp-height="326">
                 <img class="image" src="https://live.staticflickr.com/65535/48741690227_e27cb82884.jpg" width="400" alt="Ugly vertical pagination bar">
@@ -161,7 +161,6 @@
               <li><a href="https://stackoverflow.com/questions/10914022/how-do-i-check-out-a-specific-version-of-a-submodule-using-git-submodule">stackoverflow.com: how do I check out a specific version of a submodule using git submodule</a></li>
               <li><a href="https://twoguysarguing.wordpress.com/2010/11/14/tie-git-submodules-to-a-particular-commit-or-branch/">2guysarguing.wordpress.com: tie git submodules to a particular commit or branch</a></li>
               <li><a href="https://subfictional.com/fun-with-git-submodules/">subfictional.com: fun with git submodules</a></li>
-              <li>And possibly others I can’t find in my browser history anymore</li>
             </ul>
             <p>Also, note that there is no easy way to remove a submodule. I’m just glad that I attempted this inside of a pull request because then I could <code>git reset</code> when things weren’t going my way.</p>
             <p>After I finished succesfully adding the <code>primer</code> submodule 😌, all I had to do was re-add</p>
@@ -178,7 +177,7 @@
                 <div class="invisible caption">Pagination bar that's much better</div>
               </a>
             </div>
-            <p>I was thrilled with the outcome of this pagination (even though it wasn’t Jekyll’s officially supported pagination), and I committed to <code>gh-pages</code>. However, perhaps a day later, I noticed something wrong with my CSS formatting. Perhaps you can notice it if you compare the before-pretty-pagination and the after-pretty-pagination pictures… I’ll give you a hint: it has to do with the indentation and spacing of the words. Somehow, making the pagination bar pretty messed up my CSS formatting!</p>
+            <p>I was thrilled with the outcome of this pagination (even though it wasn’t Jekyll’s officially supported pagination), and I committed to <code>pages</code>. However, perhaps a day later, I noticed something wrong with my CSS formatting. Perhaps you can notice it if you compare the before-pretty-pagination and the after-pretty-pagination pictures… I’ll give you a hint: it has to do with the indentation and spacing of the words. Somehow, making the pagination bar pretty messed up my CSS formatting!</p>
             <p>I was upset. I wanted to have both a pretty pagination bar and proper formatting of the text. So, I went back in my commit changes and commented out everything from when the site last worked as expected. I slowly uncommented line after line until I found the problem line… of course it happened to be with the same line that makes the pagination work:</p>
             <div class="language-css highlighter-rouge">
               <div class="highlight">
@@ -197,7 +196,7 @@
             <p>And it turns out, the answer was as easy as that! Now, I have proper CSS layouts, a lovely pagination bar that works and doesn’t take long to load, and the file structure of my project was able to stay the same. The pagination bar isn’t perfect, but it’s better than anything I had before, and it’s good enough for me—for right now anyway.</p>
             <p>Since the pagination part of this project is <em>finally</em> done, I can officially say that I’ve now gotten everything out of Jekyll that I had hoped to, and then some. Not only did I implement a website with a “blog” that I’m proud of, but I learned a new framework and a new coding language. And most importantly, I reminded myself that one of the most important parts of being a coder is being willing to dive in, try something new, and not be afraid to fail.</p>
             <hr>
-            <p>EDIT: Since writing this blog post, I’ve moved my <code>master</code> branch to be called <code>gh-pages</code>, and I’ve updated this blog post accordingly.</p>
+            <p>Oh, lastly, if adding pagination to a Jekyll site scares you, then you may want to check out my blog post <a href="/blog/posts/using-jekyll-paginate-v2/"><em>Using <code>jekyll-paginate-v2</code></em></a>, which walks through how I adding <code>jekyll-paginate-v2</code> to this website.</p>
             <div class="text-center margin-bottom-1">
               <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
                 Load Comments
@@ -214,10 +213,10 @@
           </div>
         </div>
         <div class="col col-12 col-md-2 text-center">
-          <!-- Sidebar – button to go back to all posts and RSS feed button -->
+          <!-- Sidebar button to go back to all posts and RSS feed button -->
           <div class="text-center">
             <div class="container padding-bottom-1">
-              <a href="/blog/" class="btn btn-lg btn-outline button-text">All Posts</a>
+              <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
             </div>
             <a href="/feed.xml" target="_blank" class="link-icon-rss">
               <img class="icon-static" src="/assets/images/icons/rss-fill.svg" alt="RSS icon">

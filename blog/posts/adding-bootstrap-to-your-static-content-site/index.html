@@ -32,13 +32,13 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="alternate" href="/feed.xml" type="application/rss+xml">
     <!-- Begin Jekyll SEO tag v2.7.1e -->
-    <title>Emma Sax | Adding Bootstrap to Your Static Content Site</title>
+    <title>Adding Bootstrap | Emma Sax</title>
     <meta name="generator" content="Jekyll v4.2.1" />
-    <meta property="og:title" content="Emma Sax | Adding Bootstrap to Your Static Content Site" />
+    <meta property="og:title" content="Adding Bootstrap | Emma Sax" />
     <meta name="author" content="Emma Sax" />
     <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
-    <meta property="og:description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
+    <meta name="description" content="Read here for my experience when I added Bootstrap to this website." />
+    <meta property="og:description" content="Read here for my experience when I added Bootstrap to this website." />
     <link rel="canonical" href="https://emmasax.com/blog/posts/adding-bootstrap-to-your-static-content-site/" />
     <meta property="og:url" content="https://emmasax.com/blog/posts/adding-bootstrap-to-your-static-content-site/" />
     <meta property="og:site_name" content="Emma Sax" />
@@ -50,7 +50,7 @@
     <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
     <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"headline":"Adding Bootstrap to Your Static Content Site","url":"https://emmasax.com/blog/posts/adding-bootstrap-to-your-static-content-site/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/adding-bootstrap-to-your-static-content-site/"},"dateModified":"2020-09-26T05:57:31+00:00","datePublished":"2019-12-17T06:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies.","@type":"BlogPosting","@context":"https://schema.org"}
+      {"headline":"Adding Bootstrap to Your Static Content Site","url":"https://emmasax.com/blog/posts/adding-bootstrap-to-your-static-content-site/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/adding-bootstrap-to-your-static-content-site/"},"dateModified":"2021-11-01T17:05:53+00:00","datePublished":"2019-12-17T06:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Read here for my experience when I added Bootstrap to this website.","@type":"BlogPosting","@context":"https://schema.org"}
     </script>
     <!-- End Jekyll SEO tag -->
   </head>
@@ -121,9 +121,18 @@
             <p>Between when I originally turned this website into a Jekyll site and a couple of weeks ago, a decent amount of CSS in the site had been slowly changing. First of all, the navigation bar had gone from a whole quarter of the screen to just a small top bar. The navigation words had moved to the right of the screen. But most importantly, I was attempting to make the site responsive to different screen widths (particularly mobile vs. computer). And there was a point when I realized that there were certain limitations my CSS/HTML knowledge had.</p>
             <p>Although it is arguably beneficial for a coder like me (that’s young in my career) to hand-craft all of my site’s CSS, the truth is that the site won’t come out as nicely as if I use a 3rd party tool. And, one could even claim that getting experience in implementing a 3rd party tool, and figuring out the best ways to use it, is even better experience.</p>
             <p>So, let’s walk through the process of adding Bootstrap to a Jekyll site, since this is what I did <em>very</em> recently.</p>
-            <hr>
+            <h2>Table of Contents</h2>
+            <ul>
+              <li><a href="#install-bootstrap-into-your-site">Install Bootstrap into your site</a></li>
+              <li><a href="#load-your-site-locally-and-see-what-breaks">Load your site locally and see what breaks</a></li>
+              <li><a href="#go-through-your-css-bit-by-bit-and-delete-those-bits">Go through your CSS bit by bit and delete those bits</a></li>
+              <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+            <div id="anchor">
+              <a id="install-bootstrap-into-your-site"> </a>
+            </div>
             <h2>Install Bootstrap into your site</h2>
-            <p>I selected to use the most recent version of Bootstrap (4.4), and wanted to install it via a <code>&lt;script&gt;</code> and CDN. If you put this line right before where your site links your own stylesheets, then it’ll automatically import this and combine the two CSS’s:</p>
+            <p>I selected to use the most recent version of Bootstrap (4.4 at the time), and wanted to install it via a <code>&lt;script&gt;</code> and CDN. If you put this line right before where your site links your own stylesheets, then it’ll automatically import this and combine the two CSS’s:</p>
             <div class="language-html highlighter-rouge">
               <div class="highlight">
                 <pre class="highlight"><code data-lang="html"><span class="nt">&lt;link</span>
@@ -136,9 +145,15 @@
               </div>
             </div>
             <p>Your site will take all of Bootstrap’s CSS, and then consider whatever you’ve coded as overrides.</p>
+            <div id="anchor">
+              <a id="load-your-site-locally-and-see-what-breaks"> </a>
+            </div>
             <h2>Load your site locally and see what breaks 🤷🏻‍♀️</h2>
             <p>When I first loaded my site, a surprising amount of the site successfully showed up. In fact, I’d even say that it pretty much looked exactly like what it was before, because my local CSS was overriding all of Bootstrap’s CSS. The only big thing that changed was my font styles. At the end of the day, I chose to keep Bootstrap’s styles anyway because I started to get used to the new font.</p>
             <p>If your site does start to break, then that’s an indicator that there’s probably some of your custom CSS that you should get rid of. If you’re going to use Bootstrap, you might as well <em>use</em> Bootstrap, which includes using most of Bootstrap’s functionality and features.</p>
+            <div id="anchor">
+              <a id="go-through-your-css-bit-by-bit-and-delete-those-bits"> </a>
+            </div>
             <h2>Go through your CSS bit by bit and delete those bits</h2>
             <p>To do this part, I started with the biggest single element I could find: my navbar. I started by taking a look at <a href="https://getbootstrap.com/docs/4.0/components/navbar/">Bootstrap’s built-in navbar</a>, and worked my way through my particular HTML file implementing a basic version of Bootstrap’s navbar. This involved changing the <code>class</code> names and moving around the lines of Jekyll code that write the menu on the top. I didn’t care if it was responsive or not; I could get to that later.</p>
             <p>After I implemented the basics of the navbar, it worked pretty miraculously. It also turned out to basically be responsive right away, all I had to do was modify a few more <code>class</code> names. Then, it was time to make the navbar look like mine (with similar colors, sizing, etc).</p>
@@ -196,10 +211,13 @@
             </div>
             <p>Previously, I was running that second line without the <code>class="container"</code>. But, once we added that, suddenly the entire site’s body was fully responsive! Now, everything word-wrapped appropriately from a huge screen, right down to 320px wide (the size of an iPhone 5/SE). It’s brilliant!</p>
             <p>Over the next couple days, I eventually completely switched to using <a href="https://getbootstrap.com/docs/4.0/content/tables/">Bootstrap’s tables</a> and <a href="https://getbootstrap.com/docs/4.0/components/pagination/">Bootstrap’s pagination</a> (but I’ll get to that in another blog post).</p>
+            <div id="anchor">
+              <a id="conclusion"> </a>
+            </div>
+            <h2>Conclusion</h2>
             <p>At the end of the day (or a few days), my repo ended up going from over 650 lines of CSS code to 185 lines. That means I cut out at least 72% of my existing CSS code. <em>And</em> I have a better-looking, more responsive, more modern, and accessible website? It’s a win-win.</p>
-            <hr>
             <p>Thank you so much for getting to the bottom of that rather technical blog post. I hope it’s enough compelling evidence to remember that using a 3rd party tool to make your website’s CSS better is worth it. If I (a back-end coder with very little CSS experience) can make it happen, then so can you 😉.</p>
-            <p>For more information about how my site uses Bootstrap, please see <a href="/blog/posts/bootstrap-css-and-icons-in-this-site/">this blog post</a>. To learn more about Bootstrap, please read their documentation <a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/">here</a>.</p>
+            <p>For more information about how my site uses Bootstrap, please see <a href="/blog/posts/bootstrap-css-and-icons-in-this-site/">my blog post on using Bootstrap and CSS in this site</a>.</p>
             <div class="text-center margin-bottom-1">
               <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
                 Load Comments
@@ -216,10 +234,10 @@
           </div>
         </div>
         <div class="col col-12 col-md-2 text-center">
-          <!-- Sidebar – button to go back to all posts and RSS feed button -->
+          <!-- Sidebar button to go back to all posts and RSS feed button -->
           <div class="text-center">
             <div class="container padding-bottom-1">
-              <a href="/blog/" class="btn btn-lg btn-outline button-text">All Posts</a>
+              <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
             </div>
             <a href="/feed.xml" target="_blank" class="link-icon-rss">
               <img class="icon-static" src="/assets/images/icons/rss-fill.svg" alt="RSS icon">

@@ -32,13 +32,13 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="alternate" href="/feed.xml" type="application/rss+xml">
     <!-- Begin Jekyll SEO tag v2.7.1e -->
-    <title>Emma Sax | Time Zones, UTC, and Javascript… Oh My!</title>
+    <title>Time Zones, UTC, and Javascript… Oh My! | Emma Sax</title>
     <meta name="generator" content="Jekyll v4.2.1" />
-    <meta property="og:title" content="Emma Sax | Time Zones, UTC, and Javascript… Oh My!" />
+    <meta property="og:title" content="Time Zones, UTC, and Javascript… Oh My! | Emma Sax" />
     <meta name="author" content="Emma Sax" />
     <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
-    <meta property="og:description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
+    <meta name="description" content="Time zones are a pain in the software world… learn more about how I overcame that with my website." />
+    <meta property="og:description" content="Time zones are a pain in the software world… learn more about how I overcame that with my website." />
     <link rel="canonical" href="https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/" />
     <meta property="og:url" content="https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/" />
     <meta property="og:site_name" content="Emma Sax" />
@@ -50,7 +50,7 @@
     <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
     <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"headline":"Time Zones, UTC, and Javascript… Oh My!","url":"https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/"},"dateModified":"2021-06-04T00:44:09+00:00","datePublished":"2020-02-07T06:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies.","@type":"BlogPosting","@context":"https://schema.org"}
+      {"headline":"Time Zones, UTC, and Javascript… Oh My!","url":"https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/"},"dateModified":"2021-11-01T17:05:53+00:00","datePublished":"2020-02-07T06:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Time zones are a pain in the software world… learn more about how I overcame that with my website.","@type":"BlogPosting","@context":"https://schema.org"}
     </script>
     <!-- End Jekyll SEO tag -->
   </head>
@@ -111,15 +111,25 @@
                   <span class="date-meta">2020-02-07 00:00:00 -0600</span>
                 </div>
                 <div class="col col-12 col-md-4">
-                  <span class="post-meta">Read time: 12 minutes</span>
+                  <span class="post-meta">Read time: 11 minutes</span>
                 </div>
               </div>
             </h1>
           </div>
           <!-- Blog post content and comments -->
           <div class="page-body">
+            <h2>Table of Contents</h2>
+            <ul>
+              <li><a href="#why-time-zones">Why Time Zones?</a></li>
+              <li><a href="#switching-time-zones-between-users-and-system">Switching Time Zones between Users and System</a></li>
+              <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+            <div id="anchor">
+              <a id="why-time-zones">&nbsp;</a>
+            </div>
+            <h2>Why Time Zones?</h2>
             <p>On my latest blog post, I wanted to try something new. When publishing, I wanted to publish on a future date (specifically at midnight the next day). I set up the date of the post to include the next day, and then planned to go onto Travis at midnight to build the newest version of the site… with the new blog post. And then I continued working on my website for the night.</p>
-            <p>But what ended up happening was Travis CI built on my <code>release</code> branch at 6:15pm… and suddenly my new blog post was live 😱! What happened? Well, Travis CI by default runs in UTC. So, since 6:00pm in CST is midnight in UTC, Travis CI determined it was time to publish the blog post. I quickly reverted that commit on my <code>gh-pages</code> branch to hide the new post once again, and then worked to find a solution to make Travis CI behave for the remainder of the night.</p>
+            <p>But what ended up happening was Travis CI built on my <code>main</code> branch at 6:15pm… and suddenly my new blog post was live 😱! What happened? Well, Travis CI by default runs in UTC. So, since 6:00pm in CST is midnight in UTC, Travis CI determined it was time to publish the blog post. I quickly reverted that commit on my <code>pages</code> branch to hide the new post once again, and then worked to find a solution to make Travis CI behave for the remainder of the night.</p>
             <p>What I ended up finding was this. By adding these lines to the <code>.travis.yml</code> file, we can override Travis CI’s default time zone and have it bundle in CST.</p>
             <div class="language-yml highlighter-rouge">
               <div class="highlight">
@@ -130,7 +140,10 @@
             </div>
             <p>I thought I would be satisfied with this. I develop my site in CST (or CDT in the summer), and now Travis will also bundle in that time zone. But, after more thought, I realized that this is really just a bandaid fix 🤕. What if I move across the country and now live in a different time zone permanently? What if I’m traveling internationally (say in France), and I’m blogging while I’m there. I’m no longer going to be thinking in terms of <code>America/Chicago</code> time zone… say I publish a blog post at 12pm noon in France. When I get home to Minneapolis, should the blog post still show up as having been published at 12pm noon? Or should it properly show a 6–7 hour time difference?</p>
             <p>So after a lot of thinking, I decided that the best (and most sustainable) way to design a website is so that all dates/times are UTC in the database (Jekyll doesn’t have a DB, so just in the HTML, <code>feed.xml</code>, and <code>sitemap.xml</code>). Then, we can convert all UTC date/times to become in a user’s local time when they navigate to my site ⏱.</p>
-            <h2>The Goal</h2>
+            <div id="anchor">
+              <a id="switching-time-zones-between-users-and-system">&nbsp;</a>
+            </div>
+            <h2>Switching Time Zones between Users and System</h2>
             <p>Time zones are complicated. I’ve dabbled with them a little bit, but they tend to make my head spin 💫. So, I made hefty goal for myself 🥴. When I publish a blog post, I can specify the publish date/time in <em>my</em> local time zone. Jekyll will build the blog post as having been published at the corresponding UTC time. And when a reader looks at the blog post on the website, it’ll give the date/time in their local time zone (which may be <em>my</em> time zone, but it could also be different).</p>
             <p>Let’s look at an example. I publish a blog post at 10:15pm in CST on Jan. 17, 2020:</p>
             <div class="highlighter-rouge">
@@ -184,7 +197,7 @@ January 18, 2020 05:15
             <p>When I put both of these pieces together, the result was immediate. As soon as I ran <code>jekyll serve</code> on my website, I noticed that the <code>feed.xml</code> and <code>sitemap.xml</code> label the published date/time as in UTC! Yes! Nice and quick.</p>
             <h3>4️. Show the users the published date/time in their local time zones</h3>
             <p>This was by far the most challenging part. I played with a Jekyll plugin first, to see if there was an easy way to convert the UTC date/time to be in a different time zone. This would’ve worked, if I wanted to hard-code the new time zone (which defeats the purpose of it being flexible to the readers’ location). So, after much googling, I realized the only good way to understand the readers’ location and time zone offset is to use Javascript. Yay…. 😰</p>
-            <p>I’m not really a Javascript person. But, I jumped in anyway, and wanted to find a solution. Using some loop syntax from another slice of Javascript I use (read more about that <a href="/blog/posts/opening-links-in-new-tabs-via-javascript/">here</a>), I started typing away. I want the Javascript to go through the HTML, find all of the dates, and then convert them to the readers’ local time and print that back out again.</p>
+            <p>I’m not really a Javascript person. But, I jumped in anyway, and wanted to find a solution. Using some loop syntax from another slice of Javascript I use, I started typing away. I want the Javascript to go through the HTML, find all of the dates, and then convert them to the readers’ local time and print that back out again.</p>
             <p>The entire script locates all of the HTML elements with the class <code>date-meta</code> (assuming that it is indeed a UTC date), and then Javascript makes it easy to change time zones:</p>
             <div class="language-javascript highlighter-rouge">
               <div class="highlight">
@@ -251,12 +264,13 @@ January 18, 2020 05:15
               </div>
             </div>
             <p>Now, when I navigate to my blog posts at the old URL, my browser automatically redirects to the new URL. Hopefully that prevents my SEO ranking from going down 😬.</p>
+            <div id="anchor">
+              <a id="conclusion">&nbsp;</a>
+            </div>
             <h2>Conclusion</h2>
             <p>At the end of the day, this goal maybe wasn’t too hefty. It maybe took about six hours of total effort. I haven’t traveled yet to see if it works as expected, but I have a trip planned in about a month, so we’ll see then 🤷🏻‍♀️.</p>
             <p>The moral of the story is that time zones are complicated, but the most robust websites will take them into account. If your website has date/times, then you should show them to your users in their local times, if possible. And you should be careful when storing data with date/times to make sure they are all stored in the same time zone, so they don’t get conflicted.</p>
             <p>I’m still working on perfecting my time zone processing. It’s complicated, and not all browsers react the same way to Javascript (who knew, right ¯\_(ツ)_/¯). But, I’d strongly urge to you take the plunge on your website… it’ll be worth it when your blog becomes internationally popular 😜.</p>
-            <hr />
-            <p>EDIT: Since writing this blog post, I’ve moved my default branch to be <code>main</code>, instead of <code>release</code> and/or <code>source</code>. I originally named it <code>release</code> because the documentation I was following named it that, but realized later that the name <code>main</code> fit my workflow better. Also, I’ve moved my <code>master</code> branch to be called <code>gh-pages</code>, and I’ve updated this blog post accordingly.</p>
             <div class="text-center margin-bottom-1">
               <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
                 Load Comments
@@ -273,10 +287,10 @@ January 18, 2020 05:15
           </div>
         </div>
         <div class="col col-12 col-md-2 text-center">
-          <!-- Sidebar – button to go back to all posts and RSS feed button -->
+          <!-- Sidebar button to go back to all posts and RSS feed button -->
           <div class="text-center">
             <div class="container padding-bottom-1">
-              <a href="/blog/" class="btn btn-lg btn-outline button-text">All Posts</a>
+              <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog&nbsp;Posts</a>
             </div>
             <a href="/feed.xml" target="_blank" class="link-icon-rss">
               <img class="icon-static" src="/assets/images/icons/rss-fill.svg" alt="RSS icon">

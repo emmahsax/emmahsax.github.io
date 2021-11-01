@@ -32,13 +32,13 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="alternate" href="/feed.xml" type="application/rss+xml">
     <!-- Begin Jekyll SEO tag v2.7.1e -->
-    <title>Emma Sax | DNS, Domains, and Personal Websites</title>
+    <title>DNS, Domains, and Personal Websites | Emma Sax</title>
     <meta name="generator" content="Jekyll v4.2.1" />
-    <meta property="og:title" content="Emma Sax | DNS, Domains, and Personal Websites" />
+    <meta property="og:title" content="DNS, Domains, and Personal Websites | Emma Sax" />
     <meta name="author" content="Emma Sax" />
     <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
-    <meta property="og:description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
+    <meta name="description" content="Learn all about setting up personal websites, complete with personal domains and DNS setup." />
+    <meta property="og:description" content="Learn all about setting up personal websites, complete with personal domains and DNS setup." />
     <link rel="canonical" href="https://emmasax.com/blog/posts/dns-domains-and-personal-websites/" />
     <meta property="og:url" content="https://emmasax.com/blog/posts/dns-domains-and-personal-websites/" />
     <meta property="og:site_name" content="Emma Sax" />
@@ -50,7 +50,7 @@
     <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
     <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"headline":"DNS, Domains, and Personal Websites","url":"https://emmasax.com/blog/posts/dns-domains-and-personal-websites/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/dns-domains-and-personal-websites/"},"dateModified":"2020-10-04T17:00:04+00:00","datePublished":"2019-12-20T06:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies.","@type":"BlogPosting","@context":"https://schema.org"}
+      {"headline":"DNS, Domains, and Personal Websites","url":"https://emmasax.com/blog/posts/dns-domains-and-personal-websites/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/dns-domains-and-personal-websites/"},"dateModified":"2021-11-01T17:05:53+00:00","datePublished":"2019-12-20T06:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Learn all about setting up personal websites, complete with personal domains and DNS setup.","@type":"BlogPosting","@context":"https://schema.org"}
     </script>
     <!-- End Jekyll SEO tag -->
   </head>
@@ -118,14 +118,29 @@
           </div>
           <!-- Blog post content and comments -->
           <div class="page-body">
-            <p>There’s many companies that provide the ability for individuals to have their own websites. They include <a href="https://pages.github.com/">GitHub Pages</a> (where this site is hosted), <a href="https://about.gitlab.com/blog/2016/04/07/gitlab-pages-setup/">GitLab Pages</a>, <a href="https://wordpress.com/">WordPress</a>, <a href="https://www.blogger.com/about/?r=2">Blogger</a>, <a href="https://www.wix.com/">Wix</a>, <a href="https://support.google.com/a/users/answer/9314941?hl=en">Google Sites</a>, <a href="https://www.weebly.com/">Weebly</a>, <a href="https://www.hostgator.com/">HostGator</a>, <a href="https://www.godaddy.com/websites/website-builder">GoDaddy</a>, and even <a href="https://www.theknot.com/gs/wedding-websites">The Knot</a>. That’s only naming a few. Every single site has their own pros and cons. Some provide more themes. Some provide more flexibility but require the user to know how to code. Some are completely free but usually sacrifice flexibility and theme options. Some start as free but then have payment plans to get more features.</p>
+            <h2>Table of Contents</h2>
+            <ul>
+              <li><a href="#hosting-your-websites">Hosting Your Websites</a></li>
+              <li><a href="#domains">Domains</a></li>
+              <li><a href="#dns">DNS</a></li>
+              <li><a href="#domains--your-website">Domains + Your Website</a></li>
+              <li><a href="#references-and-more-reading">References and More Reading</a></li>
+            </ul>
+            <div id="anchor">
+              <a id="hosting-your-websites">&nbsp;</a>
+            </div>
+            <h2>Hosting Your Websites</h2>
+            <p>There’s many companies that provide the ability for individuals to have their own websites. They include GitHub Pages (where this site is hosted), GitLab Pages, WordPress, Blogger, Wix, Google Sites, Weebly, HostGator, GoDaddy, and even The Knot. And that’s only naming a few. Every single site has their own pros and cons. Some provide more themes. Some provide more flexibility but require the user to know how to code. Some are completely free but usually sacrifice flexibility and theme options. Some start as free but then have payment plans to get more features.</p>
             <p>Individuals may choose different hosting options for different websites, depending on their needs for the site. As an example, I have two maintained websites on my domain. This is my first one. I host on GitHub Pages because I feel comfortable enough to code and maintain my own site, and I like the flexibility it provides. But I also host a site on Google Sites. I host there because it doesn’t need a fancy theme, and setup needed to be extra fast (I managed to easily set up that site within four hours).</p>
             <p>People may choose to have a website for multiple reasons, including: personal blogs, advertisement of themselves and their career, a business they’re starting, etc. The good news is that with the internet, people can basically make a website for whatever they want (my partner once had one that just had a bunch of pictures of LEGO sets and MOCs he made). The bad news is that unless you specifically set your website to be private (and that feature is only available from some hosting companies), anybody browsing the web can find your website. Pros and cons, right?</p>
             <p>But, one thing is for certain. Basically, no matter how where you decide to host your website, there’s going to be an option to provide your own domain.</p>
             <p>Most of these sites will provide you with half-customized domain. This could look like <code>myblog.wordpress.com</code> or <code>firstnamelastname.weebly.com</code> or <code>github-user.github.io</code>. For the company, this is really easy to do. The user can choose whatever the front portion of that should be (called a <code>subdomain</code>). And then the back portion (the <code>domain</code> itself—ex: <code>wordpress.com</code>, <code>weebly.com</code>) functions both as an advertisement for their service, and it is easy to manage and make SSL certificates for (it’s what’s called a wildcard domain: <code>*.wordpress.com</code>).</p>
             <p>But, for many individuals, that’s not quite enough customization for their website (including myself). For whatever reason we each choose, we don’t want to advertise where our website was hosted just by the URL.</p>
+            <div id="anchor">
+              <a id="domains">&nbsp;</a>
+            </div>
             <h2>Domains</h2>
-            <p>For some small amount of money annually (usually around $10–$15 per year), an individual can purchase a custom domain name. Each domain name is unique. So since <code>facebook.com</code> is already purchased, nobody else can get this domain. Hopefully nobody’s name is <code>Faceb Ook</code>. My domain for my website is <code>emmasax4.info</code>, so nobody else can buy that, but they could buy <code>emmasax4.com</code>, or <code>emmasax.info</code>.</p>
+            <p>For some small amount of money annually (usually around $10–$15 per year), an individual can purchase a custom domain name. Each domain name is unique. So since <code>facebook.com</code> is already purchased, nobody else can get this domain. Hopefully nobody’s name is <code>Faceb Ook</code>. My domain for my website is <code>emmasax.com</code>, so nobody else can buy that, but they could buy <code>emmasax.site</code>, or <code>emmasax.info</code>.</p>
             <p>A URL (or Uniform Resource Locator) has multiple parts to it. The first part is the protocol identifier. This is typically <code>http</code> or <code>https</code> (the <code>s</code> means secure connection with an SSL certificate). Other examples of protocols may be <code>ftp</code> or <code>telnet</code>. The last two portions (<code>example.com</code>) is the domain. This the unique name that indicates where the website is being served from. The ending part (<code>.com</code>, <code>.org</code>, <code>.edu</code>, <code>.net</code>, <code>.gov</code>, etc) indicates the top-level domain designator. Here are some common top-level domains:</p>
             <div class="table-responsive-sm">
               <table class="table table-hover table-bordered">
@@ -168,9 +183,15 @@
             <p>Anything before that (including a <code>www</code>) is a subdomain. The history of <code>www</code> is sort of old-fashioned. It was first made with the idea that every single domain would start with this, as it stands for World Wide Web. But now, that’s outdated, and it’s more common for websites to just omit that portion of the URL entirely.</p>
             <p>An individual can also use subdomains to have “multiple websites” that are all part of the same website (ex: <code>example.com</code> and <code>blog.example.com</code>).</p>
             <p>Individuals can also use their domain as a part of their email (for the ultimate professional look). This would look like <code>jsmith@example.com</code>, and the domain would be <code>example.com</code>.</p>
+            <div id="anchor">
+              <a id="dns">&nbsp;</a>
+            </div>
             <h2>DNS</h2>
             <p>Okay, now that we’ve done an overview of domains, we can talk about DNS. DNS stands for Domain Name System, and is what the internet uses to map each domain to the IP address of the server that’s hosting the website. But IP addresses change regularly, they’re ugly to look at, and hard to remember. Therefore, we often map domains to other domains, which then will map to several other places to get to a final destination IP address. But all you—as the reader—needs to know is that when you purchase a domain, whatever service you purchase that from is also going to give you a DNS. And it’s in <em>that</em> DNS where you can define where you want your domain name(s) to map to.</p>
             <p>There’s several different types of configurations. The basic thing to know is that there are <code>A Records</code>, <code>ALIAS Records</code>, and <code>CNAME Records</code>. <code>A Records</code> map a domain to an IP address (when the IP address is known and stable). A <code>CNAME Record</code> maps a domain to another domain (leading to that daisy chain I was briefly describing in the paragraph above). <code>ALIAS Records</code> are a lot like <code>CNAME Record</code>s, but they can coexist with other records on that name.</p>
+            <div id="anchor">
+              <a id="domains--your-website">&nbsp;</a>
+            </div>
             <h2>Domains + Your Website</h2>
             <p>Now, let’s walk through some examples of these DNS records may look like if you set up your website on a few different host providers. Note that TTL stands for Time to Live, and it specifies how long a resolver is supposed to cache the DNS query before looking for any new DNS queries. I purchased and manage my DNS on <a href="https://namecheap.com/">Namecheap</a> (that’s not a secret, so I don’t feel bad disclosing that at all).</p>
             <p>DNS records when setting up your website with your main domain on GitHub Pages:</p>
@@ -241,7 +262,10 @@ CNAME Record       www.subdomain     subdomain.mydomain.com.       Automatic
             </div>
             <p>I haven’t worked with adding domains to any other website host providers, so I can’t speak to any other providers’ information. But, when a person goes to add a domain to their website, there’s usually plenty of (decently 🤞🏼) helpful documentation to get started.</p>
             <p>So there you go! Hopefully this has helped you either learn more about DNS and domains, or will help you in choosing your personal domain and setting it up on your new website! Best of luck. I can attest that having your own website can be fun! It gives you a fun hobby and project, and it’s definitely something that you can be proud of.</p>
-            <h2>References</h2>
+            <div id="anchor">
+              <a id="references-and-more-reading">&nbsp;</a>
+            </div>
+            <h2>References and More Reading</h2>
             <ul>
               <li><a href="https://howdns.works/">hownds.works</a></li>
               <li><a href="https://dyn.com/blog/dyn-tech-everything-you-ever-wanted-to-know-about-ttls/">dyn.com: everything you ever wanted to know about ttls</a></li>
@@ -251,10 +275,8 @@ CNAME Record       www.subdomain     subdomain.mydomain.com.       Automatic
               <li><a href="https://www.webopedia.com/TERM/U/URL.html">www.webopedia: url.html</a></li>
               <li><a href="https://www.howtogeek.com/howto/18799/add-your-own-domain-to-your-wordpress.com-blog/">www.howtogeek.com: add your own domain to your wordpress.com blog</a></li>
               <li><a href="https://www.quora.com/What-do-you-call-the-section-at-the-end-of-an-email-that-includes-peoples-job-contact-info-etc-How-can-I-design-one-for-myself">quora.com: what do you call the section at the end of an email that includes peoples job contact info</a></li>
-              <li><a href="https://namecheap.com/">namecheap.com</a></li>
             </ul>
-            <hr />
-            <p>EDIT: Since writing this blog post, I’ve switched the primary domain for my website from <code>emmasax4.info</code> to <code>emmasax.com</code>.</p>
+            <p>For more information about the setup of this website, check out my <a href="/blog/posts/more-websites-jekyll-and-dns/">blog post <em>More Websites, Jekyll, and DNS</em></a>.</p>
             <div class="text-center margin-bottom-1">
               <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
                 Load Comments
@@ -271,10 +293,10 @@ CNAME Record       www.subdomain     subdomain.mydomain.com.       Automatic
           </div>
         </div>
         <div class="col col-12 col-md-2 text-center">
-          <!-- Sidebar – button to go back to all posts and RSS feed button -->
+          <!-- Sidebar button to go back to all posts and RSS feed button -->
           <div class="text-center">
             <div class="container padding-bottom-1">
-              <a href="/blog/" class="btn btn-lg btn-outline button-text">All Posts</a>
+              <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog&nbsp;Posts</a>
             </div>
             <a href="/feed.xml" target="_blank" class="link-icon-rss">
               <img class="icon-static" src="/assets/images/icons/rss-fill.svg" alt="RSS icon">

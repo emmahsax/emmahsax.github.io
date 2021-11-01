@@ -32,13 +32,13 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="alternate" href="/feed.xml" type="application/rss+xml">
     <!-- Begin Jekyll SEO tag v2.7.1e -->
-    <title>Emma Sax | Turning Lightbox2 into PhotoSwipe</title>
+    <title>Turning Lightbox2 into PhotoSwipe | Emma Sax</title>
     <meta name="generator" content="Jekyll v4.2.1" />
-    <meta property="og:title" content="Emma Sax | Turning Lightbox2 into PhotoSwipe" />
+    <meta property="og:title" content="Turning Lightbox2 into PhotoSwipe | Emma Sax" />
     <meta name="author" content="Emma Sax" />
     <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
-    <meta property="og:description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
+    <meta name="description" content="How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience." />
+    <meta property="og:description" content="How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience." />
     <link rel="canonical" href="https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/" />
     <meta property="og:url" content="https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/" />
     <meta property="og:site_name" content="Emma Sax" />
@@ -50,7 +50,7 @@
     <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
     <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"headline":"Turning Lightbox2 into PhotoSwipe","url":"https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/"},"dateModified":"2021-09-29T19:05:42+00:00","datePublished":"2021-06-14T17:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies.","@type":"BlogPosting","@context":"https://schema.org"}
+      {"headline":"Turning Lightbox2 into PhotoSwipe","url":"https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/"},"dateModified":"2021-11-01T17:05:53+00:00","datePublished":"2021-06-14T17:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience.","@type":"BlogPosting","@context":"https://schema.org"}
     </script>
     <!-- End Jekyll SEO tag -->
   </head>
@@ -120,9 +120,8 @@
           </div>
           <!-- Blog post content and comments -->
           <div class="page-body">
-            <p>In August of 2020, I made a big push to add better photo functionality to my website. I added <a href="https://lokeshdhakar.com/projects/lightbox2/">Lightbox2</a>, by <a href="https://github.com/lokesh" class="user-mention">@lokesh</a>, to my site. In a <a href="/blog/posts/adding-lightbox-to-a-jekyll-website/">previous blog post</a>, I referenced it as plain Lightbox. It turns out that Lightbox2 is built upon Lightbox JS, by the same author. But technically, I incorporated Lightbox2.</p>
-            <p>But recently, upon the advice of an old schoolmate, I came across <a href="https://photoswipe.com/">PhotoSwipe</a>. PhotoSwipe provides similar abilities to Lightbox2, but also provides zooming, faster loading, and swipe actions, as well as clicking and arrow key pressing. This is a definite benefit for viewing my site on mobile.</p>
-            <p>The author of PhotoSwipe, <a href="https://github.com/dimsemenov" class="user-mention">@dimsemenov</a>, has been working on a new v5 beta version of PhotoSwipe, which is <a href="https://photoswipe.com/v5/docs/getting-started/">documented here</a>. Although the v5 documentation isn’t fully fleshed out (the version is still in beta after all) I still found PhotoSwipe v5 simple enough to set up.</p>
+            <p>In August of 2020, I made a big push to add better photo functionality to my website. I added Lightbox2 to my site (read more about that in <a href="/blog/posts/adding-lightbox-to-a-jekyll-website/">my <em>Adding Lightbox2 to a Jekyll Website</em> blog post</a>). But recently, I came across PhotoSwipe, a similar Javascript/CSS tool to maximize photos to make them more visible to users. PhotoSwipe provides all the same features as Lightbox2, but also provides zooming, faster loading, and swipe actions, as well as clicking and arrow key pressing. This is a definite benefit for viewing my site on mobile.</p>
+            <p>The author of PhotoSwipe has been working on a new v5 beta version of PhotoSwipe, which is <a href="https://photoswipe.com/v5/docs/getting-started/">documented on PhotoSwipe’s website</a>. Although the v5 documentation isn’t fully fleshed out (the version is still in beta after all) I still found PhotoSwipe v5 simple enough to set up.</p>
             <p>I started with an <code>assets/js/activate_photoswipe.js</code> file:</p>
             <div class="language-javascript highlighter-rouge">
               <div class="highlight">
@@ -158,7 +157,7 @@
             <div class="language-html highlighter-rouge">
               <div class="highlight">
                 <pre class="highlight"><code data-lang="html"><span class="c">&lt;!-- Lightbox2 --&gt;</span>
-{% include elements/photo.html
+{% include photo.html
    url="https://i.imgur.com/lyWrj3r.jpeg"
    thumb_width="200" caption="Adorable creature" alt="Adorable creature"
    type="lightbox2" lightbox_gallery="PHOTO1"
@@ -166,7 +165,7 @@
 
 <span class="c">&lt;!-- PhotoSwipe --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"photoswipe-gallery"</span><span class="nt">&gt;</span>
-  {% include elements/photo.html
+  {% include photo.html
      url="https://i.imgur.com/lyWrj3r.jpeg"
      thumb_width="200" alt="Adorable creature"
      full_width="600" full_height="380"
@@ -182,40 +181,40 @@
 </code></pre>
               </div>
             </div>
-            <p>Lastly, I needed to download three files from the <a href="https://github.com/dimsemenov/PhotoSwipe/tree/v5-beta/dist"><code>dist</code></a> directory: <code>photoswipe.css</code>, <code>photoswipe-lightbox.esm.min.js</code>, and <code>photoswipe.esm.min.js</code>. I placed these in <code>assets/css</code> and <code>assets/js</code> according to the file types.</p>
+            <p>Lastly, I needed to download three files from the <code>dist</code> directory of PhotoSwipe’s source code: <code>photoswipe.css</code>, <code>photoswipe-lightbox.esm.min.js</code>, and <code>photoswipe.esm.min.js</code>. I placed these in <code>assets/css</code> and <code>assets/js</code> according to the file types.</p>
             <p>And voilà. PhotoSwipe works! Feel free to compare a Lightbox2 example (left) with a PhotoSwipe example (right):</p>
             <div class="text-center photoswipe-gallery">
               <a class="lightbox2 photo" href="https://i.imgur.com/lyWrj3r.jpeg" data-lightbox="PHOTO1" title="Adorable creature">
-                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg" height="127" alt="Adorable creature">
+                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Adorable creature">
               </a>
               <a class="photoswipe photo" href="https://i.imgur.com/lyWrj3r.jpeg" target="_blank" data-pswp-width="600" data-pswp-height="380">
-                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg" height="127" alt="Adorable creature">
+                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Adorable creature">
               </a>
             </div>
             <p>As you can see, the two are very similar. However, PhotoSwipe is slightly faster to load, and I’ve found that Lightbox2 is touchy to use (aka not a consistent user experience).</p>
             <p>But the real benefit to PhotoSwipe is visible when you have a gallery of images. Take a look at this Lightbox2 gallery below:</p>
             <div class="text-center">
               <a class="lightbox2 photo" href="https://i.imgur.com/lyWrj3r.jpeg" data-lightbox="lightbox-gallery" title="Original adorable creature">
-                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg" height="127" alt="Original adorable creature">
+                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Original adorable creature">
               </a>
               <a class="lightbox2 photo" href="https://i.imgur.com/ZusTRJ9.jpg" data-lightbox="lightbox-gallery" title="Kitten cuddling a puppy">
-                <img class="image" src="https://i.imgur.com/ZusTRJ9.jpg" height="127" alt="Kitten cuddling a puppy">
+                <img class="image" src="https://i.imgur.com/ZusTRJ9.jpg"  height="127" alt="Kitten cuddling a puppy">
               </a>
               <a class="lightbox2 photo" href="https://i.imgur.com/NuhaJCb.jpeg" data-lightbox="lightbox-gallery" title="Puppy popping bubbles">
-                <img class="image" src="https://i.imgur.com/NuhaJCb.jpeg" height="127" alt="Puppy popping bubbles">
+                <img class="image" src="https://i.imgur.com/NuhaJCb.jpeg"  height="127" alt="Puppy popping bubbles">
               </a>
             </div>
             <p>The images are slow to load, and although you can navigate by clicking a photo and using arrow keys on keyboard, a mobile user cannot swipe. Furthermore, if you click in <em>slightly</em> the wrong place, a Lightbox2 gallery will exit, making it a tedious viewing experience.</p>
             <p>But, take a look at the same gallery through PhotoSwipe:</p>
             <div class="text-center photoswipe-gallery">
               <a class="photoswipe photo" href="https://i.imgur.com/lyWrj3r.jpeg" target="_blank" data-pswp-width="600" data-pswp-height="380">
-                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg" height="127" alt="Original adorable creature">
+                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Original adorable creature">
               </a>
               <a class="photoswipe photo" href="https://i.imgur.com/ZusTRJ9.jpg" target="_blank" data-pswp-width="600" data-pswp-height="450">
-                <img class="image" src="https://i.imgur.com/ZusTRJ9.jpg" height="127" alt="Kitten cuddling a puppy">
+                <img class="image" src="https://i.imgur.com/ZusTRJ9.jpg"  height="127" alt="Kitten cuddling a puppy">
               </a>
               <a class="photoswipe photo" href="https://i.imgur.com/NuhaJCb.jpeg" target="_blank" data-pswp-width="530" data-pswp-height="424">
-                <img class="image" src="https://i.imgur.com/NuhaJCb.jpeg" height="127" alt="Puppy popping bubbles">
+                <img class="image" src="https://i.imgur.com/NuhaJCb.jpeg"  height="127" alt="Puppy popping bubbles">
               </a>
             </div>
             <p>Hopefully the images are loading faster, you can swipe through photos (helpful when you’re a mobile user), and zoom may even be available (I’ve noticed zoom is only available on some images, and the images in this demo may not offer zoom… perhaps future versions of PhotoSwipe may increase zoom capabilities).</p>
@@ -273,21 +272,21 @@
 </code></pre>
               </div>
             </div>
-            <p>What this logic does is when we click on a photo, if the <code>caption</code> class is either missing or empty, then it’ll turn all PhotoSwipe captions “invisible” by adding the <code>invisible</code> class. If the <code>caption</code> class exists and the caption contains words, then it’ll remove any <code>invisible</code> class, and set the caption text to match the HTML text provided. This way, photos can have optional captions, and if the caption doesn’t exist, then the spot for a caption will disappear. If an <a href="https://www.w3schools.com/tags/att_img_alt.asp">“alt”</a> is provided, then use that as alternative text, but don’t automatically use it as a caption. If <em>only</em> a caption is given, then we can <em>also</em> use that as alternative text. See a gallery example below:</p>
+            <p>What this logic does is when we click on a photo, if the <code>caption</code> class is either missing or empty, then it’ll turn all PhotoSwipe captions “invisible” by adding the <code>invisible</code> class. If the <code>caption</code> class exists and the caption contains words, then it’ll remove any <code>invisible</code> class, and set the caption text to match the HTML text provided. This way, photos can have optional captions, and if the caption doesn’t exist, then the spot for a caption will disappear. If an “alt” (alternative text when an image can’t load) is provided, then use that as alternative text, but don’t automatically use it as a caption. If <em>only</em> a caption is given, then we can <em>also</em> use that as alternative text. See a gallery example below:</p>
             <div class="text-center photoswipe-gallery">
               <a class="photoswipe photo" href="https://i.imgur.com/lyWrj3r.jpeg" target="_blank" data-pswp-width="600" data-pswp-height="380">
-                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg" height="127" alt="Original adorable creature">
+                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Original adorable creature">
                 <div class="invisible caption">Original adorable creature</div>
               </a>
               <a class="photoswipe photo" href="https://i.imgur.com/ZusTRJ9.jpg" target="_blank" data-pswp-width="600" data-pswp-height="450">
-                <img class="image" src="https://i.imgur.com/ZusTRJ9.jpg" height="127" alt="Kitten cuddling a puppy">
+                <img class="image" src="https://i.imgur.com/ZusTRJ9.jpg"  height="127" alt="Kitten cuddling a puppy">
               </a>
               <a class="photoswipe photo" href="https://i.imgur.com/NuhaJCb.jpeg" target="_blank" data-pswp-width="530" data-pswp-height="424">
-                <img class="image" src="https://i.imgur.com/NuhaJCb.jpeg" height="127" alt="Puppy popping bubbles">
+                <img class="image" src="https://i.imgur.com/NuhaJCb.jpeg"  height="127" alt="Puppy popping bubbles">
                 <div class="invisible caption">Puppy popping bubbles</div>
               </a>
             </div>
-            <p>Throughout my PhotoSwipe experimenting, there were several other changes I made to the core files mentioned. These were in order to implement nested galleries, caption and “alt” interchangeability, optional thumb photo widths and heights, etc. In order to avoid attempting to summarize further with English language, I’ll just provide a link some of my documentation: <a href="https://gist.github.com/emmahsax/090b2f74e743e8bcbafca8a16ea6b19c">https://gist.github.com/emmahsax/090b2f74e743e8bcbafca8a16ea6b19c</a>.</p>
+            <p>Throughout my PhotoSwipe experimenting, there were several other changes I made to the core files mentioned. These were in order to implement nested galleries, caption and “alt” interchangeability, optional thumb photo widths and heights, etc. In order to avoid attempting to summarize further with English language, I’ll just provide a link some of <a href="https://gist.github.com/emmahsax/090b2f74e743e8bcbafca8a16ea6b19c">my documentation on GitHub</a>.</p>
             <p>Please feel free to reach out to me for additional information or questions you have about implementing PhotoSwipe v5. With PhotoSwipe, I’m confident that viewing images on my website will be a much better experience for both me and my viewers going forward.</p>
             <div class="text-center margin-bottom-1">
               <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
@@ -305,10 +304,10 @@
           </div>
         </div>
         <div class="col col-12 col-md-2 text-center">
-          <!-- Sidebar – button to go back to all posts and RSS feed button -->
+          <!-- Sidebar button to go back to all posts and RSS feed button -->
           <div class="text-center">
             <div class="container padding-bottom-1">
-              <a href="/blog/" class="btn btn-lg btn-outline button-text">All Posts</a>
+              <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog&nbsp;Posts</a>
             </div>
             <a href="/feed.xml" target="_blank" class="link-icon-rss">
               <img class="icon-static" src="/assets/images/icons/rss-fill.svg" alt="RSS icon">

@@ -32,13 +32,13 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="alternate" href="/feed.xml" type="application/rss+xml">
     <!-- Begin Jekyll SEO tag v2.7.1e -->
-    <title>Emma Sax | Why I Switched from CircleCI to GitHub Actions</title>
+    <title>Switching CircleCI to GitHub Actions | Emma Sax</title>
     <meta name="generator" content="Jekyll v4.2.1" />
-    <meta property="og:title" content="Emma Sax | Why I Switched from CircleCI to GitHub Actions" />
+    <meta property="og:title" content="Switching CircleCI to GitHub Actions | Emma Sax" />
     <meta name="author" content="Emma Sax" />
     <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
-    <meta property="og:description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
+    <meta name="description" content="Read on to learn why I switched from CircleCI to GitHub Actions in order to meet my website’s needs." />
+    <meta property="og:description" content="Read on to learn why I switched from CircleCI to GitHub Actions in order to meet my website’s needs." />
     <link rel="canonical" href="https://emmasax.com/blog/posts/why-i-switched-from-circleci-to-github-actions/" />
     <meta property="og:url" content="https://emmasax.com/blog/posts/why-i-switched-from-circleci-to-github-actions/" />
     <meta property="og:site_name" content="Emma Sax" />
@@ -50,7 +50,7 @@
     <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
     <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"headline":"Why I Switched from CircleCI to GitHub Actions","url":"https://emmasax.com/blog/posts/why-i-switched-from-circleci-to-github-actions/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/why-i-switched-from-circleci-to-github-actions/"},"dateModified":"2021-09-29T19:05:42+00:00","datePublished":"2020-05-28T05:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies.","@type":"BlogPosting","@context":"https://schema.org"}
+      {"headline":"Why I Switched from CircleCI to GitHub Actions","url":"https://emmasax.com/blog/posts/why-i-switched-from-circleci-to-github-actions/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/why-i-switched-from-circleci-to-github-actions/"},"dateModified":"2021-11-01T17:05:53+00:00","datePublished":"2020-05-28T05:00:00+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Read on to learn why I switched from CircleCI to GitHub Actions in order to meet my website’s needs.","@type":"BlogPosting","@context":"https://schema.org"}
     </script>
     <!-- End Jekyll SEO tag -->
   </head>
@@ -118,10 +118,9 @@
           </div>
           <!-- Blog post content and comments -->
           <div class="page-body">
-            <p>A couple of months ago, I made a decision to explore <a href="https://circleci.com/">CircleCI</a> as a continuous integration (CI) platform. After my exploration, I decided to fully switch over my website from <a href="https://travis-ci.org/">Travis CI</a> to CircleCI. I wrote a blog post about <em>why</em> I switched <a href="/blog/posts/why-i-switched-from-travis-ci-to-circleci/">here</a>. But two months later, although I was still content overall, something happened that made me think about cutting back on dependencies for my site.</p>
-            <p>I know my website was still dependent on a lot of things: <a href="https://pages.github.com/">GitHub Pages</a> to serve my site, <a href="https://circleci.com/">CircleCI</a> to build and deploy my site, <a href="https://getbootstrap.com/docs/4.4/getting-started/introduction/">Bootstrap4</a> for its buttons and CSS, <a href="https://feathericons.com/">Feather</a> for its beautiful icons, <a href="https://jquery.com/">Jquery</a> for its javascript responsive CSS, etc. So, I made a plan to remove all of those dependencies (crazy, right?!).</p>
-            <p>If we make the assumption that I’ve successfully removed all Bootstrap4, Jquery, Feather, and Google Fonts dependencies (by downloading them all raw to my GitHub repository… I know, I’m crazy), then I’m left with one big gaping dependency hole. My site relies on GitHub and CircleCI. And this leads me to describe what prompted me to do all of this.</p>
+            <h2>Table of Contents</h2>
             <ul>
+              <li><a href="#the-decision">The Decision is Made</a></li>
               <li><a href="#the-story">The Story Behind this Extreme Decision</a></li>
               <li><a href="#how-i-use-ci-tools">How I Use CI Tools</a></li>
               <li><a href="#here-enters-github-actions">Here Enters GitHub Actions</a>
@@ -134,6 +133,13 @@
               </li>
               <li><a href="#conclusion">Conclusion</a></li>
             </ul>
+            <div id="anchor">
+              <a id="the-decision">&nbsp;</a>
+            </div>
+            <h2>The Decision is Made</h2>
+            <p>A couple of months ago, I made a decision to explore CircleCI as a continuous integration (CI) platform. After my exploration, I decided to fully switch over my website from Travis CI to CircleCI. I even wrote <a href="/blog/posts/why-i-switched-from-travis-ci-to-circleci/">a blog post about <em>why</em> I switched from Travis CI to CircleCI</a>. But two months later, although I was still content overall, something happened that made me think about cutting back on dependencies for my site.</p>
+            <p>I know my website was still dependent on a lot of things: GitHub Pages to serve my site, CircleCI to build and deploy my site, Bootstrap for its buttons and CSS, dependencies for the site’s beautiful icons, Jquery for its javascript responsive CSS, etc. So, I made a plan to remove all of those dependencies (crazy, right?!).</p>
+            <p>If we make the assumption that I’ve successfully removed all Bootstrap, Jquery, icons, and Google Fonts dependencies (by downloading them all raw to my GitHub repository… I know, I’m crazy), then I’m left with one big gaping dependency hole. My site relies on GitHub and CircleCI. And this leads me to describe what prompted me to do all of this.</p>
             <div id="anchor">
               <a id="the-story">&nbsp;</a>
             </div>
@@ -149,12 +155,12 @@
               <a id="how-i-use-ci-tools">&nbsp;</a>
             </div>
             <h2>How I Use CI Tools</h2>
-            <p>As I originally outlined in <a href="/blog/posts/why-i-switched-from-travis-ci-to-circleci/">this blog post</a>, I use CI tools for four main things:</p>
+            <p>As I originally outlined in <a href="/blog/posts/why-i-switched-from-travis-ci-to-circleci/">my blog post about switching from Travis CI to CircleCI</a>, I use CI tools for four main things:</p>
             <blockquote>
               <ol>
                 <li>Build my Jekyll website quickly, run HTML Proofer on it, and have room to grow my test suite if I desire to do so</li>
                 <li>Notify a Slack channel when the build was done</li>
-                <li>“Deploy” my website by making a commit back to my <code>gh-pages</code> branch in GitHub (which GitHub Pages will then deploy for me)</li>
+                <li>“Deploy” my website by making a commit back to my <code>pages</code> branch in GitHub (which GitHub Pages will then deploy for me)</li>
                 <li>Run a daily cron so that I can automate the build to run whenever I want (ideal for when I’d like to publish a blog post at a specific time or to check that my site still builds and loads properly every now and then, since my site doesn’t get consistent updates all the time)</li>
               </ol>
             </blockquote>
@@ -170,7 +176,7 @@
               <a id="building-my-website">&nbsp;</a>
             </div>
             <h3>1. Building my website</h3>
-            <p>The first step in each workflow is to <code>checkout</code> the code. GitHub Actions provides a <a href="https://github.com/actions/checkout">Checkout Action</a> that’s made to do exactly that. So there, we have our first few steps:</p>
+            <p>The first step in each workflow is to <code>checkout</code> the code. GitHub Actions provides a “Checkout” Action that’s made to do exactly that. So there, we have our first few steps:</p>
             <div class="language-yml highlighter-rouge">
               <div class="highlight">
                 <pre class="highlight"><code data-lang="yml"><span class="na">jobs</span><span class="pi">:</span>
@@ -296,18 +302,18 @@
   <span class="na">env</span><span class="pi">:</span>
     <span class="na">GITHUB_TOKEN</span><span class="pi">:</span> <span class="s">${{ secrets.GITHUB_TOKEN }}</span>
   <span class="na">with</span><span class="pi">:</span>
-    <span class="na">BRANCH</span><span class="pi">:</span> <span class="s">gh-pages</span>
+    <span class="na">BRANCH</span><span class="pi">:</span> <span class="s">pages</span>
     <span class="na">FOLDER</span><span class="pi">:</span> <span class="s">_site</span>
     <span class="na">CLEAN</span><span class="pi">:</span> <span class="no">true</span>
-    <span class="na">COMMIT_MESSAGE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Deploy</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">${{</span><span class="nv"> </span><span class="s">github.repository</span><span class="nv"> </span><span class="s">}}.git:gh-pages'</span>
+    <span class="na">COMMIT_MESSAGE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Deploy</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">${{</span><span class="nv"> </span><span class="s">github.repository</span><span class="nv"> </span><span class="s">}}.git:pages'</span>
     <span class="na">GIT_CONFIG_EMAIL</span><span class="pi">:</span> <span class="s">41898282+github-actions[bot]@users.noreply.github.com</span>
     <span class="na">GIT_CONFIG_NAME</span><span class="pi">:</span> <span class="s">github-actions[bot]</span>
 </code></pre>
               </div>
             </div>
             <p>The <code>${{ secrets.GITHUB_TOKEN }}</code> is something that’s built into GitHub Actions, and is automatically provided with exactly the permissions required, so there was no passing around of permissions or tokens to obtain this.</p>
-            <p>The <code>CLEAN: true</code> was something that I added in later, when I realized that without it, deleted directories wouldn’t be automatically deleted from my <code>gh-pages</code> branch. One other thing that I had to take note of was that for some reason, the deploy wouldn’t work properly with <code>actions/checkout@v2</code> (it rewrites the files upon deploy, meaning each page on my site would receive a new <code>updated_at</code> or <code>lastModifiedAt</code> date upon each deploy), so I switched to <code>actions/checkout@v1</code>. Of course, <code>v1</code> of the checkout step had its own cross to bear, but that was fine for me to compromise with. I think that I could’ve gotten <code>v2</code> to work properly, had I finished reading the documentation for the deploy action originally.</p>
-            <p>One super cool thing that I actually suggested to the author of this action was to have a deployment status that is outputted at the end of the whole thing. It’s described a bit <a href="https://github.com/marketplace/actions/deploy-to-github-pages#deployment-status">here</a>, but with this, I was able to custom create a Slack message specifically about the deployment:</p>
+            <p>The <code>CLEAN: true</code> was something that I added in later, when I realized that without it, deleted directories wouldn’t be automatically deleted from my <code>pages</code> branch. One other thing that I had to take note of was that for some reason, the deploy wouldn’t work properly with <code>actions/checkout@v2</code> (it rewrites the files upon deploy, meaning each page on my site would receive a new <code>updated_at</code> or <code>lastModifiedAt</code> date upon each deploy), so I switched to <code>actions/checkout@v1</code>. Of course, <code>v1</code> of the checkout step had its own cross to bear, but that was fine for me to compromise with. I think that I could’ve gotten <code>v2</code> to work properly, had I finished reading the documentation for the deploy action originally.</p>
+            <p>One super cool thing that I actually suggested to the author of this action was to have a deployment status that is outputted at the end of the whole thing. It’s described a bit in <a href="https://github.com/marketplace/actions/deploy-to-github-pages#deployment-status">the formal documentation</a>, but with this, I was able to custom create a Slack message specifically about the deployment:</p>
             <div class="language-yml highlighter-rouge">
               <div class="highlight">
                 <pre class="highlight"><code data-lang="yml"><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Set Deploy Status Message</span>
@@ -352,8 +358,6 @@
             <p>But these cons are worth it, given that my site now completely runs on GitHub Actions and doesn’t need any other tooling.</p>
             <p>If somebody were to ask me whether to use GitHub Actions, Travis CI, or CircleCI, I’d give different responses based on the use case. If the person wants something supported, familiar, and common, then I’d say to use Travis CI. In an enterprise setting, Travis CI probably has some of the best abilities to connect to AWS, Heroku, Jenkins, etc. If the person wants something that’s still formally supported, and potentially willing to try new things, then CircleCI may be the way to go. It’s fast, simple, and relatively easy to use (if you are willing to make additional bash scripts). And if the person wants something natively built into GitHub, is okay duplicating some code, and is willing to poke around more open source code, then GitHub Actions can be a powerful tool. Also, with either Travis CI or GitHub Actions, if you don’t want builds running on a few select branches, you don’t need to explicitly ignore them, like with CircleCI. It’s worth noting that for all three of these CI solutions, you’ll have to start spending money if you want to use them heavily with private repositories.</p>
             <p>And as for me, I think I’m going to have to cut myself off from new CI solutions for now. GitHub Actions does everything I want it to, and now that it’s all set up, it’s fast, easy to maintain, and of course, I’ve got that one big bonus… I’ve eliminated a third party development dependency.</p>
-            <hr />
-            <p>EDIT: Since writing this blog post, I’ve moved my <code>master</code> branch to be called <code>gh-pages</code>, and I’ve updated this blog post accordingly. I’ve have also moved my site away from <a href="https://feathericons.com">Feather Icons</a>.</p>
             <div class="text-center margin-bottom-1">
               <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
                 Load Comments
@@ -370,10 +374,10 @@
           </div>
         </div>
         <div class="col col-12 col-md-2 text-center">
-          <!-- Sidebar – button to go back to all posts and RSS feed button -->
+          <!-- Sidebar button to go back to all posts and RSS feed button -->
           <div class="text-center">
             <div class="container padding-bottom-1">
-              <a href="/blog/" class="btn btn-lg btn-outline button-text">All Posts</a>
+              <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog&nbsp;Posts</a>
             </div>
             <a href="/feed.xml" target="_blank" class="link-icon-rss">
               <img class="icon-static" src="/assets/images/icons/rss-fill.svg" alt="RSS icon">

@@ -32,13 +32,13 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="alternate" href="/feed.xml" type="application/rss+xml">
     <!-- Begin Jekyll SEO tag v2.7.1e -->
-    <title>Emma Sax | Switching from kramdown to CommonMark</title>
+    <title>Switching kramdown to CommonMark | Emma Sax</title>
     <meta name="generator" content="Jekyll v4.2.1" />
-    <meta property="og:title" content="Emma Sax | Switching from kramdown to CommonMark" />
+    <meta property="og:title" content="Switching kramdown to CommonMark | Emma Sax" />
     <meta name="author" content="Emma Sax" />
     <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
-    <meta property="og:description" content="Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies." />
+    <meta name="description" content="Switching a Jekyll site from kramdown to CommonMark doesn’t have to be difficult!" />
+    <meta property="og:description" content="Switching a Jekyll site from kramdown to CommonMark doesn’t have to be difficult!" />
     <link rel="canonical" href="https://emmasax.com/blog/posts/switching-from-kramdown-to-commonmark/" />
     <meta property="og:url" content="https://emmasax.com/blog/posts/switching-from-kramdown-to-commonmark/" />
     <meta property="og:site_name" content="Emma Sax" />
@@ -50,7 +50,7 @@
     <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
     <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"headline":"Switching from kramdown to CommonMark","url":"https://emmasax.com/blog/posts/switching-from-kramdown-to-commonmark/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/switching-from-kramdown-to-commonmark/"},"dateModified":"2021-09-29T19:05:42+00:00","datePublished":"2020-07-19T15:00:33+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Emma Sax’s personal website and blog. Includes information about my social media profiles, resumé, and hobbies.","@type":"BlogPosting","@context":"https://schema.org"}
+      {"headline":"Switching from kramdown to CommonMark","url":"https://emmasax.com/blog/posts/switching-from-kramdown-to-commonmark/","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/switching-from-kramdown-to-commonmark/"},"dateModified":"2021-11-01T17:05:53+00:00","datePublished":"2020-07-19T15:00:33+00:00","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"description":"Switching a Jekyll site from kramdown to CommonMark doesn’t have to be difficult!","@type":"BlogPosting","@context":"https://schema.org"}
     </script>
     <!-- End Jekyll SEO tag -->
   </head>
@@ -120,10 +120,11 @@
           </div>
           <!-- Blog post content and comments -->
           <div class="page-body">
+            <h2>Table of Contents</h2>
             <ul>
               <li><a href="#introduction">Introduction</a></li>
               <li><a href="#adding-jekyll-commonmark">Adding <header-code>jekyll-commonmark</header-code></a></li>
-              <li><a href="#debugging">Debugging 🕷</a></li>
+              <li><a href="#debugging">Debugging</a></li>
               <li><a href="#conclusion">Conclusion</a></li>
               <li><a href="#references">References</a></li>
             </ul>
@@ -131,11 +132,11 @@
               <a id="introduction">&nbsp;</a>
             </div>
             <h2>Introduction</h2>
-            <p>Up until a few weeks ago, my website (this website) had always used <a href="https://kramdown.gettalong.org/">kramdown</a> (the lowercase “k” is intentional). GitHub Pages (where my website is hosted) by default uses kramdown, so I kept it that way even as I moved my site to being built on <a href="https://docs.travis-ci.com/user/for-beginners/">Travis CI</a>, and eventually <a href="https://circleci.com/">CircleCI</a>, before finally landing on <a href="https://docs.github.com/en/actions">GitHub Actions</a>.</p>
+            <p>Up until a few weeks ago, my website (this website) had always used kramdown (the lowercase “k” is intentional) to turn Markdown into HTML. GitHub Pages (where my website is hosted) by default uses kramdown, so I kept it that way even as I moved my site to being built on a CI solution instead of building through GitHub Pages.</p>
             <p>And over time, as I continued to add more content to this site, building the HTML website started to get slower and slower to load. When I started using Travis CI to build my application, running <code>bundle exec jekyll build</code> was maybe taking about 2 minutes of computation time. By the time it go over to CircleCI, it was taking a little bit longer. I don’t think the platform I was running it on mattered… rather my project continued to grow. And my first official build on GitHub Actions took 2.606 seconds.</p>
-            <p>When that happened, I hadn’t yet introduced my <a href="/interests-and-hobbies/lego/">LEGO page</a>. And when I did finally build my LEGO page, suddenly, the build time of my website skyrocketed. Using two different collections (blog posts and LEGO entries) and looping over both makes the build time of my site <em>much</em> higher than it was before. Add in a few more blog posts, and my site was taking between 4 and 5 seconds to load locally.</p>
+            <p>When that happened, I hadn’t yet introduced my <a href="/interests-and-hobbies/lego/">dedicated LEGO page</a>. And when I did finally build my LEGO page, suddenly, the build time of my website skyrocketed. Using two different collections (blog posts and LEGO entries) and looping over both makes the build time of my site <em>much</em> higher than it was before. Add in a few more blog posts, and my site was taking between 4 and 5 seconds to load locally.</p>
             <p>The amount of time my site takes to build on its CI tool doesn’t particularly matter to me… a few seconds don’t make a difference. What was almost painful was working locally. When I’m working locally on my computer, every time I make a small change to a file, Jekyll would reload my site. And waiting 5 seconds after adding one comma was pushing my patience.</p>
-            <p>So, when I came across the <a href="https://github.com/jekyll/jekyll-commonmark">jekyll/jekyll-commonmark</a> gem, I was curious. It advertises a Markdown parser that is faster than kramdown. The reason it’s faster is because it uses a C compiler instead of a Ruby compiler (see <a href="https://jekyllrb.com/docs/configuration/markdown/">here</a>). Normally I’m kind of a Ruby-lover, but I will admit that it’s not the fastest language around. So, I thought I may as well try it out on a pull request. If it’s too many changes, or it doesn’t actually benefit me, then no need to switch; kramdown is getting most of what I want done.</p>
+            <p>So, when I came across the <a href="https://github.com/jekyll/jekyll-commonmark">jekyll/jekyll-commonmark</a> gem, I was curious. It advertises a Markdown parser that is faster than kramdown. The reason it’s faster is because it uses a C compiler instead of a Ruby compiler. Normally I’m kind of a Ruby-lover, but I will admit that it’s not the fastest language around. So, I thought I may as well try it out on a pull request. If it’s too many changes, or it doesn’t actually benefit me, then no need to switch; kramdown is getting most of what I want done.</p>
             <div id="anchor">
               <a id="adding-jekyll-commonmark">&nbsp;</a>
             </div>
@@ -169,7 +170,7 @@
 </code></pre>
               </div>
             </div>
-            <p>I selected the <code>options</code> and <code>extensions</code> to use based on <a href="https://github.com/jekyll/jekyll-commonmark#configuration">this documentation</a>, and chose each one specifically based off of my needs as I debugged the switch.</p>
+            <p>I selected the <code>options</code> and <code>extensions</code> to use based on <a href="https://github.com/jekyll/jekyll-commonmark#configuration"><code>jekyll-commonmark</code>’s documentation</a>, and chose each one specifically based off of my needs as I debugged the switch.</p>
             <div id="anchor">
               <a id="debugging">&nbsp;</a>
             </div>
@@ -282,8 +283,6 @@
               <li><a href="https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors">stackoverflow.com: fixed page header overlaps in page anchors</a></li>
               <li><a href="https://codepen.io/Paulie-D/pen/zvkpJ/">codepen.io: anchor examples</a></li>
               <li><a href="https://wordpress.org/support/topic/heading-with-anchor-links-are-covered-up-by-top-of-page-header/">wordpress.org: heading with anchor links are covered up by top of page header</a></li>
-              <li><a href="https://github.com/jekyll/jekyll-commonmark">github.com: jekyll/jekyll-commonmark</a></li>
-              <li><a href="https://github.com/gjtorikian/commonmarker">github.com: gjtorikian/commonmarker</a></li>
             </ul>
             <hr />
             <p>Update: Since publishing this blog post, I’ve actually added back in almost every usage of <code>markdownify</code> that I had previously removed. The only place where it absolutely does not work is when rendering individual blog posts. It’s possible <code>markdownify</code> wasn’t the source of what was broken, but was just masking other issues I resolved around the same time.</p>
@@ -303,10 +302,10 @@
           </div>
         </div>
         <div class="col col-12 col-md-2 text-center">
-          <!-- Sidebar – button to go back to all posts and RSS feed button -->
+          <!-- Sidebar button to go back to all posts and RSS feed button -->
           <div class="text-center">
             <div class="container padding-bottom-1">
-              <a href="/blog/" class="btn btn-lg btn-outline button-text">All Posts</a>
+              <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog&nbsp;Posts</a>
             </div>
             <a href="/feed.xml" target="_blank" class="link-icon-rss">
               <img class="icon-static" src="/assets/images/icons/rss-fill.svg" alt="RSS icon">
