@@ -3,7 +3,7 @@
     <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2021-11-14T01:51:48+00:00</updated>
+    <updated>2022-01-07T11:08:50+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <author>
@@ -19,6 +19,7 @@
         <name>Emma Sax</name>
       </author>
       <category term="tech" />
+      <summary type="html"><![CDATA[This blog post describes the value in uptime monitoring, and how to easily implement it for any website.]]></summary>
     </entry>
     <entry>
       <title type="html">Turning Lightbox2 into PhotoSwipe</title>
@@ -31,17 +32,19 @@
       </author>
       <category term="tech" />
       <category term="jekyll" />
+      <summary type="html"><![CDATA[How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience.]]></summary>
     </entry>
     <entry>
       <title type="html">365 Days Since COVID</title>
       <link href="https://emmasax.com/blog/posts/365-days-since-covid/" rel="alternate" type="text/html" title="365 Days Since COVID" />
       <published>2021-03-11T06:00:00+00:00</published>
-      <updated>2021-11-01T17:05:53+00:00</updated>
+      <updated>2022-01-07T11:08:50+00:00</updated>
       <id>https://emmasax.com/blog/posts/365-days-since-covid</id>
       <author>
         <name>Emma Sax</name>
       </author>
       <category term="covid" />
+      <summary type="html"><![CDATA[Take a look at what I've learned after 365 days of the COVID pandemic.]]></summary>
     </entry>
     <entry>
       <title type="html">Adding HTML Forms to Static Sites</title>
@@ -53,6 +56,7 @@
         <name>Emma Sax</name>
       </author>
       <category term="tech" />
+      <summary type="html"><![CDATA[This provides a guide of how to add HTML forms to static sites, without using any sort of backend application! All you need is your Google account.]]></summary>
     </entry>
     <entry>
       <title type="html">Welcome to Kenya – Special: Lions vs. Villages vs. Government</title>
@@ -64,5 +68,6 @@
         <name>Emma Sax</name>
       </author>
       <category term="Welcome to Kenya" />
+      <summary type="html"><![CDATA[Join me for a special edition Kenya-themed blog post about the native villages of Kenya.]]></summary>
     </entry>
   </feed>
