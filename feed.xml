@@ -3,12 +3,24 @@
     <generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2022-02-25T22:58:22+00:00</updated>
+    <updated>2022-03-04T16:57:25+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <author>
       <name>Emma Sax</name>
     </author>
+    <entry>
+      <title type="html">Discovering Iceland – Icy Glaciers</title>
+      <link href="https://emmasax.com/blog/posts/discovering-iceland/icy-glaciers/" rel="alternate" type="text/html" title="Discovering Iceland – Icy Glaciers" />
+      <published>2022-03-04T17:00:00+00:00</published>
+      <updated>2022-03-04T16:57:25+00:00</updated>
+      <id>https://emmasax.com/blog/posts/discovering-iceland/icy-glaciers</id>
+      <author>
+        <name>Emma Sax</name>
+      </author>
+      <category term="Discovering Iceland" />
+      <summary type="html"><![CDATA[Join me in sharing the number one part of Iceland I was expecting... ice! Glaciers, waterfalls, and caves. Oh my!]]></summary>
+    </entry>
     <entry>
       <title type="html">Discovering Iceland – Hot Springs</title>
       <link href="https://emmasax.com/blog/posts/discovering-iceland/hot-springs/" rel="alternate" type="text/html" title="Discovering Iceland – Hot Springs" />
@@ -57,17 +69,5 @@
       <category term="tech" />
       <category term="jekyll" />
       <summary type="html"><![CDATA[How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience.]]></summary>
-    </entry>
-    <entry>
-      <title type="html">365 Days Since COVID</title>
-      <link href="https://emmasax.com/blog/posts/365-days-since-covid/" rel="alternate" type="text/html" title="365 Days Since COVID" />
-      <published>2021-03-11T06:00:00+00:00</published>
-      <updated>2022-01-07T11:08:50+00:00</updated>
-      <id>https://emmasax.com/blog/posts/365-days-since-covid</id>
-      <author>
-        <name>Emma Sax</name>
-      </author>
-      <category term="covid" />
-      <summary type="html"><![CDATA[Take a look at what I've learned after 365 days of the COVID pandemic.]]></summary>
     </entry>
   </feed>
