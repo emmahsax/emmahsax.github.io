@@ -56,36 +56,35 @@
   <!-- Navigation bar -->
   <header class="sticky-top">
     <nav class="navbar navbar-expand-md navbar-dark py-0 py-md-0">
-      <!-- Left hand side of navbar -->
-      <a class="navbar-brand mb-0" href="/" target="_self">
-        <img src="/assets/images/logo-plain-white-400.png" width="30" height="30"
-        class="d-inline-block align-top nav-icon" alt="E logo"
-      >&nbsp;&nbsp;Emma Sax
-      </a>
-      <!-- Navbar open/close button when on a smaller screen -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbar-links" aria-controls="navbar-links"
-      aria-expanded="false" aria-label="Toggle navigation"
-    >
-        <img class="nav-icon-menu" src="/assets/images/icons/menu.svg" alt="Menu icon">
-        <img class="nav-icon-x" src="/assets/images/icons/x.svg" alt="X icon">
-      </button>
-      <!-- Page links -->
-      <div class="collapse navbar-collapse" id="navbar-links">
-        <ul class="navbar-nav ml-auto mt-2 mt-md-0">
-          <li class="nav-item ">
-            <a class="nav-link" href="/about-me/">About Me
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/blog/">Blog
-            </a>
-          </li>
-        </ul>
+      <div class="container-fluid">
+        <!-- Left hand side of navbar -->
+        <a class="navbar-brand mb-0" href="/" target="_self">
+          <img src="/assets/images/logo-plain-white-400.png" width="30" height="30"
+          class="d-inline-block align-top nav-icon" alt="E logo"
+        >&nbsp;&nbsp;Emma Sax
+        </a>
+        <!-- Navbar open/close button when on a smaller screen -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbar-links" aria-controls="navbar-links"
+        aria-expanded="false" aria-label="Toggle navigation"
+      >
+          <img class="nav-icon-menu" src="/assets/images/icons/menu.svg" alt="Menu icon">
+          <img class="nav-icon-x" src="/assets/images/icons/x.svg" alt="X icon">
+        </button>
+        <!-- Page links -->
+        <div class="collapse navbar-collapse" id="navbar-links">
+          <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+            <li class="nav-item ">
+              <a class="nav-link" href="/about-me/">About Me</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/blog/">Blog</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
@@ -107,23 +106,25 @@
             <form method="post" target="iframe" id="form"
         action="https://docs.google.com/forms/d/e/1FAIpQLScEq299mdRxHN_dZ3tTdgp6KTYtcgUHHVbDr0DSX2-zDDCxuQ/formResponse"
       >
-              <div class="form-group">
+              <div class="mb-3">
                 <label>Full Name<span class="form-required">*</span></label>
                 <input name="entry.989289036" type="text" class="form-control" id="name" autocapitalize="words" placeholder="John Doe" required>
               </div>
-              <div class="form-group">
+              <div class="mb-3">
                 <label>Email<span class="form-required">*</span></label>
                 <input name="entry.1580808807" type="email" class="form-control" id="email" placeholder="johndoe@example.com" required>
               </div>
-              <div class="form-group">
+              <div class="mb-3">
                 <label>Message<span class="form-required">*</span></label>
                 <textarea name="entry.1379036791" class="form-control" id="message" rows="3"
             placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit." required
           ></textarea>
               </div>
-              <div class="form-group invisible">
+              <div class="mb-3 invisible">
                 <label>Anti-Spam Verification<span class="form-required">*</span></label>
-                <p class="post-meta">NOTE: My HTML does not formally require this input to be filled in order to send a message. However, leaving this value blank will automatically prevent my form from <i>accepting</i> your message, even though my website will <i>tell</i> you the submission was successful.</p>
+                <div class="form-text">
+                  NOTE: My HTML does not formally require this input to be filled in order to send a message. However, leaving this value blank will automatically prevent my form from <i>accepting</i> your message, even though my website will <i>tell</i> you the submission was successful.
+                </div>
                 <input name="entry.417228047" type="text" class="form-control" id="verification">
               </div>
               <label>Verify You’re a Human<span class="form-required">*</span></label>

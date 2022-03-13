@@ -50,44 +50,42 @@
     <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
     <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2021-11-01T17:05:53+00:00","datePublished":"2019-12-29T06:00:00+00:00","description":"Look here for an overview of how I use Bootstrap, CSS, and icons and photos within my website.","headline":"Bootstrap, CSS, and Icons in this Site","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/bootstrap-css-and-icons-in-this-site/"},"url":"https://emmasax.com/blog/posts/bootstrap-css-and-icons-in-this-site/"}
+      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2022-03-13T20:04:43+00:00","datePublished":"2019-12-29T06:00:00+00:00","description":"Look here for an overview of how I use Bootstrap, CSS, and icons and photos within my website.","headline":"Bootstrap, CSS, and Icons in this Site","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/bootstrap-css-and-icons-in-this-site/"},"url":"https://emmasax.com/blog/posts/bootstrap-css-and-icons-in-this-site/"}
     </script>
     <!-- End Jekyll SEO tag -->
   </head>
   <!-- Navigation bar -->
   <header class="sticky-top">
     <nav class="navbar navbar-expand-md navbar-dark py-0 py-md-0">
-      <!-- Left hand side of navbar -->
-      <a class="navbar-brand mb-0" href="/" target="_self">
-        <img src="/assets/images/logo-plain-white-400.png" width="30" height="30"
-        class="d-inline-block align-top nav-icon" alt="E logo"
-      >&nbsp;&nbsp;Emma Sax
-      </a>
-      <!-- Navbar open/close button when on a smaller screen -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#navbar-links" aria-controls="navbar-links"
-      aria-expanded="false" aria-label="Toggle navigation"
-    >
-        <img class="nav-icon-menu" src="/assets/images/icons/menu.svg" alt="Menu icon">
-        <img class="nav-icon-x" src="/assets/images/icons/x.svg" alt="X icon">
-      </button>
-      <!-- Page links -->
-      <div class="collapse navbar-collapse" id="navbar-links">
-        <ul class="navbar-nav ml-auto mt-2 mt-md-0">
-          <li class="nav-item ">
-            <a class="nav-link" href="/about-me/">About Me
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/blog/">Blog
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-        </ul>
+      <div class="container-fluid">
+        <!-- Left hand side of navbar -->
+        <a class="navbar-brand mb-0" href="/" target="_self">
+          <img src="/assets/images/logo-plain-white-400.png" width="30" height="30"
+          class="d-inline-block align-top nav-icon" alt="E logo"
+        >&nbsp;&nbsp;Emma Sax
+        </a>
+        <!-- Navbar open/close button when on a smaller screen -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbar-links" aria-controls="navbar-links"
+        aria-expanded="false" aria-label="Toggle navigation"
+      >
+          <img class="nav-icon-menu" src="/assets/images/icons/menu.svg" alt="Menu icon">
+          <img class="nav-icon-x" src="/assets/images/icons/x.svg" alt="X icon">
+        </button>
+        <!-- Page links -->
+        <div class="collapse navbar-collapse" id="navbar-links">
+          <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+            <li class="nav-item ">
+              <a class="nav-link" href="/about-me/">About Me</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/blog/">Blog</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
@@ -120,15 +118,15 @@
           <div class="page-body">
             <h2>Bootstrap</h2>
             <p>This site uses Bootstrap for most of its CSS. I have Bootstrap to attribute to the site looking so nice. Here are the “elements” that I’m using from Bootstrap:</p>
-            <h3>Layout</h3>
+            <h3>1. Layout</h3>
             <p>My site is responsive because of Bootstrap’s responsive layout option! This is what determines the break-points to change the section margins and width size. I use Bootstrap’s Grid system to make the proper columns.</p>
-            <h3>Pagination</h3>
+            <h3>2. Pagination</h3>
             <p>To make the pretty pagination bar appear on the blog pages, I use Bootstrap’s built-in pagination to create the CSS. Specifically, I use <code>disabled</code> and <code>active</code> states, as well as center-page alignment. For the icons, I use Feather Icons and Bootstrap Icons. For more information on the icons and pagination, look at <a href="https://gist.github.com/emmahsax/2a60960316f2eff890dd9ea8523d9608">my GitHub gist</a>.</p>
-            <h3>Navbar</h3>
+            <h3>3. Navbar</h3>
             <p>The responsive navbar utilized in this site is from Bootstrap’s built-in navbar option. Specifically, it uses the navbar which is fully responsive on smaller screens. I do add some custom icons to the drop-down section of the responsive navbar, as well as customizing the color and the font-styles. The navbar is in action throughout this entire site, and example code for it can be found in <a href="https://gist.github.com/emmahsax/2c7edf1a4bbadbb03f7a80302cdf90c7">this GitHub gist</a>.</p>
-            <h3>Tables</h3>
+            <h3>4. Tables</h3>
             <p>For my tables on this site, I use Bootstrap’s built-in tables, which are responsive, as long as you use <code>class: &quot;table-responsive&quot;</code> at the top. The tables I’ve selected to use is described in ‘Hoverable Rows’. Some examples of places where I use the tables are in my <a href="/interests-and-hobbies/theatre/">Theatre page</a> and in <a href="/blog/posts/dns-domains-and-personal-websites/">this blog post</a>. Bootstrap has some great examples of what the HTML code for the tables should look like.</p>
-            <h3>Buttons</h3>
+            <h3>5. Buttons</h3>
             <p>This site uses Bootstrap’s buttons for all of its button functionality (unless the button is an icon). Here’s an example button that uses Bootstrap’s design but includes a Feather Icon:</p>
             <div class="language-html highlighter-rouge">
               <div class="highlight">
