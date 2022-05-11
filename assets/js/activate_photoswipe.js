@@ -1,18 +1,16 @@
-import PhotoSwipeLightbox from './photoswipe_lightbox.esm.min.js'
+import Lightbox from './photoswipe_lightbox.esm.min.js'
 
 const photoswipeActivations = document.getElementsByClassName('photoswipe-activation')
 
 for (let activation = 0; activation < photoswipeActivations.length; activation++) {
-  const gallerySelector = photoswipeActivations[activation].getAttribute('gallery-selector')
-  const childSelector = photoswipeActivations[activation].getAttribute('child-selector')
-
+  const thisActivation = photoswipeActivations[activation]
   const options = {
-    gallerySelector: gallerySelector,
-    childSelector: childSelector,
-    pswpModule: '/assets/js/photoswipe.esm.min.js'
+    gallery: thisActivation.getAttribute('gallery-selector'),
+    children: thisActivation.getAttribute('child-selector'),
+    pswpModule: () => import('/assets/js/photoswipe.esm.min.js') // eslint-disable-line import/no-absolute-path
   }
 
-  const lightbox = new PhotoSwipeLightbox(options)
+  const lightbox = new Lightbox(options)
 
   lightbox.on('uiRegister', function () {
     lightbox.pswp.ui.registerElement({

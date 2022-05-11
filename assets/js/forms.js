@@ -15,17 +15,17 @@ form.onsubmit = function verifyRecaptcha () {
   if (recaptchaCompleted) {
     formSubmitted = true
   } else {
-    alert('Please fill out the reCAPTCHA to send a message.')
+    alert('Please fill out the reCAPTCHA to send a message.') // eslint-disable-line no-undef
   };
 }
 
-function recaptchaCallback (verificationResponse) {
+function recaptchaCallback (verificationResponse) { // eslint-disable-line no-unused-vars
   document.getElementById('submitButton').removeAttribute('disabled')
   recaptchaCompleted = true
   document.getElementById('verification').value = verificationResponse + code + verificationResponse
 };
 
-function recaptchaExpiredCallback () {
+function recaptchaExpiredCallback () { // eslint-disable-line no-unused-vars
   document.getElementById('submitButton').setAttribute('disabled', true)
   recaptchaCompleted = false
   document.getElementById('verification').value = null
