@@ -5,8 +5,8 @@ const photoswipeActivations = document.getElementsByClassName('photoswipe-activa
 for (let activation = 0; activation < photoswipeActivations.length; activation++) {
   const thisActivation = photoswipeActivations[activation]
   const options = {
-    gallery: thisActivation.getAttribute('gallery-selector'),
     children: thisActivation.getAttribute('child-selector'),
+    gallery: thisActivation.getAttribute('gallery-selector'),
     pswpModule: () => import('/assets/js/photoswipe.esm.min.js') // eslint-disable-line import/no-absolute-path
   }
 
@@ -14,16 +14,15 @@ for (let activation = 0; activation < photoswipeActivations.length; activation++
 
   lightbox.on('uiRegister', function () {
     lightbox.pswp.ui.registerElement({
-      name: 'custom-caption',
-      order: 9,
-      isButton: false,
       appendTo: 'root',
       html: 'Caption Text',
+      isButton: false,
+      name: 'custom-caption',
       onInit: (el, pswp) => {
         lightbox.pswp.on('change', () => {
           const currentSlideElement = lightbox.pswp.currSlide.data.element
-          const hiddenCaption = currentSlideElement.querySelector('.caption')
           const customCaptionElements = document.getElementsByClassName('pswp__custom-caption')
+          const hiddenCaption = currentSlideElement.querySelector('.caption')
           let captionHTML = ''
 
           if (hiddenCaption === '' || hiddenCaption === null) {
@@ -42,7 +41,8 @@ for (let activation = 0; activation < photoswipeActivations.length; activation++
 
           el.innerHTML = captionHTML
         })
-      }
+      },
+      order: 9
     })
   })
 
