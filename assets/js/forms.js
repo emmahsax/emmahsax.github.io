@@ -4,6 +4,10 @@ const code = 'na7iKQolB9SFbmOCe19NPi82mHPY4ILTbQ9QR4PxHIr5SIl7p5L8Ta9ZSppZ3HHS'
 const iframe = document.getElementById('iframe')
 const form = document.getElementById('form')
 
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.getElementById('recaptcha').setAttribute('data-theme', 'dark')
+};
+
 iframe.onload = function showFormResponse () {
   if (formSubmitted) {
     document.getElementById('formResponseDiv').classList.remove('invisible')
