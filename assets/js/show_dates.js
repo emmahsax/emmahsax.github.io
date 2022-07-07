@@ -45,12 +45,12 @@ for (let counter = 0; counter < dates.length; counter++) {
     // Convert written date in local timezone to UTC timezone
     const utcDateAsNumbers = writtenDate.getTime() - (timezoneAsDigit * 60 * 60 * 10)
     const utcDate = new Date(utcDateAsNumbers)
-    const utcYear = utcDate.getFullYear()
-    const utcMonth = utcDate.getMonth()
     const utcDay = utcDate.getDate()
     const utcHour = utcDate.getHours()
-    const utcMinute = utcDate.getMinutes()
     const utcMilliseconds = utcDate.getMilliseconds()
+    const utcMinute = utcDate.getMinutes()
+    const utcMonth = utcDate.getMonth()
+    const utcYear = utcDate.getFullYear()
 
     // Get the local date when it's written as in UTC timezone
     localDate = new Date(
@@ -59,7 +59,7 @@ for (let counter = 0; counter < dates.length; counter++) {
   };
 
   const day = localDate.getDate()
-  const year = localDate.getFullYear()
   const monthIndex = localDate.getMonth()
+  const year = localDate.getFullYear()
   htmlDate.innerHTML = monthNames[monthIndex] + ' ' + day + ', ' + year
 };

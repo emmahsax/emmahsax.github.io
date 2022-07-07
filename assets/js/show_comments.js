@@ -1,5 +1,5 @@
-const disqusShortname = document.getElementById('comments').getAttribute('data-name')
 const button = document.getElementById('show-comments-button')
+const disqusShortname = document.getElementById('comments').getAttribute('data-name')
 
 button.onclick = function loadComments () {
   let disqusLoaded = false
