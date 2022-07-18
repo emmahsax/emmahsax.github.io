@@ -3,12 +3,24 @@
     <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2022-07-05T03:41:58+00:00</updated>
+    <updated>2022-07-18T15:00:06+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <author>
       <name>Emma Sax</name>
     </author>
+    <entry>
+      <title type="html">Adding Dark Mode with HTML and CSS</title>
+      <link href="https://emmasax.com/blog/posts/adding-dark-mode/" rel="alternate" type="text/html" title="Adding Dark Mode with HTML and CSS" />
+      <published>2022-07-18T15:00:00+00:00</published>
+      <updated>2022-07-18T15:00:06+00:00</updated>
+      <id>https://emmasax.com/blog/posts/adding-dark-mode</id>
+      <author>
+        <name>Emma Sax</name>
+      </author>
+      <category term="tech" />
+      <summary type="html"><![CDATA[Take a peek at my step-by-step guide of how to create dark mode only using CSS and HTML!]]></summary>
+    </entry>
     <entry>
       <title type="html">Discovering Iceland – Northern Lights</title>
       <link href="https://emmasax.com/blog/posts/discovering-iceland/northern-lights/" rel="alternate" type="text/html" title="Discovering Iceland – Northern Lights" />
@@ -56,17 +68,5 @@
       </author>
       <category term="Discovering Iceland" />
       <summary type="html"><![CDATA[Join me in visiting two of Iceland's famous geothermal hot springs, where we relax in nature-maintained hot tubs smack in the middle of one of the world's coldest countries.]]></summary>
-    </entry>
-    <entry>
-      <title type="html">Discovering Iceland – Windy Cities</title>
-      <link href="https://emmasax.com/blog/posts/discovering-iceland/windy-cities/" rel="alternate" type="text/html" title="Discovering Iceland – Windy Cities" />
-      <published>2022-02-20T21:15:00+00:00</published>
-      <updated>2022-06-13T17:51:42+00:00</updated>
-      <id>https://emmasax.com/blog/posts/discovering-iceland/windy-cities</id>
-      <author>
-        <name>Emma Sax</name>
-      </author>
-      <category term="Discovering Iceland" />
-      <summary type="html"><![CDATA[Join me in visiting the beautiful city of Reykjavík, as well as braving the toughest weather phenomenon Iceland has: the wind.]]></summary>
     </entry>
   </feed>
