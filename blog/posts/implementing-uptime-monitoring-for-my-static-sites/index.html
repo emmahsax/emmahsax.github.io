@@ -33,7 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Begin Jekyll SEO tag v2.8.0e -->
     <title>Implementing Uptime Monitoring | Emma Sax</title>
-    <meta name="generator" content="Jekyll v4.2.2" />
+    <meta name="generator" content="Jekyll v4.3.1" />
     <meta property="og:title" content="Implementing Uptime Monitoring | Emma Sax" />
     <meta name="author" content="Emma Sax" />
     <meta property="og:locale" content="en_US" />
@@ -50,7 +50,7 @@
     <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
     <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2022-08-11T03:32:25+00:00","datePublished":"2021-10-02T19:43:00+00:00","description":"This blog post describes the value in uptime monitoring, and how to easily implement it for any website.","headline":"Implementing Uptime Monitoring for my Static Sites","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/implementing-uptime-monitoring-for-my-static-sites/"},"url":"https://emmasax.com/blog/posts/implementing-uptime-monitoring-for-my-static-sites/"}
+      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2022-11-14T23:54:10+00:00","datePublished":"2021-10-02T19:43:00+00:00","description":"This blog post describes the value in uptime monitoring, and how to easily implement it for any website.","headline":"Implementing Uptime Monitoring for my Static Sites","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/implementing-uptime-monitoring-for-my-static-sites/"},"url":"https://emmasax.com/blog/posts/implementing-uptime-monitoring-for-my-static-sites/"}
     </script>
     <!-- End Jekyll SEO tag -->
   </head>
@@ -138,11 +138,11 @@
             <p>This means that for <code>Full (strict)</code> to work, not only does the domain need to have an SSL certificate, but my server (and my site is currently hosted on GitHub Pages, so that would be GitHub’s server) would need a trusted private certificate… and my site does not have one. So turning on <code>Full (strict)</code> immediately broke my site. And setting it back to <code>Full</code> fixed it right away.</p>
             <p>But what this taught me was: my site was down for almost a week before I noticed anything. Either my visitors didn’t feel like telling me (or didn’t know how because my site was down), or I didn’t have any visitors during that time frame. Either way, my site was down for a long time, I didn’t know it, and I wouldn’t have realized it had I not wanted to look at something.</p>
             <p>So, I need to make a change in order to avoid this happening again. Downtime happens… it is sort of inevitable. The thing is that I need to be made aware of when downtime happens or is happening so that I can try to fix it right away. Static sites generally don’t have a lot of downtime because there’s no backend, but they’re still liable to internet issues and DNS/SSL issues (as shown above). So, I went on an experimental journey to find a 3rd party service to provide some simple uptime monitoring.</p>
-            <p>CloudRadar does a beautiful job of explaining what uptime monitoring is <a href="https://www.cloudradar.io/blog/uptime-monitoring-explained-in-two-minutes">in this blog post</a>. The gist is this (straight from that link):</p>
+            <p>CloudRadar did a beautiful job of explaining what uptime monitoring is in a blog post that, unfortunately, is no longer available. The gist from them is this:</p>
             <blockquote>
               <p>Uptime Monitoring checks the availability and the response time of your website and publicly accessible infrastructure. An effective monitoring solution will alert you of a problem as soon as it occurs - wherever you are.</p>
             </blockquote>
-            <p>So, I needed to find a service that would ping my website (over HTTPS) regularly (preferrably once a minute), and then text me, send my phone a notification, or some other alternative when it goes down for a couple of consecutive checks. It’d be awesome if it also notified me when my website came back up. I started by just googling for some uptime monitoring services. I got some pretty common ones like:</p>
+            <p>So, I needed to find a service that would ping my website (over HTTPS) regularly (preferrably once a minute), and then text me, send my phone a notification, or some other alternative when it goes down for a couple of consecutive checks. It’d be awesome if it also notified me when my website came back up. I started by just googling for some SAAS uptime monitoring services. I got some pretty common ones like:</p>
             <ul>
               <li>Pingdom</li>
               <li>Datadog</li>
