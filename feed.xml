@@ -3,12 +3,23 @@
     <generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2022-11-14T23:54:10+00:00</updated>
+    <updated>2022-12-23T20:00:08+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <author>
       <name>Emma Sax</name>
     </author>
+    <entry>
+      <title type="html">I Took My Voice For Granted</title>
+      <link href="https://emmasax.com/blog/posts/i-took-my-voice-for-granted/" rel="alternate" type="text/html" title="I Took My Voice For Granted" />
+      <published>2022-12-23T20:00:00+00:00</published>
+      <updated>2022-12-23T20:00:08+00:00</updated>
+      <id>https://emmasax.com/blog/posts/i-took-my-voice-for-granted</id>
+      <author>
+        <name>Emma Sax</name>
+      </author>
+      <summary type="html"><![CDATA[It wasn't until I began losing my voice, that I truly realized the value in having it.]]></summary>
+    </entry>
     <entry>
       <title type="html">Adding Dark Mode with HTML and CSS</title>
       <link href="https://emmasax.com/blog/posts/adding-dark-mode/" rel="alternate" type="text/html" title="Adding Dark Mode with HTML and CSS" />
@@ -56,17 +67,5 @@
       </author>
       <category term="Discovering Iceland" />
       <summary type="html"><![CDATA[Join me in sharing the number one part of Iceland I was expecting... ice! Glaciers, waterfalls, and caves. Oh my!]]></summary>
-    </entry>
-    <entry>
-      <title type="html">Discovering Iceland – Hot Springs</title>
-      <link href="https://emmasax.com/blog/posts/discovering-iceland/hot-springs/" rel="alternate" type="text/html" title="Discovering Iceland – Hot Springs" />
-      <published>2022-02-25T23:00:00+00:00</published>
-      <updated>2022-06-13T17:51:42+00:00</updated>
-      <id>https://emmasax.com/blog/posts/discovering-iceland/hot-springs</id>
-      <author>
-        <name>Emma Sax</name>
-      </author>
-      <category term="Discovering Iceland" />
-      <summary type="html"><![CDATA[Join me in visiting two of Iceland's famous geothermal hot springs, where we relax in nature-maintained hot tubs smack in the middle of one of the world's coldest countries.]]></summary>
     </entry>
   </feed>
