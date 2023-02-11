@@ -3,12 +3,24 @@
     <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2022-12-24T03:10:44+00:00</updated>
+    <updated>2023-02-11T19:10:59+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <author>
       <name>Emma Sax</name>
     </author>
+    <entry>
+      <title type="html">Why I’m Glad I Haven’t Monetized Myself</title>
+      <link href="https://emmasax.com/blog/posts/why-im-glad-i-havent-monetized-myself/" rel="alternate" type="text/html" title="Why I’m Glad I Haven’t Monetized Myself" />
+      <published>2023-02-11T19:10:00+00:00</published>
+      <updated>2023-02-11T19:10:59+00:00</updated>
+      <id>https://emmasax.com/blog/posts/monetization-of-the-self</id>
+      <author>
+        <name>Emma Sax</name>
+      </author>
+      <category term="self-improvement" />
+      <summary type="html"><![CDATA[This blog post encapsulates my general thoughts around "self-monetization", and why I'm (sort of) glad that I haven't monetized myself.]]></summary>
+    </entry>
     <entry>
       <title type="html">I Took My Voice For Granted</title>
       <link href="https://emmasax.com/blog/posts/i-took-my-voice-for-granted/" rel="alternate" type="text/html" title="I Took My Voice For Granted" />
@@ -55,17 +67,5 @@
       </author>
       <category term="Discovering Iceland" />
       <summary type="html"><![CDATA[This blog post will delve into a part of Iceland that I wasn't expecting: the lava and volcanoes!]]></summary>
-    </entry>
-    <entry>
-      <title type="html">Discovering Iceland – Icy Glaciers</title>
-      <link href="https://emmasax.com/blog/posts/discovering-iceland/icy-glaciers/" rel="alternate" type="text/html" title="Discovering Iceland – Icy Glaciers" />
-      <published>2022-03-04T17:00:00+00:00</published>
-      <updated>2022-06-13T17:51:42+00:00</updated>
-      <id>https://emmasax.com/blog/posts/discovering-iceland/icy-glaciers</id>
-      <author>
-        <name>Emma Sax</name>
-      </author>
-      <category term="Discovering Iceland" />
-      <summary type="html"><![CDATA[Join me in sharing the number one part of Iceland I was expecting... ice! Glaciers, waterfalls, and caves. Oh my!]]></summary>
     </entry>
   </feed>

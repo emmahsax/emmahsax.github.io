@@ -51,7 +51,7 @@
     <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
     <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2022-08-11T03:32:25+00:00","datePublished":"2020-03-22T17:51:00+00:00","description":"Read on to learn why I switched from Travis CI to CircleCI in order to meet my website’s needs.","headline":"Why I Switched from Travis CI to CircleCI","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/why-i-switched-from-travis-ci-to-circleci/"},"url":"https://emmasax.com/blog/posts/why-i-switched-from-travis-ci-to-circleci/"}
+      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2023-02-11T19:10:59+00:00","datePublished":"2020-03-22T17:51:00+00:00","description":"Read on to learn why I switched from Travis CI to CircleCI in order to meet my website’s needs.","headline":"Why I Switched from Travis CI to CircleCI","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/why-i-switched-from-travis-ci-to-circleci/"},"url":"https://emmasax.com/blog/posts/why-i-switched-from-travis-ci-to-circleci/"}
     </script>
     <!-- End Jekyll SEO tag -->
   </head>
@@ -471,7 +471,7 @@ git commit <span class="nt">-m</span> <span class="s2">"Deploy to </span><span c
               </div>
             </div>
             <p>Uffda. That was a big file. And I’d be lying if I said that I didn’t accidentally delete the whole site a couple of times while I tried to figure out how this file should work. But at the end of the day, this code works perfectly for what I needed.</p>
-            <p>The last piece was to set up a GitHub deploy key for my project with read/write permissions. I followed a mixture of the instructions <a href="https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys">from GitHub</a> and <a href="https://circleci.com/docs/github-integration#create-a-github-deploy-key">from CircleCI</a>. After I obtained that (it looked like an SSH key), then I could provide that to CircleCI so it’d have proper permissions to commit to <code>pages</code> branch. Then, I just added the fingerprint to my build and I was ready to go!</p>
+            <p>The last piece was to set up a GitHub deploy key for my project with read/write permissions. I followed a mixture of the instructions <a href="https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys">from GitHub</a> and <a href="https://circleci.com/docs/github-integration/#deploy-keys-and-user-keys">from CircleCI</a>. After I obtained that (it looked like an SSH key), then I could provide that to CircleCI so it’d have proper permissions to commit to <code>pages</code> branch. Then, I just added the fingerprint to my build and I was ready to go!</p>
             <div class="language-yaml highlighter-rouge">
               <div class="highlight">
                 <pre class="highlight"><code data-lang="yaml"><span class="pi">-</span> <span class="na">add_ssh_keys</span><span class="pi">:</span>
