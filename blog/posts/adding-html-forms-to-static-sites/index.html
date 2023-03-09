@@ -160,9 +160,9 @@
                 <pre class="highlight"><code data-lang="html"><span class="nt">&lt;script&gt;</span>
   <span class="kd">var</span> <span class="nx">formSubmitted</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-  <span class="kd">function</span> <span class="nx">showFormResponse</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">formResponse</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span><span class="p">;</span>
-    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">form</span><span class="dl">"</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+  <span class="kd">function</span> <span class="nf">showFormResponse</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">formResponse</span><span class="dl">"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">block</span><span class="dl">"</span><span class="p">;</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">form</span><span class="dl">"</span><span class="p">).</span><span class="nf">remove</span><span class="p">();</span>
   <span class="p">};</span>
 <span class="nt">&lt;/script&gt;</span>
 
@@ -251,11 +251,11 @@
             <p>Now, in step 8, I’m going to create two Javascript methods, called callback methods. <a href="https://developers.google.com/recaptcha/docs/display#render_param">Google’s poor documentation</a> explains a little bit about callback methods.</p>
             <div class="language-javascript highlighter-rouge">
               <div class="highlight">
-                <pre class="highlight"><code data-lang="javascript"><span class="kd">function</span> <span class="nx">recaptchaCallback</span><span class="p">()</span> <span class="p">{</span>
+                <pre class="highlight"><code data-lang="javascript"><span class="kd">function</span> <span class="nf">recaptchaCallback</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// TODO: we'll add some things here later...</span>
 <span class="p">};</span>
 
-<span class="kd">function</span> <span class="nx">recaptchaExpiredCallback</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nf">recaptchaExpiredCallback</span><span class="p">()</span> <span class="p">{</span>
   <span class="c1">// TODO: we'll add some things here later...</span>
 <span class="p">};</span>
 </code></pre>
@@ -282,9 +282,9 @@
             <p>And now, steps nine and ten. To fill in the functionality of those two methods. On the <code>data-callback</code> method, we’ll do two things: 1) enable the submission button, and 2) fill in the “Anti-Spam Verification” field on the HTML form:</p>
             <div class="language-javascript highlighter-rouge">
               <div class="highlight">
-                <pre class="highlight"><code data-lang="javascript"><span class="kd">function</span> <span class="nx">recaptchaCallback</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#submitButton</span><span class="dl">"</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="dl">"</span><span class="s2">disabled</span><span class="dl">"</span><span class="p">);</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">verification</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;14 character code that Google Form expects&gt;</span><span class="dl">"</span><span class="p">;</span>
+                <pre class="highlight"><code data-lang="javascript"><span class="kd">function</span> <span class="nf">recaptchaCallback</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#submitButton</span><span class="dl">"</span><span class="p">).</span><span class="nf">removeAttr</span><span class="p">(</span><span class="dl">"</span><span class="s2">disabled</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">verification</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">&lt;14 character code that Google Form expects&gt;</span><span class="dl">"</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre>
               </div>
@@ -293,9 +293,9 @@
             <p>Next, we’ll fill in what should happen if the reCAPTCHA expires:</p>
             <div class="language-javascript highlighter-rouge">
               <div class="highlight">
-                <pre class="highlight"><code data-lang="javascript"><span class="kd">function</span> <span class="nx">recaptchaExpiredCallback</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#submitButton</span><span class="dl">"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">disabled</span><span class="dl">"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">verification</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                <pre class="highlight"><code data-lang="javascript"><span class="kd">function</span> <span class="nf">recaptchaExpiredCallback</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#submitButton</span><span class="dl">"</span><span class="p">).</span><span class="nf">attr</span><span class="p">(</span><span class="dl">"</span><span class="s2">disabled</span><span class="dl">"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">verification</span><span class="dl">"</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre>
               </div>
@@ -316,11 +316,11 @@
             <p>EDIT: Since publishing this blog post, I’ve made one change to my form. Instead of making the invisible verification input required, I’ve instead added an additional check that will only show the “thank you” page if the reCAPTCHA was completed. Otherwise, it’ll show a browser alert that the reCAPTCHA needs to be filled out first. Under the hood, the form actually tries to submit either way (whether the reCAPTCHA was completed or not), but Google Forms will just deny the request if the reCAPTCHA (and/or the invisible verification input) wasn’t completed. To make it extra clear that the invisible input is required by the backend, just not enforced by the frontend, I wrote a little invisible message. This is what my new Javascript function looks like:</p>
             <div class="language-javascript highlighter-rouge">
               <div class="highlight">
-                <pre class="highlight"><code data-lang="javascript"><span class="kd">function</span> <span class="nx">verifyRecaptcha</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">recaptchaCompleted</span><span class="p">)</span> <span class="p">{</span>
+                <pre class="highlight"><code data-lang="javascript"><span class="kd">function</span> <span class="nf">verifyRecaptcha</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">if </span><span class="p">(</span><span class="nx">recaptchaCompleted</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">formSubmitted</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Please fill out the reCAPTCHA to send a message.</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nf">alert</span><span class="p">(</span><span class="dl">'</span><span class="s1">Please fill out the reCAPTCHA to send a message.</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">};</span>
 <span class="p">};</span>
 </code></pre>

@@ -184,11 +184,11 @@
             <div class="language-yaml highlighter-rouge">
               <div class="highlight">
                 <pre class="highlight"><code data-lang="yaml"><span class="na">notifications</span><span class="pi">:</span>
-  <span class="na">email</span><span class="pi">:</span> <span class="no">false</span> <span class="c1"># Because I don't want my email getting cluttered</span>
+  <span class="na">email</span><span class="pi">:</span> <span class="kc">false</span> <span class="c1"># Because I don't want my email getting cluttered</span>
   <span class="na">slack</span><span class="pi">:</span>
     <span class="na">on_success</span><span class="pi">:</span> <span class="s">always</span>
     <span class="na">on_failure</span><span class="pi">:</span> <span class="s">always</span>
-    <span class="na">on_pull_requests</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">on_pull_requests</span><span class="pi">:</span> <span class="kc">true</span>
     <span class="na">secure</span><span class="pi">:</span> <span class="s">ENCRYPTED_TOKEN_GOES_HERE</span>
 </code></pre>
               </div>
@@ -215,8 +215,8 @@
   <span class="na">target_branch</span><span class="pi">:</span> <span class="s">pages</span>
   <span class="na">commit_message</span><span class="pi">:</span> <span class="s">Deploy to %{url}:%{target_branch}</span>
   <span class="na">local_dir</span><span class="pi">:</span> <span class="s">./site</span>
-  <span class="na">keep_history</span><span class="pi">:</span> <span class="no">true</span>
-  <span class="na">edge</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">keep_history</span><span class="pi">:</span> <span class="kc">true</span>
+  <span class="na">edge</span><span class="pi">:</span> <span class="kc">true</span>
   <span class="na">on</span><span class="pi">:</span>
     <span class="na">branch</span><span class="pi">:</span> <span class="s">MAIN_BRANCH_NAME</span>
   <span class="na">token</span><span class="pi">:</span>
@@ -352,9 +352,9 @@ bundle <span class="nb">exec </span>htmlproofer <span class="se">\</span>
     <span class="pi">-</span> <span class="na">slack/status</span><span class="pi">:</span>
         <span class="na">success_message</span><span class="pi">:</span> <span class="s2">"</span><span class="s">$SLACK_MESSAGE</span><span class="nv"> </span><span class="s">*passed*."</span>
         <span class="na">failure_message</span><span class="pi">:</span> <span class="s2">"</span><span class="s">$SLACK_MESSAGE</span><span class="nv"> </span><span class="s">*failed*."</span>
-        <span class="na">include_job_number_field</span><span class="pi">:</span> <span class="no">false</span>
-        <span class="na">include_project_field</span><span class="pi">:</span> <span class="no">false</span>
-        <span class="na">include_visit_job_action</span><span class="pi">:</span> <span class="no">false</span>
+        <span class="na">include_job_number_field</span><span class="pi">:</span> <span class="kc">false</span>
+        <span class="na">include_project_field</span><span class="pi">:</span> <span class="kc">false</span>
+        <span class="na">include_visit_job_action</span><span class="pi">:</span> <span class="kc">false</span>
 <span class="na">jobs</span><span class="pi">:</span>
   <span class="na">test</span><span class="pi">:</span>
     <span class="na">steps</span><span class="pi">:</span>

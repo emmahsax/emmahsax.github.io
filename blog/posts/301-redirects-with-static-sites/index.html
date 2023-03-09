@@ -202,7 +202,7 @@
             <div class="language-javascript highlighter-rouge">
               <div class="highlight">
                 <pre class="highlight"><code data-lang="javascript"><span class="nx">pathname</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">;</span>
-<span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://destination-domain.com</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">pathname</span><span class="p">;},</span> <span class="mi">5000</span><span class="p">);</span>
+<span class="nf">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://destination-domain.com</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">pathname</span><span class="p">;},</span> <span class="mi">5000</span><span class="p">);</span>
 </code></pre>
               </div>
             </div>
@@ -213,10 +213,10 @@
   <span class="kd">var</span> <span class="nx">pathname</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">;</span>
 
   <span class="c1">// Perform an automatic timed redirect</span>
-  <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://destination-domain.com</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">pathname</span><span class="p">;},</span> <span class="mi">5000</span><span class="p">);</span>
+  <span class="nf">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://destination-domain.com</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">pathname</span><span class="p">;},</span> <span class="mi">5000</span><span class="p">);</span>
 
   <span class="c1">// Add button click functionality as well</span>
-  <span class="kd">function</span> <span class="nx">redirect_now</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">function</span> <span class="nf">redirect_now</span><span class="p">()</span> <span class="p">{</span>
     <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://destination-domain.com</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">pathname</span><span class="p">;</span>
   <span class="p">};</span>
 <span class="nt">&lt;/script&gt;</span>
