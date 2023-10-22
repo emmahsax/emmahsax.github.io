@@ -3,12 +3,24 @@
     <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2023-08-27T16:54:30+00:00</updated>
+    <updated>2023-10-22T00:30:04+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <author>
       <name>Emma Sax</name>
     </author>
+    <entry>
+      <title type="html">The Wedding Diaries – Part 1</title>
+      <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-01/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 1" />
+      <published>2023-10-22T00:30:00+00:00</published>
+      <updated>2023-10-22T00:30:04+00:00</updated>
+      <id>https://emmasax.com/blog/posts/the-wedding-diaries/part-01</id>
+      <author>
+        <name>Emma Sax</name>
+      </author>
+      <category term="The Wedding Diaries" />
+      <summary type="html"><![CDATA[Chronicling my first adventures of engagement.]]></summary>
+    </entry>
     <entry>
       <title type="html">Why I’m Glad I Haven’t Monetized Myself</title>
       <link href="https://emmasax.com/blog/posts/why-im-glad-i-havent-monetized-myself/" rel="alternate" type="text/html" title="Why I’m Glad I Haven’t Monetized Myself" />
@@ -55,17 +67,5 @@
       </author>
       <category term="Discovering Iceland" />
       <summary type="html"><![CDATA[For my final entry about my 2022 trip to Iceland, we'll discuss the beautiful Aurora Borealis.]]></summary>
-    </entry>
-    <entry>
-      <title type="html">Discovering Iceland – Black Beaches</title>
-      <link href="https://emmasax.com/blog/posts/discovering-iceland/black-beaches/" rel="alternate" type="text/html" title="Discovering Iceland – Black Beaches" />
-      <published>2022-03-10T05:45:00+00:00</published>
-      <updated>2022-06-13T17:51:42+00:00</updated>
-      <id>https://emmasax.com/blog/posts/discovering-iceland/black-beaches</id>
-      <author>
-        <name>Emma Sax</name>
-      </author>
-      <category term="Discovering Iceland" />
-      <summary type="html"><![CDATA[This blog post will delve into a part of Iceland that I wasn't expecting: the lava and volcanoes!]]></summary>
     </entry>
   </feed>
