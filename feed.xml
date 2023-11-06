@@ -3,12 +3,24 @@
     <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2023-10-22T00:30:04+00:00</updated>
+    <updated>2023-11-06T19:15:06+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <author>
       <name>Emma Sax</name>
     </author>
+    <entry>
+      <title type="html">The Wedding Diaries – Part 2</title>
+      <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-02/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 2" />
+      <published>2023-11-06T19:15:00+00:00</published>
+      <updated>2023-11-06T19:15:06+00:00</updated>
+      <id>https://emmasax.com/blog/posts/the-wedding-diaries/part-02</id>
+      <author>
+        <name>Emma Sax</name>
+      </author>
+      <category term="The Wedding Diaries" />
+      <summary type="html"><![CDATA[A little bit about the different wedding packages I've found.]]></summary>
+    </entry>
     <entry>
       <title type="html">The Wedding Diaries – Part 1</title>
       <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-01/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 1" />
@@ -55,17 +67,5 @@
       </author>
       <category term="tech" />
       <summary type="html"><![CDATA[Take a peek at my step-by-step guide of how to create dark mode only using CSS and HTML!]]></summary>
-    </entry>
-    <entry>
-      <title type="html">Discovering Iceland – Northern Lights</title>
-      <link href="https://emmasax.com/blog/posts/discovering-iceland/northern-lights/" rel="alternate" type="text/html" title="Discovering Iceland – Northern Lights" />
-      <published>2022-03-17T03:45:00+00:00</published>
-      <updated>2022-06-13T17:51:42+00:00</updated>
-      <id>https://emmasax.com/blog/posts/discovering-iceland/northern-lights</id>
-      <author>
-        <name>Emma Sax</name>
-      </author>
-      <category term="Discovering Iceland" />
-      <summary type="html"><![CDATA[For my final entry about my 2022 trip to Iceland, we'll discuss the beautiful Aurora Borealis.]]></summary>
     </entry>
   </feed>
