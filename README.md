@@ -8,11 +8,11 @@ For information on licensing, please see [LICENSE.txt](https://emmasax.com/LICEN
 
 This website also implements the following open source tools:
 
-* Bootstrap v5.2.3                   - https://github.com/twbs/bootstrap/blob/v5.2.3/LICENSE
+* Bootstrap v5.3.2                   - https://github.com/twbs/bootstrap/blob/v5.3.2/LICENSE
 * Google Fonts                       - https://fonts.google.com/attribution
-* Jquery v3.6.4                      - https://jquery.org/license
+* Jquery v3.7.1                      - https://jquery.org/license
 * Lightbox2 v2.11.4                  - https://github.com/lokesh/lightbox2/blob/v2.11.3/LICENSE
-* PhotoSwipe v5.3.7                  - https://github.com/dimsemenov/PhotoSwipe/blob/v5.3.5/LICENSE
+* PhotoSwipe v5.4.2                  - https://github.com/dimsemenov/PhotoSwipe/blob/v5.4.2/LICENSE
 * jekyll v4.3.2                      - https://github.com/jekyll/jekyll/blob/v4.3.2/LICENSE
 * jekyll-commonmark v1.4.0           - https://github.com/jekyll/jekyll-commonmark/blob/v1.4.0/LICENSE
 * jekyll-default-layout v0.1.5       - https://github.com/benbalter/jekyll-default-layout/blob/v0.1.5/LICENSE
