@@ -3,12 +3,24 @@
     <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2024-01-03T03:55:14+00:00</updated>
+    <updated>2024-03-08T15:22:38+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <author>
       <name>Emma Sax</name>
     </author>
+    <entry>
+      <title type="html">The Wedding Diaries – Part 5</title>
+      <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-05/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 5" />
+      <published>2024-03-08T15:22:00+00:00</published>
+      <updated>2024-03-08T15:22:38+00:00</updated>
+      <id>https://emmasax.com/blog/posts/the-wedding-diaries/part-05</id>
+      <author>
+        <name>Emma Sax</name>
+      </author>
+      <category term="The Wedding Diaries" />
+      <summary type="html"><![CDATA[My experience of some of the bridal shows and expos in the Twin Cities area]]></summary>
+    </entry>
     <entry>
       <title type="html">The Wedding Diaries – Part 4</title>
       <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-04/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 4" />
@@ -56,17 +68,5 @@
       </author>
       <category term="The Wedding Diaries" />
       <summary type="html"><![CDATA[Chronicling my first adventures of engagement.]]></summary>
-    </entry>
-    <entry>
-      <title type="html">Why I’m Glad I Haven’t Monetized Myself</title>
-      <link href="https://emmasax.com/blog/posts/why-im-glad-i-havent-monetized-myself/" rel="alternate" type="text/html" title="Why I’m Glad I Haven’t Monetized Myself" />
-      <published>2023-02-11T19:10:00+00:00</published>
-      <updated>2023-02-11T19:10:59+00:00</updated>
-      <id>https://emmasax.com/blog/posts/monetization-of-the-self</id>
-      <author>
-        <name>Emma Sax</name>
-      </author>
-      <category term="self-improvement" />
-      <summary type="html"><![CDATA[This blog post encapsulates my general thoughts around "self-monetization", and why I'm (sort of) glad that I haven't monetized myself.]]></summary>
     </entry>
   </feed>
