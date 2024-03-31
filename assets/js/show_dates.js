@@ -14,36 +14,26 @@ And written like this:
   December 28, 2019
 */
 
-const dates = document.getElementsByClassName('date-meta')
+const dates = Array.from(document.getElementsByClassName('date-meta-invisible'))
 const monthNames = [
   'January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'
 ]
 
-for (let counter = 0; counter < dates.length; counter++) {
-  const htmlDate = dates[counter]
-  const dateArrayByDigit = htmlDate.innerHTML.trim().split(/[^0-9]/)
-  const dateArrayBySpace = htmlDate.innerHTML.split(' ')
-  const timezoneAsDigit = dateArrayBySpace[dateArrayBySpace.length - 1]
+for (const htmlDate of dates) {
+  const [year, month, day, hour, minute, second] = htmlDate.innerHTML.trim().split(/[^0-9]/)
+  const timezone = htmlDate.innerHTML.split(' ').at(-1)
   let localDate = null
 
-  if (timezoneAsDigit === '+0000') {
+  if (timezone === '+0000') {
     // Get the local date when it's written as in UTC timezone
-    localDate = new Date(
-      Date.UTC(
-        dateArrayByDigit[0], dateArrayByDigit[1] - 1, dateArrayByDigit[2],
-        dateArrayByDigit[3], dateArrayByDigit[4], dateArrayByDigit[5]
-      )
-    )
+    localDate = new Date(Date.UTC(year, month - 1, day, hour, minute, second))
   } else {
     // Get the written date in the local timezone (which may not be written timezone)
-    const writtenDate = new Date(
-      dateArrayByDigit[0], dateArrayByDigit[1] - 1, dateArrayByDigit[2],
-      dateArrayByDigit[3], dateArrayByDigit[4], dateArrayByDigit[5]
-    )
+    const writtenDate = new Date(year, month - 1, day, hour, minute, second)
 
     // Convert written date in local timezone to UTC timezone
-    const utcDateAsNumbers = writtenDate.getTime() - (timezoneAsDigit * 60 * 60 * 10)
+    const utcDateAsNumbers = writtenDate.getTime() - (timezone * 60 * 60 * 10)
     const utcDate = new Date(utcDateAsNumbers)
     const utcDay = utcDate.getDate()
     const utcHour = utcDate.getHours()
@@ -53,13 +43,9 @@ for (let counter = 0; counter < dates.length; counter++) {
     const utcYear = utcDate.getFullYear()
 
     // Get the local date when it's written as in UTC timezone
-    localDate = new Date(
-      Date.UTC(utcYear, utcMonth, utcDay, utcHour, utcMinute, utcMilliseconds)
-    )
+    localDate = new Date(Date.UTC(utcYear, utcMonth, utcDay, utcHour, utcMinute, utcMilliseconds))
   };
 
-  const day = localDate.getDate()
-  const monthIndex = localDate.getMonth()
-  const year = localDate.getFullYear()
-  htmlDate.innerHTML = monthNames[monthIndex] + ' ' + day + ', ' + year
+  htmlDate.innerHTML = monthNames[localDate.getMonth()] + ' ' + localDate.getDate() + ', ' + localDate.getFullYear()
+  htmlDate.className = 'date-meta'
 };
