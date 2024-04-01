@@ -3,12 +3,24 @@
     <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2024-03-31T18:00:04+00:00</updated>
+    <updated>2024-04-01T14:00:04+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <author>
       <name>Emma Sax</name>
     </author>
+    <entry>
+      <title type="html">The Wedding Diaries – Part 6</title>
+      <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-06/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 6" />
+      <published>2024-04-01T14:00:00+00:00</published>
+      <updated>2024-04-01T14:00:04+00:00</updated>
+      <id>https://emmasax.com/blog/posts/the-wedding-diaries/part-06</id>
+      <author>
+        <name>Emma Sax</name>
+      </author>
+      <category term="The Wedding Diaries" />
+      <summary type="html"><![CDATA[A short post all about finding my perfect glam team]]></summary>
+    </entry>
     <entry>
       <title type="html">The Wedding Diaries – Part 5</title>
       <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-05/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 5" />
@@ -56,17 +68,5 @@
       </author>
       <category term="The Wedding Diaries" />
       <summary type="html"><![CDATA[A little bit about the different wedding packages I've found.]]></summary>
-    </entry>
-    <entry>
-      <title type="html">The Wedding Diaries – Part 1</title>
-      <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-01/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 1" />
-      <published>2023-10-22T00:30:00+00:00</published>
-      <updated>2024-03-10T21:00:18+00:00</updated>
-      <id>https://emmasax.com/blog/posts/the-wedding-diaries/part-01</id>
-      <author>
-        <name>Emma Sax</name>
-      </author>
-      <category term="The Wedding Diaries" />
-      <summary type="html"><![CDATA[Chronicling my first adventures of engagement.]]></summary>
     </entry>
   </feed>
