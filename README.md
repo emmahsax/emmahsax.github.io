@@ -17,7 +17,7 @@ This website also implements the following open source tools:
 * jekyll-commonmark v1.4.0           - https://github.com/jekyll/jekyll-commonmark/blob/v1.4.0/LICENSE
 * jekyll-default-layout v0.1.5       - https://github.com/benbalter/jekyll-default-layout/blob/v0.1.5/LICENSE
 * jekyll-feed                        - https://github.com/emmahsax/jekyll-feed/blob/main/LICENSE.txt
-* jekyll-last-modified-at v1.3.0     - https://github.com/gjtorikian/jekyll-last-modified-at/blob/v1.3.0/LICENSE
+* jekyll-last-modified-at v1.3.2     - https://github.com/gjtorikian/jekyll-last-modified-at/blob/v1.3.2/LICENSE.txt
 * jekyll-mentions v1.6.0             - https://github.com/jekyll/jekyll-mentions/blob/v1.6.0/LICENSE
 * jekyll-paginate-v2 v3.0.0          - https://github.com/sverrirs/jekyll-paginate-v2/blob/v3.0.0/LICENSE
 * jekyll-redirect-from v0.16.0       - https://github.com/jekyll/jekyll-redirect-from/blob/v0.16.0/LICENSE.txt
