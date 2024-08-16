@@ -3,12 +3,24 @@
     <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2024-08-07T23:35:37+00:00</updated>
+    <updated>2024-08-16T18:22:52+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <author>
       <name>Emma Sax</name>
     </author>
+    <entry>
+      <title type="html">The Wedding Diaries – Part 9</title>
+      <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-09/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 9" />
+      <published>2024-08-16T18:22:00+00:00</published>
+      <updated>2024-08-16T18:22:52+00:00</updated>
+      <id>https://emmasax.com/blog/posts/the-wedding-diaries/part-09</id>
+      <author>
+        <name>Emma Sax</name>
+      </author>
+      <category term="The Wedding Diaries" />
+      <summary type="html"><![CDATA[The wedding itself, the days surrounding it, and lessons learned]]></summary>
+    </entry>
     <entry>
       <title type="html">The Wedding Diaries – Part 8</title>
       <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-08/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 8" />
@@ -56,17 +68,5 @@
       </author>
       <category term="The Wedding Diaries" />
       <summary type="html"><![CDATA[My experience of some of the bridal shows and expos in the Twin Cities area]]></summary>
-    </entry>
-    <entry>
-      <title type="html">The Wedding Diaries – Part 4</title>
-      <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-04/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 4" />
-      <published>2024-01-03T04:00:00+00:00</published>
-      <updated>2024-03-10T21:00:18+00:00</updated>
-      <id>https://emmasax.com/blog/posts/the-wedding-diaries/part-04</id>
-      <author>
-        <name>Emma Sax</name>
-      </author>
-      <category term="The Wedding Diaries" />
-      <summary type="html"><![CDATA[Planning the wedding weekend events is another area where we can be creative and let our individuality shine!]]></summary>
     </entry>
   </feed>
