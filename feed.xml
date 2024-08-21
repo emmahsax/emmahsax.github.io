@@ -3,12 +3,24 @@
     <generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator>
     <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <updated>2024-08-16T18:22:52+00:00</updated>
+    <updated>2024-08-21T01:56:46+00:00</updated>
     <id>https://emmasax.com/feed.xml</id>
     <title type="html">Emma Sax</title>
     <author>
       <name>Emma Sax</name>
     </author>
+    <entry>
+      <title type="html">The Wedding Diaries – Part 10</title>
+      <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-10/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 10" />
+      <published>2024-08-21T01:56:00+00:00</published>
+      <updated>2024-08-21T01:56:46+00:00</updated>
+      <id>https://emmasax.com/blog/posts/the-wedding-diaries/part-10</id>
+      <author>
+        <name>Emma Sax</name>
+      </author>
+      <category term="The Wedding Diaries" />
+      <summary type="html"><![CDATA[The final budget breakdown]]></summary>
+    </entry>
     <entry>
       <title type="html">The Wedding Diaries – Part 9</title>
       <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-09/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 9" />
@@ -56,17 +68,5 @@
       </author>
       <category term="The Wedding Diaries" />
       <summary type="html"><![CDATA[A short post all about finding my perfect glam team]]></summary>
-    </entry>
-    <entry>
-      <title type="html">The Wedding Diaries – Part 5</title>
-      <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-05/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 5" />
-      <published>2024-03-08T15:22:00+00:00</published>
-      <updated>2024-03-10T21:00:18+00:00</updated>
-      <id>https://emmasax.com/blog/posts/the-wedding-diaries/part-05</id>
-      <author>
-        <name>Emma Sax</name>
-      </author>
-      <category term="The Wedding Diaries" />
-      <summary type="html"><![CDATA[My experience of some of the bridal shows and expos in the Twin Cities area]]></summary>
     </entry>
   </feed>
