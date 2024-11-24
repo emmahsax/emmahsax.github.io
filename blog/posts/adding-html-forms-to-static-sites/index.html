@@ -96,7 +96,7 @@
                       <source media="(prefers-color-scheme: dark)" srcset="/assets/images/icons/tag-dark-mode.svg">
                       <img class="post-categorization-icon" src="/assets/images/icons/tag-light-mode.svg" alt="Tag icon">
                     </picture>
-                    <a href="/blog/tech/">tech</a>
+                    <a href="/blog//">tech</a>
                   </span>
                 </div>
                 <div class="col col-12 col-md-4">
@@ -202,8 +202,8 @@
                 <div class="invisible caption">A basic HTML form</div>
               </a>
               <a class="photoswipe photo" href="https://live.staticflickr.com/65535/50910770391_a88fce2728_c.jpg" target="_blank" data-pswp-width="795" data-pswp-height="262">
-                <img class="image" src="https://live.staticflickr.com/65535/50910770391_a88fce2728_c.jpg"  height="150" alt="The 'thank you' that is shown upon submission">
-                <div class="invisible caption">The 'thank you' that is shown upon submission</div>
+                <img class="image" src="https://live.staticflickr.com/65535/50910770391_a88fce2728_c.jpg"  height="150" alt="The ‘thank you’ that is shown upon submission">
+                <div class="invisible caption">The ‘thank you’ that is shown upon submission</div>
               </a>
             </div>
             <p>Voilá! Now my users can submit this form, which will be sent to my Google Form automatically. And then they’ll be shown a nice message indicating that I received their message. From a user’s viewpoint, they won’t even be able to tell the backend is through Google Forms. This achieves everything I wanted in my contact form.</p>
@@ -295,8 +295,8 @@
             <p>Now, here’s where it gets fancy. If I go into the browser’s inspection tool, remove the <code>disable</code> on the button, and show the invisible <code>&quot;verification&quot;</code> form input, then I can enter a random value into the invisible input, and press submit… all without completing the reCAPTCHA. My website even gives a nice message that the submission was successful (as a little decoy). <em>However</em>, Google Forms never receives the message. Google Forms returns a <code>400</code> on the <code>FormResponse</code> (this can be seen in the browser’s inspection tool), and the message goes into a black hole, never to be seen again. Google Forms can only <em>receive</em> the message if the invisible verification input’s string <em>exactly matches</em> the specific regex I set in Google Forms.</p>
             <div class="text-center photoswipe-gallery">
               <a class="photoswipe photo" href="https://live.staticflickr.com/65535/50910770401_aa13b0dec4_c.jpg" target="_blank" data-pswp-width="800" data-pswp-height="424">
-                <img class="image" src="https://live.staticflickr.com/65535/50910770401_aa13b0dec4_c.jpg" width="500"  alt="A demonstration of what a spam message could 'look' like">
-                <div class="invisible caption">A demonstration of what a spam message could 'look' like</div>
+                <img class="image" src="https://live.staticflickr.com/65535/50910770401_aa13b0dec4_c.jpg" width="500"  alt="A demonstration of what a spam message could ‘look’ like">
+                <div class="invisible caption">A demonstration of what a spam message could ‘look’ like</div>
               </a>
             </div>
             <p>Now, asking for a 14 character code, which is hard-coded into my source code, isn’t very secure. Any person that <em>really</em> wanted to spam me (but please don’t) could look in my code, find the 14 character code, and write a little script to send me repeated messages. So, I got fancier. I played around with different ways of taking Google’s reCAPTCHA response, and combining it with a hard-coded “password”. And then, I implemented a fancy regex on Google Forms to verify. Unfortunately for my readers, I won’t be publicizing what regex I developed to verify the verification input, as that would compromise my backend verification.</p>
