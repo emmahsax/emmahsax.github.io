@@ -13,7 +13,7 @@ This website also implements the following open source tools:
 * Jquery v3.7.1                      - https://jquery.org/license
 * Lightbox2 v2.11.4                  - https://github.com/lokesh/lightbox2/blob/v2.11.3/LICENSE
 * PhotoSwipe v5.4.2                  - https://github.com/dimsemenov/PhotoSwipe/blob/v5.4.2/LICENSE
-* jekyll v4.3.3                      - https://github.com/jekyll/jekyll/blob/v4.3.3/LICENSE
+* jekyll v4.4.1                      - https://github.com/jekyll/jekyll/blob/v4.4.1/LICENSE
 * jekyll-commonmark v1.4.0           - https://github.com/jekyll/jekyll-commonmark/blob/v1.4.0/LICENSE
 * jekyll-default-layout v0.1.5       - https://github.com/benbalter/jekyll-default-layout/blob/v0.1.5/LICENSE
 * jekyll-feed                        - https://github.com/emmahsax/jekyll-feed/blob/main/LICENSE.txt
