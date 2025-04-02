@@ -1,177 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
-  <!-- Head -->
+<html lang="en-us">
   <head>
-    <link rel="alternate" href="/feed.xml" type="application/rss+xml">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#001aaf">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/google_fonts.min.css">
-    <link rel="stylesheet" href="/assets/css/lightbox.min.css">
-    <link rel="stylesheet" href="/assets/css/photoswipe.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css"> <!-- This needs to be the last CSS line -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
-    <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
-    <meta name="msapplication-TileColor" content="#001aaf">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Begin Jekyll SEO tag v2.8.0e -->
-    <title>Websites, Jekyll, and DNS | Emma Sax</title>
-    <meta name="generator" content="Jekyll v4.4.1" />
-    <meta property="og:title" content="Websites, Jekyll, and DNS | Emma Sax" />
-    <meta name="author" content="Emma Sax" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Learn more about how I set up my website with Jekyll and GitHub Pages." />
-    <meta property="og:description" content="Learn more about how I set up my website with Jekyll and GitHub Pages." />
-    <meta property="twitter:description" content="Learn more about how I set up my website with Jekyll and GitHub Pages." />
-    <link rel="canonical" href="https://emmasax.com/blog/posts/more-websites-jekyll-and-dns/" />
-    <meta property="og:url" content="https://emmasax.com/blog/posts/more-websites-jekyll-and-dns/" />
-    <meta property="og:site_name" content="Emma Sax" />
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2019-11-05T06:00:00+00:00" />
-    <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="More Websites, Jekyll, and DNS" />
-    <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
-    <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
-    <meta name="yandex-verification" content="32fe10ad6352714a" />
+  <link rel="alternate" href="/feed.xml" type="application/rss+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#001aaf">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/google_fonts.min.css">
+  <link rel="stylesheet" href="/css/lightbox.min.css">
+  <link rel="stylesheet" href="/css/photoswipe.min.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#001aaf">
+
+  
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Websites, Jekyll, and DNS | Emma Sax</title>
+
+  <meta name="author" content="Emma Sax">
+  <meta property="og:description" content="Learn more about how I set up my website with Jekyll and GitHub Pages.">
+  <meta property="og:locale" content="en-us" />
+  <meta property="og:site_name" content="Emma Sax" />
+  <meta property="og:title" content="Websites, Jekyll, and DNS" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://emmasax.com/blog/posts/more-websites-jekyll-and-dns/" />
+
+  <link rel="canonical" href="https://emmasax.com/blog/posts/more-websites-jekyll-and-dns/" />
+    <meta property="article:published_time" content="2019-11-05T00:00:00-06:00" />
+
+  <meta property="twitter:description" content="Learn more about how I set up my website with Jekyll and GitHub Pages." />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Websites, Jekyll, and DNS" />
+
+  <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
+  <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
+  <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2024-03-10T21:00:18+00:00","datePublished":"2019-11-05T06:00:00+00:00","description":"Learn more about how I set up my website with Jekyll and GitHub Pages.","headline":"More Websites, Jekyll, and DNS","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/more-websites-jekyll-and-dns/"},"url":"https://emmasax.com/blog/posts/more-websites-jekyll-and-dns/"}
-    </script>
-    <!-- End Jekyll SEO tag -->
-  </head>
-  <!-- Navigation bar -->
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
-      <div class="container-fluid">
-        <!-- Left hand side of navbar -->
-        <a class="navbar-brand mb-0" href="/" target="_self">
-          <img src="/assets/images/logo-plain-white-400.png" width="30" height="30"
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-04-02T12:59:01+00:00","datePublished":"2019-11-05T00:00:00-06:00","description":"Learn more about how I set up my website with Jekyll and GitHub Pages.","headline":"More Websites, Jekyll, and DNS","keywords":["tech","jekyll"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/more-websites-jekyll-and-dns/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/more-websites-jekyll-and-dns/"}
+</script>
+
+</head>
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand mb-0" href="/" target="_self">
+        <img src="/images/logo-plain-white-400.png" width="30" height="30"
           class="d-inline-block align-top nav-icon" alt="E logo"
         >&nbsp;&nbsp;Emma Sax
-        </a>
-        <!-- Navbar open/close button when on a smaller screen -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbar-links" aria-controls="navbar-links"
         aria-expanded="false" aria-label="Toggle navigation"
       >
-          <img class="nav-icon-menu" src="/assets/images/icons/menu.svg" alt="Menu icon">
-          <img class="nav-icon-x" src="/assets/images/icons/x.svg" alt="X icon">
-        </button>
-        <!-- Page links -->
-        <div class="collapse navbar-collapse" id="navbar-links">
-          <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+        <img class="nav-icon-menu" src="/images/icons/menu.svg" alt="Menu icon">
+        <img class="nav-icon-x" src="/images/icons/x.svg" alt="X icon">
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbar-links">
+        <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+          <li class="nav-item ">
+                <a class="nav-link" href="/about-me/">About Me</a>
+              </li>
             <li class="nav-item ">
-              <a class="nav-link" href="/about-me/">About Me</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-            </li>
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
+              </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/blog/">Blog</a>
-            </li>
-          </ul>
-        </div>
+                <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            </ul>
       </div>
-    </nav>
-  </header>
-  <!-- Page content -->
-  <body>
+    </div>
+  </nav>
+</header>
+<body>
     <main class="container">
       <div class="row">
         <div class="col col-12 col-md-10">
-          <!-- Blog post title and information -->
+          
           <div class="text-center">
             <h1 class="post-title">
               More Websites, Jekyll, and DNS
+
               <div class="row post-data">
                 <div class="col col-12 col-md-4">
+                  
+
                   <span class="post-meta">
-                    <picture>
-                      <source media="(prefers-color-scheme: dark)" srcset="/assets/images/icons/tag-dark-mode.svg">
-                      <img class="post-categorization-icon" src="/assets/images/icons/tag-light-mode.svg" alt="Tag icon">
-                    </source></picture>
-                  <a href="/blog/jekyll/">jekyll</a>
-                  |
-                  <a href="/blog/tech/">tech</a>
-                </span>
+                      <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="/images/icons/tag-dark-mode.svg">
+                        <img class="post-categorization-icon" src="/images/icons/tag-light-mode.svg" alt="Tag icon">
+                      </picture><a href="/blog/jekyll/">jekyll</a> | <a href="/blog/tech/">tech</a></span>
+                </div>
+
+                <div class="col col-12 col-md-4">
+                  <span class="date-meta">November 5, 2019</span></div>
+
+                <div class="col col-12 col-md-4"><span class="post-meta">Read time: 6 minutes</span>
+                </div>
               </div>
-              <div class="col col-12 col-md-4">
-                <span class="date-meta-invisible">2019-11-05 00:00:00 -0600</span>
-              </div>
-              <div class="col col-12 col-md-4">
-                <span class="post-meta">Read time: 6 minutes</span>
-              </div>
-            </div>
-          </h1>
-        </div>
-        <!-- Blog post content and comments -->
-        <div class="page-body">
-          <p>Last week, for the first time in a couple of months, I felt the need to do more with my Jekyll website(s). GitHub Pages provides an opportunity to host as many sites as I wish, as long as their repository code is public and I’m okay with the resulting site being public. I wasn’t really okay with that situation, so instead, I opted to look at GitHub Pro. GitHub Pro offered to host my GitHub Pages site on repositories that were private, which was basically exactly what I wanted. I know that GitLab Pages could provide me with that same setup for free, but my whole world is on GitHub, and I didn’t quite feel the need to switch that up yet.</p>
-          <p>When it comes to having a private website though, neither GitHub Pages nor GitLab Pages (free) offers that. So, I went to the handy-dandy Google for how to protect a GitHub Pages site. I ended up finding <a href="https://github.com/scottishstoater/protected-github-pages">@scottishstoater’ repo <em>protected-github-pages</em></a>.</p>
-          <p>As I started working on two new GitHub Pages sites I started to play around with the different Jekyll themes. It turns out that my original site (this one) was made so long ago that a decent amount about the themes have changed since then. Now, <a href="https://github.com/pages-themes">@pages-themes</a> manages most of the GitHub Pages themes (instead of the individual creators of the themes). They also do this thing where you can <code>@import {{ site.theme }};</code> into the CSS files, assuming that the theme is set in the <code>_config.yml</code>. What this means is that new users of the themes don’t need to copy-paste all of the CSS files if they just want <em>exactly</em> the CSS settings of the original themes. This means that it’s very possible that getting your GitHub Pages site up and running is fast… like super fast… like within-a-day-fast. In fact, both of my new GitHub Pages sites were running and live within a day.</p>
-          <p>What this also means is that, since none of the CSS is actually <em>in your repository</em>, when you want to make changes to the CSS (say edit the size of a button, change the font, etc), you need to go to the CSS source on GitHub, search in the entire repository for the piece that you need, and then copy-paste that entire element back to your repo and make the changes. To find exactly which piece of CSS required to make a change, I had to play a lot with using Chrome’s Inspect option on my local site. Chrome’s Inspect feature allowed me to find the exact value that I’d need to edit so I copy-pasted the proper CSS element into my local repository 😕. I’m sure that changing the themes’ CSS pattern had good intentions, but I actually found it quite annoying. Perhaps the <em>most</em> annoying part of this is that when running Jekyll locally, I got a petty warning about the <code>_includes/</code> directory not found in the source layout. Since I use the <code>_includes/</code> directory in every project, this was particularly irritating.</p>
-          <p>So instead, I went through each GitHub Pages repository I was using and copy-pasted <em>all</em> of the CSS code into my own directory, and then removed the setting of <code>theme</code> in the <code>_config.yml</code>. Now there’s a ton of CSS lines in my repos, but I don’t really mind, especially if all of the CSS can now be in one condensed file and repository, instead of calling a bunch of other files/repos.</p>
-          <p>I also took the weekend to standardize all of the code that sources my sites, so the directory and file layout of them all match. I even made another site that has nice buttons that links to each of my sites and their respective code. I also made that repo private and put in password protection. There’s links to my other private site there, so I don’t want people to figure out a way into the originally private site. So putting an extra password in for the new list of sites (that the world can’t get to) is beneficial for me. (I should clarify that hackers could probably get in… I didn’t put in top-notch security; even the example repos I used say that, but it’s secure-enough 🤫).</p>
-          <p>The last thing I did this weekend was redo this site. I wanted to make the “About Me” and “Interests &amp; Hobbies” page more user-friendly. I wanted to rethink who my audience of this site is… besides me and my mom. I realized that I wanted it to be easier for prospective employers to see information about me. So reading about my favorite books and TV shows, while debatably interesting, maybe isn’t the best content for my “About Me” page. Instead, that should be my resumé page. And then my “Interests &amp; Hobbies” page should look less bulletpoint-y and more section-y.</p>
-          <p>Oh… I also purchased my domain! 🙌🏼. I had been hesitant to make the commitment of which domain to buy for a while (which is silly because I commit for a year when I sign my apartment contract annually), but I finally took the plunge and purchased my domain: <code>emmasax4.info</code>. Technically, I could’ve swapped out <code>.info</code> for <code>.com</code>, or <code>emmasax4</code> for just plain <code>emmasax</code>. But after a week of pondering what I wanted to choose, I realized that <code>4</code> is kind of my thing. My email has a 4. My Twitter has a 4. My GitHub has a 4. And of course, I did that all intentionally when I made those usernames (actually the email thing was just because <code>emma.sax@domain.com</code> was already taken, and the rest came <em>after</em> the email). So I figured that I might as well be intentional about my 4’s and just make it happen with that! So in one night, I went through the work of setting up my DNS, hooking it all up into GitHub, and by the time I went to bed, I had my own websites hosted on GitHub Pages with custom domains and SSL.</p>
-          <p>Throughout my website “spike,” I’d like to say that I learned a lot more about Jekyll. I learned more about how the Jekyll themes use CSS, I learned that a Jekyll theme is really just a bunch of CSS, and Jekyll itself is really just about the data structures and config files. I learned more about how the permalinks work. And I learned that Jekyll isn’t really that magic 🎉… I could make my own Jekyll site by adding one file at a time, instead of selecting a specific theme in GitHub’s Settings page. I learned more about DNS, and about hosting websites on custom domains. After all of this, I feel like I’m finally ready to take on the website world!</p>
-          <p>For more blog posts about setting up this website on Jekyll, keep an eye on my other <a href="/blog/jekyll/"><em>Jekyll</em> tagged blog posts</a>!</p>
-          <hr>
-          <p>EDIT: Since writing this blog post, I’ve switched the primary domain for my website from <code>emmasax4.info</code> to <code>emmasax.com</code>. Read more on how I set up redirects for this in <a href="/blog/posts/301-redirects-with-static-sites/">my blog post <em>301 Redirects with Static Sites</em></a>.</p>
-          <div class="text-center margin-bottom-1">
-            <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
-              Load Comments
-            </button>
-            <script id="comments" data-name="emmasax4" src="/assets/js/show_comments.js"></script>
+            </h1>
           </div>
-          <div id="disqus_thread"></div>
-          <noscript>
-            Please enable JavaScript to view the
-            <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-              comments powered by Disqus.
-            </a>
-          </noscript>
+
+          
+          <div class="page-body"><p>Last week, for the first time in a couple of months, I felt the need to do more with my Jekyll website(s). GitHub Pages provides an opportunity to host as many sites as I wish, as long as their repository code is public and I&rsquo;m okay with the resulting site being public. I wasn&rsquo;t really okay with that situation, so instead, I opted to look at GitHub Pro. GitHub Pro offered to host my GitHub Pages site on repositories that were private, which was basically exactly what I wanted. I know that GitLab Pages could provide me with that same setup for free, but my whole world is on GitHub, and I didn&rsquo;t quite feel the need to switch that up yet.</p>
+<p>When it comes to having a private website though, neither GitHub Pages nor GitLab Pages (free) offers that. So, I went to the handy-dandy Google for how to protect a GitHub Pages site. I ended up finding <a href="https://github.com/scottishstoater/protected-github-pages">@scottishstoater&rsquo; repo <em>protected-github-pages</em></a>.</p>
+<p>As I started working on two new GitHub Pages sites I started to play around with the different Jekyll themes. It turns out that my original site (this one) was made so long ago that a decent amount about the themes have changed since then. Now, <a href="https://github.com/pages-themes">@pages-themes</a> manages most of the GitHub Pages themes (instead of the individual creators of the themes). They also do this thing where you can <code>@import {{ site.theme }};</code> into the CSS files, assuming that the theme is set in the <code>_config.yml</code>. What this means is that new users of the themes don&rsquo;t need to copy-paste all of the CSS files if they just want <em>exactly</em> the CSS settings of the original themes. This means that it&rsquo;s very possible that getting your GitHub Pages site up and running is fast&hellip; like super fast&hellip; like within-a-day-fast. In fact, both of my new GitHub Pages sites were running and live within a day.</p>
+<p>What this also means is that, since none of the CSS is actually <em>in your repository</em>, when you want to make changes to the CSS (say edit the size of a button, change the font, etc), you need to go to the CSS source on GitHub, search in the entire repository for the piece that you need, and then copy-paste that entire element back to your repo and make the changes. To find exactly which piece of CSS required to make a change, I had to play a lot with using Chrome&rsquo;s Inspect option on my local site. Chrome&rsquo;s Inspect feature allowed me to find the exact value that I&rsquo;d need to edit so I copy-pasted the proper CSS element into my local repository 😕. I&rsquo;m sure that changing the themes&rsquo; CSS pattern had good intentions, but I actually found it quite annoying. Perhaps the <em>most</em> annoying part of this is that when running Jekyll locally, I got a petty warning about the <code>_includes/</code> directory not found in the source layout. Since I use the <code>_includes/</code> directory in every project, this was particularly irritating.</p>
+<p>So instead, I went through each GitHub Pages repository I was using and copy-pasted <em>all</em> of the CSS code into my own directory, and then removed the setting of <code>theme</code> in the <code>_config.yml</code>. Now there&rsquo;s a ton of CSS lines in my repos, but I don&rsquo;t really mind, especially if all of the CSS can now be in one condensed file and repository, instead of calling a bunch of other files/repos.</p>
+<p>I also took the weekend to standardize all of the code that sources my sites, so the directory and file layout of them all match. I even made another site that has nice buttons that links to each of my sites and their respective code. I also made that repo private and put in password protection. There&rsquo;s links to my other private site there, so I don&rsquo;t want people to figure out a way into the originally private site. So putting an extra password in for the new list of sites (that the world can&rsquo;t get to) is beneficial for me. (I should clarify that hackers could probably get in&hellip; I didn&rsquo;t put in top-notch security; even the example repos I used say that, but it&rsquo;s secure-enough 🤫).</p>
+<p>The last thing I did this weekend was redo this site. I wanted to make the &ldquo;About Me&rdquo; and &ldquo;Interests &amp; Hobbies&rdquo; page more user-friendly. I wanted to rethink who my audience of this site is&hellip; besides me and my mom. I realized that I wanted it to be easier for prospective employers to see information about me. So reading about my favorite books and TV shows, while debatably interesting, maybe isn&rsquo;t the best content for my &ldquo;About Me&rdquo; page. Instead, that should be my resumé page. And then my &ldquo;Interests &amp; Hobbies&rdquo; page should look less bulletpoint-y and more section-y.</p>
+<p>Oh&hellip; I also purchased my domain! 🙌🏼. I had been hesitant to make the commitment of which domain to buy for a while (which is silly because I commit for a year when I sign my apartment contract annually), but I finally took the plunge and purchased my domain: <code>emmasax4.info</code>. Technically, I could&rsquo;ve swapped out <code>.info</code> for <code>.com</code>, or <code>emmasax4</code> for just plain <code>emmasax</code>. But after a week of pondering what I wanted to choose, I realized that <code>4</code> is kind of my thing. My email has a 4. My Twitter has a 4. My GitHub has a 4. And of course, I did that all intentionally when I made those usernames (actually the email thing was just because <code>emma.sax@domain.com</code> was already taken, and the rest came <em>after</em> the email). So I figured that I might as well be intentional about my 4&rsquo;s and just make it happen with that! So in one night, I went through the work of setting up my DNS, hooking it all up into GitHub, and by the time I went to bed, I had my own websites hosted on GitHub Pages with custom domains and SSL.</p>
+<p>Throughout my website &ldquo;spike,&rdquo; I&rsquo;d like to say that I learned a lot more about Jekyll. I learned more about how the Jekyll themes use CSS, I learned that a Jekyll theme is really just a bunch of CSS, and Jekyll itself is really just about the data structures and config files. I learned more about how the permalinks work. And I learned that Jekyll isn&rsquo;t really that magic 🎉&hellip; I could make my own Jekyll site by adding one file at a time, instead of selecting a specific theme in GitHub&rsquo;s Settings page. I learned more about DNS, and about hosting websites on custom domains. After all of this, I feel like I&rsquo;m finally ready to take on the website world!</p>
+<p>For more blog posts about setting up this website on Jekyll, keep an eye on my other <a href="/blog/jekyll/"><em>Jekyll</em> tagged blog posts</a>!</p>
+<hr>
+<p>EDIT: Since writing this blog post, I&rsquo;ve switched the primary domain for my website from <code>emmasax4.info</code> to <code>https://emmasax.com/</code>. Read more on how I set up redirects for this in <a href="/blog/posts/301-redirects-with-static-sites/">my blog post <em>301 Redirects with Static Sites</em></a>.</p>
+
+              <div class="text-center margin-bottom-1">
+                <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
+                  Load Comments
+                </button>
+
+                <script id="comments" data-name="emmasax4" src="/js/show_comments.js"></script>
+              </div>
+
+              <div id="disqus_thread"></div>
+
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                  comments powered by Disqus.
+                </a>
+              </noscript>
+          </div>
+        </div>
+
+        <div class="col col-12 col-md-2">
+          
+          <div class="text-center">
+            <div class="padding-bottom-1">
+  <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
+</div>
+
+            <a href="/feed.xml" target="_blank" class="link-icon-rss">
+  <img class="icon-hover-dark-mode" src="/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
+  <img class="icon-hover-light-mode" src="/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
+  <img class="icon-static-dark-mode" src="/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
+  <img class="icon-static-light-mode" src="/images/icons/rss-static-light-mode.svg" alt="RSS icon">
+</a>
+
+
+          </div>
         </div>
       </div>
-      <div class="col col-12 col-md-2 text-center">
-        <!-- Sidebar button to go back to all posts and RSS feed button -->
-        <div class="text-center">
-          <div class="padding-bottom-1">
-            <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
-          </div>
-          <a href="/feed.xml" target="_blank" class="link-icon-rss">
-            <img class="icon-hover-dark-mode" src="/assets/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
-            <img class="icon-hover-light-mode" src="/assets/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
-            <img class="icon-static-dark-mode" src="/assets/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
-            <img class="icon-static-light-mode" src="/assets/images/icons/rss-static-light-mode.svg" alt="RSS icon">
-          </a>
-        </div>
-      </div>
-    </div>
-  </main>
-</body>
-<!-- Footer -->
-<footer>
-  &copy; <script src="/assets/js/get_full_year.js"></script>
+    </main>
+  </body>
+
+  <footer>
+  &copy; <span id="year"></span>
   Emma Sax. All rights reserved.
 </footer>
-<!-- Javascript scripts -->
 <script
-    child-selector=".photoswipe"
-    class="photoswipe-activation"
-    gallery-selector=".photoswipe-gallery"
-    src="/assets/js/activate_photoswipe.js"
-    type="module"
-  ></script>
-<script src="/assets/js/bootstrap.min.js"></script>
-<script src="/assets/js/external_links.js"></script>
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/lightbox.min.js"></script>
-<script src="/assets/js/show_dates.js"></script>
+  child-selector=".photoswipe"
+  class="photoswipe-activation"
+  gallery-selector=".photoswipe-gallery"
+  src="/js/activate_photoswipe.js"
+  type="module"
+></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/external_links.js"></script>
+<script src="/js/full_year.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/lightbox.min.js"></script>
 </html>

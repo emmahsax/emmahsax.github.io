@@ -1,249 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
-  <!-- Head -->
+<html lang="en-us">
   <head>
-    <link rel="alternate" href="/feed.xml" type="application/rss+xml">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#001aaf">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/google_fonts.min.css">
-    <link rel="stylesheet" href="/assets/css/lightbox.min.css">
-    <link rel="stylesheet" href="/assets/css/photoswipe.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css"> <!-- This needs to be the last CSS line -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
-    <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
-    <meta name="msapplication-TileColor" content="#001aaf">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Begin Jekyll SEO tag v2.8.0e -->
-    <title>Using jekyll-paginate-v2 | Emma Sax</title>
-    <meta name="generator" content="Jekyll v4.4.1" />
-    <meta property="og:title" content="Using jekyll-paginate-v2 | Emma Sax" />
-    <meta name="author" content="Emma Sax" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="description" content="How I implemented jekyll-paginate-v2 with a Jekyll site, including the use of a CI provider to build the site." />
-    <meta property="og:description" content="How I implemented jekyll-paginate-v2 with a Jekyll site, including the use of a CI provider to build the site." />
-    <meta property="twitter:description" content="How I implemented jekyll-paginate-v2 with a Jekyll site, including the use of a CI provider to build the site." />
-    <link rel="canonical" href="https://emmasax.com/blog/posts/using-jekyll-paginate-v2/" />
-    <meta property="og:url" content="https://emmasax.com/blog/posts/using-jekyll-paginate-v2/" />
-    <meta property="og:site_name" content="Emma Sax" />
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2019-12-18T06:00:00+00:00" />
-    <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Using jekyll-paginate-v2" />
-    <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
-    <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
-    <meta name="yandex-verification" content="32fe10ad6352714a" />
+  <link rel="alternate" href="/feed.xml" type="application/rss+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#001aaf">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/google_fonts.min.css">
+  <link rel="stylesheet" href="/css/lightbox.min.css">
+  <link rel="stylesheet" href="/css/photoswipe.min.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#001aaf">
+
+  
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Using jekyll-paginate-v2 | Emma Sax</title>
+
+  <meta name="author" content="Emma Sax">
+  <meta property="og:description" content="How I implemented jekyll-paginate-v2 with a Jekyll site, including the use of a CI provider to build the site.">
+  <meta property="og:locale" content="en-us" />
+  <meta property="og:site_name" content="Emma Sax" />
+  <meta property="og:title" content="Using jekyll-paginate-v2" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://emmasax.com/blog/posts/using-jekyll-paginate-v2/" />
+
+  <link rel="canonical" href="https://emmasax.com/blog/posts/using-jekyll-paginate-v2/" />
+    <meta property="article:published_time" content="2019-12-18T00:00:00-06:00" />
+
+  <meta property="twitter:description" content="How I implemented jekyll-paginate-v2 with a Jekyll site, including the use of a CI provider to build the site." />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Using jekyll-paginate-v2" />
+
+  <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
+  <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
+  <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2024-11-24T03:15:54+00:00","datePublished":"2019-12-18T06:00:00+00:00","description":"How I implemented jekyll-paginate-v2 with a Jekyll site, including the use of a CI provider to build the site.","headline":"Using jekyll-paginate-v2","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/using-jekyll-paginate-v2/"},"url":"https://emmasax.com/blog/posts/using-jekyll-paginate-v2/"}
-    </script>
-    <!-- End Jekyll SEO tag -->
-  </head>
-  <!-- Navigation bar -->
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
-      <div class="container-fluid">
-        <!-- Left hand side of navbar -->
-        <a class="navbar-brand mb-0" href="/" target="_self">
-          <img src="/assets/images/logo-plain-white-400.png" width="30" height="30"
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-04-02T12:59:01+00:00","datePublished":"2019-12-18T00:00:00-06:00","description":"How I implemented jekyll-paginate-v2 with a Jekyll site, including the use of a CI provider to build the site.","headline":"Using \u003cheader-code\u003ejekyll-paginate-v2\u003c/header-code\u003e","keywords":["jekyll","tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/using-jekyll-paginate-v2/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/using-jekyll-paginate-v2/"}
+</script>
+
+</head>
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand mb-0" href="/" target="_self">
+        <img src="/images/logo-plain-white-400.png" width="30" height="30"
           class="d-inline-block align-top nav-icon" alt="E logo"
         >&nbsp;&nbsp;Emma Sax
-        </a>
-        <!-- Navbar open/close button when on a smaller screen -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbar-links" aria-controls="navbar-links"
         aria-expanded="false" aria-label="Toggle navigation"
       >
-          <img class="nav-icon-menu" src="/assets/images/icons/menu.svg" alt="Menu icon">
-          <img class="nav-icon-x" src="/assets/images/icons/x.svg" alt="X icon">
-        </button>
-        <!-- Page links -->
-        <div class="collapse navbar-collapse" id="navbar-links">
-          <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+        <img class="nav-icon-menu" src="/images/icons/menu.svg" alt="Menu icon">
+        <img class="nav-icon-x" src="/images/icons/x.svg" alt="X icon">
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbar-links">
+        <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+          <li class="nav-item ">
+                <a class="nav-link" href="/about-me/">About Me</a>
+              </li>
             <li class="nav-item ">
-              <a class="nav-link" href="/about-me/">About Me</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-            </li>
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
+              </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/blog/">Blog</a>
-            </li>
-          </ul>
-        </div>
+                <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            </ul>
       </div>
-    </nav>
-  </header>
-  <!-- Page content -->
-  <body>
+    </div>
+  </nav>
+</header>
+<body>
     <main class="container">
       <div class="row">
         <div class="col col-12 col-md-10">
-          <!-- Blog post title and information -->
+          
           <div class="text-center">
             <h1 class="post-title">
               Using <header-code>jekyll-paginate-v2</header-code>
+
               <div class="row post-data">
                 <div class="col col-12 col-md-4">
-                  <span class="post-meta">
-                    <picture>
-                      <source media="(prefers-color-scheme: dark)" srcset="/assets/images/icons/tag-dark-mode.svg">
-                      <img class="post-categorization-icon" src="/assets/images/icons/tag-light-mode.svg" alt="Tag icon">
-                    </source></picture>
-                  <a href="/blog/jekyll/">jekyll</a>
-                  |
-                  <a href="/blog/tech/">tech</a>
-                </span>
-              </div>
-              <div class="col col-12 col-md-4">
-                <span class="date-meta-invisible">2019-12-18 00:00:00 -0600</span>
-              </div>
-              <div class="col col-12 col-md-4">
-                <span class="post-meta">Read time: 11 minutes</span>
-              </div>
-            </div>
-          </h1>
-        </div>
-        <!-- Blog post content and comments -->
-        <div class="page-body">
-          <p>A couple of weeks ago, I started the endeavor of adding Bootstrap to this website. You can read more about how this repository uses Bootstrap, and how to add Bootstrap to a static content site in <a href="/blog/posts/adding-bootstrap-to-your-static-content-site/">my blog post <em>Adding Bootstrap to Your Static Site</em></a>.</p>
-          <p>But, soon after I started getting an upgrade in my CSS game, I realized that my pagination bar on my blog site was sorely outdated 😢. At one point, I had the nerve to call this pagination bar beautiful:</p>
-          <div class="text-center photoswipe-gallery">
-            <a class="photoswipe photo" href="https://i.imgur.com/H5uxeKf.png" target="_blank" data-pswp-width="500" data-pswp-height="345">
-              <img class="image" src="https://i.imgur.com/H5uxeKf.png" width="400" alt="Pagination bar that’s now not quite as lovely">
-              <div class="invisible caption">Pagination bar that’s now not quite as lovely</div>
-            </a>
-          </div>
-          <p>But since completely revamping the whole looks of the site, this pagination bar was no longer acceptable. It was old fashioned, wouldn’t remember the page you were on if you navigated forward and back in your browser, and didn’t have pretty buttons. It was time for me to look into alternate pagination options.</p>
-          <p>I build and serve this site with GitHub Pages. GitHub Pages’ built-in pagination suggestion is <code>jekyll-paginate</code>. But, it very clearly states that <code>jekyll-paginate</code> is no longer supported. The recommended newer version of Jekyll pagination is <a href="https://github.com/sverrirs/jekyll-paginate-v2"><code>jekyll-paginate-v2</code></a>.</p>
-          <p>I had considered <code>jekyll-paginate-v2</code> before, and I briefly mentioned it in <a href="/blog/posts/adding-pagination-without-jekyll/">another blog post of mine</a>. At that time, I didn’t want to make the necessary changes to my directory structure, and I’d have to be willing to either add a trailing <code>/</code> to the end of my URLs, or I’d have to be okay with some of my pages having that trailing <code>/</code>, and some not to, which I wasn’t okay with.</p>
-          <p>From a technical standpoint, it doesn’t really matter to the browser whether you write a <code>/</code> on the end of your URL or not; they resolve to the same host. There’s more detailed reasons why or why to have a trailing <code>/</code> on a URL, but the gist is that the <code>/</code> delineates a directory, which then would have files in it: <code>https://example.com/directory/</code> and then <code>https://example.com/directory/file.html</code> 🤷🏻‍♀️.</p>
-          <p>In fact, my reading said that although having URLs without <code>/</code> is the newer, more popular thing, traditionalists would actually pretty much only have <em>either</em> the trailing <code>/</code> <em>or</em> the extension (the <code>.html</code> in the above example) in the URL. So if I’m to follow these guidelines, then I probably should add the trailing <code>/</code> to the end of all of my URLs except the home page.</p>
-          <p>I could continue doing research, trying to decide what other pagination options to explore. But I figured that if I wanted to get anything easy done reasonably soon, I’d have to just be okay with compromising on the trailing <code>/</code>.</p>
-          <p>So after admitting that I’d need to accept the trailing <code>/</code>, I proceeded to set up <code>jekyll-paginate-v2</code> on my repository. How hard could it be? 😆</p>
-          <p>I started by following the installation instructions. But, as you’ll understand later, I got only got through the second line in that section; I never finished reading that doc.</p>
-          <p>Instead, I jumped right into the work, copy-pasting the basics of the needed configuration into my config file, before realizing that although there’s lots of documentation in this repo, they never quite clarify that your main <code>Blog</code> page needs to be in a <code>./blog/index.html</code> file. Furthermore, they never actually say that your blog posts need to be in a <code>_posts/</code> directory. Luckily, I poked around the examples enough to figure that out.</p>
-          <p>Thanks to <a href="https://gist.github.com/alialo/2255511">this gist from @alialo on pagination</a>, I was able to get the basic code of a simple pagination bar going right away. In fact, getting the main <code>Blog</code> page paginating wasn’t too hard at all!</p>
-          <p>But, I also wanted to make sure that I could paginate my sub-pages—basically filtering my posts based on tag names and collection names. On my site, an example of a tag name is <code>tech</code> and an example of a collection name is <code>Welcome to Kenya</code>. The distinction between the two is that a blog post can have multiple tag names, and they should be one word long. But a blog post can only be a part of one collection, and the name can be multiple words with capitalization.</p>
-          <p>Filtering posts proved to be a little bit more complicated than just paginating <em>all</em> of the posts. The documentation for <code>jekyll-paginate-v2</code> describes filtering based on what they call “tags” and “categories.” So I started with a single tag, because I wasn’t quite sure yet how to deal with the collections. After I added the first bit of code to the tag’s filter, I realized that the documentation never properly mentioned in what <em>directory</em> I should put my filter’s file. I tried at least four different places I should put it. It wasn’t until my last idea when I realized that it had to be placed in the same <code>blog/</code> directory as the <code>index.html</code>. But, as soon as I moved my tag file into the directory, so it looked like <code>blog/tag.html</code>, then it worked miraculously.</p>
-          <p>It was then easy to move all of the tags to have the same pattern. Moving to the “collection,” I had more issues, mainly with 1) figuring out the best way to paginate the filtered pages, and 2) <code>jekyll-paginate-v2</code> couldn’t be formatted to work with filtering a <code>collection</code> (only <code>tags</code>, <code>categories</code>, and <code>locales</code>, which is languages). So, I had to write my code as if my <code>collection</code> was a <code>category</code> instead. This meant changing several variable names, and in general renaming files and calls to have the word “category” instead of “collection.” In fact, by the end of the night, I had changed almost every reference to a “collection” in the whole codebase 😝.</p>
-          <p>Despite all of this work, now every single tag and category filters blog posts properly. The last secret to getting pagination working on those pages is that I needed to save the URL of the filtered page: aka <code>/blog/welcome-to-kenya</code> or <code>/blog/tech</code>. And this way, we could append the page count number to the end of that: <code>/blog/welcome-to-kenya/4/</code> or <code>/blog/tech/2/</code>.</p>
-          <p>After all of that work, I now have a pagination bar that makes me proud of this website. Just add in a few more pretty icons, and I’m satisfied 😁.</p>
-          <div class="text-center photoswipe-gallery">
-            <a class="photoswipe photo" href="https://i.imgur.com/SGAuABC.png" target="_blank" data-pswp-width="994" data-pswp-height="604">
-              <img class="image" src="https://i.imgur.com/SGAuABC.png" width="400" alt="Pagination bar that can grow with my site">
-              <div class="invisible caption">Pagination bar that can grow with my site</div>
-            </a>
-          </div>
-          <hr>
-          <p>Haha! You thought the story was over, didn’t you? Well… as soon as I merged in my pull request to add the new pagination, I realized something. That paragraph of the installation instructions that I <em>didn’t</em> finish? Well, the ending part of it warned that <code>jekyll-paginate-v2</code> is <em>not</em> supported by GitHub Pages. This means that when somebody runs the code locally on their computer, they can use <code>jekyll-paginate-v2</code> to their hearts’ content, and the site will load properly. But GitHub’s servers (which normally build the site for me), will not properly execute <code>jekyll-paginate-v2</code>, and there’s no way to compile the pagination code properly without that.</p>
-          <p>If I had just <em>finished</em> that section, I could’ve saved me a whole 30 minutes where the site wasn’t broken, and potentially even saved myself a little headache. But at this point, I’ve come too far to turn back around and go back to my old-fashioned pagination. So, Google came to the rescue.</p>
-          <p>It turns out (surprise surprise) I’m not the first person to run into this issue. There’s a <a href="https://github.com/sverrirs/jekyll-paginate-v2/issues/9">whole discussion</a> that’s going on about this topic, and trying to integrate <code>jekyll-paginate-v2</code> with GitHub Pages eventually, but it hasn’t made any progress lately. But, I did get some ideas from the discussion. Here are my options of how to proceed:</p>
-          <ol>
-            <li>After I finish making any changes to my site, I can commit my new source code to GitHub, bundle the project on my own computer, and then upload the bundled site to a <em>separate</em> branch in GitHub and have GitHub Pages deploy only <em>that</em> branch.</li>
-            <li>I can switch to use the GitHub Pages supported <code>jekyll-paginate</code> and let GitHub Pages properly paginate my blog posts.</li>
-          </ol>
-          <p>I started with the second approach. But after some more research, I learned that <code>jekyll-paginate</code> doesn’t allow for the filtering of tags and collections, which my site was heavily relying on. Therefore, to use <code>jekyll-paginate</code> would involve completely redoing my site, and several more hours’ work.</p>
-          <p>Now, I’m not a fan of needing my site to have to be built on a person’s computer to work properly. It’s never a good idea to have a website’s deployment rely on a person’s physical computer (which could break, have compilation issues, or generally just not be available). But I figured that other people had run into this issue with <code>jekyll-paginate-v2</code> and GitHub Pages, and I’m sure somebody wrote a blog post about it (similarly to like I’m doing now). So I looked up different ways to combat this issue.</p>
-          <p>What I found online suggests to go with the first approach, but don’t bundle the project on <em>your</em> machine… use a continuous deployment tool. And here comes Travis CI.</p>
-          <p>From Travis CI’s documentation,</p>
-          <blockquote>
-            <p>Continuous Integration is the practice of merging in small code changes frequently - rather than merging in a large change at the end of a development cycle. The goal is to build healthier software by developing and testing in smaller increments. This is where Travis CI comes in.</p>
-            <p>As a continuous integration platform, Travis CI supports your development process by automatically building and testing code changes, providing immediate feedback on the success of the change. Travis CI can also automate other parts of your development process by managing deployments and notifications.</p>
-          </blockquote>
-          <p>The ending part of that statement is important:</p>
-          <blockquote>
-            <p>Travis CI can… [manage] deployments and notifications.</p>
-          </blockquote>
-          <p>So, we could (in theory) make a change to the source code in GitHub, and then have Travis CI build my website and “deploy” it to GitHub Pages. And, it turns out my site was already using Travis CI to test the Jekyll build process on every commit to the <code>pages</code> branch. So, I only had to add a few lines to have Travis CI <em>also</em> deploy my changes:</p>
-          <div class="language-yml highlighter-rouge">
-            <div class="highlight">
-              <pre class="highlight"><code data-lang="yml"><span class="na">script</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">JEKYLL_ENV=production bundle exec jekyll build --destination ./site</span>
+                  
 
-<span class="na">deploy</span><span class="pi">:</span>
-  <span class="na">provider</span><span class="pi">:</span> <span class="s">pages</span>
-  <span class="na">local-dir</span><span class="pi">:</span> <span class="s">./site</span>
-  <span class="na">target-branch</span><span class="pi">:</span> <span class="s">pages</span>
-  <span class="na">email</span><span class="pi">:</span> <span class="s">deploy@travis-ci.org</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">Deployment Bot</span>
-</code></pre>
-            </div>
+                  <span class="post-meta">
+                      <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="/images/icons/tag-dark-mode.svg">
+                        <img class="post-categorization-icon" src="/images/icons/tag-light-mode.svg" alt="Tag icon">
+                      </picture><a href="/blog/jekyll/">jekyll</a> | <a href="/blog/tech/">tech</a></span>
+                </div>
+
+                <div class="col col-12 col-md-4">
+                  <span class="date-meta">December 18, 2019</span></div>
+
+                <div class="col col-12 col-md-4"><span class="post-meta">Read time: 11 minutes</span>
+                </div>
+              </div>
+            </h1>
           </div>
-          <p>The <code>script</code> section asks Travis CI to build the site to the <code>site</code> destination directory. The <code>deploy</code> section tells Travis CI to run a deploy to the GitHub Pages provider with the <code>./site</code> directory, on the target branch <code>pages</code>, and which GitHub user to use (in this case, <code>Deployment Bot</code> with the email <code>deploy@travis-ci.org</code>). There are a few other little pieces to get it working properly, but you can check out my completed <a href="https://gist.github.com/emmahsax/bcc31a42ba66bd2b2a0de7e3b6c9159d"><code>.travis.yml</code> file</a> if you want to see more. I did need to make a new branch in GitHub—the <code>main</code> branch. The idea here is that the <code>main</code> branch is used for me to store my source code for this site, and the <code>pages</code> branch is for GitHub Pages to deploy. Only the fully compiled and bundled site lives on the <code>pages</code> branch.</p>
-          <p>It’s a little complicated, but, one deploy from Travis CI later, and the site was up and running again. <em>AND</em> I had the pagination option of my choosing that had all of the functionality I could ever want.</p>
-          <div class="text-center photoswipe-gallery">
-            <a class="photoswipe photo" href="https://media.giphy.com/media/4xpB3eE00FfBm/giphy.gif" target="_blank" data-pswp-width="480" data-pswp-height="458">
-              <img class="image" src="https://media.giphy.com/media/4xpB3eE00FfBm/giphy.gif" width="400" alt="Success baby gif via Giphy">
-              <div class="invisible caption">Success baby gif via Giphy</div>
-            </a>
+
+          
+          <div class="page-body"><p>A couple of weeks ago, I started the endeavor of adding Bootstrap to this website. You can read more about how this repository uses Bootstrap, and how to add Bootstrap to a static content site in <a href="/blog/posts/adding-bootstrap-to-your-static-content-site/">my blog post <em>Adding Bootstrap to Your Static Site</em></a>.</p>
+<p>But, soon after I started getting an upgrade in my CSS game, I realized that my pagination bar on my blog site was sorely outdated 😢. At one point, I had the nerve to call this pagination bar beautiful:</p>
+<div class="text-center photoswipe-gallery">
+  <a class="photoswipe photo" href="https://i.imgur.com/H5uxeKf.png" target="_blank"
+      data-pswp-width="500" data-pswp-height="345"><img class="image" src="https://i.imgur.com/H5uxeKf.png" width="400"  alt="Pagination bar that’s now not quite as lovely"><div class="invisible caption">Pagination bar that’s now not quite as lovely</div></a>
+</div>
+<p>But since completely revamping the whole looks of the site, this pagination bar was no longer acceptable. It was old fashioned, wouldn&rsquo;t remember the page you were on if you navigated forward and back in your browser, and didn&rsquo;t have pretty buttons. It was time for me to look into alternate pagination options.</p>
+<p>I build and serve this site with GitHub Pages. GitHub Pages&rsquo; built-in pagination suggestion is <code>jekyll-paginate</code>. But, it very clearly states that <code>jekyll-paginate</code> is no longer supported. The recommended newer version of Jekyll pagination is <a href="https://github.com/sverrirs/jekyll-paginate-v2"><code>jekyll-paginate-v2</code></a>.</p>
+<p>I had considered <code>jekyll-paginate-v2</code> before, and I briefly mentioned it in <a href="/blog/posts/adding-pagination-without-jekyll/">another blog post of mine</a>. At that time, I didn&rsquo;t want to make the necessary changes to my directory structure, and I&rsquo;d have to be willing to either add a trailing <code>/</code> to the end of my URLs, or I&rsquo;d have to be okay with some of my pages having that trailing <code>/</code>, and some not to, which I wasn&rsquo;t okay with.</p>
+<p>From a technical standpoint, it doesn&rsquo;t really matter to the browser whether you write a <code>/</code> on the end of your URL or not; they resolve to the same host. There&rsquo;s more detailed reasons why or why to have a trailing <code>/</code> on a URL, but the gist is that the <code>/</code> delineates a directory, which then would have files in it: <code>https://example.com/directory/</code> and then <code>https://example.com/directory/file.html</code> 🤷🏻‍♀️.</p>
+<p>In fact, my reading said that although having URLs without <code>/</code> is the newer, more popular thing, traditionalists would actually pretty much only have <em>either</em> the trailing <code>/</code> <em>or</em> the extension (the <code>.html</code> in the above example) in the URL. So if I&rsquo;m to follow these guidelines, then I probably should add the trailing <code>/</code> to the end of all of my URLs except the home page.</p>
+<p>I could continue doing research, trying to decide what other pagination options to explore. But I figured that if I wanted to get anything easy done reasonably soon, I&rsquo;d have to just be okay with compromising on the trailing <code>/</code>.</p>
+<p>So after admitting that I&rsquo;d need to accept the trailing <code>/</code>, I proceeded to set up <code>jekyll-paginate-v2</code> on my repository. How hard could it be? 😆</p>
+<p>I started by following the installation instructions. But, as you&rsquo;ll understand later, I got only got through the second line in that section; I never finished reading that doc.</p>
+<p>Instead, I jumped right into the work, copy-pasting the basics of the needed configuration into my config file, before realizing that although there&rsquo;s lots of documentation in this repo, they never quite clarify that your main <code>Blog</code> page needs to be in a <code>./blog/index.html</code> file. Furthermore, they never actually say that your blog posts need to be in a <code>_posts/</code> directory. Luckily, I poked around the examples enough to figure that out.</p>
+<p>Thanks to <a href="https://gist.github.com/alialo/2255511">this gist from @alialo on pagination</a>, I was able to get the basic code of a simple pagination bar going right away. In fact, getting the main <code>Blog</code> page paginating wasn&rsquo;t too hard at all!</p>
+<p>But, I also wanted to make sure that I could paginate my sub-pages—basically filtering my posts based on tag names and collection names. On my site, an example of a tag name is <code>tech</code> and an example of a collection name is <code>Welcome to Kenya</code>. The distinction between the two is that a blog post can have multiple tag names, and they should be one word long. But a blog post can only be a part of one collection, and the name can be multiple words with capitalization.</p>
+<p>Filtering posts proved to be a little bit more complicated than just paginating <em>all</em> of the posts. The documentation for <code>jekyll-paginate-v2</code> describes filtering based on what they call &ldquo;tags&rdquo; and &ldquo;categories.&rdquo; So I started with a single tag, because I wasn&rsquo;t quite sure yet how to deal with the collections. After I added the first bit of code to the tag&rsquo;s filter, I realized that the documentation never properly mentioned in what <em>directory</em> I should put my filter&rsquo;s file. I tried at least four different places I should put it. It wasn&rsquo;t until my last idea when I realized that it had to be placed in the same <code>blog/</code> directory as the <code>index.html</code>. But, as soon as I moved my tag file into the directory, so it looked like <code>blog/tag.html</code>, then it worked miraculously.</p>
+<p>It was then easy to move all of the tags to have the same pattern. Moving to the &ldquo;collection,&rdquo; I had more issues, mainly with 1) figuring out the best way to paginate the filtered pages, and 2) <code>jekyll-paginate-v2</code> couldn&rsquo;t be formatted to work with filtering a <code>collection</code> (only <code>tags</code>, <code>categories</code>, and <code>locales</code>, which is languages). So, I had to write my code as if my <code>collection</code> was a <code>category</code> instead. This meant changing several variable names, and in general renaming files and calls to have the word &ldquo;category&rdquo; instead of &ldquo;collection.&rdquo; In fact, by the end of the night, I had changed almost every reference to a &ldquo;collection&rdquo; in the whole codebase 😝.</p>
+<p>Despite all of this work, now every single tag and category filters blog posts properly. The last secret to getting pagination working on those pages is that I needed to save the URL of the filtered page: aka <code>/blog/welcome-to-kenya</code> or <code>/blog/tech</code>. And this way, we could append the page count number to the end of that: <code>/blog/welcome-to-kenya/4/</code> or <code>/blog/tech/2/</code>.</p>
+<p>After all of that work, I now have a pagination bar that makes me proud of this website. Just add in a few more pretty icons, and I&rsquo;m satisfied 😁.</p>
+<div class="text-center photoswipe-gallery">
+  <a class="photoswipe photo" href="https://i.imgur.com/SGAuABC.png" target="_blank"
+      data-pswp-width="994" data-pswp-height="604"><img class="image" src="https://i.imgur.com/SGAuABC.png" width="400"  alt="Pagination bar that can grow with my site"><div class="invisible caption">Pagination bar that can grow with my site</div></a>
+</div>
+<hr>
+<p>Haha! You thought the story was over, didn&rsquo;t you? Well&hellip; as soon as I merged in my pull request to add the new pagination, I realized something. That paragraph of the installation instructions that I <em>didn&rsquo;t</em> finish? Well, the ending part of it warned that <code>jekyll-paginate-v2</code> is <em>not</em> supported by GitHub Pages. This means that when somebody runs the code locally on their computer, they can use <code>jekyll-paginate-v2</code> to their hearts&rsquo; content, and the site will load properly. But GitHub&rsquo;s servers (which normally build the site for me), will not properly execute <code>jekyll-paginate-v2</code>, and there&rsquo;s no way to compile the pagination code properly without that.</p>
+<p>If I had just <em>finished</em> that section, I could&rsquo;ve saved me a whole 30 minutes where the site wasn&rsquo;t broken, and potentially even saved myself a little headache. But at this point, I&rsquo;ve come too far to turn back around and go back to my old-fashioned pagination. So, Google came to the rescue.</p>
+<p>It turns out (surprise surprise) I&rsquo;m not the first person to run into this issue. There&rsquo;s a <a href="https://github.com/sverrirs/jekyll-paginate-v2/issues/9">whole discussion</a> that&rsquo;s going on about this topic, and trying to integrate <code>jekyll-paginate-v2</code> with GitHub Pages eventually, but it hasn&rsquo;t made any progress lately. But, I did get some ideas from the discussion. Here are my options of how to proceed:</p>
+<ol>
+<li>After I finish making any changes to my site, I can commit my new source code to GitHub, bundle the project on my own computer, and then upload the bundled site to a <em>separate</em> branch in GitHub and have GitHub Pages deploy only <em>that</em> branch.</li>
+<li>I can switch to use the GitHub Pages supported <code>jekyll-paginate</code> and let GitHub Pages properly paginate my blog posts.</li>
+</ol>
+<p>I started with the second approach. But after some more research, I learned that <code>jekyll-paginate</code> doesn&rsquo;t allow for the filtering of tags and collections, which my site was heavily relying on. Therefore, to use <code>jekyll-paginate</code> would involve completely redoing my site, and several more hours&rsquo; work.</p>
+<p>Now, I&rsquo;m not a fan of needing my site to have to be built on a person&rsquo;s computer to work properly. It&rsquo;s never a good idea to have a website&rsquo;s deployment rely on a person&rsquo;s physical computer (which could break, have compilation issues, or generally just not be available). But I figured that other people had run into this issue with <code>jekyll-paginate-v2</code> and GitHub Pages, and I&rsquo;m sure somebody wrote a blog post about it (similarly to like I&rsquo;m doing now). So I looked up different ways to combat this issue.</p>
+<p>What I found online suggests to go with the first approach, but don&rsquo;t bundle the project on <em>your</em> machine&hellip; use a continuous deployment tool. And here comes Travis CI.</p>
+<p>From Travis CI&rsquo;s documentation,</p>
+<blockquote>
+<p>Continuous Integration is the practice of merging in small code changes frequently - rather than merging in a large change at the end of a development cycle. The goal is to build healthier software by developing and testing in smaller increments. This is where Travis CI comes in.</p>
+<p>As a continuous integration platform, Travis CI supports your development process by automatically building and testing code changes, providing immediate feedback on the success of the change. Travis CI can also automate other parts of your development process by managing deployments and notifications.</p></blockquote>
+<p>The ending part of that statement is important:</p>
+<blockquote>
+<p>Travis CI can&hellip; [manage] deployments and notifications.</p></blockquote>
+<p>So, we could (in theory) make a change to the source code in GitHub, and then have Travis CI build my website and &ldquo;deploy&rdquo; it to GitHub Pages. And, it turns out my site was already using Travis CI to test the Jekyll build process on every commit to the <code>pages</code> branch. So, I only had to add a few lines to have Travis CI <em>also</em> deploy my changes:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">script</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">JEKYLL_ENV=production bundle exec jekyll build --destination ./site</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">pages</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">local-dir</span><span class="p">:</span><span class="w"> </span><span class="l">./site</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">target-branch</span><span class="p">:</span><span class="w"> </span><span class="l">pages</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l">deploy@travis-ci.org</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Deployment Bot</span><span class="w">
+</span></span></span></code></pre></div><p>The <code>script</code> section asks Travis CI to build the site to the <code>site</code> destination directory. The <code>deploy</code> section tells Travis CI to run a deploy to the GitHub Pages provider with the <code>./site</code> directory, on the target branch <code>pages</code>, and which GitHub user to use (in this case, <code>Deployment Bot</code> with the email <code>deploy@travis-ci.org</code>). There are a few other little pieces to get it working properly, but you can check out my completed <a href="https://gist.github.com/emmahsax/bcc31a42ba66bd2b2a0de7e3b6c9159d"><code>.travis.yml</code> file</a> if you want to see more. I did need to make a new branch in GitHub—the <code>main</code> branch. The idea here is that the <code>main</code> branch is used for me to store my source code for this site, and the <code>pages</code> branch is for GitHub Pages to deploy. Only the fully compiled and bundled site lives on the <code>pages</code> branch.</p>
+<p>It&rsquo;s a little complicated, but, one deploy from Travis CI later, and the site was up and running again. <em>AND</em> I had the pagination option of my choosing that had all of the functionality I could ever want.</p>
+<div class="text-center photoswipe-gallery">
+  <a class="photoswipe photo" href="https://media.giphy.com/media/4xpB3eE00FfBm/giphy.gif" target="_blank"
+      data-pswp-width="480" data-pswp-height="458"><img class="image" src="https://media.giphy.com/media/4xpB3eE00FfBm/giphy.gif" width="400"  alt="Success baby gif via Giphy"><div class="invisible caption">Success baby gif via Giphy</div></a>
+</div>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md">github.com: jekyll-paginate-v2, README-GENERATOR</a></li>
+<li><a href="https://github.com/sverrirs/jekyll-paginate-v2">github.com: jekyll-paginate-v2</a></li>
+<li><a href="https://stackoverflow.com/questions/5948659/when-should-i-use-a-trailing-slash-in-my-url">stackoverflow.com: when should I use a trailing slash in my URL</a></li>
+<li><a href="https://searchfacts.com/url-trailing-slash/">searchfacts.com: url trailing slash</a></li>
+<li><a href="https://gist.github.com/alialo/2255511">gist.github.com: alialo/2255511</a></li>
+<li><a href="https://medium.com/@mcred/supercharge-github-pages-with-jekyll-and-travis-ci-699bc0bde075">medium.com: supercharge github pages with jekyll and travis ci</a></li>
+<li><a href="https://docs.travis-ci.com/user/for-beginners/">docs.travis-ci.com: for beginners</a></li>
+</ul>
+<hr>
+<p>EDIT: Since writing this blog post, my website has switched to using CircleCI, and then to GitHub Actions, for all continuous integration tools. I wrote a blog post <a href="/blog/posts/why-i-switched-from-travis-ci-to-circleci/">about why I switched to CircleCI</a>, and wrote another post <a href="/blog/posts/why-i-switched-from-circleci-to-github-actions/">about why I again switched to GitHub Actions</a>.</p>
+
+              <div class="text-center margin-bottom-1">
+                <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
+                  Load Comments
+                </button>
+
+                <script id="comments" data-name="emmasax4" src="/js/show_comments.js"></script>
+              </div>
+
+              <div id="disqus_thread"></div>
+
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                  comments powered by Disqus.
+                </a>
+              </noscript>
           </div>
-          <h2>References</h2>
-          <ul>
-            <li><a href="https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md">github.com: jekyll-paginate-v2, README-GENERATOR</a></li>
-            <li><a href="https://github.com/sverrirs/jekyll-paginate-v2">github.com: jekyll-paginate-v2</a></li>
-            <li><a href="https://stackoverflow.com/questions/5948659/when-should-i-use-a-trailing-slash-in-my-url">stackoverflow.com: when should I use a trailing slash in my URL</a></li>
-            <li><a href="https://searchfacts.com/url-trailing-slash/">searchfacts.com: url trailing slash</a></li>
-            <li><a href="https://gist.github.com/alialo/2255511">gist.github.com: alialo/2255511</a></li>
-            <li><a href="https://medium.com/@mcred/supercharge-github-pages-with-jekyll-and-travis-ci-699bc0bde075">medium.com: supercharge github pages with jekyll and travis ci</a></li>
-            <li><a href="https://docs.travis-ci.com/user/for-beginners/">docs.travis-ci.com: for beginners</a></li>
-          </ul>
-          <hr>
-          <p>EDIT: Since writing this blog post, my website has switched to using CircleCI, and then to GitHub Actions, for all continuous integration tools. I wrote a blog post <a href="/blog/posts/why-i-switched-from-travis-ci-to-circleci/">about why I switched to CircleCI</a>, and wrote another post <a href="/blog/posts/why-i-switched-from-circleci-to-github-actions/">about why I again switched to GitHub Actions</a>.</p>
-          <div class="text-center margin-bottom-1">
-            <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
-              Load Comments
-            </button>
-            <script id="comments" data-name="emmasax4" src="/assets/js/show_comments.js"></script>
+        </div>
+
+        <div class="col col-12 col-md-2">
+          
+          <div class="text-center">
+            <div class="padding-bottom-1">
+  <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
+</div>
+
+            <a href="/feed.xml" target="_blank" class="link-icon-rss">
+  <img class="icon-hover-dark-mode" src="/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
+  <img class="icon-hover-light-mode" src="/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
+  <img class="icon-static-dark-mode" src="/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
+  <img class="icon-static-light-mode" src="/images/icons/rss-static-light-mode.svg" alt="RSS icon">
+</a>
+
+
           </div>
-          <div id="disqus_thread"></div>
-          <noscript>
-            Please enable JavaScript to view the
-            <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-              comments powered by Disqus.
-            </a>
-          </noscript>
         </div>
       </div>
-      <div class="col col-12 col-md-2 text-center">
-        <!-- Sidebar button to go back to all posts and RSS feed button -->
-        <div class="text-center">
-          <div class="padding-bottom-1">
-            <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
-          </div>
-          <a href="/feed.xml" target="_blank" class="link-icon-rss">
-            <img class="icon-hover-dark-mode" src="/assets/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
-            <img class="icon-hover-light-mode" src="/assets/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
-            <img class="icon-static-dark-mode" src="/assets/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
-            <img class="icon-static-light-mode" src="/assets/images/icons/rss-static-light-mode.svg" alt="RSS icon">
-          </a>
-        </div>
-      </div>
-    </div>
-  </main>
-</body>
-<!-- Footer -->
-<footer>
-  &copy; <script src="/assets/js/get_full_year.js"></script>
+    </main>
+  </body>
+
+  <footer>
+  &copy; <span id="year"></span>
   Emma Sax. All rights reserved.
 </footer>
-<!-- Javascript scripts -->
 <script
-    child-selector=".photoswipe"
-    class="photoswipe-activation"
-    gallery-selector=".photoswipe-gallery"
-    src="/assets/js/activate_photoswipe.js"
-    type="module"
-  ></script>
-<script src="/assets/js/bootstrap.min.js"></script>
-<script src="/assets/js/external_links.js"></script>
-<script src="/assets/js/jquery.min.js"></script>
-<script src="/assets/js/lightbox.min.js"></script>
-<script src="/assets/js/show_dates.js"></script>
+  child-selector=".photoswipe"
+  class="photoswipe-activation"
+  gallery-selector=".photoswipe-gallery"
+  src="/js/activate_photoswipe.js"
+  type="module"
+></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/external_links.js"></script>
+<script src="/js/full_year.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/lightbox.min.js"></script>
 </html>

@@ -1,333 +1,301 @@
 <!DOCTYPE html>
-<html lang="en">
-  <!-- Head -->
+<html lang="en-us">
   <head>
-    <link rel="alternate" href="/feed.xml" type="application/rss+xml">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#001aaf">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/google_fonts.min.css">
-    <link rel="stylesheet" href="/assets/css/lightbox.min.css">
-    <link rel="stylesheet" href="/assets/css/photoswipe.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css"> <!-- This needs to be the last CSS line -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
-    <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
-    <meta name="msapplication-TileColor" content="#001aaf">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Begin Jekyll SEO tag v2.8.0e -->
-    <title>Turning Lightbox2 into PhotoSwipe | Emma Sax</title>
-    <meta name="generator" content="Jekyll v4.4.1" />
-    <meta property="og:title" content="Turning Lightbox2 into PhotoSwipe | Emma Sax" />
-    <meta name="author" content="Emma Sax" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="description" content="How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience." />
-    <meta property="og:description" content="How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience." />
-    <meta property="twitter:description" content="How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience." />
-    <link rel="canonical" href="https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/" />
-    <meta property="og:url" content="https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/" />
-    <meta property="og:site_name" content="Emma Sax" />
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2021-06-14T17:00:00+00:00" />
-    <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Turning Lightbox2 into PhotoSwipe" />
-    <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
-    <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
-    <meta name="yandex-verification" content="32fe10ad6352714a" />
+  <link rel="alternate" href="/feed.xml" type="application/rss+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#001aaf">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/google_fonts.min.css">
+  <link rel="stylesheet" href="/css/lightbox.min.css">
+  <link rel="stylesheet" href="/css/photoswipe.min.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#001aaf">
+
+  
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Turning Lightbox2 into PhotoSwipe | Emma Sax</title>
+
+  <meta name="author" content="Emma Sax">
+  <meta property="og:description" content="How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience.">
+  <meta property="og:locale" content="en-us" />
+  <meta property="og:site_name" content="Emma Sax" />
+  <meta property="og:title" content="Turning Lightbox2 into PhotoSwipe" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/" />
+
+  <link rel="canonical" href="https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/" />
+    <meta property="article:published_time" content="2021-06-14T12:00:00-05:00" />
+
+  <meta property="twitter:description" content="How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience." />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Turning Lightbox2 into PhotoSwipe" />
+
+  <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
+  <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
+  <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2024-11-24T03:15:54+00:00","datePublished":"2021-06-14T17:00:00+00:00","description":"How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience.","headline":"Turning Lightbox2 into PhotoSwipe","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/"},"url":"https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/"}
-    </script>
-    <!-- End Jekyll SEO tag -->
-  </head>
-  <!-- Navigation bar -->
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
-      <div class="container-fluid">
-        <!-- Left hand side of navbar -->
-        <a class="navbar-brand mb-0" href="/" target="_self">
-          <img src="/assets/images/logo-plain-white-400.png" width="30" height="30"
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-04-02T12:59:01+00:00","datePublished":"2021-06-14T12:00:00-05:00","description":"How I improved my website by turning Lightbox2 into PhotoSwipe for a better user experience.","headline":"Turning Lightbox2 into PhotoSwipe","keywords":["tech","jekyll"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/"}
+</script>
+
+</head>
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand mb-0" href="/" target="_self">
+        <img src="/images/logo-plain-white-400.png" width="30" height="30"
           class="d-inline-block align-top nav-icon" alt="E logo"
         >&nbsp;&nbsp;Emma Sax
-        </a>
-        <!-- Navbar open/close button when on a smaller screen -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbar-links" aria-controls="navbar-links"
         aria-expanded="false" aria-label="Toggle navigation"
       >
-          <img class="nav-icon-menu" src="/assets/images/icons/menu.svg" alt="Menu icon">
-          <img class="nav-icon-x" src="/assets/images/icons/x.svg" alt="X icon">
-        </button>
-        <!-- Page links -->
-        <div class="collapse navbar-collapse" id="navbar-links">
-          <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+        <img class="nav-icon-menu" src="/images/icons/menu.svg" alt="Menu icon">
+        <img class="nav-icon-x" src="/images/icons/x.svg" alt="X icon">
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbar-links">
+        <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+          <li class="nav-item ">
+                <a class="nav-link" href="/about-me/">About Me</a>
+              </li>
             <li class="nav-item ">
-              <a class="nav-link" href="/about-me/">About Me</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-            </li>
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
+              </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/blog/">Blog</a>
-            </li>
-          </ul>
-        </div>
+                <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            </ul>
       </div>
-    </nav>
-  </header>
-  <!-- Page content -->
-  <body>
+    </div>
+  </nav>
+</header>
+<body>
     <main class="container">
       <div class="row">
         <div class="col col-12 col-md-10">
-          <!-- Blog post title and information -->
+          
           <div class="text-center">
             <h1 class="post-title">
               Turning Lightbox2 into PhotoSwipe
+
               <div class="row post-data">
                 <div class="col col-12 col-md-4">
+                  
+
                   <span class="post-meta">
-                    <picture>
-                      <source media="(prefers-color-scheme: dark)" srcset="/assets/images/icons/tag-dark-mode.svg">
-                      <img class="post-categorization-icon" src="/assets/images/icons/tag-light-mode.svg" alt="Tag icon">
-                    </picture>
-                    <a href="/blog/jekyll/">jekyll</a>
-                    |
-                    <a href="/blog/tech/">tech</a>
-                  </span>
+                      <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="/images/icons/tag-dark-mode.svg">
+                        <img class="post-categorization-icon" src="/images/icons/tag-light-mode.svg" alt="Tag icon">
+                      </picture><a href="/blog/jekyll/">jekyll</a> | <a href="/blog/tech/">tech</a></span>
                 </div>
+
                 <div class="col col-12 col-md-4">
-                  <span class="date-meta-invisible">2021-06-14 12:00:00 -0500</span>
-                </div>
-                <div class="col col-12 col-md-4">
-                  <span class="post-meta">Read time: 8 minutes</span>
+                  <span class="date-meta">June 14, 2021</span></div>
+
+                <div class="col col-12 col-md-4"><span class="post-meta">Read time: 5 minutes</span>
                 </div>
               </div>
             </h1>
           </div>
-          <!-- Blog post content and comments -->
-          <div class="page-body">
-            <p>In August of 2020, I made a big push to add better photo functionality to my website. I added Lightbox2 to my site (read more about that in <a href="/blog/posts/adding-lightbox-to-a-jekyll-website/">my <em>Adding Lightbox2 to a Jekyll Website</em> blog post</a>). But recently, I came across PhotoSwipe, a similar Javascript/CSS tool to maximize photos to make them more visible to users. PhotoSwipe provides all the same features as Lightbox2, but also provides zooming, faster loading, and swipe actions, as well as clicking and arrow key pressing. This is a definite benefit for viewing my site on mobile.</p>
-            <p>The author of PhotoSwipe has been working on a new v5 beta version of PhotoSwipe, which is <a href="https://photoswipe.com/v5/docs/getting-started/">documented on PhotoSwipe’s website</a>. Although the v5 documentation isn’t fully fleshed out (the version is still in beta after all) I still found PhotoSwipe v5 simple enough to set up.</p>
-            <p>I started with an <code>assets/js/activate_photoswipe.js</code> file:</p>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="javascript"><span class="k">import</span> <span class="nx">PhotoSwipeLightbox</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./photoswipe-lightbox.esm.min.js</span><span class="dl">'</span>
 
-<span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">gallerySelector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.photoswipe-gallery</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">childSelector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.photoswipe</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">pswpModule</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/assets/js/photoswipe.esm.min.js</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">pswpCSS</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/assets/css/photoswipe.min.css</span><span class="dl">'</span>
-<span class="p">}</span>
+          
+          <div class="page-body"><p>In August of 2020, I made a big push to add better photo functionality to my website. I added Lightbox2 to my site (read more about that in <a href="/blog/posts/adding-lightbox-to-a-jekyll-website/">my <em>Adding Lightbox2 to a Jekyll Website</em> blog post</a>). But recently, I came across PhotoSwipe, a similar Javascript/CSS tool to maximize photos to make them more visible to users. PhotoSwipe provides all the same features as Lightbox2, but also provides zooming, faster loading, and swipe actions, as well as clicking and arrow key pressing. This is a definite benefit for viewing my site on mobile.</p>
+<p>The author of PhotoSwipe has been working on a new v5 beta version of PhotoSwipe, which is <a href="https://photoswipe.com/v5/docs/getting-started/">documented on PhotoSwipe&rsquo;s website</a>. Although the v5 documentation isn&rsquo;t fully fleshed out (the version is still in beta after all) I still found PhotoSwipe v5 simple enough to set up.</p>
+<p>I started with an <code>assets/js/activate_photoswipe.js</code> file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">PhotoSwipeLightbox</span> <span class="nx">from</span> <span class="s1">&#39;./photoswipe-lightbox.esm.min.js&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">gallerySelector</span><span class="o">:</span> <span class="s1">&#39;.photoswipe-gallery&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">childSelector</span><span class="o">:</span> <span class="s1">&#39;.photoswipe&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">pswpModule</span><span class="o">:</span> <span class="s1">&#39;/assets/js/photoswipe.esm.min.js&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">pswpCSS</span><span class="o">:</span> <span class="s1">&#39;/assets/css/photoswipe.min.css&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">lightbox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PhotoSwipeLightbox</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">lightbox</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span>
+</span></span></code></pre></div><p>And then I modified my <code>_includes/photo.html</code> file to allow both Lightbox2 photos and PhotoSwipe:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{% if include.type == &#34;lightbox2&#34; %}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;lightbox2 photo&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ include.url }}&#34;</span> <span class="na">data-lightbox</span><span class="o">=</span><span class="s">&#34;{{ include.lightbox_gallery }}&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;{{ include.caption }}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{% else %}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;photoswipe photo&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ include.url }}&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span> <span class="na">data-pswp-width</span><span class="o">=</span><span class="s">&#34;{{ include.full_width }}&#34;</span> <span class="na">data-pswp-height</span><span class="o">=</span><span class="s">&#34;{{ include.full_height }}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{% endif %}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;image&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ include.url }}&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;{{ include.thumb_width }}&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;{{ include.thumb_height }}&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;{{ include.alt }}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>This way, when we call a photo, we can pass in a <code>type</code> (only required if using Lightbox2). And if we&rsquo;re using Lightbox2, then create a Lightbox2 photo, else create a PhotoSwipe photo. Here&rsquo;s how I would call the <code>_includes</code> file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!-- Lightbox2 --&gt;</span>
+</span></span><span class="line"><span class="cl">{% include photo.html
+</span></span><span class="line"><span class="cl">   url=&#34;https://i.imgur.com/lyWrj3r.jpeg&#34;
+</span></span><span class="line"><span class="cl">   thumb_width=&#34;200&#34; caption=&#34;Adorable creature&#34; alt=&#34;Adorable creature&#34;
+</span></span><span class="line"><span class="cl">   type=&#34;lightbox2&#34; lightbox_gallery=&#34;PHOTO1&#34;
+</span></span><span class="line"><span class="cl">%}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!-- PhotoSwipe --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;photoswipe-gallery&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  {% include photo.html
+</span></span><span class="line"><span class="cl">     url=&#34;https://i.imgur.com/lyWrj3r.jpeg&#34;
+</span></span><span class="line"><span class="cl">     thumb_width=&#34;200&#34; alt=&#34;Adorable creature&#34;
+</span></span><span class="line"><span class="cl">     full_width=&#34;600&#34; full_height=&#34;380&#34;
+</span></span><span class="line"><span class="cl">  %}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Then, in my <code>_layouts/default.html</code> file, I needed to initialize PhotoSwipe:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/assets/js/activate_photoswipe.js&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;module&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Lastly, I needed to download three files from the <code>dist</code> directory of PhotoSwipe&rsquo;s source code: <code>photoswipe.css</code>, <code>photoswipe-lightbox.esm.min.js</code>, and <code>photoswipe.esm.min.js</code>. I placed these in <code>assets/css</code> and <code>assets/js</code> according to the file types.</p>
+<p>And voilà. PhotoSwipe works! Feel free to compare a Lightbox2 example (left) with a PhotoSwipe example (right):</p>
+<div class="text-center photoswipe-gallery">
+  <a class="lightbox2 photo" href="https://i.imgur.com/lyWrj3r.jpeg" data-lightbox="PHOTO1" title="Adorable creature"><img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Adorable creature"></a>
+  <a class="photoswipe photo" href="https://i.imgur.com/lyWrj3r.jpeg" target="_blank"
+      data-pswp-width="600" data-pswp-height="380"><img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Adorable creature"></a>
+</div>
+<p>As you can see, the two are very similar. However, PhotoSwipe is slightly faster to load, and I&rsquo;ve found that Lightbox2 is touchy to use (aka not a consistent user experience).</p>
+<p>But the real benefit to PhotoSwipe is visible when you have a gallery of images. Take a look at this Lightbox2 gallery below:</p>
+<div class="text-center">
+  <a class="lightbox2 photo" href="https://i.imgur.com/lyWrj3r.jpeg" data-lightbox="lightbox-gallery" title="Original adorable creature"><img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Original adorable creature"></a>
+  <a class="lightbox2 photo" href="https://i.imgur.com/RCT5SOc.jpeg" data-lightbox="lightbox-gallery" title="Kitten cuddling a puppy"><img class="image" src="https://i.imgur.com/RCT5SOc.jpeg"  height="127" alt="Kitten cuddling a puppy"></a>
+  <a class="lightbox2 photo" href="https://i.imgur.com/NuhaJCb.jpeg" data-lightbox="lightbox-gallery" title="Puppy popping bubbles"><img class="image" src="https://i.imgur.com/NuhaJCb.jpeg"  height="127" alt="Puppy popping bubbles"></a>
+</div>
+<p>The images are slow to load, and although you can navigate by clicking a photo and using arrow keys on keyboard, a mobile user cannot swipe. Furthermore, if you click in <em>slightly</em> the wrong place, a Lightbox2 gallery will exit, making it a tedious viewing experience.</p>
+<p>But, take a look at the same gallery through PhotoSwipe:</p>
+<div class="text-center photoswipe-gallery">
+  <a class="photoswipe photo" href="https://i.imgur.com/lyWrj3r.jpeg" target="_blank"
+      data-pswp-width="600" data-pswp-height="380"><img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Original adorable creature"></a>
+  <a class="photoswipe photo" href="https://i.imgur.com/RCT5SOc.jpeg" target="_blank"
+      data-pswp-width="720" data-pswp-height="960"><img class="image" src="https://i.imgur.com/RCT5SOc.jpeg"  height="127" alt="Kitten cuddling a puppy"></a>
+  <a class="photoswipe photo" href="https://i.imgur.com/NuhaJCb.jpeg" target="_blank"
+      data-pswp-width="530" data-pswp-height="424"><img class="image" src="https://i.imgur.com/NuhaJCb.jpeg"  height="127" alt="Puppy popping bubbles"></a>
+</div>
+<p>Hopefully the images are loading faster, you can swipe through photos (helpful when you&rsquo;re a mobile user), and zoom may even be available (I&rsquo;ve noticed zoom is only available on some images, and the images in this demo may not offer zoom&hellip; perhaps future versions of PhotoSwipe may increase zoom capabilities).</p>
+<p>Now with only those few changes, PhotoSwipe v5 is completely set up, and I can begin transitioning my Lightbox2 photos to PhotoSwipe. The most irritating process of that transition was that PhotoSwipe requires the HTML to specifically provide the width and height of each picture by pixel. So, I needed to look at each picture individually, and look up its width and height. Good thing I only had 194 pictures shown throughout my entire site 🥴.</p>
+<p>But even after all that, you&rsquo;ll notice that there&rsquo;s something huge missing from PhotoSwipe: captions. All of my Lightbox2 photos had captions. Luckily, PhotoSwipe v5 has some detailed documentation on how to enable captions.</p>
+<p>First, I added Javascript to <code>assets/js/activate_photoswipe.js</code>. Based on the documentation provided, and after some fiddling on my part, the entire file came out like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">PhotoSwipeLightbox</span> <span class="nx">from</span> <span class="s1">&#39;./photoswipe-lightbox.esm.min.js&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">gallerySelector</span><span class="o">:</span> <span class="s1">&#39;.photoswipe-gallery&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">childSelector</span><span class="o">:</span> <span class="s1">&#39;.photoswipe&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">pswpModule</span><span class="o">:</span> <span class="s1">&#39;/assets/js/photoswipe.esm.min.js&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">pswpCSS</span><span class="o">:</span> <span class="s1">&#39;/assets/css/photoswipe.min.css&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">lightbox</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PhotoSwipeLightbox</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">lightbox</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;uiRegister&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">lightbox</span><span class="p">.</span><span class="nx">pswp</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">registerElement</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;custom-caption&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">order</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">isButton</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">appendTo</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">html</span><span class="o">:</span> <span class="s1">&#39;Caption Text&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">onInit</span><span class="o">:</span> <span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">pswp</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">lightbox</span><span class="p">.</span><span class="nx">pswp</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">currentSlideElement</span> <span class="o">=</span> <span class="nx">lightbox</span><span class="p">.</span><span class="nx">pswp</span><span class="p">.</span><span class="nx">currSlide</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">element</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">hiddenCaption</span> <span class="o">=</span> <span class="nx">currentSlideElement</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.caption&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">customCaptionElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">&#39;pswp__custom-caption&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">captionHTML</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">hiddenCaption</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span> <span class="o">||</span> <span class="nx">hiddenCaption</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">counter</span> <span class="o">&lt;</span> <span class="nx">customCaptionElements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">counter</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">customCaptionElements</span><span class="p">[</span><span class="nx">counter</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;invisible&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">counter</span> <span class="o">&lt;</span> <span class="nx">customCaptionElements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">counter</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">customCaptionElements</span><span class="p">[</span><span class="nx">counter</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;invisible&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">          <span class="k">if</span> <span class="p">(</span><span class="nx">currentSlideElement</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">captionHTML</span> <span class="o">=</span> <span class="nx">hiddenCaption</span><span class="p">.</span><span class="nx">innerHTML</span>
+</span></span><span class="line"><span class="cl">          <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">captionHTML</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">lightbox</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span>
+</span></span></code></pre></div><p>What this logic does is when we click on a photo, if the <code>caption</code> class is either missing or empty, then it&rsquo;ll turn all PhotoSwipe captions &ldquo;invisible&rdquo; by adding the <code>invisible</code> class. If the <code>caption</code> class exists and the caption contains words, then it&rsquo;ll remove any <code>invisible</code> class, and set the caption text to match the HTML text provided. This way, photos can have optional captions, and if the caption doesn&rsquo;t exist, then the spot for a caption will disappear. If an &ldquo;alt&rdquo; (alternative text when an image can&rsquo;t load) is provided, then use that as alternative text, but don&rsquo;t automatically use it as a caption. If <em>only</em> a caption is given, then we can <em>also</em> use that as alternative text. See a gallery example below:</p>
+<div class="text-center photoswipe-gallery">
+  <a class="photoswipe photo" href="https://i.imgur.com/lyWrj3r.jpeg" target="_blank"
+      data-pswp-width="600" data-pswp-height="380"><img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Original adorable creature"><div class="invisible caption">Original adorable creature</div></a>
+  <a class="photoswipe photo" href="https://i.imgur.com/RCT5SOc.jpeg" target="_blank"
+      data-pswp-width="720" data-pswp-height="960"><img class="image" src="https://i.imgur.com/RCT5SOc.jpeg"  height="127" alt="Kitten cuddling a puppy"></a>
+  <a class="photoswipe photo" href="https://i.imgur.com/NuhaJCb.jpeg" target="_blank"
+      data-pswp-width="530" data-pswp-height="424"><img class="image" src="https://i.imgur.com/NuhaJCb.jpeg"  height="127" alt="Puppy popping bubbles"><div class="invisible caption">Puppy popping bubbles</div></a>
+</div>
+<p>Throughout my PhotoSwipe experimenting, there were several other changes I made to the core files mentioned. These were in order to implement nested galleries, caption and &ldquo;alt&rdquo; interchangeability, optional thumb photo widths and heights, etc. In order to avoid attempting to summarize further with English language, I&rsquo;ll just provide a link some of <a href="https://gist.github.com/emmahsax/090b2f74e743e8bcbafca8a16ea6b19c">my documentation on GitHub</a>.</p>
+<p>Please feel free to reach out to me for additional information or questions you have about implementing PhotoSwipe v5. With PhotoSwipe, I&rsquo;m confident that viewing images on my website will be a much better experience for both me and my viewers going forward.</p>
 
-<span class="kd">const</span> <span class="nx">lightbox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PhotoSwipeLightbox</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
-<span class="nx">lightbox</span><span class="p">.</span><span class="nf">init</span><span class="p">()</span>
-</code></pre>
+              <div class="text-center margin-bottom-1">
+                <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
+                  Load Comments
+                </button>
+
+                <script id="comments" data-name="emmasax4" src="/js/show_comments.js"></script>
               </div>
-            </div>
-            <p>And then I modified my <code>_includes/photo.html</code> file to allow both Lightbox2 photos and PhotoSwipe:</p>
-            <div class="language-html highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="html">{% if include.type == "lightbox2" %}
-  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"lightbox2 photo"</span> <span class="na">href=</span><span class="s">"{{ include.url }}"</span> <span class="na">data-lightbox=</span><span class="s">"{{ include.lightbox_gallery }}"</span> <span class="na">title=</span><span class="s">"{{ include.caption }}"</span><span class="nt">&gt;</span>
-{% else %}
-  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"photoswipe photo"</span> <span class="na">href=</span><span class="s">"{{ include.url }}"</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">data-pswp-width=</span><span class="s">"{{ include.full_width }}"</span> <span class="na">data-pswp-height=</span><span class="s">"{{ include.full_height }}"</span><span class="nt">&gt;</span>
-{% endif %}
 
-    <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"image"</span> <span class="na">src=</span><span class="s">"{{ include.url }}"</span> <span class="na">width=</span><span class="s">"{{ include.thumb_width }}"</span> <span class="na">height=</span><span class="s">"{{ include.thumb_height }}"</span> <span class="na">alt=</span><span class="s">"{{ include.alt }}"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;/a&gt;</span>
-</code></pre>
-              </div>
-            </div>
-            <p>This way, when we call a photo, we can pass in a <code>type</code> (only required if using Lightbox2). And if we’re using Lightbox2, then create a Lightbox2 photo, else create a PhotoSwipe photo. Here’s how I would call the <code>_includes</code> file:</p>
-            <div class="language-html highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="html"><span class="c">&lt;!-- Lightbox2 --&gt;</span>
-{% include photo.html
-   url="https://i.imgur.com/lyWrj3r.jpeg"
-   thumb_width="200" caption="Adorable creature" alt="Adorable creature"
-   type="lightbox2" lightbox_gallery="PHOTO1"
-%}
+              <div id="disqus_thread"></div>
 
-<span class="c">&lt;!-- PhotoSwipe --&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"photoswipe-gallery"</span><span class="nt">&gt;</span>
-  {% include photo.html
-     url="https://i.imgur.com/lyWrj3r.jpeg"
-     thumb_width="200" alt="Adorable creature"
-     full_width="600" full_height="380"
-  %}
-<span class="nt">&lt;/div&gt;</span>
-</code></pre>
-              </div>
-            </div>
-            <p>Then, in my <code>_layouts/default.html</code> file, I needed to initialize PhotoSwipe:</p>
-            <div class="language-html highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/activate_photoswipe.js"</span> <span class="na">type=</span><span class="s">"module"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre>
-              </div>
-            </div>
-            <p>Lastly, I needed to download three files from the <code>dist</code> directory of PhotoSwipe’s source code: <code>photoswipe.css</code>, <code>photoswipe-lightbox.esm.min.js</code>, and <code>photoswipe.esm.min.js</code>. I placed these in <code>assets/css</code> and <code>assets/js</code> according to the file types.</p>
-            <p>And voilà. PhotoSwipe works! Feel free to compare a Lightbox2 example (left) with a PhotoSwipe example (right):</p>
-            <div class="text-center photoswipe-gallery">
-              <a class="lightbox2 photo" href="https://i.imgur.com/lyWrj3r.jpeg" data-lightbox="PHOTO1" title="Adorable creature">
-                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Adorable creature">
-              </a>
-              <a class="photoswipe photo" href="https://i.imgur.com/lyWrj3r.jpeg" target="_blank" data-pswp-width="600" data-pswp-height="380">
-                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Adorable creature">
-              </a>
-            </div>
-            <p>As you can see, the two are very similar. However, PhotoSwipe is slightly faster to load, and I’ve found that Lightbox2 is touchy to use (aka not a consistent user experience).</p>
-            <p>But the real benefit to PhotoSwipe is visible when you have a gallery of images. Take a look at this Lightbox2 gallery below:</p>
-            <div class="text-center">
-              <a class="lightbox2 photo" href="https://i.imgur.com/lyWrj3r.jpeg" data-lightbox="lightbox-gallery" title="Original adorable creature">
-                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Original adorable creature">
-              </a>
-              <a class="lightbox2 photo" href="https://i.imgur.com/RCT5SOc.jpeg" data-lightbox="lightbox-gallery" title="Kitten cuddling a puppy">
-                <img class="image" src="https://i.imgur.com/RCT5SOc.jpeg"  height="127" alt="Kitten cuddling a puppy">
-              </a>
-              <a class="lightbox2 photo" href="https://i.imgur.com/NuhaJCb.jpeg" data-lightbox="lightbox-gallery" title="Puppy popping bubbles">
-                <img class="image" src="https://i.imgur.com/NuhaJCb.jpeg"  height="127" alt="Puppy popping bubbles">
-              </a>
-            </div>
-            <p>The images are slow to load, and although you can navigate by clicking a photo and using arrow keys on keyboard, a mobile user cannot swipe. Furthermore, if you click in <em>slightly</em> the wrong place, a Lightbox2 gallery will exit, making it a tedious viewing experience.</p>
-            <p>But, take a look at the same gallery through PhotoSwipe:</p>
-            <div class="text-center photoswipe-gallery">
-              <a class="photoswipe photo" href="https://i.imgur.com/lyWrj3r.jpeg" target="_blank" data-pswp-width="600" data-pswp-height="380">
-                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Original adorable creature">
-              </a>
-              <a class="photoswipe photo" href="https://i.imgur.com/RCT5SOc.jpeg" target="_blank" data-pswp-width="720" data-pswp-height="960">
-                <img class="image" src="https://i.imgur.com/RCT5SOc.jpeg"  height="127" alt="Kitten cuddling a puppy">
-              </a>
-              <a class="photoswipe photo" href="https://i.imgur.com/NuhaJCb.jpeg" target="_blank" data-pswp-width="530" data-pswp-height="424">
-                <img class="image" src="https://i.imgur.com/NuhaJCb.jpeg"  height="127" alt="Puppy popping bubbles">
-              </a>
-            </div>
-            <p>Hopefully the images are loading faster, you can swipe through photos (helpful when you’re a mobile user), and zoom may even be available (I’ve noticed zoom is only available on some images, and the images in this demo may not offer zoom… perhaps future versions of PhotoSwipe may increase zoom capabilities).</p>
-            <p>Now with only those few changes, PhotoSwipe v5 is completely set up, and I can begin transitioning my Lightbox2 photos to PhotoSwipe. The most irritating process of that transition was that PhotoSwipe requires the HTML to specifically provide the width and height of each picture by pixel. So, I needed to look at each picture individually, and look up its width and height. Good thing I only had 194 pictures shown throughout my entire site 🥴.</p>
-            <p>But even after all that, you’ll notice that there’s something huge missing from PhotoSwipe: captions. All of my Lightbox2 photos had captions. Luckily, PhotoSwipe v5 has some detailed documentation on how to enable captions.</p>
-            <p>First, I added Javascript to <code>assets/js/activate_photoswipe.js</code>. Based on the documentation provided, and after some fiddling on my part, the entire file came out like this:</p>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="javascript"><span class="k">import</span> <span class="nx">PhotoSwipeLightbox</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./photoswipe-lightbox.esm.min.js</span><span class="dl">'</span>
-
-<span class="kd">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">gallerySelector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.photoswipe-gallery</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">childSelector</span><span class="p">:</span> <span class="dl">'</span><span class="s1">.photoswipe</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">pswpModule</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/assets/js/photoswipe.esm.min.js</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">pswpCSS</span><span class="p">:</span> <span class="dl">'</span><span class="s1">/assets/css/photoswipe.min.css</span><span class="dl">'</span>
-<span class="p">}</span>
-
-<span class="kd">const</span> <span class="nx">lightbox</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PhotoSwipeLightbox</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span>
-
-<span class="nx">lightbox</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">uiRegister</span><span class="dl">'</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">lightbox</span><span class="p">.</span><span class="nx">pswp</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nf">registerElement</span><span class="p">({</span>
-    <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">custom-caption</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">order</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
-    <span class="na">isButton</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="na">appendTo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">html</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Caption Text</span><span class="dl">'</span><span class="p">,</span>
-    <span class="na">onInit</span><span class="p">:</span> <span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="nx">pswp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">lightbox</span><span class="p">.</span><span class="nx">pswp</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">change</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">currentSlideElement</span> <span class="o">=</span> <span class="nx">lightbox</span><span class="p">.</span><span class="nx">pswp</span><span class="p">.</span><span class="nx">currSlide</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">element</span>
-        <span class="kd">const</span> <span class="nx">hiddenCaption</span> <span class="o">=</span> <span class="nx">currentSlideElement</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="dl">'</span><span class="s1">.caption</span><span class="dl">'</span><span class="p">)</span>
-        <span class="kd">const</span> <span class="nx">customCaptionElements</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">pswp__custom-caption</span><span class="dl">'</span><span class="p">)</span>
-        <span class="kd">let</span> <span class="nx">captionHTML</span> <span class="o">=</span> <span class="dl">''</span>
-
-        <span class="k">if </span><span class="p">(</span><span class="nx">hiddenCaption</span> <span class="o">===</span> <span class="dl">''</span> <span class="o">||</span> <span class="nx">hiddenCaption</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
-          <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">counter</span> <span class="o">&lt;</span> <span class="nx">customCaptionElements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">counter</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">customCaptionElements</span><span class="p">[</span><span class="nx">counter</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="dl">'</span><span class="s1">invisible</span><span class="dl">'</span><span class="p">)</span>
-          <span class="p">}</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-          <span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">counter</span> <span class="o">&lt;</span> <span class="nx">customCaptionElements</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">counter</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">customCaptionElements</span><span class="p">[</span><span class="nx">counter</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nf">remove</span><span class="p">(</span><span class="dl">'</span><span class="s1">invisible</span><span class="dl">'</span><span class="p">)</span>
-          <span class="p">}</span>
-
-          <span class="k">if </span><span class="p">(</span><span class="nx">currentSlideElement</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">captionHTML</span> <span class="o">=</span> <span class="nx">hiddenCaption</span><span class="p">.</span><span class="nx">innerHTML</span>
-          <span class="p">}</span>
-        <span class="p">}</span>
-
-        <span class="nx">el</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">captionHTML</span>
-      <span class="p">})</span>
-    <span class="p">}</span>
-  <span class="p">})</span>
-<span class="p">})</span>
-
-<span class="nx">lightbox</span><span class="p">.</span><span class="nf">init</span><span class="p">()</span>
-</code></pre>
-              </div>
-            </div>
-            <p>What this logic does is when we click on a photo, if the <code>caption</code> class is either missing or empty, then it’ll turn all PhotoSwipe captions “invisible” by adding the <code>invisible</code> class. If the <code>caption</code> class exists and the caption contains words, then it’ll remove any <code>invisible</code> class, and set the caption text to match the HTML text provided. This way, photos can have optional captions, and if the caption doesn’t exist, then the spot for a caption will disappear. If an “alt” (alternative text when an image can’t load) is provided, then use that as alternative text, but don’t automatically use it as a caption. If <em>only</em> a caption is given, then we can <em>also</em> use that as alternative text. See a gallery example below:</p>
-            <div class="text-center photoswipe-gallery">
-              <a class="photoswipe photo" href="https://i.imgur.com/lyWrj3r.jpeg" target="_blank" data-pswp-width="600" data-pswp-height="380">
-                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg"  height="127" alt="Original adorable creature">
-                <div class="invisible caption">Original adorable creature</div>
-              </a>
-              <a class="photoswipe photo" href="https://i.imgur.com/RCT5SOc.jpeg" target="_blank" data-pswp-width="720" data-pswp-height="960">
-                <img class="image" src="https://i.imgur.com/RCT5SOc.jpeg"  height="127" alt="Kitten cuddling a puppy">
-              </a>
-              <a class="photoswipe photo" href="https://i.imgur.com/NuhaJCb.jpeg" target="_blank" data-pswp-width="530" data-pswp-height="424">
-                <img class="image" src="https://i.imgur.com/NuhaJCb.jpeg"  height="127" alt="Puppy popping bubbles">
-                <div class="invisible caption">Puppy popping bubbles</div>
-              </a>
-            </div>
-            <p>Throughout my PhotoSwipe experimenting, there were several other changes I made to the core files mentioned. These were in order to implement nested galleries, caption and “alt” interchangeability, optional thumb photo widths and heights, etc. In order to avoid attempting to summarize further with English language, I’ll just provide a link some of <a href="https://gist.github.com/emmahsax/090b2f74e743e8bcbafca8a16ea6b19c">my documentation on GitHub</a>.</p>
-            <p>Please feel free to reach out to me for additional information or questions you have about implementing PhotoSwipe v5. With PhotoSwipe, I’m confident that viewing images on my website will be a much better experience for both me and my viewers going forward.</p>
-            <div class="text-center margin-bottom-1">
-              <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
-                Load Comments
-              </button>
-              <script id="comments" data-name="emmasax4" src="/assets/js/show_comments.js"></script>
-            </div>
-            <div id="disqus_thread"></div>
-            <noscript>
-              Please enable JavaScript to view the
-              <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-                comments powered by Disqus.
-              </a>
-            </noscript>
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                  comments powered by Disqus.
+                </a>
+              </noscript>
           </div>
         </div>
-        <div class="col col-12 col-md-2 text-center">
-          <!-- Sidebar button to go back to all posts and RSS feed button -->
+
+        <div class="col col-12 col-md-2">
+          
           <div class="text-center">
             <div class="padding-bottom-1">
-              <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
-            </div>
+  <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
+</div>
+
             <a href="/feed.xml" target="_blank" class="link-icon-rss">
-              <img class="icon-hover-dark-mode" src="/assets/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
-              <img class="icon-hover-light-mode" src="/assets/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
-              <img class="icon-static-dark-mode" src="/assets/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
-              <img class="icon-static-light-mode" src="/assets/images/icons/rss-static-light-mode.svg" alt="RSS icon">
-            </a>
+  <img class="icon-hover-dark-mode" src="/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
+  <img class="icon-hover-light-mode" src="/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
+  <img class="icon-static-dark-mode" src="/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
+  <img class="icon-static-light-mode" src="/images/icons/rss-static-light-mode.svg" alt="RSS icon">
+</a>
+
+
           </div>
         </div>
       </div>
     </main>
   </body>
-  <!-- Footer -->
+
   <footer>
-    &copy; <script src="/assets/js/get_full_year.js"></script>
-    Emma Sax. All rights reserved.
-  </footer>
-  <!-- Javascript scripts -->
-  <script
-    child-selector=".photoswipe"
-    class="photoswipe-activation"
-    gallery-selector=".photoswipe-gallery"
-    src="/assets/js/activate_photoswipe.js"
-    type="module"
-  ></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  <script src="/assets/js/external_links.js"></script>
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/lightbox.min.js"></script>
-  <script src="/assets/js/show_dates.js"></script>
+  &copy; <span id="year"></span>
+  Emma Sax. All rights reserved.
+</footer>
+<script
+  child-selector=".photoswipe"
+  class="photoswipe-activation"
+  gallery-selector=".photoswipe-gallery"
+  src="/js/activate_photoswipe.js"
+  type="module"
+></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/external_links.js"></script>
+<script src="/js/full_year.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/lightbox.min.js"></script>
 </html>

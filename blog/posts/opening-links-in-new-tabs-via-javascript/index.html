@@ -1,329 +1,301 @@
 <!DOCTYPE html>
-<html lang="en">
-  <!-- Head -->
+<html lang="en-us">
   <head>
-    <link rel="alternate" href="/feed.xml" type="application/rss+xml">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#001aaf">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/google_fonts.min.css">
-    <link rel="stylesheet" href="/assets/css/lightbox.min.css">
-    <link rel="stylesheet" href="/assets/css/photoswipe.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css"> <!-- This needs to be the last CSS line -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
-    <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
-    <meta name="msapplication-TileColor" content="#001aaf">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Begin Jekyll SEO tag v2.8.0e -->
-    <title>Opening Links with Javascript | Emma Sax</title>
-    <meta name="generator" content="Jekyll v4.4.1" />
-    <meta property="og:title" content="Opening Links with Javascript | Emma Sax" />
-    <meta name="author" content="Emma Sax" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Take a look at this guide for how to control where URL links open… all with Javascript." />
-    <meta property="og:description" content="Take a look at this guide for how to control where URL links open… all with Javascript." />
-    <meta property="twitter:description" content="Take a look at this guide for how to control where URL links open… all with Javascript." />
-    <link rel="canonical" href="https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/" />
-    <meta property="og:url" content="https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/" />
-    <meta property="og:site_name" content="Emma Sax" />
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-01-14T06:00:00+00:00" />
-    <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Opening Links in New Tabs via Javascript" />
-    <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
-    <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
-    <meta name="yandex-verification" content="32fe10ad6352714a" />
+  <link rel="alternate" href="/feed.xml" type="application/rss+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#001aaf">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/google_fonts.min.css">
+  <link rel="stylesheet" href="/css/lightbox.min.css">
+  <link rel="stylesheet" href="/css/photoswipe.min.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#001aaf">
+
+  
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Opening Links with Javascript | Emma Sax</title>
+
+  <meta name="author" content="Emma Sax">
+  <meta property="og:description" content="Take a look at this guide for how to control where URL links open... all with Javascript.">
+  <meta property="og:locale" content="en-us" />
+  <meta property="og:site_name" content="Emma Sax" />
+  <meta property="og:title" content="Opening Links with Javascript" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/" />
+
+  <link rel="canonical" href="https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/" />
+    <meta property="article:published_time" content="2020-01-14T00:00:00-06:00" />
+
+  <meta property="twitter:description" content="Take a look at this guide for how to control where URL links open... all with Javascript." />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Opening Links with Javascript" />
+
+  <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
+  <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
+  <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2024-11-24T03:15:54+00:00","datePublished":"2020-01-14T06:00:00+00:00","description":"Take a look at this guide for how to control where URL links open… all with Javascript.","headline":"Opening Links in New Tabs via Javascript","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/"},"url":"https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/"}
-    </script>
-    <!-- End Jekyll SEO tag -->
-  </head>
-  <!-- Navigation bar -->
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
-      <div class="container-fluid">
-        <!-- Left hand side of navbar -->
-        <a class="navbar-brand mb-0" href="/" target="_self">
-          <img src="/assets/images/logo-plain-white-400.png" width="30" height="30"
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-04-02T12:59:01+00:00","datePublished":"2020-01-14T00:00:00-06:00","description":"Take a look at this guide for how to control where URL links open... all with Javascript.","headline":"Opening Links in New Tabs via Javascript","keywords":["tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/"}
+</script>
+
+</head>
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand mb-0" href="/" target="_self">
+        <img src="/images/logo-plain-white-400.png" width="30" height="30"
           class="d-inline-block align-top nav-icon" alt="E logo"
         >&nbsp;&nbsp;Emma Sax
-        </a>
-        <!-- Navbar open/close button when on a smaller screen -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbar-links" aria-controls="navbar-links"
         aria-expanded="false" aria-label="Toggle navigation"
       >
-          <img class="nav-icon-menu" src="/assets/images/icons/menu.svg" alt="Menu icon">
-          <img class="nav-icon-x" src="/assets/images/icons/x.svg" alt="X icon">
-        </button>
-        <!-- Page links -->
-        <div class="collapse navbar-collapse" id="navbar-links">
-          <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+        <img class="nav-icon-menu" src="/images/icons/menu.svg" alt="Menu icon">
+        <img class="nav-icon-x" src="/images/icons/x.svg" alt="X icon">
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbar-links">
+        <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+          <li class="nav-item ">
+                <a class="nav-link" href="/about-me/">About Me</a>
+              </li>
             <li class="nav-item ">
-              <a class="nav-link" href="/about-me/">About Me</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-            </li>
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
+              </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/blog/">Blog</a>
-            </li>
-          </ul>
-        </div>
+                <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            </ul>
       </div>
-    </nav>
-  </header>
-  <!-- Page content -->
-  <body>
+    </div>
+  </nav>
+</header>
+<body>
     <main class="container">
       <div class="row">
         <div class="col col-12 col-md-10">
-          <!-- Blog post title and information -->
+          
           <div class="text-center">
             <h1 class="post-title">
               Opening Links in New Tabs via Javascript
+
               <div class="row post-data">
                 <div class="col col-12 col-md-4">
+                  
+
                   <span class="post-meta">
-                    <picture>
-                      <source media="(prefers-color-scheme: dark)" srcset="/assets/images/icons/tag-dark-mode.svg">
-                      <img class="post-categorization-icon" src="/assets/images/icons/tag-light-mode.svg" alt="Tag icon">
-                    </picture>
-                    <a href="/blog/tech/">tech</a>
-                  </span>
+                      <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="/images/icons/tag-dark-mode.svg">
+                        <img class="post-categorization-icon" src="/images/icons/tag-light-mode.svg" alt="Tag icon">
+                      </picture><a href="/blog/tech/">tech</a></span>
                 </div>
+
                 <div class="col col-12 col-md-4">
-                  <span class="date-meta-invisible">2020-01-14 00:00:00 -0600</span>
-                </div>
-                <div class="col col-12 col-md-4">
-                  <span class="post-meta">Read time: 10 minutes</span>
+                  <span class="date-meta">January 14, 2020</span></div>
+
+                <div class="col col-12 col-md-4"><span class="post-meta">Read time: 7 minutes</span>
                 </div>
               </div>
             </h1>
           </div>
-          <!-- Blog post content and comments -->
-          <div class="page-body">
-            <h2>Table of Contents</h2>
-            <ul>
-              <li><a href="#introduction">Introduction</a></li>
-              <li><a href="#writing-links-in-markdown">Writing Links in Markdown</a></li>
-              <li><a href="#writing-links-in-markdown-that-open-in-a-new-tab">Writing Links in Markdown that Open in a New Tab</a></li>
-              <li><a href="#a-not-so-terrible-solution">A Not-So Terrible Solution</a></li>
-              <li><a href="#putting-it-all-together">Putting It All Together</a></li>
-              <li><a href="#references-and-additional-reading">References and Additional Reading</a></li>
-            </ul>
-            <div id="anchor">
-              <a id="introduction">&nbsp;</a>
-            </div>
-            <h2>Introduction</h2>
-            <p>Have you ever noticed that some websites you visit have links that open to new tabs in your browser, and some open to the current tab in your browser? Does that inconsistency confuse or annoy you? Which do you prefer? Do you ever wonder <em>why</em> that is? Well, since the websites of the internet can’t quite seem to agree and make a choice, let’s discuss how I’ve approached this topic, and what I’ve done to make an easy decision about the important question of new tab… or not to new tab.</p>
-            <p>First, let’s make sure we’re all on the same page when I say “opening in a new tab” versus “opening in the current tab.” The first example is of a link opening in the current tab. The second is of a link opening in a new tab:</p>
-            <blockquote>
-              <p>This will be a link to <a href="https://github.com/" target="_self">GitHub</a>.</p>
-              <p>This will be a link to <a href="https://github.com/" target="_blank">GitHub</a>.</p>
-            </blockquote>
-            <p>Next, for those of you that aren’t familiar with Markdown, here’s Wikipedia’s definition (since Wikipedia is truth 😉):</p>
-            <blockquote>
-              <p>Markdown is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.</p>
-            </blockquote>
-            <p>Because Markdown makes it easy to write paragraphs and content, I actually write all of my website’s pages and blog posts as Markdown files. Jekyll, my static site generator, then reads all of my Markdown files and turns them into HTML files (which is what we see on an internet browser).</p>
-            <div id="anchor">
-              <a id="writing-links-in-markdown">&nbsp;</a>
-            </div>
-            <h2>Writing Links in Markdown ✍🏼</h2>
-            <p>In Markdown, the easiest way to add a link to a line of text is like this:</p>
-            <div class="language-markdown highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="markdown">This will be a link to <span class="p">[</span><span class="nv">GitHub</span><span class="p">](</span><span class="sx">https://github.com</span><span class="p">)</span>.
-</code></pre>
-              </div>
-            </div>
-            <p>This example will come out looking like this:</p>
-            <blockquote>
-              <p>This will be a link to <a href="https://github.com" target="_self">GitHub</a>.</p>
-            </blockquote>
-            <p>In this example, the word <code>GitHub</code> will be a clickable link to <code>https://github.com</code>. And in most Markdown interpreters, including on GitHub, that link will open in the same tab that you’re currently in. And if you’re like me, this is irritating.</p>
-            <p>For my own website, I believe that all EXTERNAL links should open in a new browser tab, and INTERNAL links should open in the same tab. An EXTERNAL link points to a new website, or a website that has a different URL than the website you are currently on. An INTERNAL link points to the same website that you’re currently looking at.</p>
-            <p>In modern internetting (not a real word, but I think I might copyright it), it’s totally a good idea to be linking all over the place. The more links the better—within reason of course. And if you’re opening all of the external links in the same tab that the user is looking in, that user will be hitting the <code>Back</code> button <em>a lot</em>. Even I get tired of that much <code>Back</code> buttoning.</p>
-            <div id="anchor">
-              <a id="writing-links-in-markdown-that-open-in-a-new-tab">&nbsp;</a>
-            </div>
-            <h2>Writing Links in Markdown that Open in a New Tab ⎘</h2>
-            <p>So, I endeavored to find the best way to set my Markdown links to open in new tabs. By default, in Markdown with kramdown, my selected Markdown-to-HTML converter, there’s only two ways to make this happen:</p>
-            <ol>
-              <li>
-                <p>This option is essentially injecting raw HTML into the Markdown sentence. While this is totally acceptable and it works, it’s typing a lot of special characters into a sentence, just for a link to open in a new tab. This solution works when Markdown is interpreted with kramdown, and it will render properly on GitHub, although GitHub will still open the link in the same tab.</p>
-                <div class="language-html highlighter-rouge">
-                  <div class="highlight">
-                    <pre class="highlight"><code data-lang="html">This will be a link to <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://github.com"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>GitHub<span class="nt">&lt;/a&gt;</span>.
-</code></pre>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <p>This option is what kramdown provides as a way to open links in new tabs. It isn’t as awful to type, and it’s not quite as many extra characters. However, it will not render on GitHub nicely at all. When rendered on GitHub, it will leave the <code>{:target=&quot;_blank&quot;}</code> as part of the text sentence, meaning it’s disrupting the read of the document <em>and</em> confusing readers.</p>
-                <div class="language-markdown highlighter-rouge">
-                  <div class="highlight">
-                    <pre class="highlight"><code data-lang="markdown">This will be a link to <span class="p">[</span><span class="nv">GitHub</span><span class="p">](</span><span class="sx">https://github.com</span><span class="p">)</span>{:target="_blank"}.
-</code></pre>
-                  </div>
-                </div>
-              </li>
-            </ol>
-            <p>And with either of the solutions, GitHub does this weird raw text italisizing that makes looking at these files very painful. Here’s an example. Do you see how half of the paragraphs have been entirely italisized?</p>
-            <div class="text-center photoswipe-gallery">
-              <a class="photoswipe photo" href="https://i.imgur.com/npgfOZz.png" target="_blank" data-pswp-width="986" data-pswp-height="962">
-                <img class="image" src="https://i.imgur.com/npgfOZz.png" width="400"  alt="GitHub’s weird italisizing">
-                <div class="invisible caption">GitHub’s weird italisizing</div>
-              </a>
-            </div>
-            <p>So, neither of these options are perfect, and I don’t like either of them. I want to be able to easily type a link, with the traditional Markdown format (<code>[link](url)</code>), and I want the link to open in a new tab on the browser (converted to HTML from kramdown), and to read in GitHub properly (not include the <code>{:target=&quot;_blank&quot;}</code>).</p>
-            <div id="anchor">
-              <a id="a-not-so-terrible-solution">&nbsp;</a>
-            </div>
-            <h2>A Not-So Terrible Solution 🤞🏼</h2>
-            <p>After several pull requests of me changing my mind about how to write links, and doing massive search-replaces in my codebase, I found a different kind of solution… a solution that involves Javascript. Static sites (like mine) can use Javascript to do view-based logic and methods right in front of the user. It’s unwise to incorporate <em>a lot</em> of Javascript on a single page because it’ll slow down loading and operation times, but it’s how I did simply functionality, like showing the comments on the bottom of each page or loading the icons. And so of course, somebody has written <a href="https://html.com/attributes/a-target/">this blog post from html.com</a> which nicely provides a Javascript solution for opening every external URL in a new tab. This script is what is suggested to be placed at the bottom of our HTML files:</p>
-            <div class="language-html highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-  <span class="kd">function</span> <span class="nf">externalLinks</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">),</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">c</span><span class="p">[</span><span class="nx">a</span><span class="p">];</span>
-      <span class="nx">b</span><span class="p">.</span><span class="nf">getAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">href</span><span class="dl">'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">!==</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">_blank</span><span class="dl">'</span><span class="p">)</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
-  <span class="nf">externalLinks</span><span class="p">();</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre>
-              </div>
-            </div>
-            <p>It’s very simple, but yet, it covers almost exactly what I need. On every page that’s loaded, it will go through my converted and compiled HTML, find each attribute that contains a link, and will guarantee that each EXTERNAL link will open to a new tab, and that each INTERNAL link opens to the current tab. Voilà!</p>
-            <p>But there’s one piece missing. That’s for exceptions. Every now and then—such as writing this blog post—I want an EXTERNAL link that will open in the current tab. So, I need a way to exclude those few links from opening in a new tab. The answer comes from changing the <code>for</code> loop to look like this:</p>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="javascript"><span class="kd">var</span> <span class="nx">links</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="k">for</span><span class="p">(</span><span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">counter</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">counter</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">link</span> <span class="o">=</span> <span class="nx">links</span><span class="p">[</span><span class="nx">counter</span><span class="p">];</span>
+          
+          <div class="page-body"><h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#writing-links-in-markdown">Writing Links in Markdown</a></li>
+<li><a href="#writing-links-in-markdown-that-open-in-a-new-tab">Writing Links in Markdown that Open in a New Tab</a></li>
+<li><a href="#a-not-so-terrible-solution">A Not-So Terrible Solution</a></li>
+<li><a href="#putting-it-all-together">Putting It All Together</a></li>
+<li><a href="#references-and-additional-reading">References and Additional Reading</a></li>
+</ul>
+<div id="anchor">
+  <a id="introduction">&nbsp;</a>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>Have you ever noticed that some websites you visit have links that open to new tabs in your browser, and some open to the current tab in your browser? Does that inconsistency confuse or annoy you? Which do you prefer? Do you ever wonder <em>why</em> that is? Well, since the websites of the internet can&rsquo;t quite seem to agree and make a choice, let&rsquo;s discuss how I&rsquo;ve approached this topic, and what I&rsquo;ve done to make an easy decision about the important question of new tab&hellip; or not to new tab.</p>
+<p>First, let&rsquo;s make sure we&rsquo;re all on the same page when I say &ldquo;opening in a new tab&rdquo; versus &ldquo;opening in the current tab.&rdquo; The first example is of a link opening in the current tab. The second is of a link opening in a new tab:</p>
+<blockquote>
+<p>This will be a link to <a href="https://github.com/" target="_self">GitHub</a>.</p>
+<p>This will be a link to <a href="https://github.com/" target="_blank">GitHub</a>.</p></blockquote>
+<p>Next, for those of you that aren&rsquo;t familiar with Markdown, here&rsquo;s Wikipedia&rsquo;s definition (since Wikipedia is truth 😉):</p>
+<blockquote>
+<p>Markdown is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.</p></blockquote>
+<p>Because Markdown makes it easy to write paragraphs and content, I actually write all of my website&rsquo;s pages and blog posts as Markdown files. Jekyll, my static site generator, then reads all of my Markdown files and turns them into HTML files (which is what we see on an internet browser).</p>
+<div id="anchor">
+  <a id="writing-links-in-markdown">&nbsp;</a>
+</div>
+<h2 id="writing-links-in-markdown-">Writing Links in Markdown ✍🏼</h2>
+<p>In Markdown, the easiest way to add a link to a line of text is like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">This will be a link to [<span class="nt">GitHub</span>](<span class="na">https://github.com</span>).
+</span></span></code></pre></div><p>This example will come out looking like this:</p>
+<blockquote>
+<p>This will be a link to <a href="https://github.com" target="_self">GitHub</a>.</p></blockquote>
+<p>In this example, the word <code>GitHub</code> will be a clickable link to <code>https://github.com</code>. And in most Markdown interpreters, including on GitHub, that link will open in the same tab that you&rsquo;re currently in. And if you&rsquo;re like me, this is irritating.</p>
+<p>For my own website, I believe that all EXTERNAL links should open in a new browser tab, and INTERNAL links should open in the same tab. An EXTERNAL link points to a new website, or a website that has a different URL than the website you are currently on. An INTERNAL link points to the same website that you&rsquo;re currently looking at.</p>
+<p>In modern internetting (not a real word, but I think I might copyright it), it&rsquo;s totally a good idea to be linking all over the place. The more links the better—within reason of course. And if you&rsquo;re opening all of the external links in the same tab that the user is looking in, that user will be hitting the <code>Back</code> button <em>a lot</em>. Even I get tired of that much <code>Back</code> buttoning.</p>
+<div id="anchor">
+  <a id="writing-links-in-markdown-that-open-in-a-new-tab">&nbsp;</a>
+</div>
+<h2 id="writing-links-in-markdown-that-open-in-a-new-tab-">Writing Links in Markdown that Open in a New Tab ⎘</h2>
+<p>So, I endeavored to find the best way to set my Markdown links to open in new tabs. By default, in Markdown with kramdown, my selected Markdown-to-HTML converter, there&rsquo;s only two ways to make this happen:</p>
+<ol>
+<li>
+<p>This option is essentially injecting raw HTML into the Markdown sentence. While this is totally acceptable and it works, it&rsquo;s typing a lot of special characters into a sentence, just for a link to open in a new tab. This solution works when Markdown is interpreted with kramdown, and it will render properly on GitHub, although GitHub will still open the link in the same tab.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">This will be a link to <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://github.com&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>GitHub<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.
+</span></span></code></pre></div></li>
+<li>
+<p>This option is what kramdown provides as a way to open links in new tabs. It isn&rsquo;t as awful to type, and it&rsquo;s not quite as many extra characters. However, it will not render on GitHub nicely at all. When rendered on GitHub, it will leave the <code>{:target=&quot;_blank&quot;}</code> as part of the text sentence, meaning it&rsquo;s disrupting the read of the document <em>and</em> confusing readers.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">This will be a link to [<span class="nt">GitHub</span>](<span class="na">https://github.com</span>){:target=&#34;_blank&#34;}.
+</span></span></code></pre></div></li>
+</ol>
+<p>And with either of the solutions, GitHub does this weird raw text italisizing that makes looking at these files very painful. Here&rsquo;s an example. Do you see how half of the paragraphs have been entirely italisized?</p>
+<div class="text-center photoswipe-gallery">
+  <a class="photoswipe photo" href="https://i.imgur.com/npgfOZz.png" target="_blank"
+      data-pswp-width="986" data-pswp-height="962"><img class="image" src="https://i.imgur.com/npgfOZz.png" width="400"  alt="GitHub’s weird italisizing"><div class="invisible caption">GitHub’s weird italisizing</div></a>
+</div>
+<p>So, neither of these options are perfect, and I don&rsquo;t like either of them. I want to be able to easily type a link, with the traditional Markdown format (<code>[link](url)</code>), and I want the link to open in a new tab on the browser (converted to HTML from kramdown), and to read in GitHub properly (not include the <code>{:target=&quot;_blank&quot;}</code>).</p>
+<div id="anchor">
+  <a id="a-not-so-terrible-solution">&nbsp;</a>
+</div>
+<h2 id="a-not-so-terrible-solution-">A Not-So Terrible Solution 🤞🏼</h2>
+<p>After several pull requests of me changing my mind about how to write links, and doing massive search-replaces in my codebase, I found a different kind of solution&hellip; a solution that involves Javascript. Static sites (like mine) can use Javascript to do view-based logic and methods right in front of the user. It&rsquo;s unwise to incorporate <em>a lot</em> of Javascript on a single page because it&rsquo;ll slow down loading and operation times, but it&rsquo;s how I did simply functionality, like showing the comments on the bottom of each page or loading the icons. And so of course, somebody has written <a href="https://html.com/attributes/a-target/">this blog post from html.com</a> which nicely provides a Javascript solution for opening every external URL in a new tab. This script is what is suggested to be placed at the bottom of our HTML files:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">externalLinks</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">c</span><span class="p">[</span><span class="nx">a</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">b</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">!==</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="s1">&#39;_blank&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">externalLinks</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>It&rsquo;s very simple, but yet, it covers almost exactly what I need. On every page that&rsquo;s loaded, it will go through my converted and compiled HTML, find each attribute that contains a link, and will guarantee that each EXTERNAL link will open to a new tab, and that each INTERNAL link opens to the current tab. Voilà!</p>
+<p>But there&rsquo;s one piece missing. That&rsquo;s for exceptions. Every now and then—such as writing this blog post—I want an EXTERNAL link that will open in the current tab. So, I need a way to exclude those few links from opening in a new tab. The answer comes from changing the <code>for</code> loop to look like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">links</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">counter</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">counter</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">link</span> <span class="o">=</span> <span class="nx">links</span><span class="p">[</span><span class="nx">counter</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">==</span> <span class="s1">&#39;_self&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">link</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">link</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">!==</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="s1">&#39;_self&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">link</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">link</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">!==</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="s1">&#39;_blank&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p>So, if the link in Markdown is written explicitly requesting the <code>target=&quot;_self&quot;</code>, then honor that. So the following link would open in the current tab:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">This will be a link to <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://github.com/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_self&#34;</span><span class="p">&gt;</span>GitHub<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.
+</span></span></code></pre></div><p>Similarly, if a link is explicitly written with <code>target=&quot;_blank&quot;</code>, no matter whether external or internal, the link should always open that in a new tab. If nothing is set for the <code>target</code> at all, then open in a new tab <em>if</em> the link is external.</p>
+<div id="anchor">
+  <a id="putting-it-all-together">&nbsp;</a>
+</div>
+<h2 id="putting-it-all-together-">Putting It All Together 🧩</h2>
+<p>Here&rsquo;s what my new script looks like after some personalized edits:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--
+</span></span></span><span class="line"><span class="cl"><span class="c">To open an EXTERNAL link in the CURRENT tab, write your link like this:
+</span></span></span><span class="line"><span class="cl"><span class="c">  &lt;a href=&#34;https://github.com&#34; target=&#34;_self&#34;&gt;GitHub&lt;/a&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c">
+</span></span></span><span class="line"><span class="cl"><span class="c">To open an INTERNAL link in a NEW tab, write your link like this:
+</span></span></span><span class="line"><span class="cl"><span class="c">  &lt;a href=&#34;https://emmasax.com&#34; target=&#34;_blank&#34;&gt;My website&lt;/a&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c">--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">openExternalLinksInNewTabs</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">links</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">counter</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">counter</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">link</span> <span class="o">=</span> <span class="nx">links</span><span class="p">[</span><span class="nx">counter</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">==</span> <span class="s1">&#39;_self&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">link</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">link</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">!==</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="s1">&#39;_self&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">link</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">link</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">!==</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="s1">&#39;_blank&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">openExternalLinksInNewTabs</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Now this <em><strong>really</strong></em> does everything I need. 🙌🏼</p>
+<div id="anchor">
+  <a id="references-and-additional-reading">&nbsp;</a>
+</div>
+<h2 id="references-and-additional-reading">References and Additional Reading</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Markdown">wikipedia.com: Markdown</a></li>
+<li><a href="https://jekyllrb.com/">jekyllrb.com</a></li>
+<li><a href="https://kramdown.gettalong.org/">kramdown</a></li>
+<li><a href="https://html.com/attributes/a-target/">html.com: a Target</a></li>
+<li><a href="https://www.caktusgroup.com/blog/2017/03/01/opening-external-links-same-tab-or-new/">caktusgroup.com: Opening External Links Same Tab or New</a></li>
+<li><a href="https://uxmovement.com/navigation/why-external-links-should-open-in-new-tabs/">uxmovement.com: Why External Links Should Open in New Tabs</a></li>
+</ul>
 
-  <span class="k">if </span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">_self</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">link</span><span class="p">.</span><span class="nf">getAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">href</span><span class="dl">'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">link</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">!==</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">_self</span><span class="dl">'</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">link</span><span class="p">.</span><span class="nf">getAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">href</span><span class="dl">'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">link</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">!==</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">_blank</span><span class="dl">'</span><span class="p">);</span>
-  <span class="p">};</span>
-<span class="p">};</span>
-</code></pre>
+              <div class="text-center margin-bottom-1">
+                <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
+                  Load Comments
+                </button>
+
+                <script id="comments" data-name="emmasax4" src="/js/show_comments.js"></script>
               </div>
-            </div>
-            <p>So, if the link in Markdown is written explicitly requesting the <code>target=&quot;_self&quot;</code>, then honor that. So the following link would open in the current tab:</p>
-            <div class="language-markdown highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="markdown">This will be a link to <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://github.com/"</span> <span class="na">target=</span><span class="s">"_self"</span><span class="nt">&gt;</span>GitHub<span class="nt">&lt;/a&gt;</span>.
-</code></pre>
-              </div>
-            </div>
-            <p>Similarly, if a link is explicitly written with <code>target=&quot;_blank&quot;</code>, no matter whether external or internal, the link should always open that in a new tab. If nothing is set for the <code>target</code> at all, then open in a new tab <em>if</em> the link is external.</p>
-            <div id="anchor">
-              <a id="putting-it-all-together">&nbsp;</a>
-            </div>
-            <h2>Putting It All Together 🧩</h2>
-            <p>Here’s what my new script looks like after some personalized edits:</p>
-            <div class="language-html highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="html"><span class="c">&lt;!--
-To open an EXTERNAL link in the CURRENT tab, write your link like this:
-  &lt;a href="https://github.com" target="_self"&gt;GitHub&lt;/a&gt;
 
-To open an INTERNAL link in a NEW tab, write your link like this:
-  &lt;a href="https://emmasax.com" target="_blank"&gt;My website&lt;/a&gt;
---&gt;</span>
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-  <span class="kd">function</span> <span class="nf">openExternalLinksInNewTabs</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">links</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">);</span>
+              <div id="disqus_thread"></div>
 
-    <span class="k">for</span><span class="p">(</span><span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">counter</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">counter</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">link</span> <span class="o">=</span> <span class="nx">links</span><span class="p">[</span><span class="nx">counter</span><span class="p">];</span>
-
-      <span class="k">if </span><span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">_self</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">link</span><span class="p">.</span><span class="nf">getAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">href</span><span class="dl">'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">link</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">!==</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">_self</span><span class="dl">'</span><span class="p">);</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">link</span><span class="p">.</span><span class="nf">getAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">href</span><span class="dl">'</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">link</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">!==</span> <span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">link</span><span class="p">.</span><span class="nx">target</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">_blank</span><span class="dl">'</span><span class="p">);</span>
-      <span class="p">};</span>
-    <span class="p">};</span>
-  <span class="p">};</span>
-  <span class="nf">openExternalLinksInNewTabs</span><span class="p">();</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre>
-              </div>
-            </div>
-            <p>Now this <em><strong>really</strong></em> does everything I need. 🙌🏼</p>
-            <div id="anchor">
-              <a id="references-and-additional-reading">&nbsp;</a>
-            </div>
-            <h2>References and Additional Reading</h2>
-            <ul>
-              <li><a href="https://en.wikipedia.org/wiki/Markdown">wikipedia.com: Markdown</a></li>
-              <li><a href="https://jekyllrb.com/">jekyllrb.com</a></li>
-              <li><a href="https://kramdown.gettalong.org/">kramdown</a></li>
-              <li><a href="https://html.com/attributes/a-target/">html.com: a Target</a></li>
-              <li><a href="https://www.caktusgroup.com/blog/2017/03/01/opening-external-links-same-tab-or-new/">caktusgroup.com: Opening External Links Same Tab or New</a></li>
-              <li><a href="https://uxmovement.com/navigation/why-external-links-should-open-in-new-tabs/">uxmovement.com: Why External Links Should Open in New Tabs</a></li>
-            </ul>
-            <div class="text-center margin-bottom-1">
-              <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
-                Load Comments
-              </button>
-              <script id="comments" data-name="emmasax4" src="/assets/js/show_comments.js"></script>
-            </div>
-            <div id="disqus_thread"></div>
-            <noscript>
-              Please enable JavaScript to view the
-              <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-                comments powered by Disqus.
-              </a>
-            </noscript>
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                  comments powered by Disqus.
+                </a>
+              </noscript>
           </div>
         </div>
-        <div class="col col-12 col-md-2 text-center">
-          <!-- Sidebar button to go back to all posts and RSS feed button -->
+
+        <div class="col col-12 col-md-2">
+          
           <div class="text-center">
             <div class="padding-bottom-1">
-              <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
-            </div>
+  <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
+</div>
+
             <a href="/feed.xml" target="_blank" class="link-icon-rss">
-              <img class="icon-hover-dark-mode" src="/assets/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
-              <img class="icon-hover-light-mode" src="/assets/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
-              <img class="icon-static-dark-mode" src="/assets/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
-              <img class="icon-static-light-mode" src="/assets/images/icons/rss-static-light-mode.svg" alt="RSS icon">
-            </a>
+  <img class="icon-hover-dark-mode" src="/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
+  <img class="icon-hover-light-mode" src="/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
+  <img class="icon-static-dark-mode" src="/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
+  <img class="icon-static-light-mode" src="/images/icons/rss-static-light-mode.svg" alt="RSS icon">
+</a>
+
+
           </div>
         </div>
       </div>
     </main>
   </body>
-  <!-- Footer -->
+
   <footer>
-    &copy; <script src="/assets/js/get_full_year.js"></script>
-    Emma Sax. All rights reserved.
-  </footer>
-  <!-- Javascript scripts -->
-  <script
-    child-selector=".photoswipe"
-    class="photoswipe-activation"
-    gallery-selector=".photoswipe-gallery"
-    src="/assets/js/activate_photoswipe.js"
-    type="module"
-  ></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  <script src="/assets/js/external_links.js"></script>
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/lightbox.min.js"></script>
-  <script src="/assets/js/show_dates.js"></script>
+  &copy; <span id="year"></span>
+  Emma Sax. All rights reserved.
+</footer>
+<script
+  child-selector=".photoswipe"
+  class="photoswipe-activation"
+  gallery-selector=".photoswipe-gallery"
+  src="/js/activate_photoswipe.js"
+  type="module"
+></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/external_links.js"></script>
+<script src="/js/full_year.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/lightbox.min.js"></script>
 </html>

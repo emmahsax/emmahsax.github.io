@@ -1,160 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
-  <!-- Head -->
+<html lang="en-us">
   <head>
-    <link rel="alternate" href="/feed.xml" type="application/rss+xml">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#001aaf">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/google_fonts.min.css">
-    <link rel="stylesheet" href="/assets/css/lightbox.min.css">
-    <link rel="stylesheet" href="/assets/css/photoswipe.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css"> <!-- This needs to be the last CSS line -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
-    <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
-    <meta name="msapplication-TileColor" content="#001aaf">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Begin Jekyll SEO tag v2.8.0e -->
-    <title>Time Zones, UTC, and Javascript… Oh My! | Emma Sax</title>
-    <meta name="generator" content="Jekyll v4.4.1" />
-    <meta property="og:title" content="Time Zones, UTC, and Javascript… Oh My! | Emma Sax" />
-    <meta name="author" content="Emma Sax" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Time zones are a pain in the software world… learn more about how I overcame that with my website." />
-    <meta property="og:description" content="Time zones are a pain in the software world… learn more about how I overcame that with my website." />
-    <meta property="twitter:description" content="Time zones are a pain in the software world… learn more about how I overcame that with my website." />
-    <link rel="canonical" href="https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/" />
-    <meta property="og:url" content="https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/" />
-    <meta property="og:site_name" content="Emma Sax" />
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-02-07T06:00:00+00:00" />
-    <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Time Zones, UTC, and Javascript… Oh My!" />
-    <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
-    <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
-    <meta name="yandex-verification" content="32fe10ad6352714a" />
+  <link rel="alternate" href="/feed.xml" type="application/rss+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#001aaf">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/google_fonts.min.css">
+  <link rel="stylesheet" href="/css/lightbox.min.css">
+  <link rel="stylesheet" href="/css/photoswipe.min.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#001aaf">
+
+  
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Time Zones, UTC, and Javascript... Oh My! | Emma Sax</title>
+
+  <meta name="author" content="Emma Sax">
+  <meta property="og:description" content="Time zones are a pain in the software world... learn more about how I overcame that with my website.">
+  <meta property="og:locale" content="en-us" />
+  <meta property="og:site_name" content="Emma Sax" />
+  <meta property="og:title" content="Time Zones, UTC, and Javascript... Oh My!" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/" />
+
+  <link rel="canonical" href="https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/" />
+    <meta property="article:published_time" content="2020-02-07T00:00:00-06:00" />
+
+  <meta property="twitter:description" content="Time zones are a pain in the software world... learn more about how I overcame that with my website." />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Time Zones, UTC, and Javascript... Oh My!" />
+
+  <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
+  <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
+  <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2024-11-24T03:15:54+00:00","datePublished":"2020-02-07T06:00:00+00:00","description":"Time zones are a pain in the software world… learn more about how I overcame that with my website.","headline":"Time Zones, UTC, and Javascript… Oh My!","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/"},"url":"https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/"}
-    </script>
-    <!-- End Jekyll SEO tag -->
-  </head>
-  <!-- Navigation bar -->
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
-      <div class="container-fluid">
-        <!-- Left hand side of navbar -->
-        <a class="navbar-brand mb-0" href="/" target="_self">
-          <img src="/assets/images/logo-plain-white-400.png" width="30" height="30"
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-04-02T12:59:01+00:00","datePublished":"2020-02-07T00:00:00-06:00","description":"Time zones are a pain in the software world... learn more about how I overcame that with my website.","headline":"Time Zones, UTC, and Javascript... Oh My!","keywords":["tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/time-zones-utc-and-javascript-oh-my/"}
+</script>
+
+</head>
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand mb-0" href="/" target="_self">
+        <img src="/images/logo-plain-white-400.png" width="30" height="30"
           class="d-inline-block align-top nav-icon" alt="E logo"
         >&nbsp;&nbsp;Emma Sax
-        </a>
-        <!-- Navbar open/close button when on a smaller screen -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbar-links" aria-controls="navbar-links"
         aria-expanded="false" aria-label="Toggle navigation"
       >
-          <img class="nav-icon-menu" src="/assets/images/icons/menu.svg" alt="Menu icon">
-          <img class="nav-icon-x" src="/assets/images/icons/x.svg" alt="X icon">
-        </button>
-        <!-- Page links -->
-        <div class="collapse navbar-collapse" id="navbar-links">
-          <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+        <img class="nav-icon-menu" src="/images/icons/menu.svg" alt="Menu icon">
+        <img class="nav-icon-x" src="/images/icons/x.svg" alt="X icon">
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbar-links">
+        <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+          <li class="nav-item ">
+                <a class="nav-link" href="/about-me/">About Me</a>
+              </li>
             <li class="nav-item ">
-              <a class="nav-link" href="/about-me/">About Me</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-            </li>
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
+              </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/blog/">Blog</a>
-            </li>
-          </ul>
-        </div>
+                <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            </ul>
       </div>
-    </nav>
-  </header>
-  <!-- Page content -->
-  <body>
+    </div>
+  </nav>
+</header>
+<body>
     <main class="container">
       <div class="row">
         <div class="col col-12 col-md-10">
-          <!-- Blog post title and information -->
+          
           <div class="text-center">
             <h1 class="post-title">
               Time Zones, UTC, and Javascript... Oh My!
+
               <div class="row post-data">
                 <div class="col col-12 col-md-4">
+                  
+
                   <span class="post-meta">
-                    <picture>
-                      <source media="(prefers-color-scheme: dark)" srcset="/assets/images/icons/tag-dark-mode.svg">
-                      <img class="post-categorization-icon" src="/assets/images/icons/tag-light-mode.svg" alt="Tag icon">
-                    </picture>
-                    <a href="/blog/tech/">tech</a>
-                  </span>
+                      <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="/images/icons/tag-dark-mode.svg">
+                        <img class="post-categorization-icon" src="/images/icons/tag-light-mode.svg" alt="Tag icon">
+                      </picture><a href="/blog/tech/">tech</a></span>
                 </div>
+
                 <div class="col col-12 col-md-4">
-                  <span class="date-meta-invisible">2020-02-07 00:00:00 -0600</span>
-                </div>
-                <div class="col col-12 col-md-4">
-                  <span class="post-meta">Read time: 11 minutes</span>
+                  <span class="date-meta">February 7, 2020</span></div>
+
+                <div class="col col-12 col-md-4"><span class="post-meta">Read time: 9 minutes</span>
                 </div>
               </div>
             </h1>
           </div>
-          <!-- Blog post content and comments -->
-          <div class="page-body">
-            <h2>Table of Contents</h2>
-            <ul>
-              <li><a href="#why-time-zones">Why Time Zones?</a></li>
-              <li><a href="#switching-time-zones-between-users-and-system">Switching Time Zones between Users and System</a></li>
-              <li><a href="#conclusion">Conclusion</a></li>
-            </ul>
-            <div id="anchor">
-              <a id="why-time-zones">&nbsp;</a>
-            </div>
-            <h2>Why Time Zones?</h2>
-            <p>On my latest blog post, I wanted to try something new. When publishing, I wanted to publish on a future date (specifically at midnight the next day). I set up the date of the post to include the next day, and then planned to go onto Travis at midnight to build the newest version of the site… with the new blog post. And then I continued working on my website for the night.</p>
-            <p>But what ended up happening was Travis CI built on my <code>main</code> branch at 6:15pm… and suddenly my new blog post was live 😱! What happened? Well, Travis CI by default runs in UTC. So, since 6:00pm in CST is midnight in UTC, Travis CI determined it was time to publish the blog post. I quickly reverted that commit on my <code>pages</code> branch to hide the new post once again, and then worked to find a solution to make Travis CI behave for the remainder of the night.</p>
-            <p>What I ended up finding was this. By adding these lines to the <code>.travis.yml</code> file, we can override Travis CI’s default time zone and have it bundle in CST.</p>
-            <div class="language-yml highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="yml"><span class="na">before_install</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">export TZ=America/Chicago</span>
-</code></pre>
-              </div>
-            </div>
-            <p>I thought I would be satisfied with this. I develop my site in CST (or CDT in the summer), and now Travis will also bundle in that time zone. But, after more thought, I realized that this is really just a bandaid fix 🤕. What if I move across the country and now live in a different time zone permanently? What if I’m traveling internationally (say in France), and I’m blogging while I’m there. I’m no longer going to be thinking in terms of <code>America/Chicago</code> time zone… say I publish a blog post at 12pm noon in France. When I get home to Minneapolis, should the blog post still show up as having been published at 12pm noon? Or should it properly show a 6–7 hour time difference?</p>
-            <p>So after a lot of thinking, I decided that the best (and most sustainable) way to design a website is so that all dates/times are UTC in the database (Jekyll doesn’t have a DB, so just in the HTML, <code>feed.xml</code>, and <code>sitemap.xml</code>). Then, we can convert all UTC date/times to become in a user’s local time when they navigate to my site ⏱.</p>
-            <div id="anchor">
-              <a id="switching-time-zones-between-users-and-system">&nbsp;</a>
-            </div>
-            <h2>Switching Time Zones between Users and System</h2>
-            <p>Time zones are complicated. I’ve dabbled with them a little bit, but they tend to make my head spin 💫. So, I made hefty goal for myself 🥴. When I publish a blog post, I can specify the publish date/time in <em>my</em> local time zone. Jekyll will build the blog post as having been published at the corresponding UTC time. And when a reader looks at the blog post on the website, it’ll give the date/time in their local time zone (which may be <em>my</em> time zone, but it could also be different).</p>
-            <p>Let’s look at an example. I publish a blog post at 10:15pm in CST on Jan. 17, 2020:</p>
-            <div class="highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code>2020-01-17 22:15:00 -0600
-</code></pre>
-              </div>
-            </div>
-            <p>Jekyll will compile and store the blog post as having been published in UTC (notice the date change):</p>
-            <div class="highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code>2020-01-18 04:15:00 +0000
-</code></pre>
-              </div>
-            </div>
-            <p>But when a reader looks at the blog post online, it will show in their local time zone (I normally hide the specific times when showing publishing dates):</p>
-            <div class="highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code>### CST - Minnesota
+
+          
+          <div class="page-body"><h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#why-time-zones">Why Time Zones?</a></li>
+<li><a href="#switching-time-zones-between-users-and-system">Switching Time Zones between Users and System</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<div id="anchor">
+  <a id="why-time-zones">&nbsp;</a>
+</div>
+<h2 id="why-time-zones">Why Time Zones?</h2>
+<p>On my latest blog post, I wanted to try something new. When publishing, I wanted to publish on a future date (specifically at midnight the next day). I set up the date of the post to include the next day, and then planned to go onto Travis at midnight to build the newest version of the site&hellip; with the new blog post. And then I continued working on my website for the night.</p>
+<p>But what ended up happening was Travis CI built on my <code>main</code> branch at 6:15pm&hellip; and suddenly my new blog post was live 😱! What happened? Well, Travis CI by default runs in UTC. So, since 6:00pm in CST is midnight in UTC, Travis CI determined it was time to publish the blog post. I quickly reverted that commit on my <code>pages</code> branch to hide the new post once again, and then worked to find a solution to make Travis CI behave for the remainder of the night.</p>
+<p>What I ended up finding was this. By adding these lines to the <code>.travis.yml</code> file, we can override Travis CI&rsquo;s default time zone and have it bundle in CST.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">before_install</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">export TZ=America/Chicago</span><span class="w">
+</span></span></span></code></pre></div><p>I thought I would be satisfied with this. I develop my site in CST (or CDT in the summer), and now Travis will also bundle in that time zone. But, after more thought, I realized that this is really just a bandaid fix 🤕. What if I move across the country and now live in a different time zone permanently? What if I&rsquo;m traveling internationally (say in France), and I&rsquo;m blogging while I&rsquo;m there. I&rsquo;m no longer going to be thinking in terms of <code>America/Chicago</code> time zone&hellip; say I publish a blog post at 12pm noon in France. When I get home to Minneapolis, should the blog post still show up as having been published at 12pm noon? Or should it properly show a 6–7 hour time difference?</p>
+<p>So after a lot of thinking, I decided that the best (and most sustainable) way to design a website is so that all dates/times are UTC in the database (Jekyll doesn&rsquo;t have a DB, so just in the HTML, <code>feed.xml</code>, and <code>sitemap.xml</code>). Then, we can convert all UTC date/times to become in a user&rsquo;s local time when they navigate to my site ⏱.</p>
+<div id="anchor">
+  <a id="switching-time-zones-between-users-and-system">&nbsp;</a>
+</div>
+<h2 id="switching-time-zones-between-users-and-system">Switching Time Zones between Users and System</h2>
+<p>Time zones are complicated. I&rsquo;ve dabbled with them a little bit, but they tend to make my head spin 💫. So, I made hefty goal for myself 🥴. When I publish a blog post, I can specify the publish date/time in <em>my</em> local time zone. Jekyll will build the blog post as having been published at the corresponding UTC time. And when a reader looks at the blog post on the website, it&rsquo;ll give the date/time in their local time zone (which may be <em>my</em> time zone, but it could also be different).</p>
+<p>Let&rsquo;s look at an example. I publish a blog post at 10:15pm in CST on Jan. 17, 2020:</p>
+<pre tabindex="0"><code>2020-01-17 22:15:00 -0600
+</code></pre><p>Jekyll will compile and store the blog post as having been published in UTC (notice the date change):</p>
+<pre tabindex="0"><code>2020-01-18 04:15:00 +0000
+</code></pre><p>But when a reader looks at the blog post online, it will show in their local time zone (I normally hide the specific times when showing publishing dates):</p>
+<pre tabindex="0"><code>### CST - Minnesota
 January 17, 2020 22:15
 
 ### PST - California
@@ -162,155 +150,132 @@ January 17, 2020 20:15
 
 ### CEST - France
 January 18, 2020 05:15
-</code></pre>
-              </div>
-            </div>
-            <p>Most of the time, I publish my blog posts at midnight on a specific date. This means that to everybody in <code>America/Chicago</code> and east of me, the date should be that specific date. But technically, to everybody west, the blog post went live on the day <em>before</em>.</p>
-            <p>So, with this as my final goal, I went ahead to try to implement this in five steps:</p>
-            <h3>1️. The entire Jekyll site must build in UTC</h3>
-            <p>This was easy. I set the following in my <code>_config.yml</code>:</p>
-            <div class="language-yml highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="yml"><span class="na">timezone</span><span class="pi">:</span> <span class="s">UTC</span>
-</code></pre>
-              </div>
-            </div>
-            <p>I also took this opportunity to remove the <code>export TZ=America/Chicago</code> from my <code>.travis.yml</code>, since now the Jekyll site and Travis CI will naturally be on the same wavelength.</p>
-            <h3>2️. Add the specific date/time of each blog posts’ publish time</h3>
-            <p>This was also pretty easy. You can just add the date to the front matter of each blog post:</p>
-            <div class="language-yml highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="yml"><span class="na">date</span><span class="pi">:</span> <span class="s">2020-01-17 22:15:00 -0600</span>
-</code></pre>
-              </div>
-            </div>
-            <p>You can specify the time the post should be published as well, although, as I stated above, I normally just use <code>00:00:00</code>, or midnight. For what I’m working with, the last part is important. That’s the time zone offset. In Minnesota, that’ll be <code>-0600</code> in the winter time (CST), or <code>-0500</code> in the summer (CDT)—I always used to get those two mixed up. But, I’ve decided that I want this to be easy for me to use going forward… so I should always write the date/time as I’m looking at my clock (in 24 hour time of course) with my current time zone offset 📝.</p>
-            <h3>3️. Jekyll will store the blog post as being published in UTC</h3>
-            <p>When I put both of these pieces together, the result was immediate. As soon as I ran <code>jekyll serve</code> on my website, I noticed that the <code>feed.xml</code> and <code>sitemap.xml</code> label the published date/time as in UTC! Yes! Nice and quick.</p>
-            <h3>4️. Show the users the published date/time in their local time zones</h3>
-            <p>This was by far the most challenging part. I played with a Jekyll plugin first, to see if there was an easy way to convert the UTC date/time to be in a different time zone. This would’ve worked, if I wanted to hard-code the new time zone (which defeats the purpose of it being flexible to the readers’ location). So, after much googling, I realized the only good way to understand the readers’ location and time zone offset is to use Javascript. Yay…. 😰</p>
-            <p>I’m not really a Javascript person. But, I jumped in anyway, and wanted to find a solution. Using some loop syntax from another slice of Javascript I use, I started typing away. I want the Javascript to go through the HTML, find all of the dates, and then convert them to the readers’ local time and print that back out again.</p>
-            <p>The entire script locates all of the HTML elements with the class <code>date-meta</code> (assuming that it is indeed a UTC date), and then Javascript makes it easy to change time zones:</p>
-            <div class="language-javascript highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="javascript"><span class="kd">var</span> <span class="nx">monthNames</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">January</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">February</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">March</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">April</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">May</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">June</span><span class="dl">'</span><span class="p">,</span>
-                  <span class="dl">'</span><span class="s1">July</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">August</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">September</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">October</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">November</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">December</span><span class="dl">'</span>
-<span class="p">];</span>
-<span class="kd">var</span> <span class="nx">dateArray</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">2020-01-18 04:15:00 +0000</span><span class="dl">'</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/</span><span class="se">[^</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">/</span><span class="p">);</span>
-<span class="c1">//  localDate = Fri Jan 17 2020 22:15:00 GMT-0600 (Central Standard Time)</span>
-<span class="kd">var</span> <span class="nx">localDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span>
-  <span class="nb">Date</span><span class="p">.</span><span class="nc">UTC</span><span class="p">(</span><span class="nx">dateArray</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
-<span class="p">);</span>
-<span class="kd">var</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nf">getDate</span><span class="p">();</span> <span class="c1">// 17</span>
-<span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nf">getFullYear</span><span class="p">();</span> <span class="c1">// 2020</span>
-<span class="kd">var</span> <span class="nx">monthIndex</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nf">getMonth</span><span class="p">();</span> <span class="c1">// 0</span>
-<span class="k">return</span> <span class="nx">monthNames</span><span class="p">[</span><span class="nx">monthIndex</span><span class="p">]</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">day</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">, </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">year</span><span class="p">;</span> <span class="c1">// January 17, 2020</span>
-</code></pre>
-              </div>
-            </div>
-            <p>All together, this now looks like this:</p>
-            <div class="language-html highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-  <span class="kd">function</span> <span class="nf">showDatesInLocalTime</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">dates</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nf">getElementsByClassName</span><span class="p">(</span><span class="dl">'</span><span class="s1">date-meta</span><span class="dl">'</span><span class="p">);</span>
-    <span class="kd">var</span> <span class="nx">monthNames</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">January</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">February</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">March</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">April</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">May</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">June</span><span class="dl">'</span><span class="p">,</span>
-                      <span class="dl">'</span><span class="s1">July</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">August</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">September</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">October</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">November</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">December</span><span class="dl">'</span>
-    <span class="p">];</span>
+</code></pre><p>Most of the time, I publish my blog posts at midnight on a specific date. This means that to everybody in <code>America/Chicago</code> and east of me, the date should be that specific date. But technically, to everybody west, the blog post went live on the day <em>before</em>.</p>
+<p>So, with this as my final goal, I went ahead to try to implement this in five steps:</p>
+<h3 id="1-the-entire-jekyll-site-must-build-in-utc">1️. The entire Jekyll site must build in UTC</h3>
+<p>This was easy. I set the following in my <code>_config.yml</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">timezone</span><span class="p">:</span><span class="w"> </span><span class="l">UTC</span><span class="w">
+</span></span></span></code></pre></div><p>I also took this opportunity to remove the <code>export TZ=America/Chicago</code> from my <code>.travis.yml</code>, since now the Jekyll site and Travis CI will naturally be on the same wavelength.</p>
+<h3 id="2-add-the-specific-datetime-of-each-blog-posts-publish-time">2️. Add the specific date/time of each blog posts&rsquo; publish time</h3>
+<p>This was also pretty easy. You can just add the date to the front matter of each blog post:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="ld">2020-01-17 22:15:00 -0600</span><span class="w">
+</span></span></span></code></pre></div><p>You can specify the time the post should be published as well, although, as I stated above, I normally just use <code>00:00:00</code>, or midnight. For what I&rsquo;m working with, the last part is important. That&rsquo;s the time zone offset. In Minnesota, that&rsquo;ll be <code>-0600</code> in the winter time (CST), or <code>-0500</code> in the summer (CDT)—I always used to get those two mixed up. But, I&rsquo;ve decided that I want this to be easy for me to use going forward&hellip; so I should always write the date/time as I&rsquo;m looking at my clock (in 24 hour time of course) with my current time zone offset 📝.</p>
+<h3 id="3-jekyll-will-store-the-blog-post-as-being-published-in-utc">3️. Jekyll will store the blog post as being published in UTC</h3>
+<p>When I put both of these pieces together, the result was immediate. As soon as I ran <code>jekyll serve</code> on my website, I noticed that the <code>feed.xml</code> and <code>sitemap.xml</code> label the published date/time as in UTC! Yes! Nice and quick.</p>
+<h3 id="4-show-the-users-the-published-datetime-in-their-local-time-zones">4️. Show the users the published date/time in their local time zones</h3>
+<p>This was by far the most challenging part. I played with a Jekyll plugin first, to see if there was an easy way to convert the UTC date/time to be in a different time zone. This would&rsquo;ve worked, if I wanted to hard-code the new time zone (which defeats the purpose of it being flexible to the readers&rsquo; location). So, after much googling, I realized the only good way to understand the readers&rsquo; location and time zone offset is to use Javascript. Yay&hellip;. 😰</p>
+<p>I&rsquo;m not really a Javascript person. But, I jumped in anyway, and wanted to find a solution. Using some loop syntax from another slice of Javascript I use, I started typing away. I want the Javascript to go through the HTML, find all of the dates, and then convert them to the readers&rsquo; local time and print that back out again.</p>
+<p>The entire script locates all of the HTML elements with the class <code>date-meta</code> (assuming that it is indeed a UTC date), and then Javascript makes it easy to change time zones:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">monthNames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;June&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="s1">&#39;July&#39;</span><span class="p">,</span><span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;October&#39;</span><span class="p">,</span><span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;December&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">dateArray</span> <span class="o">=</span> <span class="s1">&#39;2020-01-18 04:15:00 +0000&#39;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/[^0-9]/</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//  localDate = Fri Jan 17 2020 22:15:00 GMT-0600 (Central Standard Time)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">localDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="nx">dateArray</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span> <span class="c1">// 17
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span> <span class="c1">// 2020
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">monthIndex</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">();</span> <span class="c1">// 0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">return</span> <span class="nx">monthNames</span><span class="p">[</span><span class="nx">monthIndex</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">day</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nx">year</span><span class="p">;</span> <span class="c1">// January 17, 2020
+</span></span></span></code></pre></div><p>All together, this now looks like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">showDatesInLocalTime</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">dates</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">&#39;date-meta&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">monthNames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;June&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="s1">&#39;July&#39;</span><span class="p">,</span><span class="s1">&#39;August&#39;</span><span class="p">,</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;October&#39;</span><span class="p">,</span><span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;December&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">counter</span> <span class="o">&lt;</span> <span class="nx">dates</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">counter</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">htmlDate</span> <span class="o">=</span> <span class="nx">dates</span><span class="p">[</span><span class="nx">counter</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">dateArray</span> <span class="o">=</span> <span class="nx">htmlDate</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">.</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="sr">/[^0-9]/</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">localDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="nx">dateArray</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">      <span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="kd">var</span> <span class="nx">monthIndex</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">htmlDate</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">monthNames</span><span class="p">[</span><span class="nx">monthIndex</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">day</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nx">year</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">showDatesInLocalTime</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>I&rsquo;m hiding a lot of the effort this took me&hellip; don&rsquo;t get me wrong, it took me what felt like <em>hours</em> to develop this method, and I&rsquo;m still finding bugs in it 🦟.</p>
+<h3 id="5-dont-show-the-published-date-in-the-url-of-the-blog-posts">5️. Don&rsquo;t show the published date in the URL of the blog posts</h3>
+<p>In our example, I published a post on the 17th of January at night in CST. But we see now, that if I travel to France and look back at past blog posts, it&rsquo;ll look as if it was published on the 18th of January. BUT, the URL of the blog post will include the published date. See an example below:</p>
+<div class="text-center photoswipe-gallery">
+  <a class="photoswipe photo" href="https://i.imgur.com/cmdEOhd.png" target="_blank"
+      data-pswp-width="530" data-pswp-height="33"><img class="image" src="https://i.imgur.com/cmdEOhd.png" width="450"  alt="Time zone shown in URL"><div class="invisible caption">Time zone shown in URL</div></a>
+</div>
+<p>If the date the site is showing the reader is moving around depending on the readers&rsquo; location, then this is confusing—the URL date won&rsquo;t change!</p>
+<p>If I&rsquo;m honest, having the date in the URL was never my favorite thing&hellip; it always bugged me. I just never cared quite enough to change it, and to deal with the redirects I&rsquo;d have to set up. But given this inconsistency, I decided that I finally cared enough to make the shift ↪.</p>
+<p>I added the <code>jekyll-redirect-from</code> plugin to my <code>_config.yml</code>. And from there, redirecting is actually quite easy. In the front matter of each blog post, I add the new URL of the blog post, and then redirect to the new URL from the old URL:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l">/blog/posts/opening-links-in-new-tabs-via-javascript/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">redirect_from</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">/blog/posts/2020-01-14-opening-links-in-new-tabs-via-javascript/</span><span class="w">
+</span></span></span></code></pre></div><p>Now, when I navigate to my blog posts at the old URL, my browser automatically redirects to the new URL. Hopefully that prevents my SEO ranking from going down 😬.</p>
+<div id="anchor">
+  <a id="conclusion">&nbsp;</a>
+</div>
+<h2 id="conclusion">Conclusion</h2>
+<p>At the end of the day, this goal maybe wasn&rsquo;t too hefty. It maybe took about six hours of total effort. I haven&rsquo;t traveled yet to see if it works as expected, but I have a trip planned in about a month, so we&rsquo;ll see then 🤷🏻‍♀️.</p>
+<p>The moral of the story is that time zones are complicated, but the most robust websites will take them into account. If your website has date/times, then you should show them to your users in their local times, if possible. And you should be careful when storing data with date/times to make sure they are all stored in the same time zone, so they don&rsquo;t get conflicted.</p>
+<p>I&rsquo;m still working on perfecting my time zone processing. It&rsquo;s complicated, and not all browsers react the same way to Javascript (who knew, right ¯\_(ツ)_/¯). But, I&rsquo;d strongly urge to you take the plunge on your website&hellip; it&rsquo;ll be worth it when your blog becomes internationally popular 😜.</p>
 
-    <span class="k">for</span><span class="p">(</span><span class="nx">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">counter</span> <span class="o">&lt;</span> <span class="nx">dates</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">counter</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">htmlDate</span> <span class="o">=</span> <span class="nx">dates</span><span class="p">[</span><span class="nx">counter</span><span class="p">];</span>
-      <span class="kd">var</span> <span class="nx">dateArray</span> <span class="o">=</span> <span class="nx">htmlDate</span><span class="p">.</span><span class="nx">innerHTML</span><span class="p">.</span><span class="nf">trim</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sr">/</span><span class="se">[^</span><span class="sr">0-9</span><span class="se">]</span><span class="sr">/</span><span class="p">);</span>
-      <span class="kd">var</span> <span class="nx">localDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">(</span>
-        <span class="nb">Date</span><span class="p">.</span><span class="nc">UTC</span><span class="p">(</span><span class="nx">dateArray</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
-      <span class="p">);</span>
-      <span class="kd">var</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nf">getDate</span><span class="p">();</span>
-      <span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nf">getFullYear</span><span class="p">();</span>
-      <span class="kd">var</span> <span class="nx">monthIndex</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nf">getMonth</span><span class="p">();</span>
-      <span class="nx">htmlDate</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">monthNames</span><span class="p">[</span><span class="nx">monthIndex</span><span class="p">]</span> <span class="o">+</span> <span class="dl">'</span><span class="s1"> </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">day</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">, </span><span class="dl">'</span> <span class="o">+</span> <span class="nx">year</span><span class="p">;</span>
-    <span class="p">};</span>
-  <span class="p">};</span>
-  <span class="nf">showDatesInLocalTime</span><span class="p">();</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre>
+              <div class="text-center margin-bottom-1">
+                <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
+                  Load Comments
+                </button>
+
+                <script id="comments" data-name="emmasax4" src="/js/show_comments.js"></script>
               </div>
-            </div>
-            <p>I’m hiding a lot of the effort this took me… don’t get me wrong, it took me what felt like <em>hours</em> to develop this method, and I’m still finding bugs in it 🦟.</p>
-            <h3>5️. Don’t show the published date in the URL of the blog posts</h3>
-            <p>In our example, I published a post on the 17th of January at night in CST. But we see now, that if I travel to France and look back at past blog posts, it’ll look as if it was published on the 18th of January. BUT, the URL of the blog post will include the published date. See an example below:</p>
-            <div class="text-center photoswipe-gallery">
-              <a class="photoswipe photo" href="https://i.imgur.com/cmdEOhd.png" target="_blank" data-pswp-width="530" data-pswp-height="33">
-                <img class="image" src="https://i.imgur.com/cmdEOhd.png" width="450"  alt="Time zone shown in URL">
-                <div class="invisible caption">Time zone shown in URL</div>
-              </a>
-            </div>
-            <p>If the date the site is showing the reader is moving around depending on the readers’ location, then this is confusing—the URL date won’t change!</p>
-            <p>If I’m honest, having the date in the URL was never my favorite thing… it always bugged me. I just never cared quite enough to change it, and to deal with the redirects I’d have to set up. But given this inconsistency, I decided that I finally cared enough to make the shift ↪.</p>
-            <p>I added the <code>jekyll-redirect-from</code> plugin to my <code>_config.yml</code>. And from there, redirecting is actually quite easy. In the front matter of each blog post, I add the new URL of the blog post, and then redirect to the new URL from the old URL:</p>
-            <div class="language-yml highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="yml"><span class="na">permalink</span><span class="pi">:</span> <span class="s">/blog/posts/opening-links-in-new-tabs-via-javascript/</span>
-<span class="na">redirect_from</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">/blog/posts/2020-01-14-opening-links-in-new-tabs-via-javascript/</span>
-</code></pre>
-              </div>
-            </div>
-            <p>Now, when I navigate to my blog posts at the old URL, my browser automatically redirects to the new URL. Hopefully that prevents my SEO ranking from going down 😬.</p>
-            <div id="anchor">
-              <a id="conclusion">&nbsp;</a>
-            </div>
-            <h2>Conclusion</h2>
-            <p>At the end of the day, this goal maybe wasn’t too hefty. It maybe took about six hours of total effort. I haven’t traveled yet to see if it works as expected, but I have a trip planned in about a month, so we’ll see then 🤷🏻‍♀️.</p>
-            <p>The moral of the story is that time zones are complicated, but the most robust websites will take them into account. If your website has date/times, then you should show them to your users in their local times, if possible. And you should be careful when storing data with date/times to make sure they are all stored in the same time zone, so they don’t get conflicted.</p>
-            <p>I’m still working on perfecting my time zone processing. It’s complicated, and not all browsers react the same way to Javascript (who knew, right ¯\_(ツ)_/¯). But, I’d strongly urge to you take the plunge on your website… it’ll be worth it when your blog becomes internationally popular 😜.</p>
-            <div class="text-center margin-bottom-1">
-              <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
-                Load Comments
-              </button>
-              <script id="comments" data-name="emmasax4" src="/assets/js/show_comments.js"></script>
-            </div>
-            <div id="disqus_thread"></div>
-            <noscript>
-              Please enable JavaScript to view the
-              <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-                comments powered by Disqus.
-              </a>
-            </noscript>
+
+              <div id="disqus_thread"></div>
+
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                  comments powered by Disqus.
+                </a>
+              </noscript>
           </div>
         </div>
-        <div class="col col-12 col-md-2 text-center">
-          <!-- Sidebar button to go back to all posts and RSS feed button -->
+
+        <div class="col col-12 col-md-2">
+          
           <div class="text-center">
             <div class="padding-bottom-1">
-              <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
-            </div>
+  <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
+</div>
+
             <a href="/feed.xml" target="_blank" class="link-icon-rss">
-              <img class="icon-hover-dark-mode" src="/assets/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
-              <img class="icon-hover-light-mode" src="/assets/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
-              <img class="icon-static-dark-mode" src="/assets/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
-              <img class="icon-static-light-mode" src="/assets/images/icons/rss-static-light-mode.svg" alt="RSS icon">
-            </a>
+  <img class="icon-hover-dark-mode" src="/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
+  <img class="icon-hover-light-mode" src="/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
+  <img class="icon-static-dark-mode" src="/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
+  <img class="icon-static-light-mode" src="/images/icons/rss-static-light-mode.svg" alt="RSS icon">
+</a>
+
+
           </div>
         </div>
       </div>
     </main>
   </body>
-  <!-- Footer -->
+
   <footer>
-    &copy; <script src="/assets/js/get_full_year.js"></script>
-    Emma Sax. All rights reserved.
-  </footer>
-  <!-- Javascript scripts -->
-  <script
-    child-selector=".photoswipe"
-    class="photoswipe-activation"
-    gallery-selector=".photoswipe-gallery"
-    src="/assets/js/activate_photoswipe.js"
-    type="module"
-  ></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  <script src="/assets/js/external_links.js"></script>
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/lightbox.min.js"></script>
-  <script src="/assets/js/show_dates.js"></script>
+  &copy; <span id="year"></span>
+  Emma Sax. All rights reserved.
+</footer>
+<script
+  child-selector=".photoswipe"
+  class="photoswipe-activation"
+  gallery-selector=".photoswipe-gallery"
+  src="/js/activate_photoswipe.js"
+  type="module"
+></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/external_links.js"></script>
+<script src="/js/full_year.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/lightbox.min.js"></script>
 </html>

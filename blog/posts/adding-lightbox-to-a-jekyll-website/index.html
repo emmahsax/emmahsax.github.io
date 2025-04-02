@@ -1,228 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
-  <!-- Head -->
+<html lang="en-us">
   <head>
-    <link rel="alternate" href="/feed.xml" type="application/rss+xml">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#001aaf">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/google_fonts.min.css">
-    <link rel="stylesheet" href="/assets/css/lightbox.min.css">
-    <link rel="stylesheet" href="/assets/css/photoswipe.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css"> <!-- This needs to be the last CSS line -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
-    <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
-    <meta name="msapplication-TileColor" content="#001aaf">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Begin Jekyll SEO tag v2.8.0e -->
-    <title>Adding Lightbox2 to a Jekyll Website | Emma Sax</title>
-    <meta name="generator" content="Jekyll v4.4.1" />
-    <meta property="og:title" content="Adding Lightbox2 to a Jekyll Website | Emma Sax" />
-    <meta name="author" content="Emma Sax" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="description" content="Take a look at an easy way to make pictures and photos visible and user-friendly with Lightbox2." />
-    <meta property="og:description" content="Take a look at an easy way to make pictures and photos visible and user-friendly with Lightbox2." />
-    <meta property="twitter:description" content="Take a look at an easy way to make pictures and photos visible and user-friendly with Lightbox2." />
-    <link rel="canonical" href="https://emmasax.com/blog/posts/adding-lightbox-to-a-jekyll-website/" />
-    <meta property="og:url" content="https://emmasax.com/blog/posts/adding-lightbox-to-a-jekyll-website/" />
-    <meta property="og:site_name" content="Emma Sax" />
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2020-08-24T04:05:00+00:00" />
-    <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="Adding Lightbox2 to a Jekyll Website" />
-    <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
-    <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
-    <meta name="yandex-verification" content="32fe10ad6352714a" />
+  <link rel="alternate" href="/feed.xml" type="application/rss+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#001aaf">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/google_fonts.min.css">
+  <link rel="stylesheet" href="/css/lightbox.min.css">
+  <link rel="stylesheet" href="/css/photoswipe.min.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#001aaf">
+
+  
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Adding Lightbox2 to a Jekyll Website | Emma Sax</title>
+
+  <meta name="author" content="Emma Sax">
+  <meta property="og:description" content="Take a look at an easy way to make pictures and photos visible and user-friendly with Lightbox2.">
+  <meta property="og:locale" content="en-us" />
+  <meta property="og:site_name" content="Emma Sax" />
+  <meta property="og:title" content="Adding Lightbox2 to a Jekyll Website" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://emmasax.com/blog/posts/adding-lightbox-to-a-jekyll-website/" />
+
+  <link rel="canonical" href="https://emmasax.com/blog/posts/adding-lightbox-to-a-jekyll-website/" />
+    <meta property="article:published_time" content="2020-08-23T23:05:00-05:00" />
+
+  <meta property="twitter:description" content="Take a look at an easy way to make pictures and photos visible and user-friendly with Lightbox2." />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Adding Lightbox2 to a Jekyll Website" />
+
+  <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
+  <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
+  <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com"},"dateModified":"2024-03-10T21:00:18+00:00","datePublished":"2020-08-24T04:05:00+00:00","description":"Take a look at an easy way to make pictures and photos visible and user-friendly with Lightbox2.","headline":"Adding Lightbox2 to a Jekyll Website","mainEntityOfPage":{"@type":"WebPage","@id":"https://emmasax.com/blog/posts/adding-lightbox-to-a-jekyll-website/"},"url":"https://emmasax.com/blog/posts/adding-lightbox-to-a-jekyll-website/"}
-    </script>
-    <!-- End Jekyll SEO tag -->
-  </head>
-  <!-- Navigation bar -->
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
-      <div class="container-fluid">
-        <!-- Left hand side of navbar -->
-        <a class="navbar-brand mb-0" href="/" target="_self">
-          <img src="/assets/images/logo-plain-white-400.png" width="30" height="30"
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-04-02T12:59:01+00:00","datePublished":"2020-08-23T23:05:00-05:00","description":"Take a look at an easy way to make pictures and photos visible and user-friendly with Lightbox2.","headline":"Adding Lightbox2 to a Jekyll Website","keywords":["tech","jekyll"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/adding-lightbox-to-a-jekyll-website/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/adding-lightbox-to-a-jekyll-website/"}
+</script>
+
+</head>
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand mb-0" href="/" target="_self">
+        <img src="/images/logo-plain-white-400.png" width="30" height="30"
           class="d-inline-block align-top nav-icon" alt="E logo"
         >&nbsp;&nbsp;Emma Sax
-        </a>
-        <!-- Navbar open/close button when on a smaller screen -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbar-links" aria-controls="navbar-links"
         aria-expanded="false" aria-label="Toggle navigation"
       >
-          <img class="nav-icon-menu" src="/assets/images/icons/menu.svg" alt="Menu icon">
-          <img class="nav-icon-x" src="/assets/images/icons/x.svg" alt="X icon">
-        </button>
-        <!-- Page links -->
-        <div class="collapse navbar-collapse" id="navbar-links">
-          <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+        <img class="nav-icon-menu" src="/images/icons/menu.svg" alt="Menu icon">
+        <img class="nav-icon-x" src="/images/icons/x.svg" alt="X icon">
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbar-links">
+        <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+          <li class="nav-item ">
+                <a class="nav-link" href="/about-me/">About Me</a>
+              </li>
             <li class="nav-item ">
-              <a class="nav-link" href="/about-me/">About Me</a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-            </li>
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
+              </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/blog/">Blog</a>
-            </li>
-          </ul>
-        </div>
+                <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            </ul>
       </div>
-    </nav>
-  </header>
-  <!-- Page content -->
-  <body>
+    </div>
+  </nav>
+</header>
+<body>
     <main class="container">
       <div class="row">
         <div class="col col-12 col-md-10">
-          <!-- Blog post title and information -->
+          
           <div class="text-center">
             <h1 class="post-title">
               Adding Lightbox2 to a Jekyll Website
+
               <div class="row post-data">
                 <div class="col col-12 col-md-4">
+                  
+
                   <span class="post-meta">
-                    <picture>
-                      <source media="(prefers-color-scheme: dark)" srcset="/assets/images/icons/tag-dark-mode.svg">
-                      <img class="post-categorization-icon" src="/assets/images/icons/tag-light-mode.svg" alt="Tag icon">
-                    </picture>
-                    <a href="/blog/jekyll/">jekyll</a>
-                    |
-                    <a href="/blog/tech/">tech</a>
-                  </span>
+                      <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="/images/icons/tag-dark-mode.svg">
+                        <img class="post-categorization-icon" src="/images/icons/tag-light-mode.svg" alt="Tag icon">
+                      </picture><a href="/blog/jekyll/">jekyll</a> | <a href="/blog/tech/">tech</a></span>
                 </div>
+
                 <div class="col col-12 col-md-4">
-                  <span class="date-meta-invisible">2020-08-23 23:05:00 -0500</span>
-                </div>
-                <div class="col col-12 col-md-4">
-                  <span class="post-meta">Read time: 4 minutes</span>
+                  <span class="date-meta">August 23, 2020</span></div>
+
+                <div class="col col-12 col-md-4"><span class="post-meta">Read time: 4 minutes</span>
                 </div>
               </div>
             </h1>
           </div>
-          <!-- Blog post content and comments -->
-          <div class="page-body">
-            <p>In July, as I worked on adding more LEGO entries to my <a href="/interests-and-hobbies/lego/">LEGO page</a>, I realized something. I was adding a <em>lot</em> of pictures. And over time, I’d slowly be adding more. And images, unless you make them really tiny, take up a lot of precious screen space, requiring users to scroll a lot more to bypass lists of pictures. And if they’re not zoommable, what does somebody do when they want to take a closer look?</p>
-            <p>So, the answer to my questions was, to make pictures zoommable, and then show a thumbnail on the general page. This way, the image a user sees on the page is tinier (think 200 pixels wide), and then when they click it, it becomes full-screen (perhaps around 600 pixels wide).</p>
-            <p>So from a preliminary Google search, I realized what I needed was fancy Javascript/CSS to make this happen. I found the <a href="https://lokeshdhakar.com/projects/lightbox2/">Lightbox2</a> solution pretty early on into my searching, and it looked so professional that I realized that I needed to give this a go.</p>
-            <p>Check out a tiny demo of what Lightbox2 looks like in action:</p>
-            <div class="text-center">
-              <h4>Without Lightbox:</h4>
-              <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg" width="400" alt="Adorable creature">
-              <br>
-              <br>
-              <h4>With Lightbox2 (click the picture):</h4>
-              <a class="lightbox2 photo" href="https://i.imgur.com/lyWrj3r.jpeg" data-lightbox="PHOTO1" title="Adorable creature">
-                <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg" width="200"  alt="Adorable creature">
-              </a>
-            </div>
-            <p>Implementing Lightbox2 <em>seemed</em> simple. Copy-paste a CSS file, a Javascript file, and four images, all from Lightbox2’s source code, to your project. And then call them from your <code>&lt;head&gt;</code> and as a <code>&lt;script&gt;</code>:</p>
-            <div class="language-html highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/css/lightbox.min.css"</span><span class="nt">&gt;</span>
-</code></pre>
+
+          
+          <div class="page-body"><p>In July, as I worked on adding more LEGO entries to my <a href="/interests-and-hobbies/lego/">LEGO page</a>, I realized something. I was adding a <em>lot</em> of pictures. And over time, I&rsquo;d slowly be adding more. And images, unless you make them really tiny, take up a lot of precious screen space, requiring users to scroll a lot more to bypass lists of pictures. And if they&rsquo;re not zoommable, what does somebody do when they want to take a closer look?</p>
+<p>So, the answer to my questions was, to make pictures zoommable, and then show a thumbnail on the general page. This way, the image a user sees on the page is tinier (think 200 pixels wide), and then when they click it, it becomes full-screen (perhaps around 600 pixels wide).</p>
+<p>So from a preliminary Google search, I realized what I needed was fancy Javascript/CSS to make this happen. I found the <a href="https://lokeshdhakar.com/projects/lightbox2/">Lightbox2</a> solution pretty early on into my searching, and it looked so professional that I realized that I needed to give this a go.</p>
+<p>Check out a tiny demo of what Lightbox2 looks like in action:</p>
+<div class="text-center">
+  <h4>Without Lightbox:</h4>
+  <img class="image" src="https://i.imgur.com/lyWrj3r.jpeg" width="400" alt="Adorable creature">
+  <br><br>
+  <h4>With Lightbox2 (click the picture):</h4>
+  <a class="lightbox2 photo" href="https://i.imgur.com/lyWrj3r.jpeg" data-lightbox="PHOTO1" title="Adorable creature"><img class="image" src="https://i.imgur.com/lyWrj3r.jpeg" width="200"  alt="Adorable creature"></a>
+</div>
+<p>Implementing Lightbox2 <em>seemed</em> simple. Copy-paste a CSS file, a Javascript file, and four images, all from Lightbox2&rsquo;s source code, to your project. And then call them from your <code>&lt;head&gt;</code> and as a <code>&lt;script&gt;</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/assets/css/lightbox.min.css&#34;</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>and</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/assets/js/lightbox.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>And then just call your image with a <code>data-lightbox</code> element:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://example-image.com&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;Example image goes here&#34;</span> <span class="na">data-lightbox</span><span class="o">=</span><span class="s">&#34;IMAGE-1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;image&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://example-image.com&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;200&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Example image goes here&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>But, I quickly ran into issues where the images wouldn&rsquo;t get bigger on-click. To understand what I mean by the images not getting bigger, check out <a href="https://lokeshdhakar.com/projects/lightbox2/">the official Lightbox2 demo</a> or try to imagine my cute picture from above in its smaller form, but not getting bigger when you click on it. The photo is supposed to grow to full-size upon click, allowing a user to see even a small image more clearly.</p>
+<p>Well, the solution was that my version of Jquery was outdated. The notes from the documentation tell us that we must use 1.7+ version of Jquery and it doesn&rsquo;t support the <code>slim</code> builds, so my Jquery was broken in two ways—apparently I missed that in my set up. So I ended up just taking Lokesh&rsquo;s version of Jquery and Sizzle, and replacing my Jquery with those. There&rsquo;s also a note which states the order that the JS files are loaded matters, and of course I had about 10 minutes of struggling while I learned that on my own.</p>
+<p>The only pieces that I eventually customized was the fonts I wanted the captions to use, the <code>resizeDuration</code> to <code>500</code> instead of <code>700</code> so that my images would load a bit faster, and the <code>disableScrolling</code> to <code>true</code> instead of <code>false</code> to prevent scrolling while the images are open. Both of those two values I set directly inside my JS file, and the font change was set directly in my CSS file.</p>
+<p>In order to make the use of Lightbox2 a little bit more Jekyll friendly, I realized that I didn&rsquo;t really want to be copy-pasting a bunch of HTML code all over the place. What I wanted was a single &ldquo;method&rdquo; that could be reused. Although there isn&rsquo;t an easy solution for this in Liquid/Jekyll, what I decided on was an <code>_includes</code> file:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ include.url }}&#34;</span> <span class="na">caption</span><span class="o">=</span><span class="s">&#34;{{ include.title }}&#34;</span> <span class="na">data-lightbox</span><span class="o">=</span><span class="s">&#34;{{ include.lightbox_gallery }}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;image&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ include.url }}&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;{{ include.thumb_width }}&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;{{ include.title }}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>And then, we can call it like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{% include photo.html url=&#34;https://example-photo.com&#34; thumb_width=&#34;150&#34;
+</span></span><span class="line"><span class="cl">                      caption=&#34;Title of example photo&#34; lightbox_gallery=&#34;PHOTO-1&#34;
+</span></span><span class="line"><span class="cl">%}
+</span></span></code></pre></div><p>Note the <code>lightbox_gallery</code> property is for grouping sets of photos together on a page (particularly handy on pages like my <a href="/interests-and-hobbies/lego/">LEGO page</a> where there&rsquo;s multiple sets of photos all on one HTML page).</p>
+<p>And voila! There&rsquo;s still some copy-pasting, but it&rsquo;s a little easier than copy-pasting a bunch of repetitive HTML (which calls the URL twice, the title twice, etc).</p>
+<p>After the first few hours of installation pain (which could&rsquo;ve been greatly eased if I read <em>all</em> of the instructions before beginning), Lightbox2 has been flawless ever since. It&rsquo;s worked well for everything I&rsquo;ve used it for, and I can&rsquo;t imagine going back. All of my photos look so much more professional now, both on larger screens and on mobile.</p>
+<hr>
+<p>If this blog post has interested you, feel free to check out a newer blog post, all about switching from Lightbox2 to Photoswipe: <a href="/blog/posts/turning-lightbox2-into-photoswipe/"><em>Turning Lightbox2 into PhotoSwipe</em></a>.</p>
+
+              <div class="text-center margin-bottom-1">
+                <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
+                  Load Comments
+                </button>
+
+                <script id="comments" data-name="emmasax4" src="/js/show_comments.js"></script>
               </div>
-            </div>
-            <p>and</p>
-            <div class="language-html highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/js/lightbox.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</code></pre>
-              </div>
-            </div>
-            <p>And then just call your image with a <code>data-lightbox</code> element:</p>
-            <div class="language-html highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://example-image.com"</span> <span class="na">title=</span><span class="s">"Example image goes here"</span> <span class="na">data-lightbox=</span><span class="s">"IMAGE-1"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"image"</span> <span class="na">src=</span><span class="s">"https://example-image.com"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">alt=</span><span class="s">"Example image goes here"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/a&gt;</span>
-</code></pre>
-              </div>
-            </div>
-            <p>But, I quickly ran into issues where the images wouldn’t get bigger on-click. To understand what I mean by the images not getting bigger, check out <a href="https://lokeshdhakar.com/projects/lightbox2/">the official Lightbox2 demo</a> or try to imagine my cute picture from above in its smaller form, but not getting bigger when you click on it. The photo is supposed to grow to full-size upon click, allowing a user to see even a small image more clearly.</p>
-            <p>Well, the solution was that my version of Jquery was outdated. The notes from the documentation tell us that we must use 1.7+ version of Jquery and it doesn’t support the <code>slim</code> builds, so my Jquery was broken in two ways—apparently I missed that in my set up. So I ended up just taking Lokesh’s version of Jquery and Sizzle, and replacing my Jquery with those. There’s also a note which states the order that the JS files are loaded matters, and of course I had about 10 minutes of struggling while I learned that on my own.</p>
-            <p>The only pieces that I eventually customized was the fonts I wanted the captions to use, the <code>resizeDuration</code> to <code>500</code> instead of <code>700</code> so that my images would load a bit faster, and the <code>disableScrolling</code> to <code>true</code> instead of <code>false</code> to prevent scrolling while the images are open. Both of those two values I set directly inside my JS file, and the font change was set directly in my CSS file.</p>
-            <p>In order to make the use of Lightbox2 a little bit more Jekyll friendly, I realized that I didn’t really want to be copy-pasting a bunch of HTML code all over the place. What I wanted was a single “method” that could be reused. Although there isn’t an easy solution for this in Liquid/Jekyll, what I decided on was an <code>_includes</code> file:</p>
-            <div class="language-html highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="html"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ include.url }}"</span> <span class="na">caption=</span><span class="s">"{{ include.title }}"</span> <span class="na">data-lightbox=</span><span class="s">"{{ include.lightbox_gallery }}"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"image"</span> <span class="na">src=</span><span class="s">"{{ include.url }}"</span> <span class="na">width=</span><span class="s">"{{ include.thumb_width }}"</span> <span class="na">alt=</span><span class="s">"{{ include.title }}"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/a&gt;</span>
-</code></pre>
-              </div>
-            </div>
-            <p>And then, we can call it like this:</p>
-            <div class="language-html highlighter-rouge">
-              <div class="highlight">
-                <pre class="highlight"><code data-lang="html">{% include photo.html url="https://example-photo.com" thumb_width="150"
-                      caption="Title of example photo" lightbox_gallery="PHOTO-1"
-%}
-</code></pre>
-              </div>
-            </div>
-            <p>Note the <code>lightbox_gallery</code> property is for grouping sets of photos together on a page (particularly handy on pages like my <a href="/interests-and-hobbies/lego/">LEGO page</a> where there’s multiple sets of photos all on one HTML page).</p>
-            <p>And voila! There’s still some copy-pasting, but it’s a little easier than copy-pasting a bunch of repetitive HTML (which calls the URL twice, the title twice, etc).</p>
-            <p>After the first few hours of installation pain (which could’ve been greatly eased if I read <em>all</em> of the instructions before beginning), Lightbox2 has been flawless ever since. It’s worked well for everything I’ve used it for, and I can’t imagine going back. All of my photos look so much more professional now, both on larger screens and on mobile.</p>
-            <hr />
-            <p>If this blog post has interested you, feel free to check out a newer blog post, all about switching from Lightbox2 to Photoswipe: <a href="/blog/posts/turning-lightbox2-into-photoswipe/"><em>Turning Lightbox2 into PhotoSwipe</em></a>.</p>
-            <div class="text-center margin-bottom-1">
-              <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
-                Load Comments
-              </button>
-              <script id="comments" data-name="emmasax4" src="/assets/js/show_comments.js"></script>
-            </div>
-            <div id="disqus_thread"></div>
-            <noscript>
-              Please enable JavaScript to view the
-              <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-                comments powered by Disqus.
-              </a>
-            </noscript>
+
+              <div id="disqus_thread"></div>
+
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                  comments powered by Disqus.
+                </a>
+              </noscript>
           </div>
         </div>
-        <div class="col col-12 col-md-2 text-center">
-          <!-- Sidebar button to go back to all posts and RSS feed button -->
+
+        <div class="col col-12 col-md-2">
+          
           <div class="text-center">
             <div class="padding-bottom-1">
-              <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
-            </div>
+  <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
+</div>
+
             <a href="/feed.xml" target="_blank" class="link-icon-rss">
-              <img class="icon-hover-dark-mode" src="/assets/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
-              <img class="icon-hover-light-mode" src="/assets/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
-              <img class="icon-static-dark-mode" src="/assets/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
-              <img class="icon-static-light-mode" src="/assets/images/icons/rss-static-light-mode.svg" alt="RSS icon">
-            </a>
+  <img class="icon-hover-dark-mode" src="/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
+  <img class="icon-hover-light-mode" src="/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
+  <img class="icon-static-dark-mode" src="/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
+  <img class="icon-static-light-mode" src="/images/icons/rss-static-light-mode.svg" alt="RSS icon">
+</a>
+
+
           </div>
         </div>
       </div>
     </main>
   </body>
-  <!-- Footer -->
+
   <footer>
-    &copy; <script src="/assets/js/get_full_year.js"></script>
-    Emma Sax. All rights reserved.
-  </footer>
-  <!-- Javascript scripts -->
-  <script
-    child-selector=".photoswipe"
-    class="photoswipe-activation"
-    gallery-selector=".photoswipe-gallery"
-    src="/assets/js/activate_photoswipe.js"
-    type="module"
-  ></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  <script src="/assets/js/external_links.js"></script>
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/lightbox.min.js"></script>
-  <script src="/assets/js/show_dates.js"></script>
+  &copy; <span id="year"></span>
+  Emma Sax. All rights reserved.
+</footer>
+<script
+  child-selector=".photoswipe"
+  class="photoswipe-activation"
+  gallery-selector=".photoswipe-gallery"
+  src="/js/activate_photoswipe.js"
+  type="module"
+></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/external_links.js"></script>
+<script src="/js/full_year.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/lightbox.min.js"></script>
 </html>
