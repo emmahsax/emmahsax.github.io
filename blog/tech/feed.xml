@@ -3,7 +3,7 @@
   <generator uri="https://gohugo.io/" version="0.145.0">Hugo</generator>
   <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-  <updated>2025-04-04T12:48:52+00:00</updated>
+  <updated>2025-04-12T12:40:12+00:00</updated>
   <id>https://emmasax.com/feed.xml</id>
   <title type="html">Emma Sax</title>
   <author>
@@ -12,8 +12,8 @@
   <entry>
     <title type="html">RSS Feed Update Notice</title>
     <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <published>2025-04-04T12:48:52+00:00</published>
-    <updated>2025-04-04T12:48:52+00:00</updated>
+    <published>2025-04-12T12:40:12+00:00</published>
+    <updated>2025-04-12T12:40:12+00:00</updated>
     <id>https://emmasax.com/feed-notice</id>
     <author>
       <name>Emma Sax</name>
