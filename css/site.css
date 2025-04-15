@@ -24,6 +24,7 @@ html {
   --pagination-background-hover: #E9ECEF;
   --pagination-background: #ffffff;
   --pagination-text-active: #ffffff;
+  --pagination-text-disabled: #787777;
   --pagination-text: #001aaf;
   --pre-background: #f3f6fa;
   --rss-button: #f88e02;
@@ -55,6 +56,7 @@ html {
     --pagination-background-hover: #989898;
     --pagination-background: #4c565a;
     --pagination-text-active: #cacaca;
+    --pagination-text-disabled: #787777;
     --pagination-text: #cacaca;
     --pre-background: #1d1616;
     --rss-button: #f8bb02;
@@ -414,7 +416,7 @@ a:hover {
   color: var(--link-text);
 }
 
-a:hover:not(.button-text, .image, .link-icon, .link-icon-rss, .nav-link, .navbar-brand, .photo) {
+a:hover:not(.button-text, .image, .link-icon, .link-icon-rss, .nav-link, .navbar-brand, .page-link, .photo) {
   text-decoration: underline;
 }
 
@@ -711,7 +713,7 @@ nav.navbar {
 
 .page-item.disabled .page-link {
   background-color: var(--pagination-background);
-  color: var(--pagination-text);
+  color: var(--pagination-text-disabled);
 }
 
 .page-link {

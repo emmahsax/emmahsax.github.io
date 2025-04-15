@@ -1,25 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <generator uri="https://gohugo.io/" version="0.145.0">Hugo</generator>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom">
+  <generator uri="https://gohugo.io/" version="0.146.4">Hugo</generator>
   <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-  <updated>2025-04-12T12:40:12+00:00</updated>
+  <updated>2025-04-02T07:58:47-05:00</updated>
   <id>https://emmasax.com/feed.xml</id>
   <title type="html">Emma Sax</title>
   <author>
     <name>Emma Sax</name>
   </author>
-  <entry>
-    <title type="html">RSS Feed Update Notice</title>
-    <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-    <published>2025-04-12T12:40:12+00:00</published>
-    <updated>2025-04-12T12:40:12+00:00</updated>
-    <id>https://emmasax.com/feed-notice</id>
-    <author>
-      <name>Emma Sax</name>
-    </author>
-    <summary type="html">Note: This RSS feed now includes all blog posts instead of just the most recent 5 posts.</summary>
-  </entry>
   <entry>
     <title type="html">The Wedding Diaries – Part 10</title>
     <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-10/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 10" />
