@@ -2,7 +2,7 @@
   <generator uri="https://gohugo.io/" version="0.146.4">Hugo</generator>
   <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-  <updated>2025-04-29T19:45:13-05:00</updated>
+  <updated>2025-04-30T12:44:25-05:00</updated>
   <id>https://emmasax.com/feed.xml</id>
   <title type="html">Emma Sax</title>
   <author>
@@ -221,7 +221,7 @@
     <title type="html">Turning Lightbox2 into PhotoSwipe</title>
     <link href="https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/" rel="alternate" type="text/html" title="Turning Lightbox2 into PhotoSwipe" />
     <published>2021-06-14T12:00:00-05:00</published>
-    <updated>2025-04-02T07:58:47-05:00</updated>
+    <updated>2025-04-30T12:44:25-05:00</updated>
     <id>https://emmasax.com/blog/posts/turning-lightbox2-into-photoswipe/</id>
     <author>
       <name>Emma Sax</name>
@@ -298,7 +298,7 @@
     <title type="html">301 Redirects</title>
     <link href="https://emmasax.com/blog/posts/301-redirects-with-static-sites/" rel="alternate" type="text/html" title="301 Redirects" />
     <published>2020-10-04T12:00:00-05:00</published>
-    <updated>2025-04-02T07:58:47-05:00</updated>
+    <updated>2025-04-30T12:44:25-05:00</updated>
     <id>https://emmasax.com/blog/posts/301-redirects-with-static-sites/</id>
     <author>
       <name>Emma Sax</name>
@@ -353,7 +353,7 @@
     <title type="html">Switching CircleCI to GitHub Actions</title>
     <link href="https://emmasax.com/blog/posts/why-i-switched-from-circleci-to-github-actions/" rel="alternate" type="text/html" title="Switching CircleCI to GitHub Actions" />
     <published>2020-05-28T00:00:00-05:00</published>
-    <updated>2025-04-02T07:58:47-05:00</updated>
+    <updated>2025-04-30T12:44:25-05:00</updated>
     <id>https://emmasax.com/blog/posts/why-i-switched-from-circleci-to-github-actions/</id>
     <author>
       <name>Emma Sax</name>
@@ -452,7 +452,7 @@
     <title type="html">Bootstrap, CSS, and Icons</title>
     <link href="https://emmasax.com/blog/posts/bootstrap-css-and-icons-in-this-site/" rel="alternate" type="text/html" title="Bootstrap, CSS, and Icons" />
     <published>2019-12-29T00:00:00-06:00</published>
-    <updated>2025-04-02T07:58:47-05:00</updated>
+    <updated>2025-04-30T12:44:25-05:00</updated>
     <id>https://emmasax.com/blog/posts/bootstrap-css-and-icons-in-this-site/</id>
     <author>
       <name>Emma Sax</name>
@@ -485,7 +485,7 @@
     <title type="html">Using jekyll-paginate-v2</title>
     <link href="https://emmasax.com/blog/posts/using-jekyll-paginate-v2/" rel="alternate" type="text/html" title="Using jekyll-paginate-v2" />
     <published>2019-12-18T00:00:00-06:00</published>
-    <updated>2025-04-02T07:58:47-05:00</updated>
+    <updated>2025-04-30T12:44:25-05:00</updated>
     <id>https://emmasax.com/blog/posts/using-jekyll-paginate-v2/</id>
     <author>
       <name>Emma Sax</name>

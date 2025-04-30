@@ -804,7 +804,7 @@ https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers 
 .highlight .nd { color: #888888 } /* Name.Decorator */
 .highlight .ni { color: #800000; font-weight: bold } /* Name.Entity */
 .highlight .nf { color: #00aa00 } /* Name.Function */
-.highlight .nn { color: #00aaaa; text-decoration: underline } /* Name.Namespace */
+.highlight .nn { color: #00aaaa } /* Name.Namespace */
 .highlight .nt { color: #1e90ff; font-weight: bold } /* Name.Tag */
 .highlight .nv { color: #aa0000 } /* Name.Variable */
 .highlight .ow { color: #0000aa } /* Operator.Word */
