@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <link rel="alternate" href="/feed.xml" type="application/rss+xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#001aaf">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/google_fonts.min.css">
+  <link rel="stylesheet" href="/css/lightbox.min.css">
+  <link rel="stylesheet" href="/css/photoswipe.min.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" always>
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#001aaf">
+
+  
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Switching from Jekyll to Hugo | Emma Sax</title>
+
+  <meta name="author" content="Emma Sax">
+  <meta property="og:description" content="Why I made the decision to switch my websites from Jekyll to Hugo, and how I did it.">
+  <meta property="og:locale" content="en-us" />
+  <meta property="og:site_name" content="Emma Sax" />
+  <meta property="og:title" content="Switching from Jekyll to Hugo" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://emmasax.com/blog/posts/switching-from-jekyll-to-hugo/" />
+
+  <link rel="canonical" href="https://emmasax.com/blog/posts/switching-from-jekyll-to-hugo/" />
+    <meta property="article:published_time" content="2025-05-02T16:43:00-05:00" />
+
+  <meta property="twitter:description" content="Why I made the decision to switch my websites from Jekyll to Hugo, and how I did it." />
+  <meta name="twitter:card" content="summary" />
+  <meta property="twitter:title" content="Switching from Jekyll to Hugo" />
+
+  <meta name="google-site-verification" content="FaoWjM_tP-mU4KiPC2szMT0_UQnZrRROCFMUlGgQax8" />
+  <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
+  <meta name="yandex-verification" content="32fe10ad6352714a" />
+    <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-05-02T16:46:09-05:00","datePublished":"2025-05-02T16:43:00-05:00","description":"Why I made the decision to switch my websites from Jekyll to Hugo, and how I did it.","headline":"Switching from Jekyll to Hugo","keywords":["tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/switching-from-jekyll-to-hugo/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/switching-from-jekyll-to-hugo/"}
+</script>
+
+</head>
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-md py-0 py-md-0" data-bs-theme="dark">
+    <div class="container-fluid">
+      
+      <a class="navbar-brand mb-0" href="/" target="_self">
+        <img src="/images/logo-plain-white-400.png" width="30" height="30"
+          class="d-inline-block align-top nav-icon" alt="E logo"
+        >&nbsp;&nbsp;Emma Sax
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbar-links" aria-controls="navbar-links"
+        aria-expanded="false" aria-label="Toggle navigation"
+      >
+        <img class="nav-icon-menu" src="/images/icons/menu.svg" alt="Menu icon">
+        <img class="nav-icon-x" src="/images/icons/x.svg" alt="X icon">
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbar-links">
+        <ul class="navbar-nav ms-auto mt-2 mt-md-0">
+          <li class="nav-item ">
+                <a class="nav-link" href="/about-me/">About Me</a>
+              </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
+              </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<body>
+    <main class="container">
+      <div class="row">
+        <div class="col col-12 col-md-10">
+          
+          <div class="text-center">
+            <h1 class="post-title">
+              Switching from Jekyll to Hugo
+
+              <div class="row post-data">
+                <div class="col col-12 col-md-4">
+                  
+
+                  <span class="post-meta">
+                      <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="/images/icons/tag-dark-mode.svg">
+                        <img class="post-categorization-icon" src="/images/icons/tag-light-mode.svg" alt="Tag icon">
+                      </picture><a href="/blog/tech/">tech</a></span>
+                </div>
+
+                <div class="col col-12 col-md-4">
+                  <span class="date-meta">May 2, 2025</span></div>
+
+                <div class="col col-12 col-md-4"><span class="post-meta">Read time: 10 minutes</span>
+                </div>
+              </div>
+            </h1>
+          </div>
+
+          
+          <div class="page-body"><p>I first heard about <a href="https://gohugo.io/">Hugo</a> several years ago from a colleague who was building their website with it. At the time, I mentally filed it away as something to look into if I ever became dissatisfied with Jekyll. For the most part, Jekyll served me well—it&rsquo;s flexible, well-documented, and familiar. But over time, a few friction points started to accumulate.</p>
+<h2 id="why-i-considered-leaving-jekyll">Why I Considered Leaving Jekyll</h2>
+<ol>
+<li>
+<p><strong>Slow build times</strong></p>
+<p>Even with modest content, my site took several seconds to compile. Switching from kramdown to Commonmark helped (as I described <a href="/blog/posts/switching-from-kramdown-to-commonmark/">here</a>), but it still wasn&rsquo;t quick.</p>
+</li>
+<li>
+<p><strong>Plugin dependency bloat</strong></p>
+<p>I relied on extra plugins for essentials like RSS feeds, sitemaps, and SEO tags. That meant more config, more updates, and occasionally dealing with plugin quirks.</p>
+</li>
+<li>
+<p><strong>Gem version maintenance</strong></p>
+<p>Each site had its own <code>Gemfile</code> and <code>Gemfile.lock</code>, which introduced a regular maintenance burden to keep dependencies fresh and avoid version drift.</p>
+</li>
+<li>
+<p><strong>Unclear future of Jekyll</strong></p>
+<p>Development seemed questionable as I heard rumors of core maintainers stepping away, and while GitHub Pages still uses Jekyll, it only supports v3. Using Jekyll 4+ requires custom deploy setups anyway. While I&rsquo;m not panicked about Jekyll&rsquo;s development status, Hugo appears to have stronger momentum and active development.</p>
+</li>
+</ol>
+<h2 id="starting-with-a-small-hugo-migration">Starting with a Small Hugo Migration</h2>
+<p>Rather than convert my largest project upfront, I chose to start with a smaller site to test Hugo. The goal: make the backend switch from Jekyll to Hugo without changing the site&rsquo;s appearance.</p>
+<h3 id="familiar-language-new-syntax">Familiar Language, New Syntax</h3>
+<p>Hugo is written in Go, and I&rsquo;ve been working with Go and Helm since 2022—so I found Hugo&rsquo;s Go template syntax approachable. Here&rsquo;s a side-by-side comparison of common Liquid (Jekyll) vs Go Template (Hugo):</p>
+<div class="table-responsive-sm">
+  <table class="table table-hover table-bordered">
+    <thead class="text-center">
+      <th>Feature</th>
+      <th>Jekyll (Liquid)</th>
+      <th>Hugo (Go Template)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Page title</td>
+        <td><code>{{ page.title }}</code></td>
+        <td><code>{{ .Title }}</code></td>
+      </tr>
+      <tr>
+        <td>Site title</td>
+        <td><code>{{ site.title }}</code></td>
+        <td><code>{{ .Site.Title }}</code></td>
+      </tr>
+      <tr>
+        <td>Page date</td>
+        <td><code>{{ page.date }}</code></td>
+        <td><code>{{ .Date }}</code></td>
+      </tr>
+      <tr>
+        <td>Content</td>
+        <td><code>{{ content }}</code></td>
+        <td><code>{{ .Content }}</code></td>
+      </tr>
+      <tr>
+        <td>Loop</td>
+        <td><code>{% for post in site.posts %}</code></td>
+        <td><code>{{ range .Site.RegularPages }}</code></td>
+      </tr>
+      <tr>
+        <td>Conditional</td>
+        <td><code>{% if page.draft %}</code></td>
+        <td><code>{{ if .Draft }}</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h3 id="porting-the-layouts">Porting the Layouts</h3>
+<p>Jekyll&rsquo;s <code>_layouts/*.html</code> became <code>layouts/_default/*.html</code> in Hugo. A file like <code>_layouts/default.html</code> translated directly to <code>layouts/_default/all.html</code> (Hugo&rsquo;s base layout). Other layout files went into their own directories inside <code>layouts/</code>.</p>
+<h3 id="converting-_includes-to-shortcodes-and-partials">Converting <header-code>_includes/*</header-code> to Shortcodes and Partials</h3>
+<p>Hugo splits logic into:</p>
+<ul>
+<li>
+<p><strong>Shortcodes</strong>, used in content:</p>
+<p>Example: <code>{{&lt; photo &gt;}}</code> maps to <code>layouts/shortcodes/photo.html</code> file</p>
+</li>
+<li>
+<p><strong>Partials</strong>, used in templates/layouts:</p>
+<p>Example: <code>{{ partial &quot;navigation&quot; . }}</code> maps to <code>layouts/partials/navigation.html</code> file</p>
+</li>
+</ul>
+<p>Fun fact: shortcodes <em>can</em> call partials, but not the other way around.</p>
+<p>Here&rsquo;s an example of turning an <code>_include/</code> file into a shortcode:</p>
+<h4 id="_include-file-in-jekyll"><header-code>_include</header-code> file in Jekyll</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card bg-info mb-3 mx-auto&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;max-width: 50rem;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-header&#34;</span><span class="p">&gt;</span>Overall Rating<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-body&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-title&#34;</span><span class="p">&gt;</span>{{ include.rating }}<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-text&#34;</span><span class="p">&gt;</span>{{ include.description | smart_quotify }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h4 id="shortcode-in-hugo">Shortcode in Hugo</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card bg-info mb-3 mx-auto&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;max-width: 100%;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-header&#34;</span><span class="p">&gt;</span>Overall Rating<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-body&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-title&#34;</span><span class="p">&gt;</span>{{ .Get &#34;rating&#34; }}<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;card-text&#34;</span><span class="p">&gt;</span>{{ .Get &#34;description&#34; | partial &#34;smartquotes&#34; | safeHTML }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><h3 id="moving-static-assets">Moving Static Assets</h3>
+<p>Jekyll stored everything in <code>assets/</code>; Hugo prefers <code>static/</code>. Here&rsquo;s how things mapped:</p>
+<div class="table-responsive-sm">
+  <table class="table table-hover table-bordered">
+    <thead class="text-center">
+      <th>Asset in Jekyll</th>
+      <th>Asset in Hugo</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>assets/css/*.css</code></td>
+        <td><code>static/css/*.css</code></td>
+      </tr>
+      <tr>
+        <td><code>assets/js/*.js</code></td>
+        <td><code>static/js/*.js</code></td>
+      </tr>
+      <tr>
+        <td><code>assets/images/*</code></td>
+        <td><code>static/images/*</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Because I didn&rsquo;t want to use the Hugo extended version to process SCSS, I flattened my SCSS files into a single <code>static/css/site.css</code>. That also simplifies how my HTML calls the CSS files:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/bootstrap.min.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/google_fonts.min.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/lightbox.min.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/photoswipe.min.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;/css/site.css&#34;</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>Hugo doesn&rsquo;t need the <code>static</code> written as part of the <code>href</code>; Hugo will place all static directories directly at the root of the final HTML files. This is different from with Jekyll, where static files in the <code>assets/</code> directory would <em>stay</em> in the <code>assets/</code> directory in the final HTML.</p>
+<h3 id="updating-content-files">Updating Content Files</h3>
+<p>In Jekyll, a page&rsquo;s front matter might look like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">layout</span><span class="p">:</span><span class="w"> </span><span class="l">page</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">navbar</span><span class="p">:</span><span class="w"> </span><span class="l">Other</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l">/page-one/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">Page One</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
+</span></span></span></code></pre></div><p>In Hugo, that becomes:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">navbar</span><span class="p">:</span><span class="w"> </span><span class="l">Other</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">Page One</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
+</span></span></span></code></pre></div><p>Why?</p>
+<ul>
+<li>No <code>layout</code> front matter key needed—Hugo uses default layout resolution based on content section and type, falling back to <code>layouts/_default/single.html</code> unless a more specific template exists. This can be controlled via a <code>type</code> front matter key.</li>
+<li>No <code>permalink</code> needed in many cases—Hugo builds URLs based on content file paths (e.g.<code>/page-one/</code> from <code>content/page-one/_index.md</code>). This can be overriden with a <code>url</code> key if needed.</li>
+</ul>
+<h3 id="rewriting-templating-syntax">Rewriting Templating Syntax</h3>
+<p>I had to manually rewrite every <code>{% ... %}</code> block from Jekyll to the equivalent Hugo code. This took a while, especially for content-heavy projects! I&rsquo;m glad I made the shift now instead of after I&rsquo;d written 200+ blog posts!</p>
+<p>Here&rsquo;s an example of my photo <code>_include</code> that turned into a shortcode:</p>
+<h4 id="calling-_include-in-jekyll">Calling <header-code>_include</header-code> in Jekyll</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">{% include photo.html
+</span></span><span class="line"><span class="cl">  image_url=&#34;/assets/images/test.png&#34;
+</span></span><span class="line"><span class="cl">  caption=&#34;Test image&#34;
+</span></span><span class="line"><span class="cl">  thumb_width=&#34;201&#34;
+</span></span><span class="line"><span class="cl">  full_height=&#34;435&#34; full_width=&#34;350&#34;
+</span></span><span class="line"><span class="cl">%}
+</span></span></code></pre></div><h4 id="calling-shortcode-in-hugo">Calling shortcode in Hugo</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">{{&lt; photo
+</span></span><span class="line"><span class="cl">  image=&#34;/images/test.png&#34;
+</span></span><span class="line"><span class="cl">  caption=&#34;Test image&#34;
+</span></span><span class="line"><span class="cl">  thumb_width=&#34;201&#34;
+</span></span><span class="line"><span class="cl">  full_height=&#34;435&#34; full_width=&#34;350&#34;
+</span></span><span class="line"><span class="cl">&gt;}}
+</span></span></code></pre></div><h3 id="configuration-changes-_configyml--hugoyaml">Configuration Changes: <header-code>_config.yml</header-code> → <header-code>hugo.yaml</header-code></h3>
+<p>Here&rsquo;s a comparison of config files:</p>
+<h4 id="jekyll-_configyml">Jekyll <header-code>_config.yml</header-code></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l">Me</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">timezone</span><span class="p">:</span><span class="w"> </span><span class="l">UTC</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">My Site</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">exclude</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">Gemfile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">Gemfile.lock</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">README.md</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">vendor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">plugins</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">jekyll-tidy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">sass</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">sass_dir</span><span class="p">:</span><span class="w"> </span><span class="l">assets/css/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l">compressed</span><span class="w">
+</span></span></span></code></pre></div><h4 id="hugo-hugoyaml">Hugo <header-code>hugo.yaml</header-code></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">baseURL</span><span class="p">:</span><span class="w"> </span><span class="l">https://mysite.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">enableGitInfo</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">languageCode</span><span class="p">:</span><span class="w"> </span><span class="l">en-us</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">My Site</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">markup</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">defaultMarkdownHandler</span><span class="p">:</span><span class="w"> </span><span class="l">goldmark</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">goldmark</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">parser</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">attribute</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">autoHeadingID</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">extensions</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">typographer</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">taxonomies</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span></span></span></code></pre></div><p>If I needed to include author info, or any other items I want to store in the config file, I can add parameters:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l">Me</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">My cool website</span><span class="w">
+</span></span></span></code></pre></div><p>Then, I can reference all of these config properties from my HTML:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">Author =&gt; {{ .Site.Params.author }}
+</span></span><span class="line"><span class="cl">Title =&gt; {{ .Site.Title }}
+</span></span></code></pre></div><p>Or markdown:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">Author =&gt; {{&lt; param &#34;author&#34; &gt;}}
+</span></span></code></pre></div><p>Although I cannot directly access <code>.Site.Title</code> from the markdown files, I could make a shortcode and then access that if I needed to.</p>
+<h2 id="updating-github-actions">Updating GitHub Actions</h2>
+<p>Once everything was building locally, then I was ready to update my GitHub Actions so that my site could built on CI/CD.</p>
+<h3 id="jekyll-github-action">Jekyll GitHub Action</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Ruby</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">ruby/setup-ruby@v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">bundler-cache</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Jekyll Build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">JEKYLL_ENV=production bundle exec jekyll build --destination _site/</span><span class="w">
+</span></span></span></code></pre></div><h3 id="hugo-github-action">Hugo GitHub Action</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Hugo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">peaceiris/actions-hugo@v3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">extended</span><span class="p">:</span><span class="w"> </span><span class="l">${{ inputs.hugo_extended }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">hugo-version</span><span class="p">:</span><span class="w"> </span><span class="l">${{ inputs.hugo_version }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Hugo Build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">HUGO_ENV=production hugo</span><span class="w">
+</span></span></span></code></pre></div><p>And, the best part is that I no longer need a <code>Gemfile</code> or <code>Gemfile.lock</code> in every static site project. All I need is to ensure my computer has the latest version of Hugo installed (conveniently managed by Homebrew).</p>
+<h2 id="beyond-the-basics">Beyond the Basics</h2>
+<p>Larger projects (like this site) involved deeper migrations:</p>
+<ul>
+<li><strong>Photo galleries</strong> (PhotoSwipe, Lightbox2)</li>
+<li><strong>Blog post pagination</strong> with tags and collections</li>
+<li><strong>Custom RSS and sitemap generation</strong></li>
+<li><strong>SEO metadata and OpenGraph</strong></li>
+</ul>
+<p>In Jekyll, these were primarily handled by plugins. In Hugo, I had to manually define templates like <code>layouts/home/feed.xml</code>, <code>layouts/_default/sitemap.xml</code>, and enhanced <code>layouts/partials/head.html</code> for SEO metadata. To handle the pagination, I had to use Hugo&rsquo;s built in paginator and define it myself:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ $pages := where .Site.Pages &#34;.Type&#34; &#34;blog_post&#34; }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{{ if .Params.tag }}
+</span></span><span class="line"><span class="cl">  {{ $pages = where $pages &#34;Params.tags&#34; &#34;intersect&#34; (slice .Params.tag) }}
+</span></span><span class="line"><span class="cl">{{ else if .Params.category }}
+</span></span><span class="line"><span class="cl">  {{ $pages = where $pages &#34;Params.category&#34; &#34;eq&#34; .Params.category }}
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{{ $paginator := .Paginate $pages }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{{ range .Paginator.Pages }}
+</span></span><span class="line"><span class="cl">  .
+</span></span><span class="line"><span class="cl">  .
+</span></span><span class="line"><span class="cl">  .
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></div><h2 id="results--reflections">Results &amp; Reflections</h2>
+<p>After converting three different projects, I&rsquo;m glad I made the move. My largest site went from ~4 seconds to build (with Commonmark) to <strong>162 ms</strong> with Hugo. That&rsquo;s a ~25x improvement. Live reloading is nearly instantaneous. I no longer need to manage multiple gem dependencies or plugins—just Hugo itself. While it wasn&rsquo;t all easy, the internet and some of the latest coding AI tools significantly helped.</p>
+<p>Would I recommend Hugo over Jekyll? It depends:</p>
+<ul>
+<li><strong>Use Jekyll</strong> if you&rsquo;re already deep into Ruby, depend on specific plugins, or need GitHub Pages-native builds.</li>
+<li><strong>Use Hugo</strong> if you want raw speed, Go-style templating, and fewer external dependencies.</li>
+</ul>
+<p>Personally, any new site I create will start with Hugo. And if you&rsquo;re at all interested in learning Hugo, are comfortable with Go, or are looking for a static site generator that&rsquo;s simpler and faster, I&rsquo;d encourage you to give Hugo a try.</p>
+
+              <div class="text-center margin-bottom-1">
+                <button id="show-comments-button" class="btn btn-lg btn-outline button-text">
+                  Load Comments
+                </button>
+
+                <script id="comments" data-name="emmasax4" src="/js/show_comments.js"></script>
+              </div>
+
+              <div id="disqus_thread"></div>
+
+              <noscript>
+                Please enable JavaScript to view the
+                <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+                  comments powered by Disqus.
+                </a>
+              </noscript>
+          </div>
+        </div>
+
+        <div class="col col-12 col-md-2">
+          
+          <div class="text-center">
+            <div class="padding-bottom-1">
+  <a href="/blog/" class="btn btn-lg btn-outline button-text">Blog Posts</a>
+</div>
+
+            <a href="/feed.xml" target="_blank" class="link-icon-rss">
+  <img class="icon-hover-dark-mode" src="/images/icons/rss-hover-dark-mode.svg" alt="RSS icon">
+  <img class="icon-hover-light-mode" src="/images/icons/rss-hover-light-mode.svg" alt="RSS icon">
+  <img class="icon-static-dark-mode" src="/images/icons/rss-static-dark-mode.svg" alt="RSS icon">
+  <img class="icon-static-light-mode" src="/images/icons/rss-static-light-mode.svg" alt="RSS icon">
+</a>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <footer>
+  &copy; <span id="year"></span>
+  Emma Sax. All rights reserved.
+</footer>
+<script
+  child-selector=".photoswipe"
+  class="photoswipe-activation"
+  gallery-selector=".photoswipe-gallery"
+  src="/js/activate_photoswipe.js"
+  type="module"
+></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/external_links.js"></script>
+<script src="/js/full_year.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/lightbox.min.js"></script>
+</html>

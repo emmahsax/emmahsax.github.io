@@ -2,12 +2,23 @@
   <generator uri="https://gohugo.io/" version="0.146.4">Hugo</generator>
   <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-  <updated>2025-04-30T12:44:25-05:00</updated>
+  <updated>2025-05-02T16:46:09-05:00</updated>
   <id>https://emmasax.com/feed.xml</id>
   <title type="html">Emma Sax</title>
   <author>
     <name>Emma Sax</name>
   </author>
+  <entry>
+    <title type="html">Switching from Jekyll to Hugo</title>
+    <link href="https://emmasax.com/blog/posts/switching-from-jekyll-to-hugo/" rel="alternate" type="text/html" title="Switching from Jekyll to Hugo" />
+    <published>2025-05-02T16:43:00-05:00</published>
+    <updated>2025-05-02T16:46:09-05:00</updated>
+    <id>https://emmasax.com/blog/posts/switching-from-jekyll-to-hugo/</id>
+    <author>
+      <name>Emma Sax</name>
+    </author>
+    <summary type="html">Why I made the decision to switch my websites from Jekyll to Hugo, and how I did it.</summary>
+  </entry>
   <entry>
     <title type="html">The Wedding Diaries – Part 10</title>
     <link href="https://emmasax.com/blog/posts/the-wedding-diaries/part-10/" rel="alternate" type="text/html" title="The Wedding Diaries – Part 10" />
