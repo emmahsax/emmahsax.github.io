@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom">
-  <generator uri="https://gohugo.io/" version="0.146.4">Hugo</generator>
+  <generator uri="https://gohugo.io/" version="0.147.3">Hugo</generator>
   <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://emmasax.com/" rel="alternate" type="text/html" />
   <updated>2025-05-02T16:46:09-05:00</updated>
