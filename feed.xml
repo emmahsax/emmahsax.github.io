@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom">
-  <generator uri="https://gohugo.io/" version="0.147.3">Hugo</generator>
+  <generator uri="https://gohugo.io/" version="0.148.2">Hugo</generator>
   <link href="https://emmasax.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://emmasax.com/" rel="alternate" type="text/html" />
-  <updated>2025-06-29T13:47:13-05:00</updated>
+  <updated>2025-08-09T18:49:50-05:00</updated>
   <id>https://emmasax.com/feed.xml</id>
   <title type="html">Emma Sax</title>
   <author>
@@ -287,7 +287,7 @@
     <title type="html">Our 20s Matter – The Brain and the Body</title>
     <link href="https://emmasax.com/blog/posts/our-20s-matter/the-brain-and-the-body/" rel="alternate" type="text/html" title="Our 20s Matter – The Brain and the Body" />
     <published>2020-11-26T14:00:00-06:00</published>
-    <updated>2025-04-02T07:58:47-05:00</updated>
+    <updated>2025-08-09T18:49:50-05:00</updated>
     <id>https://emmasax.com/blog/posts/our-20s-matter/the-brain-and-the-body/</id>
     <author>
       <name>Emma Sax</name>
@@ -298,7 +298,7 @@
     <title type="html">Our 20s Matter – Love</title>
     <link href="https://emmasax.com/blog/posts/our-20s-matter/love/" rel="alternate" type="text/html" title="Our 20s Matter – Love" />
     <published>2020-11-21T16:05:00-06:00</published>
-    <updated>2025-04-02T07:58:47-05:00</updated>
+    <updated>2025-08-09T18:49:50-05:00</updated>
     <id>https://emmasax.com/blog/posts/our-20s-matter/love/</id>
     <author>
       <name>Emma Sax</name>
@@ -309,7 +309,7 @@
     <title type="html">Our 20s Matter – Work</title>
     <link href="https://emmasax.com/blog/posts/our-20s-matter/work/" rel="alternate" type="text/html" title="Our 20s Matter – Work" />
     <published>2020-11-15T00:00:00-06:00</published>
-    <updated>2025-04-02T07:58:47-05:00</updated>
+    <updated>2025-08-09T18:49:50-05:00</updated>
     <id>https://emmasax.com/blog/posts/our-20s-matter/work/</id>
     <author>
       <name>Emma Sax</name>
@@ -628,7 +628,7 @@
     <title type="html">Welcome to Kenya – The Game Drives</title>
     <link href="https://emmasax.com/blog/posts/welcome-to-kenya/the-game-drives/" rel="alternate" type="text/html" title="Welcome to Kenya – The Game Drives" />
     <published>2019-09-16T00:00:00-05:00</published>
-    <updated>2025-04-02T07:58:47-05:00</updated>
+    <updated>2025-08-09T18:49:50-05:00</updated>
     <id>https://emmasax.com/blog/posts/welcome-to-kenya/the-game-drives/</id>
     <author>
       <name>Emma Sax</name>

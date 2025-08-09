@@ -10,7 +10,7 @@ This website also implements the following open source tools:
 
 * Bootstrap v5.3.2   - https://github.com/twbs/bootstrap/blob/v5.3.2/LICENSE
 * Google Fonts       - https://fonts.google.com/attribution
-* Hugo v0.147.3      - https://github.com/gohugoio/hugo/blob/master/LICENSE
+* Hugo v0.148.2      - https://github.com/gohugoio/hugo/blob/master/LICENSE
 * Jquery v3.7.1      - https://jquery.org/license
 * Lightbox2 v2.11.4  - https://github.com/lokesh/lightbox2/blob/v2.11.3/LICENSE
 * PhotoSwipe v5.4.2  - https://github.com/dimsemenov/PhotoSwipe/blob/v5.4.2/LICENSE
