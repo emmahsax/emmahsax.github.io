@@ -45,7 +45,7 @@
   <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
   <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-04-02T07:58:47-05:00","datePublished":"2022-07-18T10:00:00-05:00","description":"Take a peek at my step-by-step guide of how to create dark mode only using CSS and HTML!","headline":"Adding Dark Mode with HTML and CSS","keywords":["tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/adding-dark-mode/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/adding-dark-mode/"}
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-11-16T19:17:44-06:00","datePublished":"2022-07-18T10:00:00-05:00","description":"Take a peek at my step-by-step guide of how to create dark mode only using CSS and HTML!","headline":"Adding Dark Mode with HTML and CSS","keywords":["tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/adding-dark-mode/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/adding-dark-mode/"}
 </script>
 
 </head>
@@ -120,10 +120,10 @@
 <blockquote>
 <p>NOTE: For the code examples below, I&rsquo;ve attached <em>all</em> of the HTML/CSS required to give dark mode a try yourself. To use the examples, navigate to <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_background_shorthand2">www.w3schools.com/css/tryit.asp</a>, delete whatever HTML contents is currently there, copy-paste my example code. and press <code>Run</code>.</p></blockquote>
 <ul>
-<li><a href="#1-define-colors-in-css">1. Make sure all existing colors on your site are in CSS, not HTML</a></li>
-<li><a href="#2-create-css-variables">2. Pull out all existing colors in CSS into variables</a></li>
-<li><a href="#3-make-dark-mode-colors">3. Make dark mode color alternatives</a></li>
-<li><a href="#4-test-out-your-new-color-schemes">4. Test out your new color schemes and make sure text, buttons, etc show up clearly</a>
+<li><a href="#1-make-sure-all-existing-colors-on-your-site-are-in-css-not-html">1. Make sure all existing colors on your site are in CSS, not HTML</a></li>
+<li><a href="#2-pull-out-all-existing-colors-in-css-into-variables">2. Pull out all existing colors in CSS into variables</a></li>
+<li><a href="#3-make-dark-mode-color-alternatives">3. Make dark mode color alternatives</a></li>
+<li><a href="#4-test-out-your-new-color-schemes-and-make-sure-text-buttons-etc-show-up-clearly">4. Test out your new color schemes and make sure text, buttons, etc show up clearly</a>
 <ul>
 <li><a href="#tables">Tables</a></li>
 <li><a href="#forms">Forms</a></li>
@@ -134,9 +134,6 @@
 </li>
 <li><a href="#conclusion">Conclusion</a></li>
 </ul>
-<div id="anchor">
-  <a id="1-define-colors-in-css">&nbsp;</a>
-</div>
 <h2 id="1-make-sure-all-existing-colors-on-your-site-are-in-css-not-html">1. Make sure all existing colors on your site are in CSS, not HTML</h2>
 <p>The first step is to make sure that all of your color variables are set in CSS, versus set in HTML. Here&rsquo;s a tiny HTML/CSS example where we set the color of a button directly in the HTML (see the third to last line):</p>
 <details>
@@ -208,9 +205,6 @@
 </span></span></code></pre></div></details>
 <p>In this change, we set an additional <code>class</code> called <code>override-background</code> on the second button, and then we can define the <code>class</code>&rsquo;s attributes in the CSS section.</p>
 <p>It may take some time to pull all of these <code>style</code>s out into CSS, but this will actually make your HTML and CSS code more well-formatted and more resilient, so this is a good refactor to be making anyway!</p>
-<div id="anchor">
-  <a id="2-create-css-variables">&nbsp;</a>
-</div>
 <h2 id="2-pull-out-all-existing-colors-in-css-into-variables">2. Pull out all existing colors in CSS into variables</h2>
 <p>Now that all of your colors are defined in CSS, you can begin pulling them out into variables. Here&rsquo;s what this looks like:</p>
 <details>
@@ -256,9 +250,6 @@
 </span></span></code></pre></div></details>
 <p>If you&rsquo;ve completed Step 1 properly, there shouldn&rsquo;t be changes needed on your HTML code.</p>
 <p>It turned out my website had <em>a lot</em> of colors, and some of them I wasn&rsquo;t even aware I was using (AKA I was using Bootstrap&rsquo;s default colors). Don&rsquo;t be afraid to continue adding colors to the list of variables as you move through the next steps and notice colors you may not have realized you were relying on!</p>
-<div id="anchor">
-  <a id="3-make-dark-mode-colors">&nbsp;</a>
-</div>
 <h2 id="3-make-dark-mode-color-alternatives">3. Make dark mode color alternatives</h2>
 <blockquote>
 <p>The instructions below assume your default color mode is light mode. If your default is dark mode, then you&rsquo;ll need to use <code>prefers-color-scheme: light</code> instead of <code>prefers-color-scheme: dark</code>.</p></blockquote>
@@ -390,15 +381,9 @@
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></span></code></pre></div></details>
-<div id="anchor">
-  <a id="4-test-out-your-new-color-schemes">&nbsp;</a>
-</div>
 <h2 id="4-test-out-your-new-color-schemes-and-make-sure-text-buttons-etc-show-up-clearly">4. Test out your new color schemes and make sure text, buttons, etc show up clearly</h2>
 <p>Okay, now that we&rsquo;ve got the basics of dark mode set up, it&rsquo;s time for us to test! There&rsquo;s no examples for this step, but when implementing dark mode on your websites, make sure to walk through each page (or at least each &ldquo;style&rdquo; of page – blog post, photo gallery, contact form, embedded video page, embedded PDFs, etc) to make sure there&rsquo;s no elements that show up vastly different than you&rsquo;d imagine.</p>
 <p>You may continue to come across colors you didn&rsquo;t know you were using. Some of the elements that caused me to have to go back to Step 2/3 and/or do additional research were:</p>
-<div id="anchor">
-  <a id="tables">&nbsp;</a>
-</div>
 <h3 id="tables">Tables</h3>
 <p>I had to add the following to my table CSS to ensure that the text of the words changed color appropriately:</p>
 <details>
@@ -423,9 +408,6 @@
 </span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="n">body</span><span class="o">-</span><span class="kc">text</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div></details>
-<div id="anchor">
-  <a id="forms">&nbsp;</a>
-</div>
 <h3 id="forms">Forms</h3>
 <p>I realized that I had to override the default <code>input</code> box background and text color by adding both the block below and corresponding colors:</p>
 <details>
@@ -440,9 +422,6 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="err">}</span>
 </span></span></code></pre></div></details>
-<div id="anchor">
-  <a id="recaptchas">&nbsp;</a>
-</div>
 <h3 id="recaptchas">reCAPTCHAs</h3>
 <p>Google&rsquo;s reCAPTCHA is defaulted to a white background, which is perfect for a light mode. However, they also offer a dark mode option with an almost-black background. The issue is, we cannot simply change the color using CSS, like we&rsquo;re changing the other elements. Instead, we need to completely ask for a different reCAPTCHA from Google. So instead of making a change in CSS, for this we&rsquo;ll make a change via Javascritp:</p>
 <details>
@@ -458,9 +437,6 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;recaptcha&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;g-recaptcha form-recaptcha&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span></code></pre></div></details>
 <p>To see this work, you&rsquo;ll need to actually change the mode of your device, and then <em>refresh the page</em>. This is because instead of changing the element via CSS, we&rsquo;re putting in a completely different element entirely.</p>
-<div id="anchor">
-  <a id="pagination-bar">&nbsp;</a>
-</div>
 <h3 id="pagination-bar">Pagination Bar</h3>
 <p>I realized that a lot of my pagination bar was using default colors, e.g. <code>hover</code> background and text color, <code>disabled</code> background color, etc. So, I needed to add explicitly set variables for that:</p>
 <details>
@@ -483,9 +459,6 @@
 </span></span><span class="line"><span class="cl"><span class="err">}</span>
 </span></span></code></pre></div></details>
 <p>This helped allow the backgrounds and text of the entire pagination bar to change modes!</p>
-<div id="anchor">
-  <a id="icons">&nbsp;</a>
-</div>
 <h3 id="icons">Icons</h3>
 <p>Changing my icons to dark mode was the most challenging part by far. Because all of my icons are defined as SVG files and called as images, I had to actually create brand new SVGs of different colors, and then use the <code>prefers-color-scheme: dark</code> media query to determine which SVG to show.</p>
 <p>For icons that didn&rsquo;t require changing color on hover, this was simpler. I needed to add a different source image if <code>prefers-color-scheme: dark</code>.</p>
@@ -504,9 +477,9 @@
 <div class="table-responsive-sm">
   <table class="table table-hover table-bordered">
     <thead class="text-center">
-      <th></th>
-      <th>Non-Hover</th>
-      <th>Hover</th>
+      <th scope="col"></th>
+      <th scope="col">Non-Hover</th>
+      <th scope="col">Hover</th>
     </thead>
     <tbody>
       <tr>
@@ -598,9 +571,6 @@
 </span></span><span class="line"><span class="cl"><span class="err">}</span>
 </span></span></code></pre></div></details>
 <p>As you can see, we now can use the <code>&amp;:hover</code> property paired with the HTML classes to determine which icons are shown and which are hidden. Voilá! I&rsquo;m going to be super honest, when I found that solution, I was SUPER proud of myself.</p>
-<div id="anchor">
-  <a id="conclusion">&nbsp;</a>
-</div>
 <h2 id="conclusion">Conclusion</h2>
 <p>At the end of the day, showing snippets of my code and simple examples isn&rsquo;t going to help you solve all your edge cases. This is a great place to get started, but as you go, you may run into challenges that will let you learn more about your code and CSS.</p>
 <p>But even if you do start to get stumped on those challenges, I would encourage you not to give up on dark mode yet. It may take a while, and you may have a lot of little changes here or there (implementing dark mode on my site took two pull requests and the biggest PR had 62 files changed), but dark mode will really help your readers during all hours of the day/night, make your website more accessible, and make your website look cool and hip. Personally, I am proud that I&rsquo;m able to offer my readers a viable light mode <em>and</em> dark mode.</p>

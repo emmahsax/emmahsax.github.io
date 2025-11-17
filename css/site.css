@@ -63,15 +63,6 @@ html {
   }
 }
 
-#anchor a {
-  position: absolute;
-  top: -3rem;
-}
-
-#anchor {
-  position: relative;
-}
-
 .four-0-four {
   padding-bottom: 2rem;
   padding-top: 1.5rem;
@@ -158,6 +149,14 @@ footer, header, main {
 h1 {
   border-bottom: solid .125rem var(--page-separator);
   padding-bottom: 1.5rem;
+}
+
+h2 {
+  scroll-margin-top: 3rem;
+}
+
+h3 {
+  scroll-margin-top: 3rem;
 }
 
 h4 {
@@ -259,6 +258,10 @@ blockquote {
 
 .post-title {
   padding-bottom: .75rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 @media (max-width: 782px) {

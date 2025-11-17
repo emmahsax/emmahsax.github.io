@@ -45,7 +45,7 @@
   <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
   <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-04-02T07:58:47-05:00","datePublished":"2019-12-17T00:00:00-06:00","description":"Read here for my experience when I added Bootstrap to this website.","headline":"Adding Bootstrap to Your Static Content Site","keywords":["tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/adding-bootstrap-to-your-static-content-site/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/adding-bootstrap-to-your-static-content-site/"}
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-11-16T19:17:44-06:00","datePublished":"2019-12-17T00:00:00-06:00","description":"Read here for my experience when I added Bootstrap to this website.","headline":"Adding Bootstrap to Your Static Content Site","keywords":["tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/adding-bootstrap-to-your-static-content-site/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/adding-bootstrap-to-your-static-content-site/"}
 </script>
 
 </head>
@@ -108,7 +108,7 @@
                 <div class="col col-12 col-md-4">
                   <span class="date-meta">December 17, 2019</span></div>
 
-                <div class="col col-12 col-md-4"><span class="post-meta">Read time: 8 minutes</span>
+                <div class="col col-12 col-md-4"><span class="post-meta">Read time: 7 minutes</span>
                 </div>
               </div>
             </h1>
@@ -121,13 +121,10 @@
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
 <li><a href="#install-bootstrap-into-your-site">Install Bootstrap into your site</a></li>
-<li><a href="#load-your-site-locally-and-see-what-breaks">Load your site locally and see what breaks</a></li>
+<li><a href="#load-your-site-locally-and-see-what-breaks-">Load your site locally and see what breaks</a></li>
 <li><a href="#go-through-your-css-bit-by-bit-and-delete-those-bits">Go through your CSS bit by bit and delete those bits</a></li>
 <li><a href="#conclusion">Conclusion</a></li>
 </ul>
-<div id="anchor">
-  <a id="install-bootstrap-into-your-site">&nbsp;</a>
-</div>
 <h2 id="install-bootstrap-into-your-site">Install Bootstrap into your site</h2>
 <p>I selected to use the most recent version of Bootstrap (4.4 at the time), and wanted to install it via a <code>&lt;script&gt;</code> and CDN. If you put this line right before where your site links your own stylesheets, then it&rsquo;ll automatically import this and combine the two CSS&rsquo;s:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span>
@@ -137,15 +134,9 @@
 </span></span><span class="line"><span class="cl">  <span class="na">crossorigin</span><span class="o">=</span><span class="s">&#34;anonymous&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Your site will take all of Bootstrap&rsquo;s CSS, and then consider whatever you&rsquo;ve coded as overrides.</p>
-<div id="anchor">
-  <a id="load-your-site-locally-and-see-what-breaks">&nbsp;</a>
-</div>
 <h2 id="load-your-site-locally-and-see-what-breaks-">Load your site locally and see what breaks 🤷🏻‍♀️</h2>
 <p>When I first loaded my site, a surprising amount of the site successfully showed up. In fact, I&rsquo;d even say that it pretty much looked exactly like what it was before, because my local CSS was overriding all of Bootstrap&rsquo;s CSS. The only big thing that changed was my font styles. At the end of the day, I chose to keep Bootstrap&rsquo;s styles anyway because I started to get used to the new font.</p>
 <p>If your site does start to break, then that&rsquo;s an indicator that there&rsquo;s probably some of your custom CSS that you should get rid of. If you&rsquo;re going to use Bootstrap, you might as well <em>use</em> Bootstrap, which includes using most of Bootstrap&rsquo;s functionality and features.</p>
-<div id="anchor">
-  <a id="go-through-your-css-bit-by-bit-and-delete-those-bits">&nbsp;</a>
-</div>
 <h2 id="go-through-your-css-bit-by-bit-and-delete-those-bits">Go through your CSS bit by bit and delete those bits</h2>
 <p>To do this part, I started with the biggest single element I could find: my navbar. I started by taking a look at <a href="https://getbootstrap.com/docs/4.0/components/navbar/">Bootstrap&rsquo;s built-in navbar</a>, and worked my way through my particular HTML file implementing a basic version of Bootstrap&rsquo;s navbar. This involved changing the <code>class</code> names and moving around the lines of Jekyll code that write the menu on the top. I didn&rsquo;t care if it was responsive or not; I could get to that later.</p>
 <p>After I implemented the basics of the navbar, it worked pretty miraculously. It also turned out to basically be responsive right away, all I had to do was modify a few more <code>class</code> names. Then, it was time to make the navbar look like mine (with similar colors, sizing, etc).</p>
@@ -188,9 +179,6 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Previously, I was running that second line without the <code>class=&quot;container&quot;</code>. But, once we added that, suddenly the entire site&rsquo;s body was fully responsive! Now, everything word-wrapped appropriately from a huge screen, right down to 320px wide (the size of an iPhone 5/SE). It&rsquo;s brilliant!</p>
 <p>Over the next couple days, I eventually completely switched to using <a href="https://getbootstrap.com/docs/4.0/content/tables/">Bootstrap&rsquo;s tables</a> and <a href="https://getbootstrap.com/docs/4.0/components/pagination/">Bootstrap&rsquo;s pagination</a> (but I&rsquo;ll get to that in another blog post).</p>
-<div id="anchor">
-  <a id="conclusion">&nbsp;</a>
-</div>
 <h2 id="conclusion">Conclusion</h2>
 <p>At the end of the day (or a few days), my repo ended up going from over 650 lines of CSS code to 185 lines. That means I cut out at least 72% of my existing CSS code. <em>And</em> I have a better-looking, more responsive, more modern, and accessible website? It&rsquo;s a win-win.</p>
 <p>Thank you so much for getting to the bottom of that rather technical blog post. I hope it&rsquo;s enough compelling evidence to remember that using a 3rd party tool to make your website&rsquo;s CSS better is worth it. If I (a back-end coder with very little CSS experience) can make it happen, then so can you 😉.</p>

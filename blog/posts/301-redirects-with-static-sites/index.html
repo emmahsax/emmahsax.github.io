@@ -45,7 +45,7 @@
   <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
   <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-04-30T12:44:25-05:00","datePublished":"2020-10-04T12:00:00-05:00","description":"Read here to learn about an easy and custom way to redirect static sites from one URL to another.","headline":"301 Redirects with Static Sites","keywords":["tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/301-redirects-with-static-sites/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/301-redirects-with-static-sites/"}
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-11-16T19:17:44-06:00","datePublished":"2020-10-04T12:00:00-05:00","description":"Read here to learn about an easy and custom way to redirect static sites from one URL to another.","headline":"301 Redirects with Static Sites","keywords":["tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/301-redirects-with-static-sites/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/301-redirects-with-static-sites/"}
 </script>
 
 </head>
@@ -125,9 +125,6 @@
 <li><a href="#5-set-up-seo-trackers-to-monitor-the-new-domain">5. Set up SEO trackers to monitor the new domain</a></li>
 <li><a href="#6-7-and-8-wait-turn-off-redirects-and-retire-the-old-domain">6, 7, and 8. Wait, turn off redirects, and retire the old domain</a></li>
 </ul>
-<div id="anchor">
-  <a id="why-did-i-want-to-set-up-redirects">&nbsp;</a>
-</div>
 <h2 id="why-did-i-want-to-set-up-redirects">Why did I want to set up redirects?</h2>
 <p>This past weekend, I made the big decision to move the domain of my primary website from <code>https://emmasax4.info</code> to <code>https://emmasax.com</code>. The main reason I wanted to do this was simply because I actually liked the idea of a <code>.com</code> domain. What I read online was that a <code>.com</code> domain is oftentimes the default, it&rsquo;s what people tend to remember most, etc. The reason I originally purchased a <code>.info</code> domain was because I&rsquo;m not a commercial business. I&rsquo;m not trying to sell anything. But <code>.info</code> stands for &ldquo;information&rdquo;, which I later learned was originally designated for information about a famous person, place, thing, or concept. Although I am a person, it just didn&rsquo;t feel right. But somehow, one year into the revamping of this site and my &ldquo;branding&rdquo;, <code>emmasax.com</code> just felt right. Whether any of this is true or not may be a debate on the internet for a while, but I figured, my website, my domain, my decision 💪🏼.</p>
 <p>Anyway, my domain isn&rsquo;t what this blog post is supposed to be about. It&rsquo;s supposed to be about the actual switch 🔁. So, there were several core things I realized I needed to do immediately to actually switch out the domains.</p>
@@ -142,25 +139,13 @@
 <li>(OPTIONAL) Turn off redirects</li>
 <li>(OPTIONAL) Release (or retire) old domain</li>
 </ol>
-<div id="anchor">
-  <a id="1-rename-the-source-code-repository">&nbsp;</a>
-</div>
 <h2 id="1-rename-the-source-code-repository">1. Rename the source code repository</h2>
 <p>Firstly, I needed to rename my repository (the repository that my core source code is in). Doing this was actually pretty straightforward. I used a selective find/replace, made the pull request, merged, and then changed the name in the settings of the repository 🙌🏼.</p>
-<div id="anchor">
-  <a id="2-update-where-the-project-name-is-hard-coded">&nbsp;</a>
-</div>
 <h2 id="2-update-where-the-project-name-is-hard-coded">2. Update where the project name is hard-coded</h2>
 <p>Secondly, I needed to actually change the website. This was a bit longer. I had to find/replace a bunch of places in the code, including in blog posts where I had hard-coded the website name (most likely as a code block). The other big things I had to do in this pull request was change the Google/Yandex tokens for my SEO crawlers (I had to add a &ldquo;new&rdquo; site to Google, Yandex, and Bing in order to have those search engines track the new domain)—more on this later. I had to update the <code>CNAME</code> file as well, which is what would eventually tell GitHub Pages to do the full domain switch—this became the third 3️⃣ item.</p>
 <p>Lastly, I removed a bunch of old blog post redirects (learn more about those redirects I set up in <a href="/blog/posts/time-zones-utc-and-javascript-oh-my/"><em>Time Zones, UTC, and Javascript&hellip; Oh My!</em></a>). Although it&rsquo;d be nice if all of those continued redirecting nicely, I realized it wasn&rsquo;t a priority anymore. What was a higher priority was making <code>https://emmasax4.info</code> redirect to <code>https://emmasax.com</code>. This leads into the next item.</p>
-<div id="anchor">
-  <a id="3-update-the-domain-in-github-pages-settings">&nbsp;</a>
-</div>
 <h2 id="3-update-the-domain-in-github-pages-settings">3. Update the domain in GitHub Pages settings</h2>
 <p>This step could be done before or after Step 4, but it is simply changing the domain that GitHub Pages is serving your website under. If your static site isn&rsquo;t served through GitHub Pages, you may need to find another setting to change so that the system knows your site should be served on a different domain.</p>
-<div id="anchor">
-  <a id="4-change-redirects-from-the-old-domain-to-the-new-domain">&nbsp;</a>
-</div>
 <h2 id="4-change-redirects-from-the-old-domain-to-the-new-domain">4. Change redirects from the old domain to the new domain</h2>
 <p>Fourth, I needed to make redirects from the old site to the new site. And here is where I also learned that with a static site, there&rsquo;s no super-easy way to make awesome redirects 😿.</p>
 <p>The tool that I use to set up my DNS has an easy way to set up redirects. They&rsquo;re functional, and so that&rsquo;s great. But, I wanted my redirects to be fancier. If somebody types in <code>https://emmasax4.info</code>, they should be redirected to <code>https://emmasax.com</code>. But what if they pass in something like this: <code>https://emmasax4.info/interests-and-hobbies/theatre/</code>? They should be redirected to <code>https://emmasax.com/interests-and-hobbies/theatre/</code>. And my DNS provider wasn&rsquo;t capable of providing that service (transferring URL path when redirecting). So, I looked for simple, free, easy-to-implement alternatives that could redirect all URLs 🤔.</p>
@@ -208,14 +193,8 @@
 </span></span></code></pre></div><p>Bam! Now, no matter what path a user passes in after the <code>/</code>, they&rsquo;ll be forwarded to the exact same URL with just a different domain 🥳. The last part of this project was to remove all of the extra <code>index.html</code> files. All we really need are the root <code>index.html</code> to catch when someone navigates to <code>https://emmasax4.info</code> directly, and a page to catch when somebody navigates to&hellip;. anything else (<code>https://emmasax4.info/anything/else/goes/here</code>). In that case, we can just make a <code>404.html</code> file. If the user navigates to anything else besides the plain root, then GitHub Pages will show the <code>404.html</code> page. And if the <code>404.html</code> functionality redirects to the new domain, <em>while passing the end of the path (<code>/anything/else/goes/here</code>)</em>, then the <code>404.html</code> page acts as a catch-all. So, I created a symlinked file off of the <code>index.html</code> page:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ln -s index.html 404.html
 </span></span></code></pre></div><p>This way, if I change one of the HTML files, it&rsquo;ll automatically change the other one. <a href="https://github.com/emmahsax/website-redirects/blob/main/index.html">This is what my final HTML file looks like</a>.</p>
-<div id="anchor">
-  <a id="5-set-up-seo-trackers-to-monitor-the-new-domain">&nbsp;</a>
-</div>
 <h2 id="5-set-up-seo-trackers-to-monitor-the-new-domain">5. Set up SEO trackers to monitor the new domain</h2>
 <p>The fifth step for me to do in the &ldquo;soonish&rdquo; future was to update my SEO trackers, indexers, and crawlers. I previously used Google Search Console, Bing, and Yandex to do my SEO tracking. In each of those, I had the option to add a new website or domain (<code>https://emmasax.com</code>). And on Google, I also used the feature to do a &ldquo;Change of Address.&rdquo; So for Google, I added the new URL prefix site <em>and</em> completed the <a href="https://support.google.com/webmasters/answer/9370220?hl=en">Change of Address in Google</a>.</p>
-<div id="anchor">
-  <a id="6-7-and-8-wait-turn-off-redirects-and-retire-the-old-domain">&nbsp;</a>
-</div>
 <h2 id="6-7-and-8-wait-turn-off-redirects-and-retire-the-old-domain">6, 7, and 8. Wait, turn off redirects, and retire the old domain</h2>
 <p>The next steps are to wait a few months. This is easy! Google recommends waiting a minimum of six months. Since I still own my old domain for a while, I&rsquo;m probably going to keep my redirects alive as long as possible, which in my case will be over a year. I&rsquo;ll continue to monitor traffic, clicks, and impressions on tools like Cloudflare, Google Search Console, Yandex, and Bing. With any luck, the amount of traffic going towards the old domain will decrease within a few months, and the traffic on the new domain will increase. But after my waiting period is done, then I can turn off my redirects (in my case, turn off GitHub Pages on the redirecting repository), and release or retire my old domain. If I so desire, I could keep the old domain forever and just eternally let it redirect&hellip; it&rsquo;s my choice.</p>
 

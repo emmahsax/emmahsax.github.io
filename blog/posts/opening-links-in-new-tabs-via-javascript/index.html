@@ -45,7 +45,7 @@
   <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
   <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-04-02T07:58:47-05:00","datePublished":"2020-01-14T00:00:00-06:00","description":"Take a look at this guide for how to control where URL links open... all with Javascript.","headline":"Opening Links in New Tabs via Javascript","keywords":["tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/"}
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-11-16T19:17:44-06:00","datePublished":"2020-01-14T00:00:00-06:00","description":"Take a look at this guide for how to control where URL links open... all with Javascript.","headline":"Opening Links in New Tabs via Javascript","keywords":["tech"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/opening-links-in-new-tabs-via-javascript/"}
 </script>
 
 </head>
@@ -118,15 +118,12 @@
           <div class="page-body"><h2 id="table-of-contents">Table of Contents</h2>
 <ul>
 <li><a href="#introduction">Introduction</a></li>
-<li><a href="#writing-links-in-markdown">Writing Links in Markdown</a></li>
-<li><a href="#writing-links-in-markdown-that-open-in-a-new-tab">Writing Links in Markdown that Open in a New Tab</a></li>
-<li><a href="#a-not-so-terrible-solution">A Not-So Terrible Solution</a></li>
-<li><a href="#putting-it-all-together">Putting It All Together</a></li>
+<li><a href="#writing-links-in-markdown-">Writing Links in Markdown</a></li>
+<li><a href="#writing-links-in-markdown-that-open-in-a-new-tab-">Writing Links in Markdown that Open in a New Tab</a></li>
+<li><a href="#a-not-so-terrible-solution-">A Not-So Terrible Solution</a></li>
+<li><a href="#putting-it-all-together-">Putting It All Together</a></li>
 <li><a href="#references-and-additional-reading">References and Additional Reading</a></li>
 </ul>
-<div id="anchor">
-  <a id="introduction">&nbsp;</a>
-</div>
 <h2 id="introduction">Introduction</h2>
 <p>Have you ever noticed that some websites you visit have links that open to new tabs in your browser, and some open to the current tab in your browser? Does that inconsistency confuse or annoy you? Which do you prefer? Do you ever wonder <em>why</em> that is? Well, since the websites of the internet can&rsquo;t quite seem to agree and make a choice, let&rsquo;s discuss how I&rsquo;ve approached this topic, and what I&rsquo;ve done to make an easy decision about the important question of new tab&hellip; or not to new tab.</p>
 <p>First, let&rsquo;s make sure we&rsquo;re all on the same page when I say &ldquo;opening in a new tab&rdquo; versus &ldquo;opening in the current tab.&rdquo; The first example is of a link opening in the current tab. The second is of a link opening in a new tab:</p>
@@ -137,9 +134,6 @@
 <blockquote>
 <p>Markdown is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.</p></blockquote>
 <p>Because Markdown makes it easy to write paragraphs and content, I actually write all of my website&rsquo;s pages and blog posts as Markdown files. Jekyll, my static site generator, then reads all of my Markdown files and turns them into HTML files (which is what we see on an internet browser).</p>
-<div id="anchor">
-  <a id="writing-links-in-markdown">&nbsp;</a>
-</div>
 <h2 id="writing-links-in-markdown-">Writing Links in Markdown ✍🏼</h2>
 <p>In Markdown, the easiest way to add a link to a line of text is like this:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">This will be a link to [<span class="nt">GitHub</span>](<span class="na">https://github.com</span>).
@@ -149,9 +143,6 @@
 <p>In this example, the word <code>GitHub</code> will be a clickable link to <code>https://github.com</code>. And in most Markdown interpreters, including on GitHub, that link will open in the same tab that you&rsquo;re currently in. And if you&rsquo;re like me, this is irritating.</p>
 <p>For my own website, I believe that all EXTERNAL links should open in a new browser tab, and INTERNAL links should open in the same tab. An EXTERNAL link points to a new website, or a website that has a different URL than the website you are currently on. An INTERNAL link points to the same website that you&rsquo;re currently looking at.</p>
 <p>In modern internetting (not a real word, but I think I might copyright it), it&rsquo;s totally a good idea to be linking all over the place. The more links the better—within reason of course. And if you&rsquo;re opening all of the external links in the same tab that the user is looking in, that user will be hitting the <code>Back</code> button <em>a lot</em>. Even I get tired of that much <code>Back</code> buttoning.</p>
-<div id="anchor">
-  <a id="writing-links-in-markdown-that-open-in-a-new-tab">&nbsp;</a>
-</div>
 <h2 id="writing-links-in-markdown-that-open-in-a-new-tab-">Writing Links in Markdown that Open in a New Tab ⎘</h2>
 <p>So, I endeavored to find the best way to set my Markdown links to open in new tabs. By default, in Markdown with kramdown, my selected Markdown-to-HTML converter, there&rsquo;s only two ways to make this happen:</p>
 <ol>
@@ -170,9 +161,6 @@
       data-pswp-width="986" data-pswp-height="962"><img class="image" src="https://i.imgur.com/npgfOZz.png" width="400"  alt="GitHub’s weird italisizing"><div class="invisible caption">GitHub’s weird italisizing</div></a>
 </div>
 <p>So, neither of these options are perfect, and I don&rsquo;t like either of them. I want to be able to easily type a link, with the traditional Markdown format (<code>[link](url)</code>), and I want the link to open in a new tab on the browser (converted to HTML from kramdown), and to read in GitHub properly (not include the <code>{:target=&quot;_blank&quot;}</code>).</p>
-<div id="anchor">
-  <a id="a-not-so-terrible-solution">&nbsp;</a>
-</div>
 <h2 id="a-not-so-terrible-solution-">A Not-So Terrible Solution 🤞🏼</h2>
 <p>After several pull requests of me changing my mind about how to write links, and doing massive search-replaces in my codebase, I found a different kind of solution&hellip; a solution that involves Javascript. Static sites (like mine) can use Javascript to do view-based logic and methods right in front of the user. It&rsquo;s unwise to incorporate <em>a lot</em> of Javascript on a single page because it&rsquo;ll slow down loading and operation times, but it&rsquo;s how I did simply functionality, like showing the comments on the bottom of each page or loading the icons. And so of course, somebody has written <a href="https://html.com/attributes/a-target/">this blog post from html.com</a> which nicely provides a Javascript solution for opening every external URL in a new tab. This script is what is suggested to be placed at the bottom of our HTML files:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span>
@@ -200,9 +188,6 @@
 </span></span></code></pre></div><p>So, if the link in Markdown is written explicitly requesting the <code>target=&quot;_self&quot;</code>, then honor that. So the following link would open in the current tab:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">This will be a link to <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://github.com/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_self&#34;</span><span class="p">&gt;</span>GitHub<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.
 </span></span></code></pre></div><p>Similarly, if a link is explicitly written with <code>target=&quot;_blank&quot;</code>, no matter whether external or internal, the link should always open that in a new tab. If nothing is set for the <code>target</code> at all, then open in a new tab <em>if</em> the link is external.</p>
-<div id="anchor">
-  <a id="putting-it-all-together">&nbsp;</a>
-</div>
 <h2 id="putting-it-all-together-">Putting It All Together 🧩</h2>
 <p>Here&rsquo;s what my new script looks like after some personalized edits:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--
@@ -229,9 +214,6 @@
 </span></span><span class="line"><span class="cl">  <span class="nx">openExternalLinksInNewTabs</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>Now this <em><strong>really</strong></em> does everything I need. 🙌🏼</p>
-<div id="anchor">
-  <a id="references-and-additional-reading">&nbsp;</a>
-</div>
 <h2 id="references-and-additional-reading">References and Additional Reading</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Markdown">wikipedia.com: Markdown</a></li>

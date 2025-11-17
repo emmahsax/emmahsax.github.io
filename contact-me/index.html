@@ -96,7 +96,7 @@
           
           <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-          <iframe name="iframe" id="iframe" class="invisible"></iframe>
+          <iframe name="iframe" id="iframe" class="invisible" title="Form submission handler"></iframe>
 
           
           <div id="formDiv" class="page-body">
@@ -106,24 +106,24 @@
               action="https://docs.google.com/forms/d/e/1FAIpQLScEq299mdRxHN_dZ3tTdgp6KTYtcgUHHVbDr0DSX2-zDDCxuQ/formResponse"
             >
               <div class="mb-3">
-                <label>Full Name<span class="form-required">*</span></label>
+                <label for="name">Full Name<span class="form-required">*</span></label>
                 <input name="entry.989289036" type="text" class="form-control" id="name" autocapitalize="words" placeholder="John Doe" required>
               </div>
 
               <div class="mb-3">
-                <label>Email<span class="form-required">*</span></label>
+                <label for="email">Email<span class="form-required">*</span></label>
                 <input name="entry.1580808807" type="email" class="form-control" id="email" placeholder="johndoe@example.com" required>
               </div>
 
               <div class="mb-3">
-                <label>Message<span class="form-required">*</span></label>
+                <label for="message">Message<span class="form-required">*</span></label>
                 <textarea name="entry.1379036791" class="form-control" id="message" rows="3"
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit." required
                 ></textarea>
               </div>
 
               <div class="mb-3 invisible">
-                <label>Anti-Spam Verification<span class="form-required">*</span></label>
+                <label for="verification">Anti-Spam Verification<span class="form-required">*</span></label>
                 <div class="form-text">
                   NOTE: My HTML does not formally require this input to be filled in order to send a message. However, leaving this value blank will automatically prevent my form from _accepting_ your message, even though my website will _tell_ you the submission was successful.
                 </div>

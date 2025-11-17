@@ -45,7 +45,7 @@
   <meta name="msvalidate.01" content="89B2B19FF966341B78EF64EDADE6DF81" />
   <meta name="yandex-verification" content="32fe10ad6352714a" />
     <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-04-02T07:58:47-05:00","datePublished":"2020-07-19T10:00:33-05:00","description":"Switching a Jekyll site from kramdown to CommonMark doesn't have to be difficult!","headline":"Switching from kramdown to CommonMark","keywords":["tech","jekyll"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/switching-from-kramdown-to-commonmark/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/switching-from-kramdown-to-commonmark/"}
+  {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Emma Sax","url":"https://emmasax.com/"},"dateModified":"2025-11-16T19:17:44-06:00","datePublished":"2020-07-19T10:00:33-05:00","description":"Switching a Jekyll site from kramdown to CommonMark doesn't have to be difficult!","headline":"Switching from kramdown to CommonMark","keywords":["tech","jekyll"],"mainEntityOfPage":{"@id":"https://emmasax.com/blog/posts/switching-from-kramdown-to-commonmark/","@type":"WebPage"},"name":"Emma Sax","url":"https://emmasax.com/blog/posts/switching-from-kramdown-to-commonmark/"}
 </script>
 
 </head>
@@ -108,7 +108,7 @@
                 <div class="col col-12 col-md-4">
                   <span class="date-meta">July 19, 2020</span></div>
 
-                <div class="col col-12 col-md-4"><span class="post-meta">Read time: 11 minutes</span>
+                <div class="col col-12 col-md-4"><span class="post-meta">Read time: 10 minutes</span>
                 </div>
               </div>
             </h1>
@@ -119,22 +119,16 @@
 <ul>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#adding-jekyll-commonmark">Adding <header-code>jekyll-commonmark</header-code></a></li>
-<li><a href="#debugging">Debugging</a></li>
+<li><a href="#debugging-">Debugging</a></li>
 <li><a href="#conclusion">Conclusion</a></li>
 <li><a href="#references">References</a></li>
 </ul>
-<div id="anchor">
-  <a id="introduction">&nbsp;</a>
-</div>
 <h2 id="introduction">Introduction</h2>
 <p>Up until a few weeks ago, my website (this website) had always used kramdown (the lowercase &ldquo;k&rdquo; is intentional) to turn Markdown into HTML. GitHub Pages (where my website is hosted) by default uses kramdown, so I kept it that way even as I moved my site to being built on a CI solution instead of building through GitHub Pages.</p>
 <p>And over time, as I continued to add more content to this site, building the HTML website started to get slower and slower to load. When I started using Travis CI to build my application, running <code>bundle exec jekyll build</code> was maybe taking about 2 minutes of computation time. By the time it go over to CircleCI, it was taking a little bit longer. I don&rsquo;t think the platform I was running it on mattered&hellip; rather my project continued to grow. And my first official build on GitHub Actions took 2.606 seconds.</p>
 <p>When that happened, I hadn&rsquo;t yet introduced my <a href="/interests-and-hobbies/lego/">dedicated LEGO page</a>. And when I did finally build my LEGO page, suddenly, the build time of my website skyrocketed. Using two different collections (blog posts and LEGO entries) and looping over both makes the build time of my site <em>much</em> higher than it was before. Add in a few more blog posts, and my site was taking between 4 and 5 seconds to load locally.</p>
 <p>The amount of time my site takes to build on its CI tool doesn&rsquo;t particularly matter to me&hellip; a few seconds don&rsquo;t make a difference. What was almost painful was working locally. When I&rsquo;m working locally on my computer, every time I make a small change to a file, Jekyll would reload my site. And waiting 5 seconds after adding one comma was pushing my patience.</p>
 <p>So, when I came across the <a href="https://github.com/jekyll/jekyll-commonmark">jekyll/jekyll-commonmark</a> gem, I was curious. It advertises a Markdown parser that is faster than kramdown. The reason it&rsquo;s faster is because it uses a C compiler instead of a Ruby compiler. Normally I&rsquo;m kind of a Ruby-lover, but I will admit that it&rsquo;s not the fastest language around. So, I thought I may as well try it out on a pull request. If it&rsquo;s too many changes, or it doesn&rsquo;t actually benefit me, then no need to switch; kramdown is getting most of what I want done.</p>
-<div id="anchor">
-  <a id="adding-jekyll-commonmark">&nbsp;</a>
-</div>
 <h2 id="adding-jekyll-commonmark">Adding <header-code>jekyll-commonmark</header-code></h2>
 <p>Things started out easy. I added this to my <code>Gemfile</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="n">gem</span> <span class="s1">&#39;jekyll-commonmark&#39;</span><span class="p">,</span> <span class="s1">&#39;~&gt; 1.3&#39;</span>
@@ -151,9 +145,6 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">autolink</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">table</span><span class="w">
 </span></span></span></code></pre></div><p>I selected the <code>options</code> and <code>extensions</code> to use based on <a href="https://github.com/jekyll/jekyll-commonmark?tab=readme-ov-file#configuration"><code>jekyll-commonmark</code>&rsquo;s documentation</a>, and chose each one specifically based off of my needs as I debugged the switch.</p>
-<div id="anchor">
-  <a id="debugging">&nbsp;</a>
-</div>
 <h2 id="debugging-">Debugging 🕷</h2>
 <p>The very first thing I noticed when I first ran <code>jekyll build</code> was that CommonMark was much faster. My build went from about 5 seconds locally to 2 seconds, all from switching to CommonMark. A blogger could get spoiled with build times that fast!</p>
 <p>And then I took a look at the results. The first thing I noticed was that none of my Markdown showed up! My immediate thought was that CommonMark isn&rsquo;t going to work if my content doesn&rsquo;t show up. But lo-and-behold, the answer was simple&hellip; remove every use of <code>markdownify</code> in my entire site. To be completely honest, I&rsquo;m not sure what <code>markdownify</code> is for, but somehow it previously indicated to kramdown to process a string as Markdown. I guess CommonMark didn&rsquo;t like that.</p>
@@ -169,11 +160,7 @@
   * [Nested Header One](#nested-header-one-2)
 </code></pre><p>Now, if I&rsquo;m completely honest, this isn&rsquo;t that bad. It&rsquo;s terrible to have to update, but if I wait until the blog post is written, then it won&rsquo;t go through lots more changes. Especially when I found <a href="https://github.com/alexharv074/markdown_toc/blob/322286975e3e2b6b3c71191030a934263bf4234a/mdtoc.rb">this Ruby file</a> and fixed it up to suit my needs&hellip; it makes it easy to generate a Table of Contents based off of existing headers in a particular file.</p>
 <p>The challenging part was setting the anchors. When I used kramdown&rsquo;s TOC, the anchors were automatic (because I actually moved my navigation bar to be sticky, they actually had a slight bug in them the whole time, but that&rsquo;s unrelated). Now, it was time for me to have to set my own anchors on my headers—adding to the amount of &ldquo;annoying&rdquo; that is having to update a TOC. This was the ending solution:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;anchor&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;header-two&#34;</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">## Header Two
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">## Header Two
 </span></span></code></pre></div><p>The first line indicates that this is an anchor, and the <code>id=&quot;anchor&quot;</code> calls the CSS class that I added. Because my navigation bar is now sticky, I need my anchor to line up with the <em>bottom</em> of the top navigation bar, versus the <em>top</em> of the entire window. Without the second line, whenever a user clicked on a TOC link, it would slightly cut off the words of the anchor&hellip; not a very good user experience! So the second line actually makes an empty line <code>&amp;nbsp;</code> the anchor. And the last line actually prints the words of the header, for users to see. With this, the actual anchor lines up with the top of the window, but to the user, it looks like it&rsquo;s lining up with the bottom of the top nav bar. There were several links I used as research for this, and I&rsquo;ll link to all of them below.</p>
 <p>And then, the last trick was to add CSS:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">#</span><span class="nn">anchor</span> <span class="p">{</span>
@@ -212,14 +199,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">vendor</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">Gemfile</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">Gemfile.lock</span><span class="w">
-</span></span></span></code></pre></div><div id="anchor">
-  <a id="conclusion">&nbsp;</a>
-</div>
-<h2 id="conclusion">Conclusion</h2>
+</span></span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
 <p>Most of these changes only took a few of hours, and in my opinion, they were well worth the time. In about 120 local builds, I&rsquo;ll have made up the time that I would&rsquo;ve spent waiting for my site to build. In writing this blog post alone, I&rsquo;ve already done about 40 local builds. And the changes reflected on GitHub Actions? The last build with kramdown took <strong>3.796 seconds</strong> to build. My first build with CommonMark took <strong>1.794 seconds</strong>&hellip; just a smidgen over 2 seconds faster.</p>
-<div id="anchor">
-  <a id="references">&nbsp;</a>
-</div>
 <h2 id="references">References</h2>
 <ul>
 <li><a href="https://www.sitepoint.com/community/t/fixed-nav-with-positioning/290073/4">sitepoint.com: fixed nav with positioning</a></li>
