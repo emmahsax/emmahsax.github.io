@@ -74,11 +74,11 @@
           <li class="nav-item ">
                 <a class="nav-link" href="/about-me/">About Me</a>
               </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-              </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
               </li>
             </ul>
       </div>
@@ -245,16 +245,16 @@
 <p>Here are the additional files that these steps call.</p>
 <p><code>.circleci/configure-bundler.sh</code> is called in the <code>configure_bundler</code> command. This file grabs the <code>bundler</code> version from the <code>Gemfile.lock</code>, and then installs that version of <code>bundler</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;export BUNDLER_VERSION=</span><span class="k">$(</span>cat Gemfile.lock <span class="p">|</span> tail -1 <span class="p">|</span> tr -d <span class="s1">&#39; &#39;</span><span class="k">)</span><span class="s2">&#34;</span> &gt;&gt; <span class="nv">$BASH_ENV</span>
+</span></span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;export BUNDLER_VERSION=</span><span class="k">$(</span>cat Gemfile.lock <span class="p">|</span> tail -1 <span class="p">|</span> tr -d <span class="s1">&#39; &#39;</span><span class="k">)</span><span class="s2">&#34;</span> &gt;&gt; <span class="nv">$BASH_ENV</span>
 </span></span><span class="line"><span class="cl"><span class="nb">source</span> <span class="nv">$BASH_ENV</span>
 </span></span><span class="line"><span class="cl">gem install bundler
 </span></span></code></pre></div><p><code>.circleci/html-proofer.sh</code> is called in the <code>html_proofer</code> command. This file will just run HTML Proofer on the command line.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>bundle <span class="nb">exec</span> htmlproofer <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --assume-extension <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --allow-hash-href <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --internal-domains /https://emmasax.com// <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  _site
+</span></span></span><span class="line"><span class="cl">bundle <span class="nb">exec</span> htmlproofer <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --assume-extension <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --allow-hash-href <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --internal-domains /https://emmasax.com// <span class="se">\
+</span></span></span><span class="line"><span class="cl">  _site
 </span></span></code></pre></div><h3 id="2-notifying-slack-1">2. Notifying Slack</h3>
 <p>To notify Slack, I set up the <a href="https://circleci.com/orbs/registry/orb/circleci/slack">Slack orb</a>. I still don&rsquo;t really understand the purpose of orbs, but this slack one wasn&rsquo;t too difficult to use. Here&rsquo;s my configuration which will send a notification message when my build is finished:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">commands</span><span class="p">:</span><span class="w">
@@ -271,14 +271,14 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">include_job_number_field</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">include_project_field</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">include_visit_job_action</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">jobs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">test</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">set_slack_message</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">slack_build_notification</span><span class="w">
 </span></span></span></code></pre></div><p>The orb comes with a default Slack message, but I wanted to customize mine a bit. So I set a custom message in a <code>.circleci/generate-slack-message.sh</code> file:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Start with a link to the CircleCI build and the project...</span>
 </span></span><span class="line"><span class="cl"><span class="nv">m</span><span class="o">=</span><span class="s2">&#34;Build &lt;</span><span class="nv">$CIRCLE_BUILD_URL</span><span class="s2">|#</span><span class="nv">$CIRCLE_BUILD_NUM</span><span class="s2">&gt; of </span><span class="nv">$CIRCLE_PROJECT_USERNAME</span><span class="s2">/</span><span class="nv">$CIRCLE_PROJECT_REPONAME</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">
@@ -302,7 +302,8 @@
 </span></span><span class="line"><span class="cl"><span class="nb">source</span> <span class="nv">$BASH_ENV</span>
 </span></span></code></pre></div><p>With this, a final message will include all of the information I&rsquo;d like to see when a CircleCI build finishes:</p>
 <blockquote>
-<p>Build <a href="https://example.com">#538</a> of github-user/github-repo on branch <code>branch_name</code> in PR <a href="https://example.com">#201</a> by github-user passed.</p></blockquote>
+<p>Build <a href="https://example.com">#538</a> of github-user/github-repo on branch <code>branch_name</code> in PR <a href="https://example.com">#201</a> by github-user passed.</p>
+</blockquote>
 <p>To set up credentials, I added a custom CircleCI Slack application on my Slack account. This Slack app can post to specific channels via an incoming webhook. From the incoming webhook, they gave me a secure URL to post back to, and I added that as a CircleCI environment variable. Voilà!</p>
 <h3 id="3-deploying-to-github-pages-1">3. &ldquo;Deploying&rdquo; to GitHub Pages</h3>
 <p>Setting up the &ldquo;deploy&rdquo; to GitHub Pages consisted of defining a new workflow, job, and command. I set up the new workflow so that I could separate when the deploy job would be run, since there&rsquo;s no need to run it on the <code>develop</code> workflow:</p>
@@ -314,7 +315,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">filters</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">branches</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">only</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="l">MAIN_BRANCH_NAME ]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">jobs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">test-and-deploy</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">working_directory</span><span class="p">:</span><span class="w"> </span><span class="l">~/PROJECT_NAME</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">docker: [ image</span><span class="p">:</span><span class="w"> </span><span class="l">circleci/RUBY_IMAGE ]</span><span class="w">
@@ -324,7 +325,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">jekyll_build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">github_pages_deploy</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">slack_build_notification</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">commands</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">commands</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">github_pages_deploy</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">add_ssh_keys</span><span class="p">:</span><span class="w">
@@ -334,7 +335,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l">.circleci/github-pages-deploy.sh</span><span class="w">
 </span></span></span></code></pre></div><p>This workflow titled <code>release</code> will only run on the <code>MAIN_BRANCH_NAME</code>. It will still build the Jekyll site, so there&rsquo;s something to deploy, and it will still notify Slack upon completion. But, we&rsquo;ve defined a new command for the job to run, <code>github_pages_deploy</code>, which will call the <code>.circleci/github-pages-deploy.sh</code> file:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># These are two variables that I added as CircleCI environment variables</span>
 </span></span><span class="line"><span class="cl">git config user.name <span class="s2">&#34;</span><span class="nv">$USER_NAME</span><span class="s2">&#34;</span>
 </span></span><span class="line"><span class="cl">git config user.email <span class="s2">&#34;</span><span class="nv">$USER_EMAIL</span><span class="s2">&#34;</span>
@@ -385,12 +386,12 @@
 <h3 id="adding-a-configyml-to-the-pages-branch">Adding a <header-code>config.yml</header-code> to the <header-code>pages</header-code> branch</h3>
 <p>In Travis CI, if there&rsquo;s no <code>.travis.yml</code> file, then Travis CI will ignore the commit and it won&rsquo;t run anything. This was useful on branches like the <code>pages</code> branch, where there&rsquo;s no need to run a build on each commit. In CircleCI, if there&rsquo;s no <code>.circleci/config.yml</code> on a branch, it&rsquo;ll still try to run a build, and then break and say there&rsquo;s no config file. So, I manually added this <code>.circleci/config.yml</code> to my <code>pages</code> branch, to completely ignore the branch on each commit:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="m">2.1</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">jobs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">skip</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">working_directory</span><span class="p">:</span><span class="w"> </span><span class="l">~/PROJECT_NAME</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">docker: [ image</span><span class="p">:</span><span class="w"> </span><span class="l">circleci/RUBY_IMAGE ]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="l">checkout ]</span><span class="w"> </span><span class="c"># A simple step otherwise the build breaks with syntax errors</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">workflows</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">workflows</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">BRANCH_TO_IGNORE</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">jobs</span><span class="p">:</span><span class="w">

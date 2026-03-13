@@ -74,11 +74,11 @@
           <li class="nav-item ">
                 <a class="nav-link" href="/about-me/">About Me</a>
               </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-              </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
               </li>
             </ul>
       </div>
@@ -150,7 +150,8 @@
 <li>Notify a Slack channel when the build was done</li>
 <li>&ldquo;Deploy&rdquo; my website by making a commit back to my <code>pages</code> branch in GitHub (which GitHub Pages will then deploy for me)</li>
 <li>Run a daily cron so that I can automate the build to run whenever I want (ideal for when I&rsquo;d like to publish a blog post at a specific time or to check that my site still builds and loads properly every now and then, since my site doesn&rsquo;t get consistent updates all the time)</li>
-</ol></blockquote>
+</ol>
+</blockquote>
 <p>This list of four requirements hasn&rsquo;t changed. CircleCI can do all of these things beautifully, although if I&rsquo;m honest, I had to do some of my own personal fidgeting around to get #3 working as expected and #2 with a custom Slack message. All of this is fine. I put the time and effort in once, and it&rsquo;s paid off countless times since. #automation #computers. Now it&rsquo;s time to see if GitHub Actions can do the same things for me.</p>
 <h2 id="here-enters-github-actions">Here Enters GitHub Actions</h2>
 <p>On the surface, GitHub Actions is <em>very</em> similar to CircleCI. Both of them use Yaml, and both of them use workflows which have multiple jobs, and jobs have multiple steps/commands. Both of them require a <code>checkout</code> step, and both of them have capabilities to run on a schedule or on <code>push</code>.</p>
@@ -175,27 +176,27 @@
 </span></span></span></code></pre></div><p>Technically the Checkout Action provides a <code>v2</code> to use, but I found that it doesn&rsquo;t work for what I wanted. I&rsquo;ll explain more about that later. So to bypass those issues, I paired the checkout step with the <code>Switch to Current Branch</code> step to get around that issue.</p>
 <p>The next few steps are to set up Bundler, install gems, and build the site. I&rsquo;ll just give these steps instead of explaining:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="c"># install the exact version of bundler that the Gemfile.lock uses</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configure Bundler</span><span class="w">
+</span></span></span><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configure Bundler</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">sudo gem install bundler -v $(cat Gemfile.lock | tail -1 | tr -d &#39; &#39;)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># use https://github.com/actions/cache to set a gem cache</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configure Gem Cache</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># use https://github.com/actions/cache to set a gem cache</span><span class="w">
+</span></span></span><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Configure Gem Cache</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/cache@v1</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">with</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">vendor/bundle</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l">bundler-cache-${{ hashFiles(&#39;**/Gemfile.lock&#39;) }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="l">bundler-cache-</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># install all gems or use the cached gems</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Gems</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># install all gems or use the cached gems</span><span class="w">
+</span></span></span><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Install Gems</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">bundle config set path &#39;vendor/bundle&#39; &amp;&amp; bundle install</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># build the site</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Jekyll Build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># build the site</span><span class="w">
+</span></span></span><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Jekyll Build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">JEKYLL_ENV=production bundle exec jekyll build --destination _site</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># run HTML proofer</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">HTML Proofer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c"># run HTML proofer</span><span class="w">
+</span></span></span><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">HTML Proofer</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">bundle exec htmlproofer --assume-extension --allow-hash-href --internal-domains /https://emmasax.com// --only_4xx _site</span><span class="w">
 </span></span></span></code></pre></div><p>Bam! Not too shabby. This now looks <em>very</em> familiar to CircleCI.</p>
 <h3 id="2-notifying-slack">2. Notifying Slack</h3>
@@ -222,7 +223,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="sd">      Build &lt;${{ env.BUILD_URL }}|${{ github.run_id }}&gt; on branch `${{ env.BRANCH }}`
 </span></span></span><span class="line"><span class="cl"><span class="sd">      in PR &lt;${{ env.PULL_URL }}|#${{ env.PULL_ID }}&gt; *passed*.</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Notify Slack on Failure</span><span class="w">
+</span></span></span><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Notify Slack on Failure</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l">failure()</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">emmahsax/slack-notifier-action@main</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">env</span><span class="p">:</span><span class="w">
@@ -278,7 +279,7 @@
 <h3 id="4-running-daily-crons">4. Running daily crons</h3>
 <p>If I&rsquo;m completely honest, running daily crons is about the simplest part of this entire process. Either GitHub Actions supports crons, or it doesn&rsquo;t. In this case&hellip; it totally does. The <a href="https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#onschedule">documentation for GitHub Actions schedules</a> clearly defines that we should submit our crons in UTC in Posix format:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Cron</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">on</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">cron: &#39;30 5 * * 1&#39; # On Mondays</span><span class="p">:</span><span class="w"> </span><span class="m">05</span><span class="p">:</span><span class="m">30</span><span class="w"> </span><span class="l">UTC =&gt; 00:30 CDT / 23:30 CST</span><span class="w">
 </span></span></span></code></pre></div><p>And that&rsquo;s it. The cron takes a couple of minutes longer to begin than it does with CircleCI, but that&rsquo;s close enough for me.</p>

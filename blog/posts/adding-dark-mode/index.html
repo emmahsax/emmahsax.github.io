@@ -74,11 +74,11 @@
           <li class="nav-item ">
                 <a class="nav-link" href="/about-me/">About Me</a>
               </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-              </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
               </li>
             </ul>
       </div>
@@ -118,7 +118,8 @@
           <div class="page-body"><p>&ldquo;Dark mode&rdquo; was first introduced in 2016 on Windows, and macOS soon followed in 2019. But even though that was years ago, not all sites have added an automatic dark mode option. Until recently, my site was only available in light mode (AKA a light background with dark text, perfect for when it&rsquo;s a bright day outside). I had previously held off on attempting dark mode with the impression it would be an HTML and CSS challenge. But I was pleasantly surprised!</p>
 <p>Some websites, such as Twitter and Facebook, offer sticky settings where you can set the browser or app to always show that website in light or dark mode. Other websites give a little toggle button to switch between light and dark mode at will. And lastly, other websites allow the website to automatically change mode with your device settings. For example, I set my phone and computer to use light mode from 8am until 9:30pm, and if it&rsquo;s not between those hours (AKA at night), then give me dark mode whenever possible. Implementing functions like sticky settings, toggle buttons, setting other user preferences, etc are more complex features that may include using browser cookies or a database. However, using CSS to automatically switch between light and dark mode with a device setting is much simpler, so that&rsquo;s what we&rsquo;ll walk through today!</p>
 <blockquote>
-<p>NOTE: For the code examples below, I&rsquo;ve attached <em>all</em> of the HTML/CSS required to give dark mode a try yourself. To use the examples, navigate to <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_background_shorthand2">www.w3schools.com/css/tryit.asp</a>, delete whatever HTML contents is currently there, copy-paste my example code. and press <code>Run</code>.</p></blockquote>
+<p>NOTE: For the code examples below, I&rsquo;ve attached <em>all</em> of the HTML/CSS required to give dark mode a try yourself. To use the examples, navigate to <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_background_shorthand2">www.w3schools.com/css/tryit.asp</a>, delete whatever HTML contents is currently there, copy-paste my example code. and press <code>Run</code>.</p>
+</blockquote>
 <ul>
 <li><a href="#1-make-sure-all-existing-colors-on-your-site-are-in-css-not-html">1. Make sure all existing colors on your site are in CSS, not HTML</a></li>
 <li><a href="#2-pull-out-all-existing-colors-in-css-into-variables">2. Pull out all existing colors in CSS into variables</a></li>
@@ -252,7 +253,8 @@
 <p>It turned out my website had <em>a lot</em> of colors, and some of them I wasn&rsquo;t even aware I was using (AKA I was using Bootstrap&rsquo;s default colors). Don&rsquo;t be afraid to continue adding colors to the list of variables as you move through the next steps and notice colors you may not have realized you were relying on!</p>
 <h2 id="3-make-dark-mode-color-alternatives">3. Make dark mode color alternatives</h2>
 <blockquote>
-<p>The instructions below assume your default color mode is light mode. If your default is dark mode, then you&rsquo;ll need to use <code>prefers-color-scheme: light</code> instead of <code>prefers-color-scheme: dark</code>.</p></blockquote>
+<p>The instructions below assume your default color mode is light mode. If your default is dark mode, then you&rsquo;ll need to use <code>prefers-color-scheme: light</code> instead of <code>prefers-color-scheme: dark</code>.</p>
+</blockquote>
 <p>All right, now&rsquo;s the time to bring on the dark mode! I started with switching over easy-to-see elements, such as background colors, text colors, and big buttons. This could look something like this:</p>
 <details>
   <summary class="collapse-summary">View Code</summary>

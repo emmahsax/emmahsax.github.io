@@ -74,11 +74,11 @@
           <li class="nav-item ">
                 <a class="nav-link" href="/about-me/">About Me</a>
               </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-              </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
               </li>
             </ul>
       </div>
@@ -132,7 +132,8 @@
 <p>So, I need to make a change in order to avoid this happening again. Downtime happens&hellip; it is sort of inevitable. The thing is that I need to be made aware of when downtime happens or is happening so that I can try to fix it right away. Static sites generally don&rsquo;t have a lot of downtime because there&rsquo;s no backend, but they&rsquo;re still liable to internet issues and DNS/SSL issues (as shown above). So, I went on an experimental journey to find a 3rd party service to provide some simple uptime monitoring.</p>
 <p>CloudRadar did a beautiful job of explaining what uptime monitoring is in a blog post that, unfortunately, is no longer available. The gist from them is this:</p>
 <blockquote>
-<p>Uptime Monitoring checks the availability and the response time of your website and publicly accessible infrastructure. An effective monitoring solution will alert you of a problem as soon as it occurs - wherever you are.</p></blockquote>
+<p>Uptime Monitoring checks the availability and the response time of your website and publicly accessible infrastructure. An effective monitoring solution will alert you of a problem as soon as it occurs - wherever you are.</p>
+</blockquote>
 <p>So, I needed to find a service that would ping my website (over HTTPS) regularly (preferrably once a minute), and then text me, send my phone a notification, or some other alternative when it goes down for a couple of consecutive checks. It&rsquo;d be awesome if it also notified me when my website came back up. I started by just googling for some SAAS uptime monitoring services. I got some pretty common ones like:</p>
 <ul>
 <li>Pingdom</li>

@@ -74,11 +74,11 @@
           <li class="nav-item ">
                 <a class="nav-link" href="/about-me/">About Me</a>
               </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-              </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
               </li>
             </ul>
       </div>
@@ -129,17 +129,20 @@
 <p>First, let&rsquo;s make sure we&rsquo;re all on the same page when I say &ldquo;opening in a new tab&rdquo; versus &ldquo;opening in the current tab.&rdquo; The first example is of a link opening in the current tab. The second is of a link opening in a new tab:</p>
 <blockquote>
 <p>This will be a link to <a href="https://github.com/" target="_self">GitHub</a>.</p>
-<p>This will be a link to <a href="https://github.com/" target="_blank">GitHub</a>.</p></blockquote>
+<p>This will be a link to <a href="https://github.com/" target="_blank">GitHub</a>.</p>
+</blockquote>
 <p>Next, for those of you that aren&rsquo;t familiar with Markdown, here&rsquo;s Wikipedia&rsquo;s definition (since Wikipedia is truth 😉):</p>
 <blockquote>
-<p>Markdown is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.</p></blockquote>
+<p>Markdown is a lightweight markup language with plain text formatting syntax. Its design allows it to be converted to many output formats, but the original tool by the same name only supports HTML. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.</p>
+</blockquote>
 <p>Because Markdown makes it easy to write paragraphs and content, I actually write all of my website&rsquo;s pages and blog posts as Markdown files. Jekyll, my static site generator, then reads all of my Markdown files and turns them into HTML files (which is what we see on an internet browser).</p>
 <h2 id="writing-links-in-markdown-">Writing Links in Markdown ✍🏼</h2>
 <p>In Markdown, the easiest way to add a link to a line of text is like this:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">This will be a link to [<span class="nt">GitHub</span>](<span class="na">https://github.com</span>).
 </span></span></code></pre></div><p>This example will come out looking like this:</p>
 <blockquote>
-<p>This will be a link to <a href="https://github.com" target="_self">GitHub</a>.</p></blockquote>
+<p>This will be a link to <a href="https://github.com" target="_self">GitHub</a>.</p>
+</blockquote>
 <p>In this example, the word <code>GitHub</code> will be a clickable link to <code>https://github.com</code>. And in most Markdown interpreters, including on GitHub, that link will open in the same tab that you&rsquo;re currently in. And if you&rsquo;re like me, this is irritating.</p>
 <p>For my own website, I believe that all EXTERNAL links should open in a new browser tab, and INTERNAL links should open in the same tab. An EXTERNAL link points to a new website, or a website that has a different URL than the website you are currently on. An INTERNAL link points to the same website that you&rsquo;re currently looking at.</p>
 <p>In modern internetting (not a real word, but I think I might copyright it), it&rsquo;s totally a good idea to be linking all over the place. The more links the better—within reason of course. And if you&rsquo;re opening all of the external links in the same tab that the user is looking in, that user will be hitting the <code>Back</code> button <em>a lot</em>. Even I get tired of that much <code>Back</code> buttoning.</p>
@@ -186,7 +189,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">};</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></div><p>So, if the link in Markdown is written explicitly requesting the <code>target=&quot;_self&quot;</code>, then honor that. So the following link would open in the current tab:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">This will be a link to <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://github.com/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_self&#34;</span><span class="p">&gt;</span>GitHub<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">This will be a link to &lt;a href=&#34;https://github.com/&#34; target=&#34;_self&#34;&gt;GitHub&lt;/a&gt;.
 </span></span></code></pre></div><p>Similarly, if a link is explicitly written with <code>target=&quot;_blank&quot;</code>, no matter whether external or internal, the link should always open that in a new tab. If nothing is set for the <code>target</code> at all, then open in a new tab <em>if</em> the link is external.</p>
 <h2 id="putting-it-all-together-">Putting It All Together 🧩</h2>
 <p>Here&rsquo;s what my new script looks like after some personalized edits:</p>

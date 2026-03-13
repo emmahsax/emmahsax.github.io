@@ -74,11 +74,11 @@
           <li class="nav-item ">
                 <a class="nav-link" href="/about-me/">About Me</a>
               </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-              </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
               </li>
             </ul>
       </div>
@@ -165,13 +165,13 @@ January 18, 2020 05:15
 </span></span><span class="line"><span class="cl"><span class="p">];</span>
 </span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">dateArray</span> <span class="o">=</span> <span class="s1">&#39;2020-01-18 04:15:00 +0000&#39;</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/[^0-9]/</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="c1">//  localDate = Fri Jan 17 2020 22:15:00 GMT-0600 (Central Standard Time)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">localDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span>
+</span></span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">localDate</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">Date</span><span class="p">.</span><span class="nx">UTC</span><span class="p">(</span><span class="nx">dateArray</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="nx">dateArray</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl"><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span> <span class="c1">// 17
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span> <span class="c1">// 2020
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">monthIndex</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">();</span> <span class="c1">// 0
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">return</span> <span class="nx">monthNames</span><span class="p">[</span><span class="nx">monthIndex</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">day</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nx">year</span><span class="p">;</span> <span class="c1">// January 17, 2020
+</span></span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span> <span class="c1">// 2020
+</span></span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">monthIndex</span> <span class="o">=</span> <span class="nx">localDate</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">();</span> <span class="c1">// 0
+</span></span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="nx">monthNames</span><span class="p">[</span><span class="nx">monthIndex</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">day</span> <span class="o">+</span> <span class="s1">&#39;, &#39;</span> <span class="o">+</span> <span class="nx">year</span><span class="p">;</span> <span class="c1">// January 17, 2020
 </span></span></span></code></pre></div><p>All together, this now looks like this:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="kd">function</span> <span class="nx">showDatesInLocalTime</span><span class="p">()</span> <span class="p">{</span>
@@ -205,7 +205,7 @@ January 18, 2020 05:15
 <p>If I&rsquo;m honest, having the date in the URL was never my favorite thing&hellip; it always bugged me. I just never cared quite enough to change it, and to deal with the redirects I&rsquo;d have to set up. But given this inconsistency, I decided that I finally cared enough to make the shift ↪.</p>
 <p>I added the <code>jekyll-redirect-from</code> plugin to my <code>_config.yml</code>. And from there, redirecting is actually quite easy. In the front matter of each blog post, I add the new URL of the blog post, and then redirect to the new URL from the old URL:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">permalink</span><span class="p">:</span><span class="w"> </span><span class="l">/blog/posts/opening-links-in-new-tabs-via-javascript/</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">redirect_from</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">redirect_from</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">/blog/posts/2020-01-14-opening-links-in-new-tabs-via-javascript/</span><span class="w">
 </span></span></span></code></pre></div><p>Now, when I navigate to my blog posts at the old URL, my browser automatically redirects to the new URL. Hopefully that prevents my SEO ranking from going down 😬.</p>
 <h2 id="conclusion">Conclusion</h2>

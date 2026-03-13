@@ -74,11 +74,11 @@
           <li class="nav-item ">
                 <a class="nav-link" href="/about-me/">About Me</a>
               </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
-              </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/interests-and-hobbies/">Interests & Hobbies</a>
               </li>
             </ul>
       </div>
@@ -154,15 +154,17 @@
 <p>From Travis CI&rsquo;s documentation,</p>
 <blockquote>
 <p>Continuous Integration is the practice of merging in small code changes frequently - rather than merging in a large change at the end of a development cycle. The goal is to build healthier software by developing and testing in smaller increments. This is where Travis CI comes in.</p>
-<p>As a continuous integration platform, Travis CI supports your development process by automatically building and testing code changes, providing immediate feedback on the success of the change. Travis CI can also automate other parts of your development process by managing deployments and notifications.</p></blockquote>
+<p>As a continuous integration platform, Travis CI supports your development process by automatically building and testing code changes, providing immediate feedback on the success of the change. Travis CI can also automate other parts of your development process by managing deployments and notifications.</p>
+</blockquote>
 <p>The ending part of that statement is important:</p>
 <blockquote>
-<p>Travis CI can&hellip; [manage] deployments and notifications.</p></blockquote>
+<p>Travis CI can&hellip; [manage] deployments and notifications.</p>
+</blockquote>
 <p>So, we could (in theory) make a change to the source code in GitHub, and then have Travis CI build my website and &ldquo;deploy&rdquo; it to GitHub Pages. And, it turns out my site was already using Travis CI to test the Jekyll build process on every commit to the <code>pages</code> branch. So, I only had to add a few lines to have Travis CI <em>also</em> deploy my changes:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">script</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">JEKYLL_ENV=production bundle exec jekyll build --destination ./site</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">deploy</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">pages</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">local-dir</span><span class="p">:</span><span class="w"> </span><span class="l">./site</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">target-branch</span><span class="p">:</span><span class="w"> </span><span class="l">pages</span><span class="w">
