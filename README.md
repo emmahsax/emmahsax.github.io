@@ -12,5 +12,5 @@ This website also implements the following open source tools:
 * Google Fonts       - https://fonts.google.com/attribution
 * Hugo v0.164.0      - https://github.com/gohugoio/hugo/blob/v0.164.0/LICENSE
 * Jquery v3.7.1      - https://jquery.org/license
-* Lightbox2 v2.11.5  - https://github.com/lokesh/lightbox2/blob/v2.11.5/LICENSE
+* Lightbox2 v2.12.0  - https://github.com/lokesh/lightbox2/blob/v2.12.0/LICENSE
 * PhotoSwipe v5.4.4  - https://github.com/dimsemenov/PhotoSwipe/blob/v5.4.4/LICENSE
