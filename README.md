@@ -8,7 +8,7 @@ For information on licensing, please see [LICENSE.txt](https://emmasax.com/LICEN
 
 This website also implements the following open source tools:
 
-* Bootstrap v5.3.7   - https://github.com/twbs/bootstrap/blob/v5.3.7/LICENSE
+* Bootstrap v5.3.8   - https://github.com/twbs/bootstrap/blob/v5.3.8/LICENSE
 * Google Fonts       - https://fonts.google.com/attribution
 * Hugo v0.164.0      - https://github.com/gohugoio/hugo/blob/v0.164.0/LICENSE
 * Jquery v3.7.1      - https://jquery.org/license
