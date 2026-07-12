@@ -210,7 +210,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">jobs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">test</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">working_directory</span><span class="p">:</span><span class="w"> </span><span class="l">~/PROJECT_NAME</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">docker: [ image</span><span class="p">:</span><span class="w"> </span><span class="l">circleci/RUBY_IMAGE ]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">docker</span><span class="p">:</span><span class="w"> </span><span class="nt">[ image</span><span class="p">:</span><span class="w"> </span><span class="l">circleci/RUBY_IMAGE ]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">checkout</span><span class="w"> </span><span class="c"># This is so the build goes into your working_directory</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">configure_bundler</span><span class="w">
@@ -318,7 +318,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="nt">jobs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">test-and-deploy</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">working_directory</span><span class="p">:</span><span class="w"> </span><span class="l">~/PROJECT_NAME</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">docker: [ image</span><span class="p">:</span><span class="w"> </span><span class="l">circleci/RUBY_IMAGE ]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">docker</span><span class="p">:</span><span class="w"> </span><span class="nt">[ image</span><span class="p">:</span><span class="w"> </span><span class="l">circleci/RUBY_IMAGE ]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">checkout</span><span class="w"> </span><span class="c"># this is so the build goes into your working_directory</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">configure_bundler</span><span class="w">
@@ -389,7 +389,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="nt">jobs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">skip</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">working_directory</span><span class="p">:</span><span class="w"> </span><span class="l">~/PROJECT_NAME</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">docker: [ image</span><span class="p">:</span><span class="w"> </span><span class="l">circleci/RUBY_IMAGE ]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">docker</span><span class="p">:</span><span class="w"> </span><span class="nt">[ image</span><span class="p">:</span><span class="w"> </span><span class="l">circleci/RUBY_IMAGE ]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="l">checkout ]</span><span class="w"> </span><span class="c"># A simple step otherwise the build breaks with syntax errors</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="nt">workflows</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">

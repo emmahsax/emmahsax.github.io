@@ -281,7 +281,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Cron</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="nt">on</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">schedule</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">cron: &#39;30 5 * * 1&#39; # On Mondays</span><span class="p">:</span><span class="w"> </span><span class="m">05</span><span class="p">:</span><span class="m">30</span><span class="w"> </span><span class="l">UTC =&gt; 00:30 CDT / 23:30 CST</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;30 5 * * 1&#39;</span><span class="w"> </span><span class="c"># On Mondays: 05:30 UTC =&gt; 00:30 CDT / 23:30 CST</span><span class="w">
 </span></span></span></code></pre></div><p>And that&rsquo;s it. The cron takes a couple of minutes longer to begin than it does with CircleCI, but that&rsquo;s close enough for me.</p>
 <h2 id="conclusion">Conclusion</h2>
 <p>After what&rsquo;s probably about 8 hours of work, my new CI solution is complete. My site now completely uses GitHub Actions to build and deploy, and there&rsquo;s only a couple things I compromised.</p>
